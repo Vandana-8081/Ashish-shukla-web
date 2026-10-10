@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Temporary portrait placeholder</title>
+  <desc id="desc">A neutral silhouette used until an authorized portrait is provided.</desc>
+  <rect width="640" height="480" fill="#fff"/>
+  <circle cx="320" cy="166" r="76" fill="#d9e4e2"/>
+  <path d="M160 430c8-102 65-157 160-157s152 55 160 157" fill="#d9e4e2"/>
+</svg>

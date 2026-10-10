@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@theme {
+  --color-saffron: #F5660A;
+  --color-saffron-light: #FF7D2B;
+  --color-saffron-dark: #D45300;
+  --color-dark: #151210;
+  --color-dark-surface: #1E1A17;
+  --color-cream: #F8F4ED;
+  --color-cream-card: #FFFFFF;
+  --color-body: #171717;
+  --color-muted: #6B625A;
+  --color-border-subtle: #E8E2D8;
+
+  --font-serif: "Newsreader", "Playfair Display", "Merriweather", "Georgia", "Cambria", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+:root {
+  --bg-primary: #F8F4ED;
+  --text-primary: #171717;
+  --text-muted: #6B625A;
+  --brand-saffron: #F5660A;
+  --bg-dark: #151210;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: #F8F4ED;
+  color: #171717;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Serif class for editorial headings */
+.font-editorial {
+  font-family: var(--font-serif);
+  letter-spacing: -0.015em;
+}
+
+/* Clean text selection */
+::selection {
+  background-color: #F5660A;
+  color: #FFFFFF;
+}
+
+[data-site-motion] {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  transition:
+    opacity 650ms ease,
+    transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 250ms ease,
+    border-color 250ms ease;
+}
+
+[data-site-motion][data-site-visible] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  [data-site-card][data-site-visible]:hover {
+    transform: translate3d(0, -4px, 0);
+    box-shadow: 0 16px 32px rgb(21 18 16 / 10%);
+    border-color: rgb(245 102 10 / 45%);
+  }
+
+  main a,
+  main button {
+    transition:
+      color 200ms ease,
+      background-color 200ms ease,
+      border-color 200ms ease,
+      box-shadow 200ms ease,
+      transform 200ms ease;
+  }
+
+  main a:hover,
+  main button:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Subtle custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F4ED;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4CCC0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F5660A;
+}

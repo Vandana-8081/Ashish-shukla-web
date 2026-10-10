@@ -1,0 +1,13 @@
+node_modules/
+.next/
+.vercel/
+out/
+build/
+dist/
+coverage/
+*.tsbuildinfo
+images - Shortcut.lnk
+.DS_Store
+*.log
+.env*
+!.env.example

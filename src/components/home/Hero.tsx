@@ -1,0 +1,509 @@
+'use client';
+
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { useLanguage } from '@/lib/languageContext';
+import { heroSlides } from '@/data/heroSlides';
+import { Button } from '@/components/ui/Button';
+import { Container } from '@/components/ui/Container';
+import {
+  ChevronLeft,
+  ChevronRight,
+} from 'lucide-react';
+
+export function Hero() {
+  const { t, dict, getHref } = useLanguage();
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    if (heroSlides.length <= 1) return;
+
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 7000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const slide = heroSlides[currentSlide];
+
+  const goToPrevious = () => {
+    setCurrentSlide((prev) =>
+      prev === 0 ? heroSlides.length - 1 : prev - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentSlide((prev) =>
+      (prev + 1) % heroSlides.length
+    );
+  };
+
+  return (
+    <section
+      className="
+        relative
+        min-h-[650px]
+        lg:min-h-[720px]
+        overflow-hidden
+        bg-[#F8F4ED]
+        border-b
+        border-[#E8E2D8]
+      "
+    >
+      {/* =====================================================
+          BACKGROUND
+      ====================================================== */}
+
+      {/* Soft warm glow */}
+      <div
+        className="
+          absolute
+          left-[-180px]
+          bottom-[-220px]
+          w-[650px]
+          h-[500px]
+          rounded-full
+          bg-[#F5660A]/[0.06]
+          blur-3xl
+          pointer-events-none
+        "
+      />
+
+      {/* =====================================================
+          DECORATIVE CURVE / SAFFRON SHAPE
+          Similar visual language to your reference
+      ====================================================== */}
+
+      <div
+        className="
+          absolute
+          right-[-120px]
+          bottom-[-260px]
+          w-[720px]
+          h-[480px]
+          rounded-[50%]
+          border-[80px]
+          border-[#F5660A]/[0.08]
+          rotate-[-8deg]
+          pointer-events-none
+        "
+      />
+
+      <Container
+        size="wide"
+        className="
+          relative
+          z-10
+          h-full
+          min-h-[650px]
+          lg:min-h-[720px]
+        "
+      >
+        <div
+          className="
+            relative
+            min-h-[650px]
+            lg:min-h-[720px]
+            grid
+            grid-cols-1
+            lg:grid-cols-12
+            items-center
+          "
+        >
+          {/* =================================================
+              LEFT CONTENT
+          ================================================== */}
+
+          <div
+            className="
+              relative
+              z-20
+              lg:col-span-7
+              xl:col-span-7
+              flex
+              flex-col
+              justify-center
+              pt-16
+              pb-20
+              lg:py-20
+              pr-0
+              lg:pr-8
+            "
+          >
+            {/* Eyebrow */}
+            <div
+              className="
+                flex
+                items-center
+                gap-3
+                mb-5
+                sm:mb-7
+                text-xs
+                sm:text-sm
+                font-bold
+                tracking-[0.22em]
+                uppercase
+                text-[#F5660A]
+              "
+            >
+             
+                {t(slide.eyebrow)}
+             
+            </div>
+
+            {/* Main Heading */}
+            <h1
+              className="
+                max-w-[780px]
+                font-editorial
+                text-[44px]
+                sm:text-[56px]
+                md:text-[64px]
+                lg:text-[68px]
+                xl:text-[76px]
+                font-bold
+                text-[#151210]
+                leading-[0.98]
+                tracking-[-0.035em]
+              "
+            >
+              {t(slide.heading)}
+            </h1>
+
+            {/* Description */}
+            <p
+              className="
+                mt-7
+                max-w-[680px]
+                text-base
+                sm:text-lg
+                md:text-xl
+                text-[#6B625A]
+                leading-[1.65]
+                font-normal
+              "
+            >
+              {t(slide.description)}
+            </p>
+
+            {/* CTA Buttons */}
+            <div
+              className="
+                mt-8
+                sm:mt-10
+                flex
+                flex-wrap
+                items-center
+                gap-4
+              "
+            >
+              <Button
+                href={getHref(slide.primaryCta.path)}
+                variant="primary"
+                size="lg"
+                icon="arrow"
+              >
+                {t(slide.primaryCta.label)}
+              </Button>
+
+              <Button
+                href={getHref(slide.secondaryCta.path)}
+                variant="secondary"
+                size="lg"
+              >
+                {t(slide.secondaryCta.label)}
+              </Button>
+            </div>
+
+            {/* Grounded information */}
+            <div
+              className="
+                mt-9
+                sm:mt-11
+                pt-5
+                border-t
+                border-[#E8E2D8]
+                max-w-[620px]
+                flex
+                flex-wrap
+                items-center
+                gap-x-6
+                gap-y-2
+                text-xs
+                sm:text-sm
+                text-[#6B625A]
+              "
+            >
+              <div className="flex items-center gap-2">
+                <span
+                  className="
+                    w-2
+                    h-2
+                    rounded-full
+                    bg-[#F5660A]
+                  "
+                />
+
+                <span className="font-semibold text-[#151210]">
+                  {dict.hero.subLocation}
+                </span>
+              </div>
+
+              <span className="hidden sm:inline text-[#D4CCC0]">
+                •
+              </span>
+
+              <span>
+                {dict.hero.subTagline}
+              </span>
+            </div>
+          </div>
+
+          {/* =================================================
+              RIGHT IMAGE
+          ================================================== */}
+
+          <div
+            className="
+              absolute
+              right-[-5%]
+              bottom-0
+              hidden
+              lg:block
+              lg:col-span-5
+              w-[53%]
+              h-full
+              pointer-events-none
+            "
+          >
+            {/* Main image */}
+            <div className="absolute inset-0">
+
+              <Image
+                key={slide.image}
+                src={slide.image}
+                alt={dict.hero.leaderCardTitle}
+                fill
+                priority
+                sizes="(max-width: 1024px) 0vw, 55vw"
+                className="
+                  object-cover
+                  object-center
+                "
+              />
+
+              {/* Left fade — blends image into cream background */}
+              <div
+                className="
+                  absolute
+                  inset-y-0
+                  left-0
+                  w-[42%]
+                  bg-gradient-to-r
+                  from-[#F8F4ED]
+                  via-[#F8F4ED]/75
+                  to-transparent
+                "
+              />
+
+              {/* Bottom fade */}
+              <div
+                className="
+                  absolute
+                  inset-x-0
+                  bottom-0
+                  h-[28%]
+                  bg-gradient-to-t
+                  from-[#F8F4ED]
+                  via-[#F8F4ED]/35
+                  to-transparent
+                "
+              />
+
+              {/* Top soft fade */}
+              <div
+                className="
+                  absolute
+                  inset-x-0
+                  top-0
+                  h-[15%]
+                  bg-gradient-to-b
+                  from-[#F8F4ED]/45
+                  to-transparent
+                "
+              />
+
+              {/* Very subtle warm image tint */}
+              <div
+                className="
+                  absolute
+                  inset-0
+                  bg-gradient-to-tr
+                  from-[#F5660A]/[0.03]
+                  via-transparent
+                  to-[#F5660A]/[0.04]
+                  mix-blend-multiply
+                "
+              />
+            </div>
+          </div>
+
+          {/* =================================================
+              MOBILE IMAGE
+          ================================================== */}
+
+          <div
+            className="
+              lg:hidden
+              relative
+              w-full
+              h-[420px]
+              sm:h-[500px]
+              mt-[-20px]
+            "
+          >
+            <div className="absolute inset-0">
+
+              <Image
+                key={`mobile-${slide.image}`}
+                src={slide.image}
+                alt={dict.hero.leaderCardTitle}
+                fill
+                sizes="100vw"
+                className="
+                  object-cover
+                  object-center
+                "
+              />
+
+              {/* Top fade */}
+              <div
+                className="
+                  absolute
+                  inset-x-0
+                  top-0
+                  h-[35%]
+                  bg-gradient-to-b
+                  from-[#F8F4ED]
+                  via-[#F8F4ED]/60
+                  to-transparent
+                "
+              />
+
+              {/* Bottom fade */}
+              <div
+                className="
+                  absolute
+                  inset-x-0
+                  bottom-0
+                  h-[25%]
+                  bg-gradient-to-t
+                  from-[#F8F4ED]
+                  to-transparent
+                "
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* =====================================================
+            SLIDER CONTROLS
+        ====================================================== */}
+
+        {heroSlides.length > 1 && (
+          <div
+            className="
+              absolute
+              z-30
+              bottom-7
+              lg:bottom-8
+              left-1/2
+              -translate-x-1/2
+              flex
+              items-center
+              gap-3
+              bg-[#151210]/10
+              backdrop-blur-md
+              border
+              border-white/40
+              rounded-full
+              px-3
+              py-2
+              shadow-sm
+            "
+          >
+            {/* Previous */}
+            <button
+              type="button"
+              onClick={goToPrevious}
+              aria-label="Previous slide"
+              className="
+                w-8
+                h-8
+                rounded-full
+                flex
+                items-center
+                justify-center
+                text-[#151210]
+                hover:bg-white/70
+                transition-colors
+              "
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+
+            {/* Dots */}
+            <div
+              className="flex items-center gap-1.5"
+              role="tablist"
+              aria-label="Hero slides"
+            >
+              {heroSlides.map((_, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => setCurrentSlide(idx)}
+                  aria-label={`Go to slide ${idx + 1}`}
+                  aria-selected={currentSlide === idx}
+                  className={`
+                    h-2
+                    rounded-full
+                    transition-all
+                    duration-300
+                    ${
+                      currentSlide === idx
+                        ? 'w-8 bg-[#F5660A]'
+                        : 'w-2 bg-[#A89F95]/60 hover:bg-[#6B625A]'
+                    }
+                  `}
+                />
+              ))}
+            </div>
+
+            {/* Next */}
+            <button
+              type="button"
+              onClick={goToNext}
+              aria-label="Next slide"
+              className="
+                w-8
+                h-8
+                rounded-full
+                flex
+                items-center
+                justify-center
+                text-[#151210]
+                hover:bg-white/70
+                transition-colors
+              "
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        )}
+      </Container>
+    </section>
+  );
+}
