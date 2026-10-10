@@ -58,7 +58,7 @@ export const translations = {
       switchLanguage: 'Switch Language',
     },
     hero: {
-      eyebrow: 'GRASSROOTS LEADERSHIP',
+      eyebrow: 'OFFICIAL PROFILE',
       heading: 'Experience That Works at the Grassroots',
       description:
         'A lifelong commitment to the people of Bhagwant Nagar, driven by practical experience, active community dialogue, and unyielding dedication to inclusive progress.',
@@ -264,7 +264,7 @@ export const translations = {
       switchLanguage: 'भाषा बदलें',
     },
     hero: {
-      eyebrow: 'जमीनी नेतृत्व',
+      eyebrow: 'आधिकारिक परिचय',
       heading: 'जमीन से जुड़े अनुभव, जनसेवा को समर्पित',
       description:
         'भगवंत नगर के जन-जन के प्रति अटूट निष्ठा, जमीनी अनुभव, सक्रिय जनसंवाद और समग्र विकास के प्रति दृढ़ संकल्प।',

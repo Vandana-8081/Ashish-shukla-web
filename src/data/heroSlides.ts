@@ -5,8 +5,8 @@ export const heroSlides: HeroSlide[] = [
 id: 'hero-1',
 image: '/images/hero/home3.png',
 eyebrow: {
-en: 'GRASSROOTS LEADERSHIP',
-hi: 'जमीनी नेतृत्व',
+en: 'OFFICIAL PROFILE',
+hi: 'आधिकारिक परिचय',
 },
 heading: {
 en: 'ASHISH SHUKLA',
