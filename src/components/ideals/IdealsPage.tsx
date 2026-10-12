@@ -44,18 +44,23 @@ export function IdealsPage() {
 
   return (
     <main className="min-h-screen bg-[#F7F4EF] pb-14">
-      <header className="border-y border-[#E8E2D8] bg-white px-4 py-10 sm:py-12">
-        <div className="mx-auto flex max-w-[1440px] flex-col items-center text-center">
-          <h1 className="font-editorial text-3xl font-bold tracking-tight text-[#151210] sm:text-4xl md:text-5xl">
-            {copy.heading}
-          </h1>
-          <span aria-hidden="true" className="mt-5 h-1 w-14 rounded-full bg-[#F5660A]" />
+      <header className="border-y border-[#E8E2D8] bg-white">
+        <div className="relative mx-auto aspect-[1920/340] w-full max-w-[1920px]">
+          <Image
+            src="/images/ideals/banner.jpeg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
         </div>
+        <h1 className="sr-only">{copy.heading}</h1>
       </header>
 
       <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 gap-6 px-4 pt-8 sm:px-6 md:pt-10 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-7 lg:px-8 xl:grid-cols-[340px_minmax(0,1fr)]">
         <aside aria-label={copy.categories} className="self-start overflow-hidden rounded-lg bg-white shadow-sm">
-          <h2 className="bg-[#003B3E] px-4 py-3 text-lg font-semibold text-white">
+          <h2 className="bg-[#F5660A] px-4 py-3 text-lg font-semibold text-white">
             {copy.categories}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1">
@@ -69,8 +74,8 @@ export function IdealsPage() {
                   onClick={() => setSelectedCategoryId(category.id)}
                   className={`min-h-14 border-b border-[#E5E5E5] px-4 py-3 text-left text-sm leading-relaxed transition-colors focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-[#F5660A] sm:min-h-16 ${
                     active
-                      ? 'bg-[#EFE7DC] text-[#003B3E]'
-                      : 'bg-white text-[#373737] hover:bg-[#F7F4EF] hover:text-[#003B3E]'
+                      ? 'bg-[#EFE7DC] text-[#F5660A]'
+                      : 'bg-white text-[#373737] hover:bg-[#F7F4EF] hover:text-[#F5660A]'
                   }`}
                 >
                   {isHindi ? category.title.hi : category.title.en}
@@ -81,7 +86,7 @@ export function IdealsPage() {
         </aside>
 
         <section aria-live="polite" aria-labelledby="selected-ideals-category" className="min-w-0">
-          <div className="mb-5 flex flex-wrap items-end justify-between gap-3 border-b border-[#CFC8BE] pb-3 text-[#003B3E]">
+          <div className="mb-5 flex flex-wrap items-end justify-between gap-3 border-b border-[#CFC8BE] pb-3 text-[#F5660A]">
             <h2 id="selected-ideals-category" className="font-editorial text-2xl font-bold sm:text-3xl">
               {copy.eyebrow}
             </h2>
@@ -111,7 +116,7 @@ export function IdealsPage() {
                         className={person.portrait ? 'object-contain' : 'object-cover'}
                       />
                       {!person.portrait && (
-                        <span className="absolute inset-x-0 bottom-0 bg-[#003B3E]/80 px-2 py-1.5 text-center text-[10px] font-semibold tracking-wider text-white">
+                        <span className="absolute inset-x-0 bottom-0 bg-[#F5660A]/80 px-2 py-1.5 text-center text-[10px] font-semibold tracking-wider text-white">
                           {copy.temporaryPortrait}
                         </span>
                       )}
@@ -193,7 +198,7 @@ export function IdealsPage() {
                   className="object-contain"
                 />
                 {!activePerson.portrait && (
-                  <span className="absolute inset-x-0 bottom-0 bg-[#003B3E]/80 px-2 py-1.5 text-center text-[10px] font-semibold tracking-wider text-white">
+                  <span className="absolute inset-x-0 bottom-0 bg-[#F5660A]/80 px-2 py-1.5 text-center text-[10px] font-semibold tracking-wider text-white">
                     {copy.temporaryPortrait}
                   </span>
                 )}

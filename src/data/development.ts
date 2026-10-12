@@ -98,7 +98,7 @@ export const developmentPriorities: DevelopmentPriority[] = [
       { en: 'Widening key arterial corridors connecting Bhagwant Nagar to Unnao and Kanpur', hi: 'प्रमुख व्यापारिक और आवागमन मार्गों का चौड़ीकरण व सुदृढ़ीकरण' },
       { en: 'Expediting culvert repairs and bridge construction over seasonal drains', hi: 'बरसाती नालों पर पुलियों का निर्माण ताकि बारिश में आवागमन बाधित न हो' },
     ],
-    image: '/images/development/road.jpg',
+    image: '/images/development/road-paving.png',
     tag: {
       en: 'Road Infrastructure',
       hi: 'सड़क अवसंरचना',
@@ -142,7 +142,7 @@ export const developmentPriorities: DevelopmentPriority[] = [
       { en: 'Dedicated assistance during procurement seasons at local mandis', hi: 'क्रय केंद्रों पर पारदर्शी तौल और किसानों के त्वरित भुगतान की निगरानी' },
       { en: 'Assisting smallholder farmers with modern horticultural techniques', hi: 'उद्यानिकी और आधुनिक कृषि तकनीकों के प्रति कृषकों को प्रोत्साहन' },
     ],
-    image: '/images/development/farmer.png',
+    image: '/images/public-life/water.webp',
     tag: {
       en: 'Agricultural Growth',
       hi: 'कृषि संवर्धन',

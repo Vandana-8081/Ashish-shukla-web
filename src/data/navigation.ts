@@ -60,11 +60,6 @@ export const navigationItems: NavItem[] = [
       {
         name: { en: 'Field Inspections', hi: 'क्षेत्रीय निरीक्षण' },
         path: '/public-life#field-visits',
-       
-      },
-      {
-        name: { en: 'Development', hi: 'विकास कार्य' },
-        path: '/public-life#development',
       },
     ],
   },

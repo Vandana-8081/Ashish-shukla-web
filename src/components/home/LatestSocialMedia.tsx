@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '@/lib/languageContext';
 import { socialLinks } from '@/data/socialLinks';
 import { Container } from '@/components/ui/Container';
@@ -12,8 +13,28 @@ export function LatestSocialMedia() {
   const content = dict.latestSocialMedia;
   const facebook = socialLinks.find((item) => item.platform === 'facebook');
 
+  // The Facebook plugin only renders correctly when its width matches the
+  // container (allowed range 180-500px); a fixed 500px clips on phones.
+  const embedRef = useRef<HTMLDivElement>(null);
+  const [embedWidth, setEmbedWidth] = useState<number | null>(null);
+
+  useEffect(() => {
+    const element = embedRef.current;
+    if (!element) return;
+    const update = () => {
+      const available = Math.floor(element.clientWidth);
+      if (available <= 0) return;
+      // Round down to 10px steps so small resizes do not reload the iframe.
+      setEmbedWidth(Math.min(500, Math.max(180, Math.floor(available / 10) * 10)));
+    };
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+
   const facebookCard = (
-    <article className="rounded-2xl border border-[#E8E2D8] bg-[#F8F4ED] p-5 sm:p-7">
+    <article className="rounded-2xl border border-[#E8E2D8] bg-[#F8F4ED] p-3 sm:p-4">
       <div className="flex items-center justify-between gap-4 border-b border-[#E8E2D8] pb-5">
         <div className="flex items-center gap-3">
           <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-[#F5660A]">
@@ -31,17 +52,18 @@ export function LatestSocialMedia() {
       </div>
 
       <div
+        ref={embedRef}
         role="region"
         aria-label={content.facebookTitle}
-        className="mt-5 overflow-hidden rounded-xl border border-[#E8E2D8] bg-white"
+        className="mt-5 flex justify-center overflow-hidden rounded-xl border border-[#E8E2D8] bg-white"
       >
-        {facebook && (
+        {facebook && embedWidth && (
           <iframe
             title={content.facebookTitle}
-            src={`https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(facebook.url)}&tabs=timeline&width=500&height=560&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false`}
-            width="500"
+            src={`https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(facebook.url)}&tabs=timeline&width=${embedWidth}&height=560&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false`}
+            width={embedWidth}
             height="560"
-            className="block h-[560px] w-full"
+            className="block h-[560px] max-w-full"
             style={{ border: 'none', overflow: 'hidden' }}
             scrolling="no"
             loading="lazy"
@@ -60,9 +82,9 @@ export function LatestSocialMedia() {
 
   return (
     <section className="bg-white py-20 md:py-28 border-b border-[#E8E2D8]">
-      <Container size="wide">
+      <Container size="wide" className="px-2 sm:px-4 lg:px-6">
         <SectionHeading eyebrow={content.eyebrow} title={content.heading} description={content.description} />
-        <div className="mx-auto max-w-2xl">
+        <div className="mx-auto max-w-[540px]">
           {facebookCard}
         </div>
       </Container>

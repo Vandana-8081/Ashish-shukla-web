@@ -359,9 +359,10 @@ export function Hero() {
               lg:hidden
               relative
               w-full
-              h-[420px]
-              sm:h-[500px]
-              mt-[-20px]
+              h-[460px]
+              min-[480px]:h-[560px]
+              md:h-[640px]
+              pb-16
             "
           >
             <div className="absolute inset-0">
@@ -373,8 +374,8 @@ export function Hero() {
                 fill
                 sizes="100vw"
                 className="
-                  object-cover
-                  object-center
+                  object-contain
+                  object-bottom
                 "
               />
 
@@ -384,10 +385,9 @@ export function Hero() {
                   absolute
                   inset-x-0
                   top-0
-                  h-[35%]
+                  h-[8%]
                   bg-gradient-to-b
                   from-[#F8F4ED]
-                  via-[#F8F4ED]/60
                   to-transparent
                 "
               />
@@ -398,7 +398,7 @@ export function Hero() {
                   absolute
                   inset-x-0
                   bottom-0
-                  h-[25%]
+                  h-[12%]
                   bg-gradient-to-t
                   from-[#F8F4ED]
                   to-transparent

@@ -16,7 +16,7 @@ export function Biography() {
       {/* Intro & Portrait */}
       <Container size="wide">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          <div className="lg:col-span-5 sticky top-28">
+          <div className="lg:col-span-5 lg:sticky lg:top-28">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-[#E8E2D8] border border-[#E8E2D8] shadow-md">
               <Image
                 src={biographyData.portraitImage}

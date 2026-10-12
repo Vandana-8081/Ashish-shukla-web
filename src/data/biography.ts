@@ -91,7 +91,7 @@ export const biographyData: BiographyData = {
     },
   ],
 
-  profileImage: '/images/hero/about.webp',
+  profileImage: '/images/hero/ashish3.png',
   portraitImage: '/images/hero/hero1.png',
 };
 

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -8,7 +8,7 @@ import { useLanguage } from '@/lib/languageContext';
 import { navigationItems } from '@/data/navigation';
 import { socialLinks } from '@/data/socialLinks';
 import { FacebookIcon, InstagramIcon, XIcon } from '@/components/ui/SocialIcons';
-import { X, ArrowRight } from 'lucide-react';
+import { X, ArrowRight, ChevronDown } from 'lucide-react';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
 interface MobileMenuProps {
@@ -19,6 +19,7 @@ interface MobileMenuProps {
 export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const pathname = usePathname();
   const { locale, dict, t, getHref } = useLanguage();
+  const [expandedId, setExpandedId] = useState<string | null>(null);
 
   useEffect(() => {
     if (isOpen) {
@@ -88,20 +89,58 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   ? pathname === `/${locale}` || pathname === `/${locale}/`
                   : pathname.startsWith(`/${locale}${item.path}`);
 
+              const hasChildren = !!item.children && item.children.length > 0;
+              const isExpanded = expandedId === item.id;
+              const rowClass = `flex items-center justify-between px-3 py-3 rounded-lg text-lg font-medium transition-colors ${
+                isActive
+                  ? 'text-[#F5660A] bg-white font-semibold shadow-2xs'
+                  : 'text-[#151210] hover:bg-white/80'
+              }`;
+
+              if (!hasChildren) {
+                return (
+                  <Link key={item.id} href={targetHref} onClick={onClose} className={rowClass}>
+                    <span>{t(item.name)}</span>
+                    <ArrowRight className="w-4 h-4 opacity-40" />
+                  </Link>
+                );
+              }
+
               return (
-                <Link
-                  key={item.id}
-                  href={targetHref}
-                  onClick={onClose}
-                  className={`flex items-center justify-between px-3 py-3 rounded-lg text-lg font-medium transition-colors ${
-                    isActive
-                      ? 'text-[#F5660A] bg-white font-semibold shadow-2xs'
-                      : 'text-[#151210] hover:bg-white/80'
-                  }`}
-                >
-                  <span>{t(item.name)}</span>
-                  <ArrowRight className="w-4 h-4 opacity-40" />
-                </Link>
+                <div key={item.id}>
+                  <div className={rowClass}>
+                    <Link href={targetHref} onClick={onClose} className="flex-1 py-0.5">
+                      {t(item.name)}
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => setExpandedId(isExpanded ? null : item.id)}
+                      aria-expanded={isExpanded}
+                      aria-label={t(item.name)}
+                      className="w-9 h-9 -mr-2 flex items-center justify-center rounded-lg"
+                    >
+                      <ChevronDown
+                        className={`w-5 h-5 opacity-60 transition-transform duration-200 ${
+                          isExpanded ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                  </div>
+                  {isExpanded && (
+                    <div className="ml-4 mt-1 mb-2 pl-3 border-l-2 border-[#F5660A]/30 space-y-0.5">
+                      {item.children?.map((sub) => (
+                        <Link
+                          key={sub.path}
+                          href={getHref(sub.path)}
+                          onClick={onClose}
+                          className="block px-3 py-2.5 rounded-lg text-base text-[#6B625A] hover:text-[#F5660A] hover:bg-white/80"
+                        >
+                          {t(sub.name)}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               );
             })}
           </div>

@@ -113,13 +113,13 @@ export function DevelopmentPreview() {
             </div>
 
             <div className="lg:col-span-5">
-              <div className="relative aspect-[4/3] lg:aspect-square rounded-2xl overflow-hidden border border-[#2B2521] shadow-2xl">
+              <div className="relative aspect-[4/5] sm:aspect-[4/3] lg:aspect-square rounded-2xl overflow-hidden border border-[#2B2521] shadow-2xl">
                 <Image
                   src={bhagwantNagarData.heroImage}
                   alt={dict.bhagwantNagarSection.heading}
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 text-xs text-[#E8E2D8] font-medium bg-[#151210]/70 backdrop-blur-xs p-3 rounded-lg border border-white/10">
