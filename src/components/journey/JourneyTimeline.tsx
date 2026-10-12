@@ -88,9 +88,6 @@ export function JourneyTimeline() {
                         sizes="(max-width: 1024px) 100vw, 50vw"
                         className="object-cover group-hover:scale-103 transition-transform duration-500"
                       />
-                      <div className="absolute top-3 left-3 lg:hidden px-2.5 py-1 bg-[#151210]/80 backdrop-blur-xs text-white text-xs font-bold rounded-md">
-                        Phase 0{index + 1}
-                      </div>
                     </div>
                   </div>
                 </div>
