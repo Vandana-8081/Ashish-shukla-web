@@ -25,7 +25,7 @@ export function VideoSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
 
           {/* ================= VIDEO PLAYER ================= */}
-          <div className="lg:col-span-8 relative aspect-[16/9] w-full bg-black">
+          <div className="lg:col-span-8 relative aspect-[4/5] sm:aspect-[16/9] w-full bg-black">
 
             {isPlayerOpen && selectedVideo.videoPath && !hasPlaybackError ? (
               /* ACTUAL VIDEO */
@@ -35,7 +35,7 @@ export function VideoSection() {
                 controls
                 autoPlay
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-contain bg-black"
                 onError={() => {
                   setHasPlaybackError(true);
                   setIsPlayerOpen(false);
