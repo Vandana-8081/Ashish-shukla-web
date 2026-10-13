@@ -48,10 +48,6 @@ export default async function MediaPage({
 
       {/* Photo Gallery */}
       <Container size="wide" id="photos" className="pt-8 border-t border-[#E8E2D8]">
-        <SectionHeading
-          title={dict.mediaSection.photoHeading}
-          description={dict.mediaSection.photoDesc}
-        />
         <PhotoGallery />
       </Container>
     </div>

@@ -30,6 +30,7 @@ export interface HeroSlide {
   image: string;
   eyebrow: LocalizedString;
   heading: LocalizedString;
+  subtitle?: LocalizedString;
   description: LocalizedString;
   primaryCta: {
     label: LocalizedString;

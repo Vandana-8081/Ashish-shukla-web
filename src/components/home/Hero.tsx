@@ -185,10 +185,17 @@ export function Hero() {
               {t(slide.heading)}
             </h1>
 
+            {/* Subtitle */}
+            {slide.subtitle && (
+              <p className="mt-4 sm:mt-6 max-w-[680px] font-editorial text-lg sm:text-xl md:text-2xl font-semibold leading-snug text-[#151210]">
+                {t(slide.subtitle)}
+              </p>
+            )}
+
             {/* Description */}
             <p
               className="
-                mt-4 sm:mt-7
+                mt-3 sm:mt-4
                 max-w-[680px]
                 text-base
                 sm:text-lg

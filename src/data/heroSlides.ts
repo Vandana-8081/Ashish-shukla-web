@@ -12,9 +12,13 @@ heading: {
 en: 'ASHISH SHUKLA',
 hi: 'आशीष शुक्ला',
 },
+subtitle: {
+en: 'Dedicated to Public Service, Committed to the Progress of Bhagwantnagar',
+hi: 'जनसेवा के प्रति समर्पित, भगवंतनगर की प्रगति के लिए प्रतिबद्ध',
+},
 description: {
-en: 'Connected with the people of Bhagwantnagar, committed to public service and local development.',
-hi: 'भगवंतनगर की जनता से जुड़ाव, जनसेवा और स्थानीय विकास के प्रति प्रतिबद्धता।',
+en: 'Working continuously, together with the citizens of Bhagwantnagar, for local development, better civic amenities and a brighter future for every citizen.',
+hi: 'भगवंतनगर के नागरिकों के साथ मिलकर स्थानीय विकास, बेहतर नागरिक सुविधाओं और प्रत्येक नागरिक के उज्ज्वल भविष्य के लिए निरंतर प्रयासरत।',
 },
 primaryCta: {
 label: {
