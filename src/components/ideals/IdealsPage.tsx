@@ -44,15 +44,23 @@ export function IdealsPage() {
 
   return (
     <main className="min-h-screen bg-[#F7F4EF] pb-14">
-      <header className="border-y border-[#E8E2D8] bg-white">
-        <div className="relative mx-auto aspect-[1920/340] w-full max-w-[1920px]">
+      <header className="mt-8 border-y border-[#E8E2D8] bg-white sm:mt-0">
+        <div className="relative mx-auto aspect-[750/130] w-full max-w-[1920px] sm:aspect-[1920/340]">
+          <Image
+            src="/images/ideals/banner-mobile.jpeg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[50%_40%] sm:hidden"
+          />
           <Image
             src="/images/ideals/banner.jpeg"
             alt=""
             fill
             priority
             sizes="100vw"
-            className="object-cover"
+            className="hidden object-cover sm:block"
           />
         </div>
         <h1 className="sr-only">{copy.heading}</h1>

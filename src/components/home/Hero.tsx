@@ -57,7 +57,7 @@ export function Hero() {
     <section
       className="
         relative
-        min-h-[650px]
+        min-h-0
         lg:min-h-[720px]
         overflow-hidden
         bg-[#F8F4ED]
@@ -110,14 +110,14 @@ export function Hero() {
           relative
           z-10
           h-full
-          min-h-[650px]
+          min-h-0
           lg:min-h-[720px]
         "
       >
         <div
           className="
             relative
-            min-h-[650px]
+            min-h-0
             lg:min-h-[720px]
             grid
             grid-cols-1
@@ -138,8 +138,8 @@ export function Hero() {
               flex
               flex-col
               justify-center
-              pt-16
-              pb-6
+              pt-6 sm:pt-16
+              pb-4 sm:pb-6
               lg:py-20
               pr-0
               lg:pr-8
@@ -151,7 +151,7 @@ export function Hero() {
                 flex
                 items-center
                 gap-3
-                mb-5
+                mb-3
                 sm:mb-7
                 text-xs
                 sm:text-sm
@@ -171,7 +171,7 @@ export function Hero() {
               className="
                 max-w-[780px]
                 font-editorial
-                text-[44px]
+                text-[38px]
                 sm:text-[56px]
                 md:text-[64px]
                 lg:text-[68px]
@@ -188,7 +188,7 @@ export function Hero() {
             {/* Description */}
             <p
               className="
-                mt-7
+                mt-4 sm:mt-7
                 max-w-[680px]
                 text-base
                 sm:text-lg
@@ -204,12 +204,12 @@ export function Hero() {
             {/* CTA Buttons */}
             <div
               className="
-                mt-8
+                mt-5
                 sm:mt-10
                 flex
-                flex-wrap
+                flex-nowrap sm:flex-wrap
                 items-center
-                gap-4
+                gap-3 sm:gap-4
               "
             >
               <Button
@@ -217,6 +217,7 @@ export function Hero() {
                 variant="primary"
                 size="lg"
                 icon="arrow"
+                className="flex-1 sm:flex-none px-3 py-3 text-sm sm:px-6 sm:py-3.5 sm:text-base whitespace-nowrap"
               >
                 {t(slide.primaryCta.label)}
               </Button>
@@ -225,6 +226,7 @@ export function Hero() {
                 href={getHref(slide.secondaryCta.path)}
                 variant="secondary"
                 size="lg"
+                className="flex-1 sm:flex-none px-3 py-3 text-sm sm:px-6 sm:py-3.5 sm:text-base whitespace-nowrap"
               >
                 {t(slide.secondaryCta.label)}
               </Button>
@@ -331,7 +333,7 @@ export function Hero() {
               -mx-4
               sm:-mx-6
               w-auto
-              -mt-6
+              mt-2
             "
             style={{ aspectRatio: mobilePhotoRatio }}
           >

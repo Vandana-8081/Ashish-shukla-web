@@ -82,12 +82,11 @@ export async function POST(request: Request) {
 
   const receiver = process.env.CONTACT_RECEIVER_EMAIL?.trim() ?? '';
   const sender = process.env.CONTACT_SENDER_EMAIL?.trim() ?? '';
-  const smtpHost = process.env.SMTP_HOST?.trim() ?? '';
-  const smtpPort = Number(process.env.SMTP_PORT ?? 465);
-  const smtpUser = process.env.SMTP_USER?.trim() ?? '';
-  const smtpPassword = process.env.SMTP_PASSWORD ?? '';
-  if (!emailPattern.test(receiver) || !emailPattern.test(sender) || /[\r\n]/u.test(sender) || !smtpHost
-    || !Number.isInteger(smtpPort) || smtpPort < 1 || smtpPort > 65535 || !smtpUser || !smtpPassword) {
+  const gmailUser = process.env.GMAIL_USER?.trim() ?? '';
+  // Google shows app passwords in groups of four separated by spaces; strip them.
+  const gmailAppPassword = (process.env.GMAIL_APP_PASSWORD ?? '').replace(/\s+/gu, '');
+  if (!emailPattern.test(receiver) || !emailPattern.test(sender) || /[\r\n]/u.test(sender)
+    || !emailPattern.test(gmailUser) || !gmailAppPassword) {
     return NextResponse.json({ error: 'email_not_configured' }, { status: 503 });
   }
 
@@ -112,10 +111,8 @@ export async function POST(request: Request) {
 
   try {
     const transporter = nodemailer.createTransport({
-      host: smtpHost,
-      port: smtpPort,
-      secure: smtpPort === 465,
-      auth: { user: smtpUser, pass: smtpPassword },
+      service: 'gmail',
+      auth: { user: gmailUser, pass: gmailAppPassword },
     });
     await transporter.sendMail({
       from: sender,
@@ -124,13 +121,13 @@ export async function POST(request: Request) {
       subject: `New Public Enquiry - Ashish Shukla Website: ${subject}`,
       text,
       html: `<div style="font-family:Arial,sans-serif;color:#171717"><h2>New public enquiry</h2><table style="border-collapse:collapse;width:100%;max-width:760px">${htmlRows}</table></div>`,
-      messageId: `<${randomUUID()}@${smtpHost}>`,
+      messageId: `<${randomUUID()}@${gmailUser.split('@')[1]}>`,
     });
     return NextResponse.json({ ok: true }, { status: 200 });
   } catch (error) {
     const smtpError = error as { code?: unknown; responseCode?: unknown };
     const authenticationFailed = smtpError.code === 'EAUTH' || smtpError.responseCode === 535;
-    // Log only safe SMTP diagnostics. Never log credentials or message content.
+    // Log only safe delivery diagnostics. Never log credentials or message content.
     console.error('Contact email delivery failed', {
       code: typeof smtpError.code === 'string' ? smtpError.code : 'UNKNOWN',
       responseCode: typeof smtpError.responseCode === 'number' ? smtpError.responseCode : undefined,
