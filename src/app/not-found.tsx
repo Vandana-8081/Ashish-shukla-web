@@ -9,7 +9,7 @@ export default function NotFound() {
           404
         </div>
         <div className="space-y-2">
-          <h1 className="font-editorial text-3xl font-bold text-[#151210]">
+          <h1 className="font-editorial text-2xl font-bold text-[#151210]">
             Page not found
           </h1>
           <p className="text-sm text-[#6B625A] leading-relaxed">

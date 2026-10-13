@@ -24,6 +24,14 @@
   --bg-dark: #151210;
 }
 
+/* Devanagari must not be letter-spaced: it splits conjuncts and matras apart. */
+html:lang(hi),
+html:lang(hi) *,
+html:lang(hi) *::before,
+html:lang(hi) *::after {
+  letter-spacing: normal !important;
+}
+
 html {
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;

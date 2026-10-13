@@ -43,7 +43,7 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`sticky top-0 z-40 w-full transition-all duration-300 border-t-2 border-[#F5660A] bg-white/95 backdrop-blur-md ${
+        className={`sticky top-0 z-40 w-full transition duration-300 border-t-2 border-[#F5660A] bg-white/95 backdrop-blur-md ${
           isScrolled ? 'shadow-xs border-b border-[#E8E2D8]' : 'border-b border-[#E8E2D8]/80'
         }`}
       >

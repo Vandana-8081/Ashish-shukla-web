@@ -13,7 +13,7 @@ export function PublicLifeSections() {
   const { t, dict, getHref, locale } = useLanguage();
 
   return (
-    <div className="py-12 md:py-20 space-y-20">
+    <div className="pt-4 pb-12 md:pb-20 space-y-20">
       {/* Jan Sunwai Comprehensive Section */}
       <Container size="wide" id="jan-sunwai">
         <div className="bg-white rounded-3xl border border-[#E8E2D8] p-6 sm:p-10 lg:p-14 shadow-sm">
@@ -23,11 +23,11 @@ export function PublicLifeSections() {
                 <span>{dict.publicLifeSection.eyebrow}</span>
               </div>
 
-              <h2 className="font-editorial text-3xl sm:text-4xl font-bold text-[#151210] leading-tight">
+              <h2 className="font-editorial text-2xl sm:text-3xl font-bold text-[#151210] leading-tight">
                 {dict.publicLifeSection.heading}
               </h2>
 
-              <p className="text-base sm:text-lg text-[#6B625A] leading-relaxed">
+              <p className="text-sm sm:text-base text-[#6B625A] leading-relaxed">
                 {dict.publicLifeSection.description}
               </p>
 
@@ -93,7 +93,7 @@ export function PublicLifeSections() {
           {publicLifeItems.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-2xl border border-[#E8E2D8] overflow-hidden hover:border-[#F5660A]/70 transition-all shadow-2xs group"
+              className="bg-white rounded-2xl border border-[#E8E2D8] overflow-hidden hover:border-[#F5660A]/70 transition shadow-2xs group"
             >
               <div className="relative aspect-[16/9] w-full bg-[#F8F4ED]">
                 <Image
@@ -105,7 +105,7 @@ export function PublicLifeSections() {
                 />
               </div>
               <div className="p-6 sm:p-8 space-y-3">
-                <h3 className="font-editorial text-2xl font-bold text-[#151210] group-hover:text-[#F5660A] transition-colors">
+                <h3 className="font-editorial text-xl font-bold text-[#151210] group-hover:text-[#F5660A] transition-colors">
                   {t(item.title)}
                 </h3>
                 <p className="text-sm text-[#6B625A] leading-relaxed">

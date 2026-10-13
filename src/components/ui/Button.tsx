@@ -22,7 +22,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseClasses =
-    'inline-flex items-center justify-center font-medium transition-all duration-200 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F5660A]';
+    'inline-flex items-center justify-center font-medium transition duration-200 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F5660A]';
 
   const sizeClasses = {
     sm: 'text-xs px-3.5 py-1.5 gap-1.5 rounded-lg',

@@ -464,28 +464,287 @@ export const blogArticles: BlogArticle[] = [
   status: 'published',
 },
 
-  {
-    id: 'government-schemes-guide',
-    slug: 'government-schemes-eligibility-benefits-application-process',
-    categoryId: 'schemes',
-    title: { en: 'Government Schemes: Eligibility, Benefits and Application Process', hi: 'सरकारी योजनाएँ: पात्रता, लाभ और आवेदन प्रक्रिया' },
-    excerpt: { en: 'A practical checklist for finding official scheme information, checking eligibility, applying through the right channel, and avoiding fraud.', hi: 'आधिकारिक योजना जानकारी खोजने, पात्रता जाँचने, सही माध्यम से आवेदन करने और धोखाधड़ी से बचने की उपयोगी जाँच-सूची।' },
-    sections: [
-      { heading: { en: 'Start with an official scheme page', hi: 'आधिकारिक योजना पृष्ठ से शुरुआत करें' }, paragraphs: [
-        { en: 'Eligibility, benefits, documents, and application windows vary by scheme and may change. Search the myScheme portal or the responsible ministry/state department, open the specific scheme page, and read its current rules before acting. A general summary is not a substitute for the scheme guidelines.', hi: 'पात्रता, लाभ, दस्तावेज और आवेदन अवधि हर योजना में अलग होती है और बदल सकती है। मायस्कीम पोर्टल या संबंधित मंत्रालय/राज्य विभाग पर योजना खोजें, उसका विशिष्ट पृष्ठ खोलें और आवेदन से पहले वर्तमान नियम पढ़ें। सामान्य सारांश योजना के दिशा-निर्देशों का विकल्प नहीं है।' },
-        { en: 'Check who can apply, which documents are required, where applications are accepted, how status is tracked, and how an appeal or grievance is made. Keep the application acknowledgement and use only contact information published by the responsible department.', hi: 'कौन आवेदन कर सकता है, कौन से दस्तावेज चाहिए, आवेदन कहाँ स्वीकार होता है, स्थिति कैसे देखी जाती है और अपील/शिकायत कैसे की जाती है—इनकी पुष्टि करें। आवेदन पावती रखें और केवल संबंधित विभाग द्वारा प्रकाशित संपर्क जानकारी का उपयोग करें।' },
-      ] },
-      { heading: { en: 'Protect your personal information', hi: 'अपनी निजी जानकारी सुरक्षित रखें' }, paragraphs: [
-        { en: 'Do not trust a link only because it uses a government logo. Avoid unknown links, never share an OTP or password, and do not pay an unverified agent for a promised approval or benefit. If a requirement is unclear, contact the scheme office or service centre listed by the department.', hi: 'केवल सरकारी लोगो देखकर किसी लिंक पर भरोसा न करें। अनजान लिंक से बचें, OTP या पासवर्ड कभी साझा न करें और मंजूरी या लाभ के वादे पर अपुष्ट एजेंट को भुगतान न करें। कोई शर्त स्पष्ट न हो तो विभाग द्वारा बताए कार्यालय या सेवा केंद्र से संपर्क करें।' },
-      ] },
-    ],
-    image: '/images/blog/property%20card.webp', imageAlt: { en: 'Information card for public schemes', hi: 'सार्वजनिक योजनाओं के लिए सूचना कार्ड' },
-    publishedAt: '2026-10-10', updatedAt: '2026-10-10', author: ashish,
-    sources: [
-      { name: { en: 'myScheme: Government scheme discovery portal', hi: 'मायस्कीम: सरकारी योजना खोज पोर्टल' }, url: 'https://www.myscheme.gov.in/' },
-      { name: { en: 'PM-KISAN official portal', hi: 'पीएम-किसान आधिकारिक पोर्टल' }, url: 'https://pmkisan.gov.in/' },
-    ], featured: true, status: 'published',
+
+{
+  id: 'government-schemes-guide',
+  slug: 'government-schemes-eligibility-benefits-application-process',
+  categoryId: 'schemes',
+
+  title: {
+    en: 'Government Schemes: Eligibility, Benefits and Application Process',
+    hi: 'सरकारी योजनाएँ: पात्रता, लाभ और आवेदन प्रक्रिया',
   },
+
+  excerpt: {
+    en: 'A detailed guide to discovering government schemes, understanding eligibility criteria, preparing documents, applying through official channels, tracking applications, and protecting yourself from fraud.',
+    hi: 'सरकारी योजनाओं की जानकारी प्राप्त करने, पात्रता समझने, दस्तावेज तैयार करने, आधिकारिक माध्यम से आवेदन करने, आवेदन की स्थिति जानने और धोखाधड़ी से बचने की विस्तृत मार्गदर्शिका।',
+  },
+
+  sections: [
+    {
+      heading: {
+        en: 'Understanding Government Schemes and Their Purpose',
+        hi: 'सरकारी योजनाओं और उनके उद्देश्य को समझें',
+      },
+      paragraphs: [
+        {
+          en: 'Government schemes are designed to provide different forms of support to eligible individuals, families, farmers, students, workers, entrepreneurs, and other groups. Depending on the programme, assistance may relate to financial support, education, healthcare, housing, agriculture, skill development, employment, social security, or access to public services.',
+          hi: 'सरकारी योजनाएँ पात्र व्यक्तियों, परिवारों, किसानों, विद्यार्थियों, श्रमिकों, उद्यमियों और अन्य समूहों को विभिन्न प्रकार की सहायता प्रदान करने के उद्देश्य से बनाई जाती हैं। योजना के अनुसार सहायता आर्थिक सहयोग, शिक्षा, स्वास्थ्य, आवास, कृषि, कौशल विकास, रोजगार, सामाजिक सुरक्षा या सार्वजनिक सेवाओं तक पहुँच से संबंधित हो सकती है।',
+        },
+        {
+          en: 'Every scheme has its own objectives, eligibility conditions, application procedure, and benefit structure. Some programmes are administered by the Central Government, while others are operated by state governments or local authorities. Certain schemes may involve cooperation between multiple levels of government.',
+          hi: 'प्रत्येक योजना के अपने उद्देश्य, पात्रता की शर्तें, आवेदन प्रक्रिया और लाभों की व्यवस्था होती है। कुछ कार्यक्रम केंद्र सरकार द्वारा संचालित किए जाते हैं, जबकि अन्य राज्य सरकारों या स्थानीय प्राधिकरणों के अंतर्गत आते हैं। कुछ योजनाओं में सरकार के विभिन्न स्तरों के बीच सहयोग भी शामिल हो सकता है।',
+        },
+        {
+          en: 'Before applying, understand what the scheme actually provides and whether it is relevant to your circumstances. Do not assume that every government programme provides direct cash assistance or that every applicant will automatically receive a benefit.',
+          hi: 'आवेदन करने से पहले समझें कि योजना वास्तव में क्या सुविधा देती है और क्या वह आपकी परिस्थितियों के अनुकूल है। यह न मानें कि प्रत्येक सरकारी कार्यक्रम सीधे आर्थिक सहायता देता है या हर आवेदक को स्वतः लाभ मिल जाएगा।',
+        },
+      ],
+    },
+
+    {
+      heading: {
+        en: 'Start with an Official Scheme Information Portal',
+        hi: 'सरकारी योजनाओं की जानकारी आधिकारिक पोर्टल से प्राप्त करें',
+      },
+      paragraphs: [
+        {
+          en: 'The myScheme portal is a useful starting point for discovering government programmes that may match a person’s circumstances. Users can explore scheme information and review the conditions that may apply to different categories of applicants. Visit https://www.myscheme.gov.in/ and search for schemes relevant to your needs.',
+          hi: 'मायस्कीम पोर्टल किसी व्यक्ति की परिस्थितियों के अनुसार संभावित सरकारी योजनाएँ खोजने का उपयोगी माध्यम है। इसके जरिए विभिन्न प्रकार के आवेदकों पर लागू हो सकने वाली योजनाओं की जानकारी देखी जा सकती है। https://www.myscheme.gov.in/ पर जाकर अपनी आवश्यकताओं से संबंधित योजनाएँ खोजें।',
+        },
+        {
+          en: 'After finding a potentially relevant scheme, visit the official website of the responsible ministry, department, or state authority. Read the latest guidelines, notifications, application instructions, and terms carefully. A summary page can help you discover a scheme, but the responsible authority’s current rules should guide your application.',
+          hi: 'संभावित रूप से उपयोगी योजना मिलने के बाद संबंधित मंत्रालय, विभाग या राज्य प्राधिकरण की आधिकारिक वेबसाइट पर जाएँ। नवीनतम दिशा-निर्देश, अधिसूचनाएँ, आवेदन संबंधी निर्देश और शर्तें ध्यान से पढ़ें। सारांश वाला पृष्ठ योजना खोजने में मदद कर सकता है, लेकिन आवेदन संबंधित प्राधिकरण के वर्तमान नियमों के अनुसार ही करना चाहिए।',
+        },
+        {
+          en: 'Check whether applications are currently open, whether registration is required, and whether the scheme is available in your state or area. Application periods, available services, and programme requirements may change over time.',
+          hi: 'जाँचें कि आवेदन वर्तमान में खुले हैं या नहीं, पंजीकरण आवश्यक है या नहीं और योजना आपके राज्य या क्षेत्र में उपलब्ध है या नहीं। आवेदन की अवधि, उपलब्ध सेवाएँ और कार्यक्रम की शर्तें समय के साथ बदल सकती हैं।',
+        },
+      ],
+    },
+
+    {
+      heading: {
+        en: 'Check Eligibility Before Applying',
+        hi: 'आवेदन से पहले पात्रता की जाँच करें',
+      },
+      paragraphs: [
+        {
+          en: 'Eligibility is one of the most important parts of any government scheme. Depending on the programme, conditions may relate to age, residence, income, occupation, landholding, educational qualifications, family circumstances, category-specific requirements, or other criteria. Not every condition applies to every scheme.',
+          hi: 'पात्रता किसी भी सरकारी योजना का सबसे महत्वपूर्ण हिस्सा है। कार्यक्रम के अनुसार शर्तें आयु, निवास, आय, व्यवसाय, भूमि के स्वामित्व, शैक्षणिक योग्यता, पारिवारिक परिस्थितियों, विशेष श्रेणी की आवश्यकताओं या अन्य मानदंडों से संबंधित हो सकती हैं। हर योजना में सभी शर्तें लागू नहीं होतीं।',
+        },
+        {
+          en: 'Read the eligibility section carefully and compare the stated conditions with your own circumstances. If the rules are unclear, seek clarification from the department or an authorised service centre before submitting an application.',
+          hi: 'पात्रता वाले भाग को ध्यान से पढ़ें और उसमें दी गई शर्तों की तुलना अपनी परिस्थितियों से करें। यदि नियम स्पष्ट नहीं हैं, तो आवेदन जमा करने से पहले संबंधित विभाग या अधिकृत सेवा केंद्र से जानकारी प्राप्त करें।',
+        },
+        {
+          en: 'Providing incorrect information or documents can delay an application or lead to rejection, depending on the applicable rules. Submit accurate details and disclose information requested by the scheme honestly.',
+          hi: 'गलत जानकारी या दस्तावेज देने से आवेदन में देरी हो सकती है या लागू नियमों के अनुसार आवेदन अस्वीकार किया जा सकता है। सही विवरण दें और योजना में माँगी गई जानकारी ईमानदारी से प्रस्तुत करें।',
+        },
+      ],
+    },
+
+    {
+      heading: {
+        en: 'Understand the Benefits and Conditions',
+        hi: 'योजना के लाभ और शर्तों को समझें',
+      },
+      paragraphs: [
+        {
+          en: 'The benefits provided under a scheme may take different forms. Depending on its rules, a programme may offer financial assistance, access to a service, training, insurance coverage, a subsidy, an eligible loan facility, or another form of support. The exact benefit, amount, duration, and delivery method must be confirmed from the official scheme guidelines.',
+          hi: 'किसी योजना के अंतर्गत अलग-अलग प्रकार के लाभ मिल सकते हैं। नियमों के अनुसार कोई कार्यक्रम आर्थिक सहायता, किसी सेवा तक पहुँच, प्रशिक्षण, बीमा कवरेज, सब्सिडी, पात्रता के अनुसार ऋण सुविधा या अन्य प्रकार का सहयोग प्रदान कर सकता है। लाभ का सही स्वरूप, राशि, अवधि और वितरण की प्रक्रिया आधिकारिक दिशा-निर्देशों से सत्यापित करनी चाहिए।',
+        },
+        {
+          en: 'Some benefits may require verification, approval, periodic renewal, or fulfilment of additional conditions. A submitted application does not necessarily mean that the application has been approved or that a benefit has been released.',
+          hi: 'कुछ लाभों के लिए सत्यापन, स्वीकृति, समय-समय पर नवीनीकरण या अतिरिक्त शर्तों को पूरा करना आवश्यक हो सकता है। आवेदन जमा कर देने का अर्थ यह नहीं है कि आवेदन स्वीकृत हो गया है या लाभ जारी कर दिया गया है।',
+        },
+        {
+          en: 'Before relying on a benefit, check whether it is one-time or recurring, whether there are limits or exclusions, and what responsibilities the beneficiary must fulfil. Keep a copy of the applicable terms for future reference.',
+          hi: 'किसी लाभ पर निर्भर करने से पहले जाँचें कि वह एक बार मिलता है या नियमित रूप से, क्या उस पर कोई सीमा या अपवाद लागू है और लाभार्थी को किन जिम्मेदारियों का पालन करना है। भविष्य में संदर्भ के लिए लागू शर्तों की एक प्रति सुरक्षित रखें।',
+        },
+      ],
+    },
+
+    {
+      heading: {
+        en: 'Prepare the Required Documents',
+        hi: 'आवश्यक दस्तावेज पहले से तैयार रखें',
+      },
+      paragraphs: [
+        {
+          en: 'The documents required for an application depend on the specific scheme. Depending on the stated rules, applicants may need identity or address proof, bank account details, income or residence certificates, educational records, land-related documents, photographs, or other supporting records.',
+          hi: 'आवेदन के लिए आवश्यक दस्तावेज संबंधित योजना पर निर्भर करते हैं। निर्धारित नियमों के अनुसार आवेदक को पहचान या पते का प्रमाण, बैंक खाते का विवरण, आय या निवास प्रमाणपत्र, शैक्षणिक रिकॉर्ड, भूमि से संबंधित दस्तावेज, फोटो या अन्य सहायक रिकॉर्ड की आवश्यकता हो सकती है।',
+        },
+        {
+          en: 'Use the official checklist rather than assuming that the same documents are required for every programme. Check whether documents must be current, issued by a particular authority, uploaded in a specific format, or presented in original form during verification.',
+          hi: 'यह मानने के बजाय कि हर कार्यक्रम में एक जैसे दस्तावेज आवश्यक हैं, आधिकारिक चेकलिस्ट का उपयोग करें। जाँचें कि दस्तावेज वर्तमान होने चाहिए या नहीं, उन्हें किसी विशेष प्राधिकरण ने जारी किया होना चाहिए या नहीं, उन्हें किसी निश्चित प्रारूप में अपलोड करना है या सत्यापन के समय मूल प्रति दिखानी है।',
+        },
+        {
+          en: 'Ensure that the information on your application matches the supporting documents. Keep copies of the documents you submit and protect them from unauthorised access.',
+          hi: 'सुनिश्चित करें कि आवेदन में दी गई जानकारी सहायक दस्तावेजों से मेल खाती हो। जमा किए गए दस्तावेजों की प्रतियाँ रखें और उन्हें अनधिकृत पहुँच से सुरक्षित रखें।',
+        },
+      ],
+    },
+
+    {
+      heading: {
+        en: 'Follow the Correct Application Process',
+        hi: 'सही आवेदन प्रक्रिया का पालन करें',
+      },
+      paragraphs: [
+        {
+          en: 'Once eligibility and document requirements have been checked, follow the application instructions published by the responsible department. Depending on the scheme, applications may be accepted through an official website, an authorised service centre, a designated office, or another prescribed channel.',
+          hi: 'पात्रता और दस्तावेजों की आवश्यकताएँ जाँचने के बाद संबंधित विभाग द्वारा प्रकाशित आवेदन निर्देशों का पालन करें। योजना के अनुसार आवेदन आधिकारिक वेबसाइट, अधिकृत सेवा केंद्र, निर्धारित कार्यालय या किसी अन्य स्वीकृत माध्यम से स्वीकार किए जा सकते हैं।',
+        },
+        {
+          en: 'Complete the application carefully, check spelling and identification details, upload the requested documents in the specified format, and review the information before submission. Do not submit multiple applications unless the scheme instructions permit or require it.',
+          hi: 'आवेदन सावधानी से भरें, नाम और पहचान संबंधी विवरण जाँचें, माँगे गए दस्तावेज निर्धारित प्रारूप में अपलोड करें और जमा करने से पहले पूरी जानकारी की समीक्षा करें। जब तक योजना के निर्देश इसकी अनुमति न दें या इसकी आवश्यकता न हो, एक ही आवेदन बार-बार जमा न करें।',
+        },
+        {
+          en: 'Where available, save the acknowledgement, registration number, receipt, or application reference number. These records may help you check progress or communicate with the responsible office later.',
+          hi: 'जहाँ उपलब्ध हो, आवेदन की पावती, पंजीकरण संख्या, रसीद या आवेदन संदर्भ संख्या सुरक्षित रखें। बाद में प्रगति जानने या संबंधित कार्यालय से संपर्क करने में ये रिकॉर्ड उपयोगी हो सकते हैं।',
+        },
+      ],
+    },
+
+    {
+      heading: {
+        en: 'Track Your Application and Respond to Requests',
+        hi: 'आवेदन की स्थिति देखें और आवश्यक सूचनाओं का जवाब दें',
+      },
+      paragraphs: [
+        {
+          en: 'If the scheme provides an online status facility, use the official portal and the reference details supplied during registration. Some programmes may require applicants to contact a designated office or service centre for updates.',
+          hi: 'यदि योजना में ऑनलाइन स्थिति देखने की सुविधा उपलब्ध है, तो आधिकारिक पोर्टल और पंजीकरण के समय मिली संदर्भ जानकारी का उपयोग करें। कुछ कार्यक्रमों में प्रगति की जानकारी के लिए निर्धारित कार्यालय या सेवा केंद्र से संपर्क करना पड़ सकता है।',
+        },
+        {
+          en: 'Read any official communication carefully. If additional information, document correction, or verification is requested, follow the stated instructions and deadlines. Keep a record of any response or document submitted after the initial application.',
+          hi: 'आधिकारिक संदेशों को ध्यान से पढ़ें। यदि अतिरिक्त जानकारी, दस्तावेज में सुधार या सत्यापन के लिए कहा जाता है, तो दिए गए निर्देशों और समय-सीमा का पालन करें। प्रारंभिक आवेदन के बाद जमा किए गए किसी भी उत्तर या दस्तावेज का रिकॉर्ड रखें।',
+        },
+        {
+          en: 'If an application is delayed, returned, or rejected, check the stated reason and the available review, appeal, or grievance process. The procedure and time limits vary between schemes, so follow the rules published by the responsible authority.',
+          hi: 'यदि आवेदन में देरी होती है, उसे वापस किया जाता है या अस्वीकार किया जाता है, तो कारण और उपलब्ध समीक्षा, अपील या शिकायत प्रक्रिया की जानकारी लें। अलग-अलग योजनाओं में प्रक्रिया और समय-सीमा अलग हो सकती है, इसलिए संबंधित प्राधिकरण द्वारा प्रकाशित नियमों का पालन करें।',
+        },
+      ],
+    },
+
+    {
+      heading: {
+        en: 'Examples of Official Scheme Information',
+        hi: 'आधिकारिक योजना जानकारी के उदाहरण',
+      },
+      paragraphs: [
+        {
+          en: 'Different official portals serve different purposes. The myScheme portal helps users discover government programmes, while the PM-KISAN portal provides scheme-specific information for the Pradhan Mantri Kisan Samman Nidhi programme. Applicants should consult the relevant portal for current rules rather than relying on old messages or informal summaries.',
+          hi: 'अलग-अलग आधिकारिक पोर्टल अलग-अलग उद्देश्यों के लिए उपयोगी हैं। मायस्कीम पोर्टल सरकारी कार्यक्रमों की जानकारी खोजने में मदद करता है, जबकि पीएम-किसान पोर्टल प्रधानमंत्री किसान सम्मान निधि कार्यक्रम से संबंधित जानकारी प्रदान करता है। आवेदकों को पुराने संदेशों या अनौपचारिक सारांश पर निर्भर रहने के बजाय वर्तमान नियमों के लिए संबंधित पोर्टल देखना चाहिए।',
+        },
+        {
+          en: 'For PM-KISAN, use https://pmkisan.gov.in/ to consult the programme’s official information, available services, and applicable requirements. Do not assume that every farmer or landholder automatically qualifies; eligibility and exclusions must be checked against the current official rules.',
+          hi: 'पीएम-किसान के लिए https://pmkisan.gov.in/ पर जाकर कार्यक्रम की आधिकारिक जानकारी, उपलब्ध सेवाएँ और लागू शर्तें देखें। यह न मानें कि प्रत्येक किसान या भूमि धारक स्वतः पात्र है; पात्रता और अपवादों की जाँच वर्तमान आधिकारिक नियमों के अनुसार करनी चाहिए।',
+        },
+        {
+          en: 'These portals are examples, not a complete list of government schemes. The appropriate programme depends on the applicant’s circumstances, location, needs, and the scheme’s current availability.',
+          hi: 'ये पोर्टल केवल उदाहरण हैं, सरकारी योजनाओं की पूरी सूची नहीं। उपयुक्त कार्यक्रम का चुनाव आवेदक की परिस्थितियों, स्थान, आवश्यकताओं और योजना की वर्तमान उपलब्धता पर निर्भर करता है।',
+        },
+      ],
+    },
+
+    {
+      heading: {
+        en: 'Protect Yourself from Fraudulent Scheme Offers',
+        hi: 'फर्जी योजना और लाभ के वादों से सावधान रहें',
+      },
+      paragraphs: [
+        {
+          en: 'Fraudulent messages may promise guaranteed approval, immediate payment, special access, or faster processing in exchange for money or personal information. Be cautious of unsolicited calls, social media posts, unofficial forms, and links shared by unknown people.',
+          hi: 'फर्जी संदेश पैसे या निजी जानकारी के बदले निश्चित स्वीकृति, तुरंत भुगतान, विशेष पहुँच या तेजी से प्रक्रिया पूरी कराने का वादा कर सकते हैं। अनचाही कॉल, सोशल मीडिया पोस्ट, अनौपचारिक फॉर्म और अनजान लोगों द्वारा भेजे गए लिंक से सावधान रहें।',
+        },
+        {
+          en: 'A government logo or a professional-looking website does not by itself establish that a message or service is genuine. Verify the web address and contact details independently through the responsible department’s official website.',
+          hi: 'सरकारी लोगो या पेशेवर दिखने वाली वेबसाइट अपने आप में यह साबित नहीं करती कि संदेश या सेवा वास्तविक है। संबंधित विभाग की आधिकारिक वेबसाइट से वेब पते और संपर्क विवरण की स्वतंत्र रूप से पुष्टि करें।',
+        },
+        {
+          en: 'Never share an OTP, password, PIN, or online banking credentials with someone claiming to secure a scheme benefit. Do not pay an unverified agent for a promised approval or payment. If a fee is specified by an official process, verify the requirement and amount through the authorised channel and keep the receipt.',
+          hi: 'योजना का लाभ दिलाने का दावा करने वाले व्यक्ति के साथ OTP, पासवर्ड, PIN या ऑनलाइन बैंकिंग की गोपनीय जानकारी साझा न करें। निश्चित स्वीकृति या भुगतान के वादे पर किसी अपुष्ट एजेंट को पैसे न दें। यदि आधिकारिक प्रक्रिया में कोई शुल्क निर्धारित है, तो अधिकृत माध्यम से उसकी आवश्यकता और राशि की पुष्टि करें तथा रसीद सुरक्षित रखें।',
+        },
+        {
+          en: 'If you suspect fraud, preserve relevant messages, receipts, contact details, and transaction records. Report the incident through the appropriate official complaint or cybercrime reporting channel.',
+          hi: 'यदि आपको धोखाधड़ी का संदेह हो, तो संबंधित संदेश, रसीद, संपर्क विवरण और लेन-देन के रिकॉर्ड सुरक्षित रखें। उचित आधिकारिक शिकायत या साइबर अपराध रिपोर्टिंग माध्यम से घटना की सूचना दें।',
+        },
+      ],
+    },
+
+    {
+      heading: {
+        en: 'Where to Seek Help When You Have Questions',
+        hi: 'जानकारी या सहायता के लिए कहाँ संपर्क करें',
+      },
+      paragraphs: [
+        {
+          en: 'If you are unsure about eligibility, required documents, application status, or a scheme condition, consult the department responsible for that programme or an authorised service centre identified through official sources. Ask specific questions and note the instructions you receive.',
+          hi: 'यदि पात्रता, आवश्यक दस्तावेज, आवेदन की स्थिति या योजना की किसी शर्त को लेकर संदेह हो, तो संबंधित कार्यक्रम के जिम्मेदार विभाग या आधिकारिक स्रोत से पहचाने गए अधिकृत सेवा केंद्र से संपर्क करें। स्पष्ट प्रश्न पूछें और प्राप्त निर्देशों को नोट करें।',
+        },
+        {
+          en: 'When seeking help, carry only the documents required for the service and avoid handing over original records unless the official procedure requires them. Never disclose confidential account credentials or OTPs to another person.',
+          hi: 'सहायता लेते समय केवल सेवा के लिए आवश्यक दस्तावेज साथ रखें और जब तक आधिकारिक प्रक्रिया में आवश्यक न हो, मूल दस्तावेज किसी को न सौंपें। अपने खाते की गोपनीय जानकारी या OTP किसी अन्य व्यक्ति को न बताएँ।',
+        },
+        {
+          en: 'Local availability, office timings, service charges, and application arrangements may vary. Confirm these details with the responsible office before travelling or making a payment.',
+          hi: 'स्थानीय उपलब्धता, कार्यालय का समय, सेवा शुल्क और आवेदन की व्यवस्था अलग-अलग हो सकती है। यात्रा करने या भुगतान करने से पहले संबंधित कार्यालय से इन विवरणों की पुष्टि करें।',
+        },
+      ],
+    },
+
+    {
+      heading: {
+        en: 'Conclusion: Make Informed and Responsible Decisions',
+        hi: 'निष्कर्ष: जानकारी के आधार पर जिम्मेदार निर्णय लें',
+      },
+      paragraphs: [
+        {
+          en: 'Government schemes can provide important support to eligible people, but accessing that support requires accurate information and careful attention to the applicable rules. Identify a relevant programme, check the official eligibility criteria, prepare the required documents, apply through the correct channel, and retain your application records.',
+          hi: 'सरकारी योजनाएँ पात्र लोगों को महत्वपूर्ण सहायता प्रदान कर सकती हैं, लेकिन इस सहायता तक पहुँचने के लिए सही जानकारी और लागू नियमों पर ध्यान देना आवश्यक है। उपयुक्त कार्यक्रम की पहचान करें, आधिकारिक पात्रता जाँचें, आवश्यक दस्तावेज तैयार करें, सही माध्यम से आवेदन करें और आवेदन से संबंधित रिकॉर्ड सुरक्षित रखें।',
+        },
+        {
+          en: 'Remember that scheme rules, application dates, benefits, and availability can change. Verify the latest information through the responsible department and be cautious of anyone promising guaranteed approval or payment. Informed decisions and secure application practices can help applicants navigate government services more confidently.',
+          hi: 'ध्यान रखें कि योजना के नियम, आवेदन की तिथियाँ, लाभ और उपलब्धता बदल सकते हैं। संबंधित विभाग से नवीनतम जानकारी की पुष्टि करें और निश्चित स्वीकृति या भुगतान का वादा करने वाले लोगों से सावधान रहें। सही जानकारी और सुरक्षित आवेदन प्रक्रिया सरकारी सेवाओं का उपयोग अधिक समझदारी और आत्मविश्वास के साथ करने में मदद कर सकती है।',
+        },
+      ],
+    },
+  ],
+
+  image: '/images/blog/property%20card.webp',
+
+  imageAlt: {
+    en: 'Information about government schemes, eligibility, and application procedures',
+    hi: 'सरकारी योजनाओं, पात्रता और आवेदन प्रक्रिया से संबंधित जानकारी',
+  },
+
+  publishedAt: '2026-10-10',
+  updatedAt: '2026-10-13',
+  author: ashish,
+
+  sources: [
+    {
+      name: {
+        en: 'myScheme: Government Schemes Discovery Portal',
+        hi: 'मायस्कीम: सरकारी योजनाओं की जानकारी',
+      },
+      url: 'https://www.myscheme.gov.in/',
+    },
+    {
+      name: {
+        en: 'PM-KISAN Official Portal',
+        hi: 'पीएम-किसान आधिकारिक पोर्टल',
+      },
+      url: 'https://pmkisan.gov.in/',
+    },
+  ],
+
+  featured: true,
+  status: 'published',
+},
+
   {
     id: 'india-before-after-2014', slug: 'india-before-after-2014-public-welfare-development-indicators', categoryId: 'india-comparison',
     title: { en: 'India Before and After 2014: Public Welfare and Development Indicators', hi: '2014 से पहले और बाद का भारत: जनकल्याण एवं विकास के आँकड़े' },

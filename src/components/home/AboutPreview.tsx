@@ -47,7 +47,7 @@ export function AboutPreview() {
               <span>{dict.aboutSection.eyebrow}</span>
             </div>
 
-            <h2 className="font-editorial text-3xl sm:text-4xl md:text-5xl font-bold text-[#151210] leading-tight">
+            <h2 className="font-editorial text-2xl sm:text-3xl md:text-4xl font-bold text-[#151210] leading-tight">
               {dict.aboutSection.heading}
             </h2>
 

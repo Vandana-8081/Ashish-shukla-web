@@ -32,7 +32,7 @@ export function FloatingSocial() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Visit Ashish Shukla on ${item.label}`}
-            className="w-9 h-9 rounded-xl flex items-center justify-center text-[#D4CCC0] hover:text-white hover:bg-[#F5660A] transition-all"
+            className="w-9 h-9 rounded-xl flex items-center justify-center text-[#D4CCC0] hover:text-white hover:bg-[#F5660A] transition"
           >
             {getSocialIcon(item.platform)}
           </a>

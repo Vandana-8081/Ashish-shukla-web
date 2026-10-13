@@ -11,10 +11,23 @@ import {
   ChevronRight,
 } from 'lucide-react';
 
+// Feather the photo's edges into the section background so it never reads as a card.
+const mobilePhotoMask = {
+  maskImage: 'linear-gradient(to bottom, transparent 0, #000 12%, #000 100%)',
+  WebkitMaskImage: 'linear-gradient(to bottom, transparent 0, #000 12%, #000 100%)',
+} as React.CSSProperties;
+
+const desktopPhotoMask = {
+  maskImage: 'linear-gradient(to right, transparent 0, #000 22%, #000 86%, transparent 100%)',
+  WebkitMaskImage: 'linear-gradient(to right, transparent 0, #000 22%, #000 86%, transparent 100%)',
+} as React.CSSProperties;
+
 export function Hero() {
   const { t, dict, getHref } = useLanguage();
 
   const [currentSlide, setCurrentSlide] = useState(0);
+  // Mobile photo box follows each slide's own proportions: full width, never cropped.
+  const [mobilePhotoRatio, setMobilePhotoRatio] = useState(4 / 3);
 
   useEffect(() => {
     if (heroSlides.length <= 1) return;
@@ -126,7 +139,7 @@ export function Hero() {
               flex-col
               justify-center
               pt-16
-              pb-20
+              pb-6
               lg:py-20
               pr-0
               lg:pr-8
@@ -216,49 +229,6 @@ export function Hero() {
                 {t(slide.secondaryCta.label)}
               </Button>
             </div>
-
-            {/* Grounded information */}
-            <div
-              className="
-                mt-9
-                sm:mt-11
-                pt-5
-                border-t
-                border-[#E8E2D8]
-                max-w-[620px]
-                flex
-                flex-wrap
-                items-center
-                gap-x-6
-                gap-y-2
-                text-xs
-                sm:text-sm
-                text-[#6B625A]
-              "
-            >
-              <div className="flex items-center gap-2">
-                <span
-                  className="
-                    w-2
-                    h-2
-                    rounded-full
-                    bg-[#F5660A]
-                  "
-                />
-
-                <span className="font-semibold text-[#151210]">
-                  {dict.hero.subLocation}
-                </span>
-              </div>
-
-              <span className="hidden sm:inline text-[#D4CCC0]">
-                •
-              </span>
-
-              <span>
-                {dict.hero.subTagline}
-              </span>
-            </div>
           </div>
 
           {/* =================================================
@@ -279,7 +249,7 @@ export function Hero() {
             "
           >
             {/* Main image */}
-            <div className="absolute inset-0">
+            <div className="absolute inset-0" style={desktopPhotoMask}>
 
               <Image
                 key={slide.image}
@@ -358,14 +328,14 @@ export function Hero() {
             className="
               lg:hidden
               relative
-              w-full
-              h-[460px]
-              min-[480px]:h-[560px]
-              md:h-[640px]
-              pb-16
+              -mx-4
+              sm:-mx-6
+              w-auto
+              -mt-6
             "
+            style={{ aspectRatio: mobilePhotoRatio }}
           >
-            <div className="absolute inset-0">
+            <div className="absolute inset-0" style={mobilePhotoMask}>
 
               <Image
                 key={`mobile-${slide.image}`}
@@ -373,10 +343,11 @@ export function Hero() {
                 alt={dict.hero.leaderCardTitle}
                 fill
                 sizes="100vw"
-                className="
-                  object-contain
-                  object-bottom
-                "
+                className="object-cover"
+                onLoad={(event) => {
+                  const { naturalWidth, naturalHeight } = event.currentTarget;
+                  if (naturalWidth && naturalHeight) setMobilePhotoRatio(naturalWidth / naturalHeight);
+                }}
               />
 
               {/* Top fade */}
@@ -440,8 +411,8 @@ export function Hero() {
               onClick={goToPrevious}
               aria-label="Previous slide"
               className="
-                w-8
-                h-8
+                w-10
+                h-10
                 rounded-full
                 flex
                 items-center
@@ -464,13 +435,18 @@ export function Hero() {
                 <button
                   key={idx}
                   type="button"
+                  role="tab"
                   onClick={() => setCurrentSlide(idx)}
                   aria-label={`Go to slide ${idx + 1}`}
                   aria-selected={currentSlide === idx}
                   className={`
+                    relative
                     h-2
                     rounded-full
-                    transition-all
+                    after:absolute
+                    after:-inset-2
+                    after:content-['']
+                    transition-[width,background-color]
                     duration-300
                     ${
                       currentSlide === idx
@@ -488,8 +464,8 @@ export function Hero() {
               onClick={goToNext}
               aria-label="Next slide"
               className="
-                w-8
-                h-8
+                w-10
+                h-10
                 rounded-full
                 flex
                 items-center

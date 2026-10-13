@@ -40,7 +40,7 @@ export function LatestSocialMedia() {
           <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-[#F5660A]">
             <FacebookIcon size={22} aria-hidden="true" />
           </span>
-          <h3 className="font-editorial text-xl sm:text-2xl font-bold text-[#151210]">{content.facebookTitle}</h3>
+          <h3 className="font-editorial text-xl sm:text-xl font-bold text-[#151210]">{content.facebookTitle}</h3>
         </div>
         {facebook && (
           <a href={facebook.url} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-[#E8E2D8] bg-white px-3 text-sm font-semibold text-[#151210] hover:border-[#F5660A] hover:text-[#F5660A] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F5660A]">

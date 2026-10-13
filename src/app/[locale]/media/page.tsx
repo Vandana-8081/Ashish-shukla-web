@@ -39,8 +39,8 @@ export default async function MediaPage({
       {/* Video Section */}
       <Container size="wide" id="videos">
         <SectionHeading
-          eyebrow={dict.mediaSection.videoEyebrow}
           title={dict.mediaSection.videoHeading}
+          as="h1"
           description={dict.mediaSection.videoDesc}
         />
         <VideoSection />
@@ -49,7 +49,6 @@ export default async function MediaPage({
       {/* Photo Gallery */}
       <Container size="wide" id="photos" className="pt-8 border-t border-[#E8E2D8]">
         <SectionHeading
-          eyebrow={dict.mediaSection.photoEyebrow}
           title={dict.mediaSection.photoHeading}
           description={dict.mediaSection.photoDesc}
         />

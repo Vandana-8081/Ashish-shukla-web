@@ -44,7 +44,7 @@ export function SocialLinksList() {
             </div>
           </div>
 
-          <div className="w-10 h-10 rounded-full border border-black/20 flex items-center justify-center text-[#151210] group-hover:bg-black group-hover:text-white transition-all">
+          <div className="w-10 h-10 rounded-full border border-black/20 flex items-center justify-center text-[#151210] group-hover:bg-black group-hover:text-white transition">
             <ArrowUpRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </div>
         </a>

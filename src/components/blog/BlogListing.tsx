@@ -71,7 +71,7 @@ export function BlogListing({ locale, articles, recentArticles, categories, quer
                     <span className="rounded-full bg-[#FFF3E8] px-3 py-1 font-semibold text-[#A94300]">{article.categoryId && categories.find((c) => c.id === article.categoryId)?.name[locale]}</span>
                     <span>{text.author} {article.author[locale]}</span>
                   </div>
-                  <h2 className="font-editorial text-xl font-bold leading-snug text-[#171412] sm:text-2xl">
+                  <h2 className="font-editorial text-xl font-bold leading-snug text-[#171412] sm:text-xl">
                     <Link href={`/${locale}/blog/${article.slug}`} className="transition-colors hover:text-[#A94300] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C64C00]">{article.title[locale]}</Link>
                   </h2>
                   <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-[#625950] sm:text-base">{article.excerpt[locale]}</p>

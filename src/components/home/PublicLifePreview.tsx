@@ -6,7 +6,7 @@ import { useLanguage } from '@/lib/languageContext';
 import { janSunwaiData, publicLifeItems } from '@/data/publicLife';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
-import { Users, CheckCircle2, MapPin } from 'lucide-react';
+import { CheckCircle2, MapPin } from 'lucide-react';
 
 export function PublicLifePreview() {
   const { t, dict, getHref } = useLanguage();
@@ -23,11 +23,11 @@ export function PublicLifePreview() {
                 <span>{dict.publicLifeSection.eyebrow}</span>
               </div>
 
-              <h2 className="font-editorial text-3xl sm:text-4xl font-bold text-[#151210] leading-tight">
+              <h2 className="font-editorial text-2xl sm:text-3xl font-bold text-[#151210] leading-tight">
                 {dict.publicLifeSection.heading}
               </h2>
 
-              <p className="text-base sm:text-lg text-[#6B625A] leading-relaxed">
+              <p className="text-sm sm:text-base text-[#6B625A] leading-relaxed">
                 {dict.publicLifeSection.description}
               </p>
 
@@ -65,10 +65,6 @@ export function PublicLifePreview() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover transition-transform duration-500 hover:scale-102"
                 />
-                <div className="absolute bottom-3 left-3 bg-[#151210]/85 backdrop-blur-xs text-white px-3.5 py-1.5 rounded-lg text-xs font-medium flex items-center gap-2">
-                  <Users className="w-3.5 h-3.5 text-[#F5660A]" />
-                  <span>{dict.publicLifeSection.directBadge}</span>
-                </div>
               </div>
             </div>
           </div>
@@ -79,7 +75,7 @@ export function PublicLifePreview() {
           {publicLifeItems.map((item) => (
             <div
               key={item.id}
-              className="group bg-white rounded-2xl border border-[#E8E2D8] overflow-hidden hover:border-[#F5660A]/60 transition-all duration-300"
+              className="group bg-white rounded-2xl border border-[#E8E2D8] overflow-hidden hover:border-[#F5660A]/60 transition duration-300"
             >
               <div className="relative aspect-[16/9] w-full bg-[#F8F4ED]">
                 <Image
@@ -92,7 +88,7 @@ export function PublicLifePreview() {
               </div>
 
               <div className="p-6 space-y-3">
-                <h3 className="font-editorial text-xl sm:text-2xl font-bold text-[#151210] group-hover:text-[#F5660A] transition-colors">
+                <h3 className="font-editorial text-lg sm:text-xl font-bold text-[#151210] group-hover:text-[#F5660A] transition-colors">
                   {t(item.title)}
                 </h3>
                 <p className="text-sm text-[#6B625A] leading-relaxed">

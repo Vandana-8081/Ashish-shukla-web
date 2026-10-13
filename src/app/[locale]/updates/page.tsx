@@ -42,6 +42,7 @@ export default async function UpdatesPage({
           title={dict.updatesSection.heading}
           description={dict.updatesSection.description}
           className="mb-6 md:mb-8"
+          as="h1"
         />
         <UpdatesGrid updates={updatesData} compact />
       </Container>

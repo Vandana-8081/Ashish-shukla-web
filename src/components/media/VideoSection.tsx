@@ -75,7 +75,7 @@ export function VideoSection() {
                         setHasPlaybackError(false);
                         setIsPlayerOpen(true);
                       }}
-                      className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#F5660A] text-white flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all"
+                      className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#F5660A] text-white flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition"
                       aria-label="Play video"
                     >
                       <Play className="w-7 h-7 sm:w-9 sm:h-9 ml-1 fill-white" />
@@ -130,7 +130,7 @@ export function VideoSection() {
                 {dict.mediaSection.featuredVideoBadge}
               </div>
 
-              <h3 className="font-editorial text-2xl font-bold text-white leading-snug">
+              <h3 className="font-editorial text-xl font-bold text-white leading-snug">
                 {t(selectedVideo.title)}
               </h3>
 
@@ -166,7 +166,7 @@ export function VideoSection() {
                 setIsPlayerOpen(false);
                 setHasPlaybackError(false);
               }}
-              className={`text-left p-3 rounded-2xl border transition-all flex gap-3.5 items-center ${
+              className={`text-left p-3 rounded-2xl border transition flex gap-3.5 items-center ${
                 isCurrent
                   ? 'bg-white border-[#F5660A] shadow-xs'
                   : 'bg-white border-[#E8E2D8] hover:border-[#F5660A]/50'

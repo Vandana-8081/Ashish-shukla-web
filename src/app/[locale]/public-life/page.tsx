@@ -35,12 +35,14 @@ export default async function PublicLifePage({
   const dict = getDictionary((locale === 'hi' ? 'hi' : 'en') as Locale);
 
   return (
-    <div className="bg-[#FAF7F2] py-12 md:py-16">
+    <div className="bg-[#FAF7F2] pt-8 pb-0 md:pt-10">
       <Container size="wide">
         <SectionHeading
           eyebrow={dict.publicLifeSection.eyebrow}
           title={dict.publicLifeSection.heading}
-          description={dict.publicLifeSection.description}
+          as="h1"
+          compact
+          className="mb-0"
         />
       </Container>
       <PublicLifeSections />

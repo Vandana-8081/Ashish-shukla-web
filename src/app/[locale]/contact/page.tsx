@@ -118,6 +118,7 @@ export default function LocalizedContactPage() {
         <SectionHeading
           eyebrow={dict.contactSection.eyebrow}
           title={hi ? 'संपर्क करें' : 'Get in touch'}
+          as="h1"
           description={hi
             ? 'सार्वजनिक सहभागिता, मीडिया, कार्यक्रमों या मुलाक़ात के लिए अपना संदेश भेजें।'
             : 'Get in touch about public engagement, media, programmes, or a meeting.'}
@@ -127,7 +128,7 @@ export default function LocalizedContactPage() {
           {submitted ? (
             <div className="border border-[#E8E2D8] bg-white p-8 text-center sm:p-12">
               <CheckCircle2 className="mx-auto h-12 w-12 text-emerald-600" aria-hidden="true" />
-              <h2 className="mt-5 font-editorial text-2xl font-bold text-[#151210]">
+              <h2 className="mt-5 font-editorial text-xl font-bold text-[#151210]">
                 {hi ? 'आपका संदेश सफलतापूर्वक भेजा गया' : 'Your enquiry was sent successfully'}
               </h2>
               <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-[#6B625A]">

@@ -13,7 +13,7 @@ export function PhotoGallery() {
       {photoGalleryData.map((item) => (
         <div
           key={item.id}
-          className="group bg-white rounded-2xl border border-[#E8E2D8] overflow-hidden shadow-2xs hover:border-[#F5660A] transition-all duration-300"
+          className="group bg-white rounded-2xl border border-[#E8E2D8] overflow-hidden shadow-2xs hover:border-[#F5660A] transition duration-300"
         >
           <div className="relative aspect-[4/3] w-full bg-[#F8F4ED]">
             <Image
@@ -23,12 +23,9 @@ export function PhotoGallery() {
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
               className="object-cover group-hover:scale-105 transition-transform duration-500"
             />
-            <div className="absolute top-2.5 left-2.5 px-2 py-0.5 bg-[#151210]/80 backdrop-blur-xs text-white text-[10px] font-semibold rounded-md">
-              {t(item.category)}
-            </div>
           </div>
           <div className="p-4">
-            <p className="text-xs text-[#6B625A] leading-relaxed line-clamp-2">
+            <p className="text-xs font-bold text-saffron leading-relaxed line-clamp-2">
               {t(item.caption)}
             </p>
           </div>

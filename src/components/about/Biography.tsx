@@ -43,6 +43,7 @@ export function Biography() {
               eyebrow={t(biographyData.eyebrow)}
               title={t(biographyData.title)}
               className="mb-0"
+              as="h1"
             />
 
             {/* Editorial Quote */}

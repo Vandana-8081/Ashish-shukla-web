@@ -8,6 +8,8 @@ interface SectionHeadingProps {
   align?: 'left' | 'center';
   className?: string;
   light?: boolean;
+  as?: 'h1' | 'h2';
+  compact?: boolean;
 }
 
 export function SectionHeading({
@@ -17,6 +19,8 @@ export function SectionHeading({
   align = 'left',
   className,
   light = false,
+  as: Heading = 'h2',
+  compact = false,
 }: SectionHeadingProps) {
   return (
     <div
@@ -37,14 +41,15 @@ export function SectionHeading({
           <span>{eyebrow}</span>
         </div>
       )}
-      <h2
+      <Heading
         className={cn(
-          'font-editorial text-3xl sm:text-4xl md:text-5xl font-semibold leading-[1.15] tracking-tight',
+          'font-editorial font-semibold leading-[1.15] tracking-tight',
+          compact ? 'text-xl sm:text-2xl' : 'text-2xl sm:text-3xl md:text-4xl',
           light ? 'text-white' : 'text-[#151210]'
         )}
       >
         {title}
-      </h2>
+      </Heading>
       {description && (
         <p
           className={cn(

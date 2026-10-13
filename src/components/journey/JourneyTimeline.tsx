@@ -43,7 +43,7 @@ export function JourneyTimeline() {
                       <span>{t(phase.phase)}</span>
                     </div>
 
-                    <h3 className="font-editorial text-2xl sm:text-3xl md:text-4xl font-bold text-[#151210] leading-tight">
+                    <h3 className="font-editorial text-xl sm:text-2xl md:text-3xl font-bold text-[#151210] leading-tight">
                       {t(phase.title)}
                     </h3>
 

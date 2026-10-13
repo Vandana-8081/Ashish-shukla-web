@@ -92,7 +92,7 @@ export default async function BlogPage({ params, searchParams }: BlogPageProps) 
       <Container size="wide">
         <header className="mb-10 max-w-3xl pb-7 md:mb-12">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-[#B84300]">{locale === 'hi' ? 'जनसूचना एवं विचार' : 'PUBLIC INFORMATION & PERSPECTIVES'}</p>
-          <h1 className="font-editorial text-4xl font-bold tracking-wide text-[#171412] sm:text-5xl">{copy.title}</h1>
+          <h1 className="font-editorial text-3xl font-bold tracking-wide text-[#171412] sm:text-4xl">{copy.title}</h1>
         </header>
         <BlogListing
           locale={locale}

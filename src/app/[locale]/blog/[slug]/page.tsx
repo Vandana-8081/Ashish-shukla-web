@@ -60,7 +60,7 @@ export default async function BlogArticlePage({ params }: ArticlePageProps) {
         <Link href={`/${locale}/blog`} className="mb-7 inline-flex items-center gap-2 text-sm font-semibold text-[#A94300] hover:text-[#752D00] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C64C00]"><ArrowLeft aria-hidden="true" className="h-4 w-4" />{labels.back}</Link>
         <header className="mb-8">
           <p className="mb-3 text-sm font-semibold text-[#A94300]">{getBlogCategory(article.categoryId, locale)}</p>
-          <h1 className="font-editorial text-3xl font-bold leading-tight text-[#171412] sm:text-4xl md:text-5xl">{article.title[locale]}</h1>
+          <h1 className="font-editorial text-2xl font-bold leading-tight text-[#171412] sm:text-3xl md:text-4xl">{article.title[locale]}</h1>
           <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-y border-[#E5DDD3] py-3 text-sm text-[#6B625A]">
             <span>{locale === 'hi' ? 'लेखक:' : 'By'} {article.author[locale]}</span>
           </div>
@@ -72,7 +72,7 @@ export default async function BlogArticlePage({ params }: ArticlePageProps) {
         <div className="space-y-9">
           {article.sections.map((section) => (
             <section key={section.heading.en} className="space-y-4">
-              <h2 className="font-editorial text-2xl font-bold text-[#171412] sm:text-3xl">{section.heading[locale]}</h2>
+              <h2 className="font-editorial text-xl font-bold text-[#171412] sm:text-2xl">{section.heading[locale]}</h2>
               {section.paragraphs.map((paragraph, index) => <p key={index} className="text-base leading-8 text-[#332F2B] sm:text-lg">{paragraph[locale]}</p>)}
             </section>
           ))}

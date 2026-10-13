@@ -17,7 +17,6 @@ export function UpdateCard({ update, compact = false }: UpdateCardProps) {
 
   const title = locale === 'hi' ? update.titleHi : update.titleEn;
   const description = locale === 'hi' ? update.descriptionHi : update.descriptionEn;
-  const category = locale === 'hi' ? update.categoryHi : update.categoryEn;
   const date = locale === 'hi' ? update.dateHi : update.dateEn;
   const detailUrl = getHref(`/updates/${update.slug}`);
 
@@ -36,9 +35,6 @@ export function UpdateCard({ update, compact = false }: UpdateCardProps) {
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
           />
-          <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-xs text-[#151210] font-semibold text-xs px-2.5 py-1 rounded-md border border-[#E8E2D8]">
-            {category}
-          </div>
         </Link>
 
         {/* Metadata Line */}
@@ -60,7 +56,7 @@ export function UpdateCard({ update, compact = false }: UpdateCardProps) {
         </div>
 
         {/* Large Editorial Title */}
-        <h3 className="font-editorial text-2xl sm:text-3xl font-bold text-[#151210] leading-snug group-hover:text-[#F5660A] transition-colors">
+        <h3 className="font-editorial text-xl sm:text-2xl font-bold text-[#151210] leading-snug group-hover:text-[#F5660A] transition-colors">
           <Link href={detailUrl}>{title}</Link>
         </h3>
 

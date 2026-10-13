@@ -51,7 +51,7 @@ export function LanguageSwitcher({ locale, className = '' }: LanguageSwitcherPro
         href={englishPath}
         onClick={() => handleLocaleChange('en')}
         scroll={false}
-        className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all ${
+        className={`inline-flex min-h-8 items-center px-3 py-1.5 text-xs font-semibold rounded-lg transition ${
           locale === 'en'
             ? 'bg-[#F5660A] text-white shadow-xs font-bold'
             : 'text-[#6B625A] hover:text-[#151210]'
@@ -71,7 +71,7 @@ export function LanguageSwitcher({ locale, className = '' }: LanguageSwitcherPro
         href={hindiPath}
         onClick={() => handleLocaleChange('hi')}
         scroll={false}
-        className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-all ${
+        className={`inline-flex min-h-8 items-center px-3 py-1.5 text-xs font-semibold rounded-lg transition ${
           locale === 'hi'
             ? 'bg-[#F5660A] text-white shadow-xs font-bold'
             : 'text-[#6B625A] hover:text-[#151210]'

@@ -95,7 +95,7 @@ export function Footer() {
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between p-2.5 rounded-lg bg-[#1E1A17] border border-[#2B2521] hover:border-[#F5660A]/60 hover:bg-[#25201C] text-sm text-[#E8E2D8] transition-all group"
+                  className="flex items-center justify-between p-2.5 rounded-lg bg-[#1E1A17] border border-[#2B2521] hover:border-[#F5660A]/60 hover:bg-[#25201C] text-sm text-[#E8E2D8] transition group"
                 >
                   <div className="flex items-center gap-2.5">
                     <span className="text-[#F5660A]">{getSocialIcon(item.platform)}</span>
@@ -121,7 +121,7 @@ export function Footer() {
             className="group inline-flex max-w-full items-center gap-3 rounded-full border border-[#49433D] bg-[#1E1A17] py-2 pl-4 pr-2.5 text-[#E8E2D8] transition-colors hover:border-[#F5660A]/70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5660A] sm:gap-4 sm:pl-5 sm:pr-3"
           >
             <span className="min-w-0">
-              <span className="block text-[9px] font-semibold uppercase tracking-[0.18em] text-[#A89F95] sm:text-[10px]">
+              <span className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-[#A89F95] sm:text-xs">
                 Digital Experience Partner
               </span>
               <span className="mt-0.5 block truncate font-editorial text-sm font-bold text-white transition-colors group-hover:text-[#FFCA9E] sm:text-base">

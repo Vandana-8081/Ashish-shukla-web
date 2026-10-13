@@ -58,7 +58,7 @@ export function IdealsPage() {
         <h1 className="sr-only">{copy.heading}</h1>
       </header>
 
-      <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 gap-6 px-4 pt-8 sm:px-6 md:pt-10 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-7 lg:px-8 xl:grid-cols-[340px_minmax(0,1fr)]">
+      <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 gap-6 px-4 pt-8 sm:px-6 md:pt-10 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-7 lg:pl-8 lg:pr-20 xl:grid-cols-[340px_minmax(0,1fr)]">
         <aside aria-label={copy.categories} className="self-start overflow-hidden rounded-lg bg-white shadow-sm">
           <h2 className="bg-[#F5660A] px-4 py-3 text-lg font-semibold text-white">
             {copy.categories}
@@ -116,7 +116,7 @@ export function IdealsPage() {
                         className={person.portrait ? 'object-contain' : 'object-cover'}
                       />
                       {!person.portrait && (
-                        <span className="absolute inset-x-0 bottom-0 bg-[#F5660A]/80 px-2 py-1.5 text-center text-[10px] font-semibold tracking-wider text-white">
+                        <span className="absolute inset-x-0 bottom-0 bg-[#F5660A]/80 px-2 py-1.5 text-center text-[11px] font-semibold tracking-wider text-white">
                           {copy.temporaryPortrait}
                         </span>
                       )}
@@ -131,7 +131,7 @@ export function IdealsPage() {
                           <span aria-hidden="true" className="font-serif text-3xl font-bold text-[#A9A9A9]">”</span>
                         </p>
                       )}
-                      <div className="mt-4 text-right text-sm font-bold text-[#004D53] sm:text-base">
+                      <div className="mt-4 text-right text-sm font-bold text-saffron sm:text-base">
                         {isHindi ? person.name.hi : person.name.en}
                         {person.years ? ` (${isHindi && person.yearsHi ? person.yearsHi : person.years})` : ''}
                       </div>
@@ -181,7 +181,7 @@ export function IdealsPage() {
                 type="button"
                 aria-label={copy.closeDialog}
                 onClick={() => setActivePerson(null)}
-                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xl font-bold text-[#777] transition-colors hover:bg-[#F2F2F2] hover:text-[#333] focus-visible:outline-2 focus-visible:outline-[#F5660A]"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-xl font-bold text-[#777] transition-colors hover:bg-[#F2F2F2] hover:text-[#333] focus-visible:outline-2 focus-visible:outline-[#F5660A]"
               >
                 ×
               </button>
@@ -198,7 +198,7 @@ export function IdealsPage() {
                   className="object-contain"
                 />
                 {!activePerson.portrait && (
-                  <span className="absolute inset-x-0 bottom-0 bg-[#F5660A]/80 px-2 py-1.5 text-center text-[10px] font-semibold tracking-wider text-white">
+                  <span className="absolute inset-x-0 bottom-0 bg-[#F5660A]/80 px-2 py-1.5 text-center text-[11px] font-semibold tracking-wider text-white">
                     {copy.temporaryPortrait}
                   </span>
                 )}

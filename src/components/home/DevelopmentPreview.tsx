@@ -34,7 +34,7 @@ export function DevelopmentPreview() {
           {developmentPriorities.slice(0, 3).map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-2xl border border-[#E8E2D8] overflow-hidden flex flex-col justify-between hover:border-[#F5660A] transition-all duration-300 group shadow-2xs"
+              className="bg-white rounded-2xl border border-[#E8E2D8] overflow-hidden flex flex-col justify-between hover:border-[#F5660A] transition duration-300 group shadow-2xs"
             >
               <div>
                 {/* Photo */}
@@ -46,9 +46,6 @@ export function DevelopmentPreview() {
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover group-hover:scale-103 transition-transform duration-500"
                   />
-                  <div className="absolute top-3 left-3 bg-[#151210]/80 backdrop-blur-xs text-white text-[11px] font-semibold px-2.5 py-1 rounded-md">
-                    {t(item.tag)}
-                  </div>
                 </div>
 
                 <div className="p-6">
@@ -94,7 +91,7 @@ export function DevelopmentPreview() {
                 <span>{dict.bhagwantNagarSection.tagline}</span>
               </div>
 
-              <h2 className="font-editorial text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+              <h2 className="font-editorial text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
                 {dict.bhagwantNagarSection.heading}
               </h2>
 

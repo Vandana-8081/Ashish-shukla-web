@@ -31,7 +31,7 @@ export function JourneyPreview() {
           {journeyTimeline.map((item, index) => (
             <div
               key={item.id}
-              className="bg-white rounded-2xl border border-[#E8E2D8] p-5 flex flex-col justify-between hover:border-[#F5660A]/60 transition-all duration-300 group shadow-2xs"
+              className="bg-white rounded-2xl border border-[#E8E2D8] p-5 flex flex-col justify-between hover:border-[#F5660A]/60 transition duration-300 group shadow-2xs"
             >
               <div>
                 {/* Photo Frame */}
@@ -43,9 +43,6 @@ export function JourneyPreview() {
                     sizes="(max-width: 768px) 100vw, 25vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-2.5 left-2.5 px-2 py-0.5 bg-[#151210]/80 backdrop-blur-xs text-white text-[11px] font-semibold rounded-md">
-                    0{index + 1}
-                  </div>
                 </div>
 
                 <div className="text-xs font-bold text-[#F5660A] uppercase tracking-wider mb-1">

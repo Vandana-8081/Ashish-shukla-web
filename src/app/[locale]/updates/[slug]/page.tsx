@@ -99,7 +99,7 @@ export default async function LocalizedUpdateDetailPage({
             {category}
           </div>
 
-          <h1 className="font-editorial text-3xl sm:text-4xl md:text-5xl font-bold text-[#151210] leading-tight">
+          <h1 className="font-editorial text-2xl sm:text-3xl md:text-4xl font-bold text-[#151210] leading-tight">
             {title}
           </h1>
 
@@ -140,7 +140,7 @@ export default async function LocalizedUpdateDetailPage({
           </div>
 
           <div className="space-y-4 pt-4">
-            <h3 className="font-editorial text-2xl font-bold text-[#151210]">
+            <h3 className="font-editorial text-xl font-bold text-[#151210]">
               {dict.updatesSection.fieldReportTitle}
             </h3>
             {contentParagraphs?.map((paragraph, index) => (

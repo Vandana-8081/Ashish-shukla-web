@@ -11,11 +11,9 @@ import { CheckCircle2 } from 'lucide-react';
 function DevelopmentPriorityImage({
   src,
   alt,
-  tag,
 }: {
   src: string;
   alt: string;
-  tag: string;
 }) {
   const [aspectRatio, setAspectRatio] = useState(4 / 3);
 
@@ -37,9 +35,6 @@ function DevelopmentPriorityImage({
           }
         }}
       />
-      <div className="absolute top-3 left-3 rounded-md bg-[#151210]/80 px-3 py-1 text-xs font-semibold text-white backdrop-blur-xs">
-        {tag}
-      </div>
     </div>
   );
 }
@@ -75,7 +70,6 @@ export function DevelopmentCards() {
                     <DevelopmentPriorityImage
                       src={item.image}
                       alt={t(item.title)}
-                      tag={t(item.tag)}
                     />
                   </div>
 
@@ -85,7 +79,7 @@ export function DevelopmentCards() {
                       <span>{t(item.tag)}</span>
                     </div>
 
-                    <h3 className="font-editorial text-2xl sm:text-3xl font-bold text-[#151210] leading-snug">
+                    <h3 className="font-editorial text-xl sm:text-2xl font-bold text-[#151210] leading-snug">
                       {t(item.title)}
                     </h3>
 

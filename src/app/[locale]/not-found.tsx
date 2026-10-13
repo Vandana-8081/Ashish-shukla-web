@@ -14,7 +14,7 @@ export default function LocalizedNotFound() {
           {dict.notFound.code}
         </div>
         <div className="space-y-2">
-          <h1 className="font-editorial text-3xl font-bold text-[#151210]">
+          <h1 className="font-editorial text-2xl font-bold text-[#151210]">
             {dict.notFound.title}
           </h1>
           <p className="text-sm text-[#6B625A] leading-relaxed">

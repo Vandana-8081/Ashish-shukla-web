@@ -17,7 +17,7 @@ export function SocialSection() {
             <div className="text-xs font-bold tracking-[0.2em] uppercase text-black/70">
               {dict.socialSection.eyebrow}
             </div>
-            <h2 className="font-editorial text-4xl sm:text-5xl md:text-6xl font-bold text-[#151210] leading-[1.1] tracking-tight">
+            <h2 className="font-editorial text-3xl sm:text-4xl md:text-5xl font-bold text-[#151210] leading-[1.1] tracking-tight">
               {dict.socialSection.heading}
             </h2>
             <p className="text-base sm:text-lg text-black/80 leading-relaxed max-w-md pt-2">
