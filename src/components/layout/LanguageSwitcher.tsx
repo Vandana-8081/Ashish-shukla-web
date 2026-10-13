@@ -42,7 +42,7 @@ export function LanguageSwitcher({ locale, className = '' }: LanguageSwitcherPro
 
   return (
     <div
-      className={`inline-flex items-center bg-[#F8F4ED] p-1 rounded-xl border border-[#E8E2D8] ${className}`}
+      className={`inline-flex items-center bg-[#F8F4ED] p-1.5 sm:p-1 rounded-xl border border-[#E8E2D8] ${className}`}
       role="group"
       aria-label="Language selection"
     >
@@ -51,7 +51,7 @@ export function LanguageSwitcher({ locale, className = '' }: LanguageSwitcherPro
         href={englishPath}
         onClick={() => handleLocaleChange('en')}
         scroll={false}
-        className={`inline-flex min-h-8 items-center px-3 py-1.5 text-xs font-semibold rounded-lg transition ${
+        className={`inline-flex min-h-7 items-center px-2.5 py-1 text-[11px] font-semibold rounded-md transition sm:min-h-8 sm:px-3 sm:py-1.5 sm:text-xs sm:rounded-lg ${
           locale === 'en'
             ? 'bg-[#F5660A] text-white shadow-xs font-bold'
             : 'text-[#6B625A] hover:text-[#151210]'
@@ -62,7 +62,7 @@ export function LanguageSwitcher({ locale, className = '' }: LanguageSwitcherPro
         EN
       </Link>
 
-      <span className="text-[#D4CCC0] text-xs font-light px-1 select-none" aria-hidden="true">
+      <span className="text-[#D4CCC0] text-xs font-light px-0.5 sm:px-1 select-none" aria-hidden="true">
         |
       </span>
 
@@ -71,7 +71,7 @@ export function LanguageSwitcher({ locale, className = '' }: LanguageSwitcherPro
         href={hindiPath}
         onClick={() => handleLocaleChange('hi')}
         scroll={false}
-        className={`inline-flex min-h-8 items-center px-3 py-1.5 text-xs font-semibold rounded-lg transition ${
+        className={`inline-flex min-h-7 items-center px-2.5 py-1 text-[11px] font-semibold rounded-md transition sm:min-h-8 sm:px-3 sm:py-1.5 sm:text-xs sm:rounded-lg ${
           locale === 'hi'
             ? 'bg-[#F5660A] text-white shadow-xs font-bold'
             : 'text-[#6B625A] hover:text-[#151210]'

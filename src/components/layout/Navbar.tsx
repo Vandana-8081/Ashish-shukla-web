@@ -47,12 +47,12 @@ export function Navbar() {
           isScrolled ? 'shadow-xs border-b border-[#E8E2D8]' : 'border-b border-[#E8E2D8]/80'
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1400px] mx-auto pl-2 pr-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-22">
             {/* Brand Logo */}
             <Link
               href={`/${locale}`}
-              className="flex items-center gap-3.5 group focus-visible:outline-2 focus-visible:outline-[#F5660A] rounded-lg p-1"
+              className="flex items-center gap-3.5 group focus-visible:outline-2 focus-visible:outline-[#F5660A] rounded-lg p-1 -ml-1 sm:ml-0"
             >
               <Image
                 src="/icons/ashish.svg"
