@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { LanguageProvider } from '@/lib/languageContext';
 import { SiteMotion } from '@/components/layout/SiteMotion';
+import { OG_IMAGE, SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ashish-shukla.org'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Ashish Shukla - Official Profile & Public Service',
     template: '%s | Ashish Shukla',
@@ -30,14 +31,14 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'hi_IN',
     alternateLocale: 'en_US',
-    url: 'https://ashish-shukla.org',
+    url: SITE_URL,
     title: 'Ashish Shukla - Official Profile & Public Service',
     description:
       'Official public profile website of Ashish Shukla. Life journey, public service, community engagement, development priorities, and initiatives for Bhagwant Nagar.',
     siteName: 'Ashish Shukla Official',
     images: [
       {
-        url: '/images/profile/ashish-shukla-portrait.jpg',
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
         alt: 'Ashish Shukla - Bhagwant Nagar',
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
     description:
       'Official public profile website of Ashish Shukla. Life journey, public service, and development for Bhagwant Nagar.',
     creator: '@Ashish4Shuka',
-    images: ['/images/profile/ashish-shukla-portrait.jpg'],
+    images: [OG_IMAGE],
   },
   icons: {
     icon: '/favicon.ico',

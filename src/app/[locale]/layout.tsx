@@ -8,6 +8,7 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { FloatingSocial } from '@/components/layout/FloatingSocial';
 import { getDictionary } from '@/data/translations';
+import { OG_IMAGE, SITE_URL } from '@/lib/site';
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
@@ -30,7 +31,7 @@ export async function generateMetadata({
   const dict = getDictionary(locale as Locale);
 
   return {
-    metadataBase: new URL('https://ashish-shukla.org'),
+    metadataBase: new URL(SITE_URL),
     title: {
       default: dict.meta.siteTitle,
       template: `%s | ${dict.brand.name}`,
@@ -52,13 +53,13 @@ export async function generateMetadata({
       type: 'website',
       locale: locale === 'hi' ? 'hi_IN' : 'en_US',
       alternateLocale: locale === 'hi' ? 'en_US' : 'hi_IN',
-      url: `https://ashish-shukla.org/${locale}`,
+      url: `${SITE_URL}/${locale}`,
       title: dict.meta.siteTitle,
       description: dict.meta.siteDescription,
       siteName: `${dict.brand.name} Official`,
       images: [
         {
-          url: '/images/profile/ashish-shukla-portrait.jpg',
+          url: OG_IMAGE,
           width: 1200,
           height: 630,
           alt: `${dict.brand.name} - Bhagwant Nagar`,
@@ -70,7 +71,7 @@ export async function generateMetadata({
       title: dict.meta.siteTitle,
       description: dict.meta.siteDescription,
       creator: '@Ashish4Shuka',
-      images: ['/images/profile/ashish-shukla-portrait.jpg'],
+      images: [OG_IMAGE],
     },
     icons: {
       icon: '/favicon.ico',
@@ -91,23 +92,43 @@ export default async function LocaleLayout({
   const validLocale = locale as Locale;
   const dict = getDictionary(validLocale);
 
+  const pageUrl = `${SITE_URL}/${validLocale}`;
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: dict.brand.name,
-    description: dict.meta.siteDescription,
-    image: 'https://ashish-shukla.org/images/profile/ashish-shukla-portrait.jpg',
-    sameAs: [
-      'https://www.facebook.com/ashish4unnaao',
-      'https://www.instagram.com/ashish4unnao/',
-      'https://x.com/Ashish4Shuka',
+    '@graph': [
+      {
+        '@type': 'Person',
+        '@id': `${SITE_URL}/#person`,
+        name: dict.brand.name,
+        alternateName: validLocale === 'hi' ? 'रिंकू' : 'Rinku',
+        description: dict.meta.siteDescription,
+        url: pageUrl,
+        image: `${SITE_URL}${OG_IMAGE}`,
+        jobTitle:
+          validLocale === 'hi'
+            ? 'अध्यक्ष, नगर पंचायत भगवंतनगर'
+            : 'President, Bhagwantnagar Nagar Panchayat',
+        sameAs: [
+          'https://www.facebook.com/ashish4unnaao',
+          'https://www.instagram.com/ashish4unnao/',
+          'https://x.com/Ashish4Shuka',
+        ],
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Bhagwant Nagar',
+          addressRegion: 'Uttar Pradesh',
+          addressCountry: 'IN',
+        },
+      },
+      {
+        '@type': 'WebSite',
+        '@id': `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: `${dict.brand.name} Official`,
+        inLanguage: validLocale === 'hi' ? 'hi-IN' : 'en-IN',
+        about: { '@id': `${SITE_URL}/#person` },
+      },
     ],
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Bhagwant Nagar',
-      addressRegion: 'Uttar Pradesh',
-      addressCountry: 'IN',
-    },
   };
 
   return (

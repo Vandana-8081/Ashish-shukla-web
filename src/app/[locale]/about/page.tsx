@@ -14,7 +14,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const dict = getDictionary((locale === 'hi' ? 'hi' : 'en') as Locale);
   return {
-    title: locale === 'hi' ? 'आशीष शुक्ला के बारे में' : 'About Ashish Shukla',
+    title: locale === 'hi' ? 'जीवन परिचय एवं यात्रा' : 'Biography & Journey',
     description: dict.aboutSection.heading,
     alternates: {
       canonical: `/${locale}/about`,

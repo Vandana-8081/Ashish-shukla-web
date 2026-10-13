@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '@/lib/site';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -49,8 +50,8 @@ export default async function BlogArticlePage({ params }: ArticlePageProps) {
     ...(article.publishedAt ? { datePublished: article.publishedAt } : {}),
     ...(article.updatedAt ? { dateModified: article.updatedAt } : {}),
     ...(isAuthorConfirmed ? { author: { '@type': 'Person', name: article.author[locale] } } : {}),
-    mainEntityOfPage: `https://ashish-shukla.org/${locale}/blog/${slug}`,
-    ...(article.image ? { image: `https://ashish-shukla.org${article.image}` } : {}),
+    mainEntityOfPage: `${SITE_URL}/${locale}/blog/${slug}`,
+    ...(article.image ? { image: `${SITE_URL}${article.image}` } : {}),
   };
 
   return (
