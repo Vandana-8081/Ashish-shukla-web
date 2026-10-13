@@ -47,7 +47,7 @@ export function Biography() {
             />
 
             {/* Editorial Quote */}
-            <blockquote className="p-6 bg-[#FAF7F2] rounded-2xl border-l-4 border-[#F5660A] text-lg sm:text-xl font-editorial italic text-[#171717] leading-relaxed">
+            <blockquote className="text-justify p-6 bg-[#FAF7F2] rounded-2xl border-l-4 border-[#F5660A] text-lg sm:text-xl font-editorial italic text-[#171717] leading-relaxed">
               {t(biographyData.quote)}
             </blockquote>
 

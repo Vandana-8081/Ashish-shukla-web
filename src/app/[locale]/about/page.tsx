@@ -34,7 +34,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <Biography />
       <section id="journey" className="bg-[#F8F4ED] py-12 md:py-16 scroll-mt-24">
         <Container size="wide">
-          <SectionHeading eyebrow={dict.journeySection.eyebrow} title={dict.journeySection.heading} description={dict.journeySection.description} />
+          <SectionHeading className="[&_p]:text-justify" eyebrow={dict.journeySection.eyebrow} title={dict.journeySection.heading} description={dict.journeySection.description} />
         </Container>
         <JourneyTimeline />
       </section>

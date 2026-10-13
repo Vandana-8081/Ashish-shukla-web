@@ -62,7 +62,7 @@ export function JourneyTimeline() {
                       {phase.highlights.map((h, i) => (
                         <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#171717]">
                           <CheckCircle2 className="w-4 h-4 text-[#F5660A] shrink-0 mt-0.5" />
-                          <span>{t(h)}</span>
+                          <span className="text-justify">{t(h)}</span>
                         </div>
                       ))}
                     </div>
