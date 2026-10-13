@@ -134,7 +134,7 @@ export function VideoSection() {
                 {t(selectedVideo.title)}
               </h3>
 
-              <p className="text-sm text-[#A89F95] leading-relaxed">
+              <p className="text-justify text-sm text-[#A89F95] leading-relaxed">
                 {t(selectedVideo.description)}
               </p>
 

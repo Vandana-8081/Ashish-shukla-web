@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { updatesData } from '@/data/updates';
 import { Container } from '@/components/ui/Container';
-import { ArrowLeft, Calendar, MapPin } from 'lucide-react';
+import { ArrowLeft, MapPin } from 'lucide-react';
 import type { Locale } from '@/types';
 import { getDictionary } from '@/data/translations';
 
@@ -75,7 +75,6 @@ export default async function LocalizedUpdateDetailPage({
   const title = isHi ? item.titleHi : item.titleEn;
   const description = isHi ? item.descriptionHi : item.descriptionEn;
   const category = isHi ? item.categoryHi : item.categoryEn;
-  const date = isHi ? item.dateHi : item.dateEn;
   const location = item.location ? (isHi ? item.location.hi : item.location.en) : null;
   const contentParagraphs = isHi ? item.contentHi : item.contentEn;
 
@@ -103,22 +102,14 @@ export default async function LocalizedUpdateDetailPage({
             {title}
           </h1>
 
-          <div className="flex flex-wrap items-center gap-4 pt-3 text-xs sm:text-sm text-[#6B625A] border-t border-b border-[#E8E2D8] py-3">
-            <div className="flex items-center gap-1.5">
-              <Calendar className="w-4 h-4 text-[#F5660A]" />
-              <span>{date}</span>
+          {location && (
+            <div className="flex flex-wrap items-center gap-4 pt-3 text-xs sm:text-sm text-[#6B625A] border-t border-b border-[#E8E2D8] py-3">
+              <div className="flex items-center gap-1">
+                <MapPin className="w-4 h-4 text-[#F5660A]" />
+                <span>{location}</span>
+              </div>
             </div>
-
-            {location && (
-              <>
-                <span aria-hidden="true">·</span>
-                <div className="flex items-center gap-1">
-                  <MapPin className="w-4 h-4 text-[#F5660A]" />
-                  <span>{location}</span>
-                </div>
-              </>
-            )}
-          </div>
+          )}
         </div>
 
         {/* Hero Featured Photograph */}
@@ -144,7 +135,7 @@ export default async function LocalizedUpdateDetailPage({
               {dict.updatesSection.fieldReportTitle}
             </h3>
             {contentParagraphs?.map((paragraph, index) => (
-              <p key={index} className="text-[#332F2B] leading-relaxed">
+              <p key={index} className="text-justify text-[#332F2B] leading-relaxed">
                 {paragraph}
               </p>
             ))}

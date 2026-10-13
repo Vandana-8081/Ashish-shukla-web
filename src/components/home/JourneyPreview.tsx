@@ -53,7 +53,7 @@ export function JourneyPreview() {
                   {t(item.title)}
                 </h3>
 
-                <p className="mt-2.5 text-xs text-[#6B625A] leading-relaxed line-clamp-3">
+                <p className="mt-2.5 text-justify text-xs text-[#6B625A] leading-relaxed line-clamp-3">
                   {t(item.description)}
                 </p>
               </div>

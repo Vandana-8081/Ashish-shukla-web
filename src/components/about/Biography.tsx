@@ -52,7 +52,7 @@ export function Biography() {
             </blockquote>
 
             {/* Paragraphs */}
-            <div className="space-y-5 text-base sm:text-lg text-[#6B625A] leading-relaxed">
+            <div className="space-y-5 text-justify text-base sm:text-lg text-[#6B625A] leading-relaxed">
               {biographyData.paragraphs.map((p, i) => (
                 <p key={i}>{t(p)}</p>
               ))}

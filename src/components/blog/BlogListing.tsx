@@ -74,7 +74,7 @@ export function BlogListing({ locale, articles, recentArticles, categories, quer
                   <h2 className="font-editorial text-xl font-bold leading-snug text-[#171412] sm:text-xl">
                     <Link href={`/${locale}/blog/${article.slug}`} className="transition-colors hover:text-[#A94300] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C64C00]">{article.title[locale]}</Link>
                   </h2>
-                  <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-[#625950] sm:text-base">{article.excerpt[locale]}</p>
+                  <p className="mt-3 text-justify line-clamp-3 text-sm leading-relaxed text-[#625950] sm:text-base">{article.excerpt[locale]}</p>
                   <Link href={`/${locale}/blog/${article.slug}`} className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-bold text-[#A94300] hover:text-[#752D00] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C64C00]">
                     {text.readMore}<ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </Link>

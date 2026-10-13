@@ -83,7 +83,7 @@ export function DevelopmentCards() {
                       {t(item.title)}
                     </h3>
 
-                    <p className="text-base text-[#6B625A] leading-relaxed">
+                    <p className="text-justify text-base text-[#6B625A] leading-relaxed">
                       {t(item.description)}
                     </p>
 

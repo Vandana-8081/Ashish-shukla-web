@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/lib/languageContext';
 import type { Update } from '@/types';
-import { ArrowRight, Calendar, MapPin } from 'lucide-react';
+import { ArrowRight, MapPin } from 'lucide-react';
 
 interface UpdateCardProps {
   update: Update;
@@ -17,7 +17,6 @@ export function UpdateCard({ update, compact = false }: UpdateCardProps) {
 
   const title = locale === 'hi' ? update.titleHi : update.titleEn;
   const description = locale === 'hi' ? update.descriptionHi : update.descriptionEn;
-  const date = locale === 'hi' ? update.dateHi : update.dateEn;
   const detailUrl = getHref(`/updates/${update.slug}`);
 
   return (
@@ -39,14 +38,8 @@ export function UpdateCard({ update, compact = false }: UpdateCardProps) {
 
         {/* Metadata Line */}
         <div className="flex items-center gap-3 text-xs text-[#6B625A] mb-2.5">
-          <div className="flex items-center gap-1.5">
-            <Calendar className="w-3.5 h-3.5 text-[#F5660A]" />
-            <span>{date}</span>
-          </div>
-
           {update.location && (
             <>
-              <span aria-hidden="true">·</span>
               <div className="flex items-center gap-1">
                 <MapPin className="w-3.5 h-3.5 text-[#6B625A]" />
                 <span className="line-clamp-1">{t(update.location)}</span>
@@ -61,7 +54,7 @@ export function UpdateCard({ update, compact = false }: UpdateCardProps) {
         </h3>
 
         {/* Short Description */}
-        <p className="mt-3 text-sm sm:text-base text-[#6B625A] leading-relaxed line-clamp-3">
+        <p className="mt-3 text-justify text-sm sm:text-base text-[#6B625A] leading-relaxed line-clamp-3">
           {description}
         </p>
       </div>

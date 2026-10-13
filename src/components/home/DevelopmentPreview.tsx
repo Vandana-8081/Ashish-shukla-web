@@ -53,7 +53,7 @@ export function DevelopmentPreview() {
                     {t(item.title)}
                   </h3>
 
-                  <p className="mt-3 text-sm text-[#6B625A] leading-relaxed">
+                  <p className="text-justify mt-3 text-sm text-[#6B625A] leading-relaxed">
                     {t(item.description)}
                   </p>
 
@@ -95,7 +95,7 @@ export function DevelopmentPreview() {
                 {dict.bhagwantNagarSection.heading}
               </h2>
 
-              <p className="text-base sm:text-lg text-[#D4CCC0] leading-relaxed">
+              <p className="text-justify text-base sm:text-lg text-[#D4CCC0] leading-relaxed">
                 {dict.bhagwantNagarSection.intro}
               </p>
 

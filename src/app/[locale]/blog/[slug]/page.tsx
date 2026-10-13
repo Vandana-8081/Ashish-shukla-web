@@ -64,7 +64,7 @@ export default async function BlogArticlePage({ params }: ArticlePageProps) {
           <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-y border-[#E5DDD3] py-3 text-sm text-[#6B625A]">
             <span>{locale === 'hi' ? 'लेखक:' : 'By'} {article.author[locale]}</span>
           </div>
-          <p className="mt-5 text-lg leading-relaxed text-[#625950]">{article.excerpt[locale]}</p>
+          <p className="text-justify mt-5 text-lg leading-relaxed text-[#625950]">{article.excerpt[locale]}</p>
         </header>
 
         {article.image && <div className="relative mb-9 aspect-[16/9] overflow-hidden rounded-xl bg-[#E8E2D8]"><Image src={article.image} alt={article.imageAlt[locale]} fill priority sizes="(max-width: 768px) 100vw, 800px" className="object-cover" /></div>}
@@ -73,7 +73,7 @@ export default async function BlogArticlePage({ params }: ArticlePageProps) {
           {article.sections.map((section) => (
             <section key={section.heading.en} className="space-y-4">
               <h2 className="font-editorial text-xl font-bold text-[#171412] sm:text-2xl">{section.heading[locale]}</h2>
-              {section.paragraphs.map((paragraph, index) => <p key={index} className="text-base leading-8 text-[#332F2B] sm:text-lg">{paragraph[locale]}</p>)}
+              {section.paragraphs.map((paragraph, index) => <p key={index} className="text-justify text-base leading-8 text-[#332F2B] sm:text-lg">{paragraph[locale]}</p>)}
             </section>
           ))}
         </div>
@@ -83,7 +83,7 @@ export default async function BlogArticlePage({ params }: ArticlePageProps) {
           <ul className="mt-4 space-y-3">
             {article.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-start gap-2 text-sm font-medium leading-relaxed text-[#A94300] underline decoration-[#D8CEC2] underline-offset-4 hover:text-[#752D00] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C64C00]"><span>{source.name[locale]}</span><ExternalLink aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0" /></a></li>)}
           </ul>
-          <p className="mt-5 text-xs leading-relaxed text-[#6B625A]">{labels.disclaimer}</p>
+          <p className="text-justify mt-5 text-xs leading-relaxed text-[#6B625A]">{labels.disclaimer}</p>
         </aside>}
 
         {related.length > 0 && <aside className="mt-10 border-t border-[#E5DDD3] pt-6">

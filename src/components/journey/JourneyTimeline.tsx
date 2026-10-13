@@ -53,7 +53,7 @@ export function JourneyTimeline() {
                       </p>
                     )}
 
-                    <p className="text-sm sm:text-base text-[#6B625A] leading-relaxed">
+                    <p className="text-justify text-sm sm:text-base text-[#6B625A] leading-relaxed">
                       {t(phase.description)}
                     </p>
 

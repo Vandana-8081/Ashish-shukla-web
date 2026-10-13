@@ -27,7 +27,7 @@ export function PublicLifePreview() {
                 {dict.publicLifeSection.heading}
               </h2>
 
-              <p className="text-sm sm:text-base text-[#6B625A] leading-relaxed">
+              <p className="text-justify text-sm sm:text-base text-[#6B625A] leading-relaxed">
                 {dict.publicLifeSection.description}
               </p>
 
@@ -91,7 +91,7 @@ export function PublicLifePreview() {
                 <h3 className="font-editorial text-lg sm:text-xl font-bold text-[#151210] group-hover:text-[#F5660A] transition-colors">
                   {t(item.title)}
                 </h3>
-                <p className="text-sm text-[#6B625A] leading-relaxed">
+                <p className="text-justify text-sm text-[#6B625A] leading-relaxed">
                   {t(item.description)}
                 </p>
 
