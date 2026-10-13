@@ -89,7 +89,7 @@ export const photographData: PhotographItem[] = [
   },
   {
     id: 'inauguration',
-    image: '/images/gallery/ashish2.jpg',
+    image: '/images/gallery/sister.jpg',
     alt: genericAlt,
   },
   {
