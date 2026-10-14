@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/lib/languageContext';
 import { socialLinks } from '@/data/socialLinks';
@@ -40,15 +39,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-14 border-b border-[#25201C]">
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-5">
-            <div className="flex items-center gap-3.5">
-              <Image
-                src="/icons/ashish.svg"
-                alt={dict.brand.name}
-                width={2048}
-                height={683}
-                className="h-14 w-auto max-w-[min(60vw,14rem)] shrink-0 object-contain"
-              />
-            </div>
+            <p className="font-editorial text-3xl font-bold leading-tight tracking-tight text-[#F5660A] sm:text-4xl">
+              {dict.brand.name}
+            </p>
 
             <p className="text-sm leading-relaxed text-[#A89F95] max-w-sm">
               {dict.footer.description}

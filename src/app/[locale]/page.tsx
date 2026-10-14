@@ -6,6 +6,7 @@ import { DevelopmentPreview } from '@/components/home/DevelopmentPreview';
 import { UpdatesPreview } from '@/components/home/UpdatesPreview';
 import { SocialSection } from '@/components/home/SocialSection';
 import { LatestSocialMedia } from '@/components/home/LatestSocialMedia';
+import { ContactSection } from '@/components/contact/ContactSection';
 
 export default function LocalizedHomePage() {
   return (
@@ -18,6 +19,7 @@ export default function LocalizedHomePage() {
       <UpdatesPreview />
       <LatestSocialMedia />
       <SocialSection />
+      <ContactSection id="contact" />
     </>
   );
 }
