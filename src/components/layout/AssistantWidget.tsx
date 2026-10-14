@@ -21,21 +21,6 @@ export function AssistantWidget() {
   const listRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const [scrolledAway, setScrolledAway] = useState(false);
-
-  // Tuck the launcher away while reading downwards so it never covers content.
-  useEffect(() => {
-    let lastY = window.scrollY;
-    const onScroll = () => {
-      const y = window.scrollY;
-      if (Math.abs(y - lastY) < 8) return;
-      setScrolledAway(y > lastY && y > 120);
-      lastY = y;
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   useEffect(() => {
     listRef.current?.scrollTo({ top: listRef.current.scrollHeight, behavior: 'smooth' });
   }, [messages, loading, open]);
@@ -171,7 +156,7 @@ export function AssistantWidget() {
         }}
         aria-label={open ? (hi ? 'चैट बंद करें' : 'Close assistant') : (hi ? 'AI सहायक खोलें' : 'Open AI assistant')}
         aria-expanded={open}
-        className={`fixed bottom-4 right-4 z-50 group flex h-12 items-center justify-center rounded-full bg-[#F5660A] px-3 text-white shadow-xl transition-[transform,opacity,background-color] duration-300 hover:scale-105 hover:bg-[#D45300] active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5660A] sm:bottom-6 sm:right-6 sm:h-14 sm:px-4 ${scrolledAway && !open ? 'pointer-events-none translate-y-24 opacity-0' : ''}`}
+        className={`fixed bottom-4 right-4 z-50 group flex h-12 items-center justify-center rounded-full bg-[#F5660A] px-3 text-white shadow-xl transition-[transform,opacity,background-color] duration-300 hover:scale-105 hover:bg-[#D45300] active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5660A] sm:bottom-6 sm:right-6 sm:h-14 sm:px-4`}
       >
         {open ? <X className="h-6 w-6" aria-hidden="true" /> : <MessageCircle className="h-6 w-6" aria-hidden="true" />}
         {!open && (
