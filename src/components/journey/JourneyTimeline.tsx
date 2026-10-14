@@ -30,7 +30,6 @@ export function JourneyTimeline() {
             >
               {t(politicalJourneyIntro.heading)}
             </h2>
-            <div aria-hidden="true" className="mt-4 h-1 w-16 rounded-full bg-[#F5660A]" />
             <p className="mt-5 text-base leading-relaxed text-[#5C5650] sm:text-lg">
               {t(politicalJourneyIntro.description)}
             </p>
