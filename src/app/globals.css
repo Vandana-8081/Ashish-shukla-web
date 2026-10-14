@@ -51,6 +51,12 @@ body {
   letter-spacing: -0.015em;
 }
 
+/* Hindi headings only: Devanagari display font (English pages keep the serif stack above). */
+html:lang(hi) .font-editorial {
+  font-family: var(--font-hindi-heading), var(--font-serif);
+  font-synthesis-weight: none;
+}
+
 /* Clean text selection */
 ::selection {
   background-color: #F5660A;

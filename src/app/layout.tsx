@@ -1,8 +1,17 @@
 import type { Metadata } from 'next';
+import { Yatra_One } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/lib/languageContext';
 import { SiteMotion } from '@/components/layout/SiteMotion';
 import { OG_IMAGE, SITE_URL } from '@/lib/site';
+
+// Devanagari-only subset: used for Hindi headings; Latin text keeps the existing serif stack.
+const hindiHeading = Yatra_One({
+  subsets: ['devanagari'],
+  weight: '400',
+  display: 'swap',
+  variable: '--font-hindi-heading',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -70,7 +79,7 @@ export default function RootLayout({
   const locale = 'hi' as const;
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} className={hindiHeading.variable} suppressHydrationWarning>
       <body className="min-h-screen flex flex-col bg-[#F8F4ED] text-[#171717] antialiased selection:bg-[#F5660A] selection:text-white">
         <LanguageProvider locale={locale}>
           <SiteMotion />
