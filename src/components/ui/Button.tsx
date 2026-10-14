@@ -34,11 +34,11 @@ export function Button({
     primary:
       'bg-[#F5660A] text-white hover:bg-[#D45300] shadow-xs active:translate-y-[1px]',
     secondary:
-      'bg-white text-[#151210] border border-[#E8E2D8] hover:border-[#151210] hover:bg-[#FAF7F2] active:translate-y-[1px]',
+      'bg-white text-[#151210] border border-[#E8E2D8] hover:border-[#F5660A] hover:text-[#F5660A] hover:bg-[#FFF5E9] active:translate-y-[1px]',
     outline:
-      'border border-[#151210] text-[#151210] hover:bg-[#151210] hover:text-white active:translate-y-[1px]',
+      'border border-[#F5660A] text-[#F5660A] hover:bg-[#F5660A] hover:text-white active:translate-y-[1px]',
     dark:
-      'bg-[#151210] text-white hover:bg-[#25201C] active:translate-y-[1px]',
+      'bg-[#D45300] text-white hover:bg-[#B84300] active:translate-y-[1px]',
     ghost:
       'text-[#151210] hover:text-[#F5660A] hover:bg-black/5 p-0',
   };

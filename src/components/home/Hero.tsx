@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { useLanguage } from '@/lib/languageContext';
 import { heroSlides } from '@/data/heroSlides';
@@ -27,7 +27,8 @@ export function Hero() {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   // Mobile photo box follows each slide's own proportions: full width, never cropped.
-  const [mobilePhotoRatio, setMobilePhotoRatio] = useState(4 / 3);
+  const [mobilePhotoRatio, setMobilePhotoRatio] = useState(4 / 5);
+  const mobileImageRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     if (heroSlides.length <= 1) return;
@@ -40,6 +41,14 @@ export function Hero() {
   }, []);
 
   const slide = heroSlides[currentSlide];
+
+  // onLoad can fire before hydration for cached images, so also read the size of an already-loaded image.
+  useEffect(() => {
+    const img = mobileImageRef.current;
+    if (img?.complete && img.naturalWidth && img.naturalHeight) {
+      setMobilePhotoRatio(img.naturalWidth / img.naturalHeight);
+    }
+  }, [currentSlide]);
 
   const goToPrevious = () => {
     setCurrentSlide((prev) =>
@@ -60,9 +69,9 @@ export function Hero() {
         min-h-0
         lg:min-h-[720px]
         overflow-hidden
-        bg-[#F8F4ED]
+        bg-[#F5660A]
         border-b
-        border-[#E8E2D8]
+        border-[#D45300]
       "
     >
       {/* =====================================================
@@ -158,7 +167,7 @@ export function Hero() {
                 font-bold
                 tracking-[0.22em]
                 uppercase
-                text-[#F5660A]
+                text-white
               "
             >
              
@@ -200,7 +209,7 @@ export function Hero() {
                 text-base
                 sm:text-lg
                 md:text-xl
-                text-[#6B625A]
+                text-white/95
                 leading-[1.65]
                 font-normal
               "
@@ -224,7 +233,7 @@ export function Hero() {
                 variant="primary"
                 size="lg"
                 icon="arrow"
-                className="flex-1 sm:flex-none px-3 py-3 text-sm sm:px-6 sm:py-3.5 sm:text-base whitespace-nowrap"
+                className="flex-1 sm:flex-none px-3 py-3 text-sm sm:px-6 sm:py-3.5 sm:text-base whitespace-nowrap bg-white text-[#F5660A] hover:bg-[#FFF5E9]"
               >
                 {t(slide.primaryCta.label)}
               </Button>
@@ -281,8 +290,8 @@ export function Hero() {
                   left-0
                   w-[42%]
                   bg-gradient-to-r
-                  from-[#F8F4ED]
-                  via-[#F8F4ED]/75
+                  from-[#F5660A]
+                  via-[#F5660A]/75
                   to-transparent
                 "
               />
@@ -295,8 +304,8 @@ export function Hero() {
                   bottom-0
                   h-[28%]
                   bg-gradient-to-t
-                  from-[#F8F4ED]
-                  via-[#F8F4ED]/35
+                  from-[#F5660A]
+                  via-[#F5660A]/35
                   to-transparent
                 "
               />
@@ -309,7 +318,7 @@ export function Hero() {
                   top-0
                   h-[15%]
                   bg-gradient-to-b
-                  from-[#F8F4ED]/45
+                  from-[#F5660A]/45
                   to-transparent
                 "
               />
@@ -348,6 +357,7 @@ export function Hero() {
 
               <Image
                 key={`mobile-${slide.image}`}
+                ref={mobileImageRef}
                 src={slide.image}
                 alt={dict.hero.leaderCardTitle}
                 fill
@@ -367,7 +377,7 @@ export function Hero() {
                   top-0
                   h-[8%]
                   bg-gradient-to-b
-                  from-[#F8F4ED]
+                  from-[#F5660A]
                   to-transparent
                 "
               />
@@ -380,7 +390,7 @@ export function Hero() {
                   bottom-0
                   h-[12%]
                   bg-gradient-to-t
-                  from-[#F8F4ED]
+                  from-[#F5660A]
                   to-transparent
                 "
               />
@@ -459,8 +469,8 @@ export function Hero() {
                     duration-300
                     ${
                       currentSlide === idx
-                        ? 'w-8 bg-[#F5660A]'
-                        : 'w-2 bg-[#A89F95]/60 hover:bg-[#6B625A]'
+                        ? 'w-8 bg-white'
+                        : 'w-2 bg-white/50 hover:bg-white/80'
                     }
                   `}
                 />

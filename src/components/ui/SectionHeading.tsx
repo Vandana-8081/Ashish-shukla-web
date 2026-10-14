@@ -50,6 +50,10 @@ export function SectionHeading({
       >
         {title}
       </Heading>
+      <div
+        aria-hidden="true"
+        className={cn('mt-4 h-1 w-14 rounded-full', light ? 'bg-white' : 'bg-[#F5660A]', align === 'center' && 'mx-auto')}
+      />
       {description && (
         <p
           className={cn(

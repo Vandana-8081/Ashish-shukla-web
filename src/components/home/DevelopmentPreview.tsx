@@ -83,11 +83,11 @@ export function DevelopmentPreview() {
         </div>
 
         {/* Dedicated Bhagwant Nagar Section */}
-        <div className="relative rounded-3xl overflow-hidden bg-[#151210] text-white p-8 sm:p-12 lg:p-16 border border-[#2B2521]">
+        <div className="relative rounded-3xl overflow-hidden bg-[#F5660A] text-white p-8 sm:p-12 lg:p-16 border border-[#D45300]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase text-[#F5660A]">
-                <Sparkles className="w-4 h-4 text-[#F5660A]" />
+              <div className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase text-white">
+                <Sparkles className="w-4 h-4 text-white" />
                 <span>{dict.bhagwantNagarSection.tagline}</span>
               </div>
 
@@ -95,22 +95,22 @@ export function DevelopmentPreview() {
                 {dict.bhagwantNagarSection.heading}
               </h2>
 
-              <p className="text-justify text-base sm:text-lg text-[#D4CCC0] leading-relaxed">
+              <p className="text-justify text-base sm:text-lg text-white/95 leading-relaxed">
                 {dict.bhagwantNagarSection.intro}
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 border-t border-[#2B2521]">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 border-t border-white/30">
                 {bhagwantNagarData.pillars.map((pillar, i) => (
                   <div key={i} className="space-y-1.5">
-                    <div className="text-sm font-bold text-[#F5660A]">{t(pillar.title)}</div>
-                    <p className="text-xs text-[#A89F95] leading-relaxed">{t(pillar.description)}</p>
+                    <div className="text-sm font-bold text-white">{t(pillar.title)}</div>
+                    <p className="text-xs text-white/90 leading-relaxed">{t(pillar.description)}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="lg:col-span-5">
-              <div className="relative aspect-[4/5] sm:aspect-[4/3] lg:aspect-square rounded-2xl overflow-hidden border border-[#2B2521] shadow-2xl">
+              <div className="relative aspect-[4/5] sm:aspect-[4/3] lg:aspect-square rounded-2xl overflow-hidden border border-white/30 shadow-2xl">
                 <Image
                   src={bhagwantNagarData.heroImage}
                   alt={dict.bhagwantNagarSection.heading}

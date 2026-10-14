@@ -74,8 +74,11 @@ export async function generateMetadata({
       images: [OG_IMAGE],
     },
     icons: {
-      icon: '/favicon.ico',
-      apple: '/icons/ashish.svg',
+      icon: [
+      { url: '/favicon.ico?v=2', sizes: 'any' },
+      { url: '/icons/icon.png?v=2', type: 'image/png', sizes: '512x512' },
+    ],
+      apple: '/icons/apple-touch-icon.png?v=2',
     },
   };
 }

@@ -82,14 +82,6 @@ export function PhotoGallery() {
                 className="block"
               />
             </button>
-            {item.caption && (
-              <figcaption className="mt-3 font-editorial text-base leading-snug text-[#151210]">
-                {t(item.caption)}
-                {item.note && (
-                  <span className="font-sans text-sm text-[#6B625A]"> · {t(item.note)}</span>
-                )}
-              </figcaption>
-            )}
           </figure>
         ))}
       </div>
@@ -159,14 +151,7 @@ export function PhotoGallery() {
             </button>
           </div>
 
-          <div className="min-h-16 px-4 py-4 text-center sm:px-6" onClick={(event) => event.stopPropagation()}>
-            {active.caption && (
-              <p className="mx-auto max-w-3xl font-editorial text-base leading-snug text-white">
-                {t(active.caption)}
-                {active.note && <span className="font-sans text-sm text-white/60"> · {t(active.note)}</span>}
-              </p>
-            )}
-          </div>
+          <div className="h-4 sm:h-6" aria-hidden="true" />
         </div>
       )}
     </div>

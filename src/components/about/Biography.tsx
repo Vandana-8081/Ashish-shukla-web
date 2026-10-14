@@ -65,7 +65,7 @@ export function Biography() {
       <Container size="wide">
         <section
           aria-label={dict.brand.name}
-          className="rounded-2xl bg-[#151210] px-6 py-8 sm:px-8 md:py-10"
+          className="rounded-2xl bg-[#F5660A] px-6 py-8 sm:px-8 md:py-10"
         >
           <dl className="grid grid-cols-1 gap-y-7 sm:grid-cols-2 sm:gap-x-0 lg:grid-cols-4">
             {personalProfile
@@ -79,14 +79,14 @@ export function Biography() {
                     index === 0 ? 'lg:border-l-0 lg:pl-0' : ''
                   } ${index === items.length - 1 ? 'lg:pr-0' : ''}`}
                 >
-                  <dt className="mb-3 text-sm font-semibold tracking-wide text-[#FF7D2B]">
+                  <dt className="mb-3 text-sm font-semibold tracking-wide text-white">
                     {t(item.label)}
                   </dt>
                   <dd className="text-base font-medium leading-snug text-white sm:text-lg">
                     {t(item.value)}
                   </dd>
                   {item.note && (
-                    <dd className="mt-2 text-sm leading-relaxed text-white/65">
+                    <dd className="mt-2 text-sm leading-relaxed text-white/90">
                       {t(item.note)}
                     </dd>
                   )}

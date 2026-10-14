@@ -3,7 +3,7 @@ import type { PhotoItem, VideoItem } from '@/types';
 export const photoGalleryData: PhotoItem[] = [
   {
     id: 'gallery-1',
-    image: '/images/gallery/dharmik.jpg',
+    image: '/images/gallery/a11.jpg',
     category: {
       en: 'Cultural & Heritage',
       hi: 'सांस्कृतिक एवं सामाजिक',
@@ -15,7 +15,7 @@ export const photoGalleryData: PhotoItem[] = [
   },
   {
     id: 'gallery-2',
-    image: '/images/gallery/bujurg.jpg',
+    image: '/images/gallery/a8.jpg',
     category: {
       en: 'Community Dialogue',
       hi: 'जनसंवाद',
@@ -27,7 +27,7 @@ export const photoGalleryData: PhotoItem[] = [
   },
   {
     id: 'gallery-3',
-    image: '/images/gallery/khel.jpg',
+    image: '/images/gallery/a9.jpg',
     category: {
       en: 'Youth & Sports',
       hi: 'युवा एवं खेल',
@@ -39,7 +39,7 @@ export const photoGalleryData: PhotoItem[] = [
   },
   {
     id: 'gallery-4',
-    image: '/images/gallery/ashish1.jpg',
+    image: '/images/gallery/a10.jpg',
     category: {
       en: 'Civic Engagement',
       hi: 'सार्वजनिक सहभागिता',

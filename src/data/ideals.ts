@@ -32,7 +32,7 @@ export const idealsCategories: IdealCategory[] = [
         id: 'atal-bihari-vajpayee',
         name: { en: 'Shri Atal Bihari Vajpayee', hi: 'श्री अटल बिहारी वाजपेयी' },
         years: '1924–2018',
-        portrait: '/images/ideals/atal-bihari-vajpayee.jpg',
+        portrait: '/images/ideals/atalbihari.avif',
         portraitAlt: { en: 'Portrait of Atal Bihari Vajpayee', hi: 'अटल बिहारी वाजपेयी का चित्र' },
         quotation: {
           hi: 'देश एक मंदिर है, हम पुजारी हैं। राष्ट्रदेव की पूजा में हमें अपने को समर्पित कर देना चाहिए।',
@@ -43,7 +43,7 @@ export const idealsCategories: IdealCategory[] = [
         id: 'narendra-modi',
         name: { en: 'Shri Narendra Modi', hi: 'श्री नरेंद्र मोदी' },
         years: '1950–',
-        portrait: '/images/ideals/narendra-modi.jpg',
+        portrait: '/images/ideals/modiji.avif',
         portraitAlt: { en: 'Portrait of Narendra Modi', hi: 'नरेंद्र मोदी का चित्र' },
         quotation: {
           hi: 'कुछ बनने के लिए सपने मत देखो बल्कि कुछ ऐसा करके दिखाना है ऐसा सपना देखना चाहिए।',
@@ -54,7 +54,7 @@ export const idealsCategories: IdealCategory[] = [
         id: 'ashok-singhal',
         name: { en: 'Shri Ashok Singhal', hi: 'श्री अशोक सिंघल' },
         years: '1926–2015',
-        portrait: '/images/ideals/ashok-singhal.jpg',
+        portrait: '/images/ideals/ashokji.avif',
         portraitAlt: { en: 'Portrait of Ashok Singhal', hi: 'अशोक सिंघल का चित्र' },
         quotation: {
           hi: 'धर्म जागरण एवं कर्मनिष्ठा का सबसे बड़ा स्रोत श्रीमद्भगवद्गीता ग्रंथ है। मैं अपने जीवनकाल के सत्कर्मों की प्रेरणा स्रोत इसे ही मानता हूँ।',

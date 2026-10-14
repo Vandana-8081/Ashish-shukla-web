@@ -61,7 +61,7 @@ export const janSunwaiData: JanSunwaiDetails = {
     en: 'Held regularly at the central camp office in Bhagwant Nagar, as well as rotational village chaupals across blocks.',
     hi: 'भगवंत नगर केंद्रीय कैंप कार्यालय एवं विकास खंडों के विभिन्न ग्रामों में चौपालों के माध्यम से नियमित आयोजित।',
   },
-  image: '/images/public-life/ashish2.jpg',
+  image: '/images/public-life/jan-sunwai.jpg',
 };
 
 export const publicLifeItems: PublicLifeItem[] = [

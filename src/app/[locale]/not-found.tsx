@@ -24,7 +24,7 @@ export default function LocalizedNotFound() {
         <div className="pt-4">
           <Link
             href={getHref('/')}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#151210] text-white hover:bg-[#F5660A] text-sm font-semibold transition-colors group"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#F5660A] text-white hover:bg-[#D45300] text-sm font-semibold transition-colors group"
           >
             <span>{dict.notFound.button}</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

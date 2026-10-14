@@ -61,13 +61,13 @@ export const photographData: PhotographItem[] = [
   { id: 'dharmik', image: dharmik.image, alt: dharmik.caption, caption: dharmik.caption },
   {
     id: 'portrait',
-    image: '/images/hero/ashish4.png',
+    image: '/images/gallery/a13.jpg',
     alt: { en: 'Portrait of Ashish Shukla', hi: 'आशीष शुक्ला का चित्र' },
   },
   { id: 'bujurg', image: bujurg.image, alt: bujurg.caption, caption: bujurg.caption },
   {
     id: 'jan-sunwai',
-    image: '/images/public-life/ashish2.jpg',
+    image: '/images/gallery/a12.jpg',
     alt: { en: 'Jan Sunwai public hearing', hi: 'जनसुनवाई कार्यक्रम' },
     caption: { en: 'Regular Jan Sunwai', hi: 'नियमित जनसुनवाई' },
     note: { en: 'Held at the camp office and in village chaupals', hi: 'कैंप कार्यालय एवं ग्राम चौपालों में आयोजित' },
@@ -75,7 +75,7 @@ export const photographData: PhotographItem[] = [
   { id: 'khel', image: khel.image, alt: khel.caption, caption: khel.caption },
   {
     id: 'health-camp',
-    image: '/images/gallery/health.jpg',
+    image: '/images/gallery/a3.jpg',
     alt: health.caption,
     caption: health.caption,
     note: health.note,
@@ -94,14 +94,14 @@ export const photographData: PhotographItem[] = [
   },
   {
     id: 'kisan',
-    image: '/images/updates/kisan.jpg',
+    image: '/images/gallery/a4.jpg',
     alt: kisan.caption,
     caption: kisan.caption,
     note: kisan.note,
   },
   {
     id: 'sports-1',
-    image: '/images/updates/khel1.jpg',
+    image: '/images/gallery/a5.jpg',
     alt: sports.caption,
     caption: sports.caption,
     note: sports.note,
@@ -115,24 +115,24 @@ export const photographData: PhotographItem[] = [
  
   {
     id: 'sports-2',
-    image: '/images/updates/khel2.jpg',
+    image: '/images/gallery/a1.jpg',
     alt: sports.caption,
   },
   {
     id: 'sunwai-group',
-    image: '/images/updates/sunwai.jpg',
+    image: '/images/gallery/a14.jpg',
     alt: sunwai.caption,
     caption: sunwai.caption,
     note: sunwai.note,
   },
   {
     id: 'public-meeting',
-    image: '/images/public-life/nagrik.jpg',
+    image: '/images/gallery/a7.jpg',
     alt: genericAlt,
   },
   {
     id: 'sunwai-1',
-    image: '/images/updates/pservise.jpg',
+    image: '/images/gallery/a2.jpg',
     alt: sunwai.caption,
   },
  

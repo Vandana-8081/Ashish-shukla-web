@@ -23,6 +23,8 @@ export function IdealsPage() {
   const copy = isHindi
     ? {
         eyebrow: 'हमारे आदर्श',
+        kicker: 'प्रेरणा के स्रोत',
+        tagline: 'वे महान व्यक्तित्व, जिनके विचार और मूल्य हमारी जनसेवा का मार्ग दिखाते हैं।',
         heading: 'हमारे आदर्श',
         categories: 'श्रेणियाँ',
         pending: 'इस श्रेणी के लिए सत्यापित परिचय और स्वीकृत चित्र शीघ्र जोड़े जाएंगे।',
@@ -33,6 +35,8 @@ export function IdealsPage() {
       }
     : {
         eyebrow: 'OUR IDEALS',
+        kicker: 'SOURCES OF INSPIRATION',
+        tagline: 'The great personalities whose thoughts and values guide our public service.',
         heading: 'Our Ideals',
         categories: 'CATEGORIES',
         pending: 'Verified profiles and approved portraits for this category will be added here.',
@@ -44,26 +48,28 @@ export function IdealsPage() {
 
   return (
     <main className="min-h-screen bg-[#F7F4EF] pb-14">
-      <header className="mt-8 border-y border-[#E8E2D8] bg-white sm:mt-0">
-        <div className="relative mx-auto aspect-[750/130] w-full max-w-[1920px] sm:aspect-[1920/340]">
-          <Image
-            src="/images/ideals/banner-mobile.jpeg"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-[50%_40%] sm:hidden"
-          />
-          <Image
-            src="/images/ideals/banner.jpeg"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="hidden object-cover sm:block"
-          />
+      <header className="relative isolate overflow-hidden bg-gradient-to-br from-[#FF8A2B] via-[#F5660A] to-[#D45300] text-white">
+        {/* Soft sunburst rays */}
+        <div
+          aria-hidden="true"
+          className="absolute -right-24 top-1/2 -z-10 h-[620px] w-[620px] -translate-y-1/2 rounded-full opacity-25 [background:repeating-conic-gradient(from_0deg,rgba(255,255,255,0.55)_0deg_6deg,transparent_6deg_18deg)] [mask-image:radial-gradient(circle,#000_0,transparent_68%)] [-webkit-mask-image:radial-gradient(circle,#000_0,transparent_68%)]"
+        />
+        <div aria-hidden="true" className="absolute -left-16 -top-20 -z-10 h-64 w-64 rounded-full border-[28px] border-white/10" />
+        <div aria-hidden="true" className="absolute -bottom-24 left-1/3 -z-10 h-56 w-56 rounded-full bg-white/10 blur-2xl" />
+        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-white/70 to-transparent" />
+
+        <div className="mx-auto flex max-w-[1440px] flex-col items-center px-4 py-7 text-center sm:px-6 sm:py-9 lg:py-10">
+          <span className="text-xs font-bold uppercase tracking-[0.3em] text-white/90 sm:text-sm">{copy.kicker}</span>
+          <div className="mt-3 flex items-center gap-3" aria-hidden="true">
+            <span className="h-px w-12 bg-white/70 sm:w-20" />
+            <span className="h-2.5 w-2.5 rotate-45 bg-white" />
+            <span className="h-px w-12 bg-white/70 sm:w-20" />
+          </div>
+          <h1 className="mt-3 font-editorial text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+            {copy.heading}
+          </h1>
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/95 sm:text-base">{copy.tagline}</p>
         </div>
-        <h1 className="sr-only">{copy.heading}</h1>
       </header>
 
       <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 gap-6 px-4 pt-8 sm:px-6 md:pt-10 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-7 lg:pl-8 lg:pr-20 xl:grid-cols-[340px_minmax(0,1fr)]">

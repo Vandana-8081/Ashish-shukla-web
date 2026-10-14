@@ -27,7 +27,7 @@ export const updatesData: Update[] = [
       'उन्होंने कार्यदायी संस्था के अभियंताओं को निर्धारित समयसीमा के भीतर कार्य पूर्ण करने और आबादी वाले क्षेत्रों में पक्की नालियों का निर्माण सुनिश्चित करने के निर्देश दिए।',
     ],
     galleryImages: [
-      '/images/gallery/ashish2.jpg',
+      '/images/gallery/a14.jpg',
       '/images/public-life/nagrik.jpg',
     ],
   },
@@ -57,7 +57,7 @@ export const updatesData: Update[] = [
       'नेत्र रोगियों को निःशुल्क चश्मे और मोतियाबिंद ऑपरेशन हेतु चिन्हित किया गया तथा महिलाओं व बच्चों को आवश्यक औषधियां एवं पोषण सामग्री वितरित की गई।',
     ],
     galleryImages: [
-      '/images/gallery/health.jpg',
+      '/images/development/health.jpg',
       '/images/updates/health.png',
     ],
   },
@@ -87,8 +87,8 @@ export const updatesData: Update[] = [
       'उन्होंने किसानों को आश्वस्त किया कि सरकारी क्रय केंद्रों पर पारदर्शी व्यवस्था लागू रहेगी और किसी भी किसान को अपनी उपज बेचने में परेशानी नहीं होने दी जाएगी।',
     ],
     galleryImages: [
-      '/images/gallery/bujurg.jpg',
-      '/images/gallery/ashish1.jpg',
+      '/images/gallery/a12.jpg',
+      '/images/gallery/a4.jpg',
     ],
   },
   {

@@ -20,7 +20,7 @@ export function VideoSection() {
     <div className="space-y-8">
 
       {/* Featured Video Player Area */}
-      <div className="bg-[#151210] rounded-3xl overflow-hidden border h-full border-[#2B2521] text-white">
+      <div className="bg-[#F5660A] rounded-3xl overflow-hidden border h-full border-[#D45300] text-white">
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
 
@@ -122,11 +122,11 @@ export function VideoSection() {
           </div>
 
           {/* ================= DETAILS SIDEBAR ================= */}
-          <div className="lg:col-span-4 p-6 sm:p-8 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-[#2B2521] bg-[#1A1614]">
+          <div className="lg:col-span-4 p-6 sm:p-8 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-white/25 bg-[#D45300]">
 
             <div className="space-y-4">
 
-              <div className="text-xs uppercase font-bold tracking-[0.2em] text-[#F5660A]">
+              <div className="text-xs uppercase font-bold tracking-[0.2em] text-white">
                 {dict.mediaSection.featuredVideoBadge}
               </div>
 
@@ -134,14 +134,14 @@ export function VideoSection() {
                 {t(selectedVideo.title)}
               </h3>
 
-              <p className="text-justify text-sm text-[#A89F95] leading-relaxed">
+              <p className="text-justify text-sm text-white/90 leading-relaxed">
                 {t(selectedVideo.description)}
               </p>
 
             </div>
 
             {/* Bottom Info */}
-            <div className="pt-6 border-t border-[#2B2521] text-xs text-[#8A8177]">
+            <div className="pt-6 border-t border-white/25 text-xs text-white/80">
               <span>{dict.mediaSection.videoSourceNote}</span>
             </div>
 
