@@ -171,9 +171,14 @@ export function AssistantWidget() {
         }}
         aria-label={open ? (hi ? 'चैट बंद करें' : 'Close assistant') : (hi ? 'AI सहायक खोलें' : 'Open AI assistant')}
         aria-expanded={open}
-        className={`fixed bottom-4 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-[#F5660A] text-white shadow-xl transition-[transform,opacity,background-color] duration-300 hover:scale-105 hover:bg-[#D45300] active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5660A] sm:bottom-6 sm:right-6 sm:h-14 sm:w-14 ${scrolledAway && !open ? 'pointer-events-none translate-y-24 opacity-0' : ''}`}
+        className={`fixed bottom-4 right-4 z-50 group flex h-12 items-center justify-center rounded-full bg-[#F5660A] px-3 text-white shadow-xl transition-[transform,opacity,background-color] duration-300 hover:scale-105 hover:bg-[#D45300] active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5660A] sm:bottom-6 sm:right-6 sm:h-14 sm:px-4 ${scrolledAway && !open ? 'pointer-events-none translate-y-24 opacity-0' : ''}`}
       >
         {open ? <X className="h-6 w-6" aria-hidden="true" /> : <MessageCircle className="h-6 w-6" aria-hidden="true" />}
+        {!open && (
+          <span className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-semibold opacity-0 transition-[max-width,opacity,margin] duration-300 group-hover:ml-2 group-hover:max-w-[11rem] group-hover:opacity-100 group-focus-visible:ml-2 group-focus-visible:max-w-[11rem] group-focus-visible:opacity-100 sm:text-base">
+            {hi ? 'सहायक से पूछें' : 'Ask Assistant'}
+          </span>
+        )}
       </button>
     </>
   );
