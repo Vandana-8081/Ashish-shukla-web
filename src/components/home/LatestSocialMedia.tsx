@@ -5,6 +5,7 @@ import { useLanguage } from '@/lib/languageContext';
 import { socialLinks } from '@/data/socialLinks';
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
+import { TwitterFeed } from '@/components/home/TwitterFeed';
 import { FacebookIcon } from '@/components/ui/SocialIcons';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -34,7 +35,7 @@ export function LatestSocialMedia() {
   }, []);
 
   const facebookCard = (
-    <article className="rounded-2xl border border-[#E8E2D8] bg-[#F8F4ED] p-3 sm:p-4">
+    <article className="flex flex-col rounded-2xl border border-[#E8E2D8] bg-[#F8F4ED] p-3 sm:p-4">
       <div className="flex items-center justify-between gap-4 border-b border-[#E8E2D8] pb-5">
         <div className="flex items-center gap-3">
           <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-[#F5660A]">
@@ -84,8 +85,9 @@ export function LatestSocialMedia() {
     <section className="bg-white py-20 md:py-28 border-b border-[#E8E2D8]">
       <Container size="wide" className="px-2 sm:px-4 lg:px-6">
         <SectionHeading eyebrow={content.eyebrow} title={content.heading} description={content.description} />
-        <div className="mx-auto max-w-[540px]">
+        <div className="mx-auto grid max-w-[1120px] grid-cols-1 items-stretch gap-6 lg:grid-cols-2">
           {facebookCard}
+          <TwitterFeed />
         </div>
       </Container>
     </section>
