@@ -76,7 +76,7 @@ export const developmentPriorities: DevelopmentPriority[] = [
       { en: 'Regular specialist medical camps and diagnostic screenings', hi: 'ग्रामीण क्षेत्रों में नियमित निःशुल्क स्वास्थ्य व नेत्र परीक्षण शिविर' },
       { en: 'Adequate stock of anti-rabies, anti-venom, and critical medicines', hi: 'आवश्यक व आपातकालीन जीवनरक्षक दवाओं की निरंतर उपलब्धता' },
     ],
-    image: '/images/development/health.png',
+    image: '/images/development/health.webp',
     tag: {
       en: 'Primary Healthcare',
       hi: 'प्राथमिक स्वास्थ्य',
@@ -120,7 +120,7 @@ export const developmentPriorities: DevelopmentPriority[] = [
       { en: 'Encouraging girls’ higher education with safe transport and support', hi: 'बालिकाओं की उच्च शिक्षा हेतु प्रोत्साहन और सुरक्षित आवागमन' },
       { en: 'Promoting digital literacy and competitive examination resources', hi: 'डिजिटल साक्षरता और प्रतियोगी परीक्षाओं के लिए अध्ययन सामग्री' },
     ],
-    image: '/images/development/education.jpg',
+    image: '/images/development/education.webp',
     tag: {
       en: 'Foundational Learning',
       hi: 'शिक्षा उन्नयन',
@@ -142,7 +142,7 @@ export const developmentPriorities: DevelopmentPriority[] = [
       { en: 'Dedicated assistance during procurement seasons at local mandis', hi: 'क्रय केंद्रों पर पारदर्शी तौल और किसानों के त्वरित भुगतान की निगरानी' },
       { en: 'Assisting smallholder farmers with modern horticultural techniques', hi: 'उद्यानिकी और आधुनिक कृषि तकनीकों के प्रति कृषकों को प्रोत्साहन' },
     ],
-    image: '/images/public-life/water.webp',
+    image: '/images/development/farmer.webp',
     tag: {
       en: 'Agricultural Growth',
       hi: 'कृषि संवर्धन',
