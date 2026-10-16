@@ -28,6 +28,10 @@ export const navigationItems: NavItem[] = [
         path: '/about#journey',
 
       },
+      {
+        name: { en: 'Heritage & Identity', hi: 'विरासत एवं पहचान' },
+        path: '/heritage',
+      },
     ],
   },
   {

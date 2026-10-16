@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     ...localized('', { changeFrequency: 'weekly', priority: 1.0 }),
     ...localized('/about', { changeFrequency: 'monthly', priority: 0.8 }),
+    ...localized('/heritage', { changeFrequency: 'monthly', priority: 0.7 }),
     ...localized('/public-life', { changeFrequency: 'weekly', priority: 0.9 }),
     ...localized('/ideals', { changeFrequency: 'monthly', priority: 0.7 }),
     ...localized('/media', { changeFrequency: 'weekly', priority: 0.7 }),
