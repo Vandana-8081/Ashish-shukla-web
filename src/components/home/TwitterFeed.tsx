@@ -6,12 +6,27 @@ import { ArrowUpRight } from 'lucide-react';
 import { useLanguage } from '@/lib/languageContext';
 import { socialLinks } from '@/data/socialLinks';
 import { XIcon } from '@/components/ui/SocialIcons';
+import type { XPost } from '@/lib/xFeed';
+import { xPostIds } from '@/data/xPosts';
 
 type TwitterWindow = Window & { twttr?: { widgets?: { load: (element?: HTMLElement) => void } } };
 
 const FALLBACK_AFTER_MS = 8000;
+const URL_PATTERN = /(https?:\/\/[^\s]+)/g;
 
-export function TwitterFeed() {
+function linkify(text: string) {
+  return text.split(URL_PATTERN).map((part, index) =>
+    /^https?:\/\//.test(part) ? (
+      <a key={index} href={part} target="_blank" rel="noopener noreferrer" className="break-all text-[#F5660A] hover:underline">
+        {part}
+      </a>
+    ) : (
+      part
+    ),
+  );
+}
+
+export function TwitterFeed({ posts }: { posts?: XPost[] | null }) {
   const { dict, locale } = useLanguage();
   const content = dict.latestSocialMedia;
   const profile = socialLinks.find((item) => item.platform === 'x');
@@ -25,12 +40,13 @@ export function TwitterFeed() {
 
   // widgets.js may already be on the page (client-side navigation, language switch).
   useEffect(() => {
+    if (posts) return;
     renderTimeline();
     const timer = window.setTimeout(() => {
       if (!containerRef.current?.querySelector('iframe')) setFailed(true);
     }, FALLBACK_AFTER_MS);
     return () => window.clearTimeout(timer);
-  }, []);
+  }, [posts]);
 
   if (!profile) return null;
 
@@ -51,9 +67,33 @@ export function TwitterFeed() {
       </div>
 
       <div role="region" aria-label={content.xTitle} className="mt-5 min-h-[560px] overflow-hidden rounded-xl border border-[#E8E2D8] bg-white">
-        <Script src="https://platform.twitter.com/widgets.js" strategy="lazyOnload" onReady={renderTimeline} />
-
-        {failed ? (
+        {posts ? (
+          <ul className="flex h-[560px] flex-col gap-3 overflow-y-auto bg-[#F8F4ED] p-3">
+            {posts.map((post) => (
+              <li key={post.id} className="rounded-xl border border-[#E8E2D8] bg-white p-4">
+                {post.createdAt && (
+                  <time dateTime={post.createdAt} className="text-xs font-semibold text-[#151210]/60">
+                    {new Intl.DateTimeFormat(locale === 'hi' ? 'hi-IN' : 'en-IN', { dateStyle: 'medium' }).format(new Date(post.createdAt))}
+                  </time>
+                )}
+                <p className="mt-2 whitespace-pre-line break-words text-sm leading-relaxed text-[#151210]">{linkify(post.text)}</p>
+                {post.imageUrl && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={post.imageUrl} alt="" loading="lazy" className="mt-3 w-full rounded-lg object-cover" />
+                )}
+                <a
+                  href={`${profile.url}/status/${post.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-[#F5660A] hover:text-[#D45300]"
+                >
+                  {content.viewOnX}
+                  <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        ) : failed ? (
           <div className="flex min-h-[560px] flex-col items-center justify-center gap-4 p-6 text-center">
             <p className="font-editorial text-xl font-bold text-[#151210]">{content.xFallbackText}</p>
             <a
@@ -67,11 +107,22 @@ export function TwitterFeed() {
           </div>
         ) : (
           <div ref={containerRef}>
-            <a className="twitter-timeline" data-height="560" data-theme="light" data-lang={locale} href="https://twitter.com/Ashish4Shuka">
-              Posts by @{profile.username}
-            </a>
+            {xPostIds.length > 0 ? (
+              <div className="h-[560px] space-y-3 overflow-y-auto p-3">
+                {xPostIds.map((id) => (
+                  <blockquote key={id} className="twitter-tweet" data-theme="light" data-lang={locale} data-dnt="true">
+                    <a href={`https://twitter.com/${profile.username}/status/${id}`}>{content.xLoading}</a>
+                  </blockquote>
+                ))}
+              </div>
+            ) : (
+              <a className="twitter-timeline" data-height="560" data-theme="light" data-lang={locale} href="https://twitter.com/Ashish4Shuka">
+                Posts by @{profile.username}
+              </a>
+            )}
           </div>
         )}
+        {!posts && <Script src="https://platform.twitter.com/widgets.js" strategy="lazyOnload" onReady={renderTimeline} />}
       </div>
 
       <a href={profile.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#F5660A] hover:text-[#D45300] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F5660A]">

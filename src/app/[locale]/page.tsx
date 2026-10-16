@@ -6,6 +6,7 @@ import { DevelopmentPreview } from '@/components/home/DevelopmentPreview';
 import { UpdatesPreview } from '@/components/home/UpdatesPreview';
 import { SocialSection } from '@/components/home/SocialSection';
 import { LatestSocialMedia } from '@/components/home/LatestSocialMedia';
+import { XUpdatesCard } from '@/components/home/XUpdatesCard';
 import { ContactSection } from '@/components/contact/ContactSection';
 
 export default function LocalizedHomePage() {
@@ -17,7 +18,7 @@ export default function LocalizedHomePage() {
       <PublicLifePreview />
       <DevelopmentPreview />
       <UpdatesPreview />
-      <LatestSocialMedia />
+      <LatestSocialMedia xCard={<XUpdatesCard />} />
       <SocialSection />
       <ContactSection id="contact" />
     </>

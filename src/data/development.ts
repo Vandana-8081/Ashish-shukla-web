@@ -126,28 +126,38 @@ export const developmentPriorities: DevelopmentPriority[] = [
       hi: 'शिक्षा उन्नयन',
     },
   },
-  {
-    id: 'farmers',
-    slug: 'farmers',
-    title: {
-      en: 'Agricultural Welfare & Tail-End Irrigation Support',
-      hi: 'किसान कल्याण एवं टेल तक सिंचाई जल की सुनिश्चितता',
-    },
-    description: {
-      en: 'Championing the rights and practical needs of farmers: reliable electricity for tube-wells, timely fertilizer availability, and desiltation of irrigation canals.',
-      hi: 'किसानों के खेतों तक समय पर पानी, नहरों की सफाई, ट्यूबवेल हेतु निर्बाध बिजली और बीज-खाद की सुलभ उपलब्धता सुनिश्चित करना।',
-    },
-    keyInitiatives: [
-      { en: 'Intensive canal cleaning drives to reach end-mile farmland', hi: 'नहरों की सिल्ट सफाई की निगरानी ताकि अंतिम छोर के खेत तक पानी पहुंचे' },
-      { en: 'Dedicated assistance during procurement seasons at local mandis', hi: 'क्रय केंद्रों पर पारदर्शी तौल और किसानों के त्वरित भुगतान की निगरानी' },
-      { en: 'Assisting smallholder farmers with modern horticultural techniques', hi: 'उद्यानिकी और आधुनिक कृषि तकनीकों के प्रति कृषकों को प्रोत्साहन' },
-    ],
-    image: '/images/development/farmer.webp',
-    tag: {
-      en: 'Agricultural Growth',
-      hi: 'कृषि संवर्धन',
-    },
+{
+  id: 'farmers',
+  slug: 'farmers',
+  title: {
+    en: 'Farmer Welfare & Agricultural Support',
+    hi: 'किसान कल्याण एवं कृषि सहायता',
   },
+  description: {
+    en: 'Working towards the welfare of farming families by promoting awareness of agricultural schemes, access to farming resources, modern agricultural practices, and support services that can help farmers improve their livelihoods.',
+    hi: 'किसान परिवारों के कल्याण के लिए कृषि योजनाओं की जानकारी, खेती से जुड़े संसाधनों की उपलब्धता, आधुनिक कृषि पद्धतियों और सहायक सेवाओं के प्रति जागरूकता बढ़ाने की दिशा में प्रयास।',
+  },
+  keyInitiatives: [
+    {
+      en: 'Creating awareness about government agricultural schemes and farmer benefits',
+      hi: 'सरकारी कृषि योजनाओं एवं किसान हितकारी सुविधाओं के प्रति जागरूकता',
+    },
+    {
+      en: 'Encouraging access to quality seeds, fertilizers, and agricultural guidance',
+      hi: 'उन्नत बीज, खाद एवं कृषि मार्गदर्शन की उपलब्धता के लिए प्रोत्साहन',
+    },
+    {
+      en: 'Promoting modern farming techniques and sustainable agricultural practices',
+      hi: 'आधुनिक कृषि तकनीकों एवं टिकाऊ खेती को बढ़ावा देना',
+    },
+  ],
+  image: '/images/development/farmer.webp',
+  tag: {
+    en: 'Farmer Welfare',
+    hi: 'किसान कल्याण',
+  },
+},
+
   {
     id: 'youth-employment',
     slug: 'youth-employment',
@@ -170,26 +180,36 @@ export const developmentPriorities: DevelopmentPriority[] = [
       hi: 'युवा सशक्तिकरण',
     },
   },
-  {
-    id: 'women-empowerment',
-    slug: 'women-empowerment',
-    title: {
-      en: 'Women Self-Help Groups & Community Participation',
-      hi: 'महिला स्वयं सहायता समूह एवं सामाजिक सहभागिता',
-    },
-    description: {
-      en: 'Strengthening women’s self-help groups (SHGs) with micro-credit facilitation, market linkages for rural produce, and maternal healthcare awareness.',
-      hi: 'मातृशक्ति के आर्थिक स्वावलंबन हेतु स्वयं सहायता समूहों को प्रोत्साहन, उत्पादों के विपणन में सहयोग और सम्मानजनक भागीदारी।',
-    },
-    keyInitiatives: [
-      { en: 'Supporting women-led micro-enterprises and village handicrafts', hi: 'ग्रामीण लघु उद्यमों एवं हस्तशिल्प में महिलाओं का सहयोग' },
-      { en: 'Comprehensive mother and child nutrition monitoring drives', hi: 'आंगनबाड़ी केंद्रों के माध्यम से मातृ एवं शिशु पोषण की सतत निगरानी' },
-      { en: 'Safe public sanitation and community spaces for village women', hi: 'सार्वजनिक स्थानों पर स्वच्छता एवं सुरक्षित परिवेश का निर्माण' },
-    ],
-    image: '/images/development/women.png',
-    tag: {
-      en: 'Women Self-Reliance',
-      hi: 'मातृशक्ति स्वावलंबन',
-    },
+ {
+  id: 'women-empowerment',
+  slug: 'women-empowerment',
+  title: {
+    en: 'Women Empowerment & Digital Awareness',
+    hi: 'महिला सशक्तिकरण एवं डिजिटल जागरूकता',
   },
+  description: {
+    en: 'Encouraging women to become more self-reliant through digital literacy, skill development, awareness of government welfare schemes, and opportunities for participation in community and economic activities.',
+    hi: 'डिजिटल साक्षरता, कौशल विकास, सरकारी कल्याणकारी योजनाओं की जानकारी तथा सामाजिक और आर्थिक गतिविधियों में भागीदारी के अवसरों के माध्यम से महिलाओं को आत्मनिर्भर बनाने की दिशा में प्रयास।',
+  },
+  keyInitiatives: [
+    {
+      en: 'Promoting digital literacy and access to online services among women',
+      hi: 'महिलाओं के बीच डिजिटल साक्षरता एवं ऑनलाइन सेवाओं के उपयोग को बढ़ावा देना',
+    },
+    {
+      en: 'Encouraging skill development, self-help groups, and women-led enterprises',
+      hi: 'कौशल विकास, स्वयं सहायता समूहों एवं महिला उद्यमिता को प्रोत्साहित करना',
+    },
+    {
+      en: 'Creating awareness about women-focused government schemes and welfare services',
+      hi: 'महिला हितकारी सरकारी योजनाओं एवं कल्याणकारी सेवाओं के प्रति जागरूकता बढ़ाना',
+    },
+  ],
+  image: '/images/development/women.webp',
+  tag: {
+    en: 'Women Empowerment',
+    hi: 'महिला सशक्तिकरण',
+  },
+},
+
 ];

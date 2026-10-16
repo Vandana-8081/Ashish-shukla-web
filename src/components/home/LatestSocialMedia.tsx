@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { useLanguage } from '@/lib/languageContext';
 import { socialLinks } from '@/data/socialLinks';
 import { Container } from '@/components/ui/Container';
@@ -9,7 +9,7 @@ import { TwitterFeed } from '@/components/home/TwitterFeed';
 import { FacebookIcon } from '@/components/ui/SocialIcons';
 import { ArrowUpRight } from 'lucide-react';
 
-export function LatestSocialMedia() {
+export function LatestSocialMedia({ xCard }: { xCard?: ReactNode }) {
   const { dict } = useLanguage();
   const content = dict.latestSocialMedia;
   const facebook = socialLinks.find((item) => item.platform === 'facebook');
@@ -87,7 +87,7 @@ export function LatestSocialMedia() {
         <SectionHeading eyebrow={content.eyebrow} title={content.heading} description={content.description} />
         <div className="mx-auto grid max-w-[1120px] grid-cols-1 items-stretch gap-6 lg:grid-cols-2">
           {facebookCard}
-          <TwitterFeed />
+          {xCard ?? <TwitterFeed />}
         </div>
       </Container>
     </section>

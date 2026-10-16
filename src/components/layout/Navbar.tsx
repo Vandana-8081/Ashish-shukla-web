@@ -30,11 +30,11 @@ export function Navbar() {
   const getSocialIcon = (platform: string) => {
     switch (platform) {
       case 'facebook':
-        return <FacebookIcon size={16} />;
+        return <FacebookIcon size={16} className="text-[#1877F2]" />;
       case 'instagram':
-        return <InstagramIcon size={16} />;
+        return <InstagramIcon size={16} className="text-[#E1306C]" />;
       case 'x':
-        return <XIcon size={15} />;
+        return <XIcon size={15} className="text-dark" />;
       default:
         return null;
     }

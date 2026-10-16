@@ -20,7 +20,7 @@ export function UpdateCard({ update, compact = false }: UpdateCardProps) {
   const detailUrl = getHref(`/updates/${update.slug}`);
 
   return (
-    <article className="group flex flex-col justify-between pb-8 border-b border-[#E8E2D8]">
+    <article className="group flex flex-col justify-between px-4 sm:px-6 pb-8 border-b border-[#E8E2D8]">
       <div>
         {/* Actual Image with Editorial Aspect */}
         <Link
