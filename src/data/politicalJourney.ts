@@ -16,8 +16,6 @@ export interface JourneyMilestone {
   image?: { src: string; alt: LocalizedString };
   /** Link to an existing route (relative path, localised by the component). */
   link?: { path: string; label: LocalizedString };
-  /** Renders the documented activities already published in Updates. */
-  showUpdates?: boolean;
 }
 
 export const politicalJourneyIntro = {
@@ -95,15 +93,13 @@ export const journeyMilestones: JourneyMilestone[] = [
     id: 'development-initiatives',
     title: { hi: 'विकास एवं सामाजिक पहल', en: 'Development & Social Initiatives' },
     body: {
-      hi: 'वेबसाइट के अपडेट में दर्ज कुछ प्रमुख गतिविधियाँ:',
-      en: 'Some of the activities documented in the site updates:',
+      hi: 'स्वास्थ्य शिविर, किसान चौपाल और खेल पहल जैसे जनहित के कार्य।',
+      en: 'Public-interest work such as health camps, farmer chaupals and sports initiatives.',
     },
-    showUpdates: true,
     image: {
       src: '/images/gallery/a10.jpg',
       alt: { hi: 'स्वास्थ्य जांच शिविर', en: 'Health screening camp' },
     },
-    link: { path: '/updates', label: { hi: 'सभी अपडेट देखें', en: 'View all updates' } },
   },
   {
     id: 'road-ahead',

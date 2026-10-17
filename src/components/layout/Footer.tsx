@@ -29,7 +29,6 @@ export function Footer() {
     { path: '/public-life', label: dict.navigation.publicLife },
     { path: '/public-life#development', label: dict.navigation.development },
     { path: '/media', label: dict.navigation.media },
-    { path: '/updates', label: dict.navigation.updates },
     { path: '/contact', label: dict.navigation.contact },
   ];
 

@@ -15,8 +15,8 @@ export function PublicLifeSections() {
   return (
     <div className="pt-4 pb-12 md:pb-20 space-y-20">
       {/* Jan Sunwai Comprehensive Section */}
-      <Container size="wide" id="jan-sunwai">
-        <div className="bg-white rounded-3xl border border-[#E8E2D8] p-6 sm:p-10 lg:p-14 shadow-sm">
+      <section id="jan-sunwai" data-site-motion-ignore className="scroll-mt-24">
+        <Container size="wide" className="py-10 sm:py-14 lg:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             <div className="lg:col-span-6 space-y-6">
               <div className="inline-flex items-center text-xs font-bold tracking-[0.2em] uppercase text-[#F5660A]">
@@ -52,7 +52,7 @@ export function PublicLifeSections() {
             <div className="lg:col-span-6 space-y-6">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#E8E2D8] shadow-md border border-[#E8E2D8]">
                 <Image
-                  src={janSunwaiData.image}
+                  src={janSunwaiData.pageImage ?? janSunwaiData.image}
                   alt={dict.publicLifeSection.heading}
                   fill
                   priority
@@ -78,8 +78,8 @@ export function PublicLifeSections() {
               </div>
             </div>
           </div>
-        </div>
-      </Container>
+        </Container>
+      </section>
 
       {/* Community Engagement & Field Visits */}
       <Container size="wide" id="community">

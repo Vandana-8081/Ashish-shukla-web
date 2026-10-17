@@ -6,10 +6,7 @@ import Link from 'next/link';
 import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { useLanguage } from '@/lib/languageContext';
 import { journeyMilestones, politicalJourneyIntro } from '@/data/politicalJourney';
-import { updatesData } from '@/data/updates';
 import { Container } from '@/components/ui/Container';
-
-const FEATURED_UPDATES = updatesData.slice(0, 4);
 
 export function JourneyTimeline() {
   const { t, language, getHref } = useLanguage();
@@ -74,27 +71,6 @@ export function JourneyTimeline() {
                       <li key={point.en} className="flex items-start gap-2.5 text-sm text-[#242424]">
                         <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#176B3A]" aria-hidden="true" />
                         <span>{t(point)}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-
-                {milestone.showUpdates && (
-                  <ul className="mt-4 divide-y divide-[#E8E2DA] rounded-xl border border-[#E8E2DA] bg-white">
-                    {FEATURED_UPDATES.map((update) => (
-                      <li key={update.slug}>
-                        <Link
-                          href={getHref(`/updates/${update.slug}`)}
-                          className="flex items-start justify-between gap-3 px-4 py-3 text-sm transition-colors hover:bg-[#FFF5E9] focus-visible:outline-2 focus-visible:outline-[#F5660A]"
-                        >
-                          <span>
-                            <span className="block text-xs font-semibold text-[#C95F0A]">
-                              {hi ? update.dateHi : update.dateEn}
-                            </span>
-                            <span className="block text-[#242424]">{hi ? update.titleHi : update.titleEn}</span>
-                          </span>
-                          <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-[#F5660A]" aria-hidden="true" />
-                        </Link>
                       </li>
                     ))}
                   </ul>

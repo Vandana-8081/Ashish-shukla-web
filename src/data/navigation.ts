@@ -28,19 +28,7 @@ export const navigationItems: NavItem[] = [
         path: '/about#journey',
 
       },
-      {
-        name: { en: 'Heritage & Identity', hi: 'विरासत एवं पहचान' },
-        path: '/heritage',
-      },
     ],
-  },
-  {
-    id: 'ideals',
-    name: {
-      en: 'Our Ideals',
-      hi: 'हमारे आदर्श',
-    },
-    path: '/ideals',
   },
   {
     id: 'public-life',
@@ -49,23 +37,6 @@ export const navigationItems: NavItem[] = [
       hi: 'सार्वजनिक जीवन',
     },
     path: '/public-life',
-    hasDropdown: true,
-    children: [
-      {
-        name: { en: 'Jan Sunwai & Redressal', hi: 'जनसुनवाई एवं संवाद' },
-        path: '/public-life#jan-sunwai',
-        
-      },
-      {
-        name: { en: 'Community Engagement', hi: 'सामुदायिक सहभागिता' },
-        path: '/public-life#community',
-      
-      },
-      {
-        name: { en: 'Field Inspections', hi: 'क्षेत्रीय निरीक्षण' },
-        path: '/public-life#field-visits',
-      },
-    ],
   },
   {
     id: 'media',
@@ -89,17 +60,22 @@ export const navigationItems: NavItem[] = [
     ],
   },
   {
-    id: 'updates',
-    name: {
-      en: 'Updates',
-      hi: 'अपडेट्स',
-    },
-    path: '/updates',
+    id: 'development',
+    name: { en: 'Development & Ideas', hi: 'विकास एवं विचार' },
+    path: '/development',
+    hasDropdown: true,
+    children: [
+      { name: { en: 'Ideas & Articles', hi: 'विचार एवं लेख' }, path: '/development/ideas' },
+      { name: { en: 'Development Journey', hi: 'विकास यात्रा' }, path: '/development/journey' },
+    ],
   },
   {
-    id: 'blog',
-    name: { en: 'Blog', hi: 'ब्लॉग' },
-    path: '/blog',
+    id: 'ideals',
+    name: {
+      en: 'Our Ideals',
+      hi: 'हमारे आदर्श',
+    },
+    path: '/ideals',
   },
   {
     id: 'contact',

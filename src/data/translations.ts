@@ -21,7 +21,6 @@ export const translations = {
       publicLife: 'Public Life',
       development: 'Development',
       media: 'Media',
-      updates: 'Updates',
       contact: 'Contact',
     },
     navDropdowns: {
@@ -42,16 +41,13 @@ export const translations = {
       explorePublicWork: 'Explore Public Work',
       viewJourney: 'View Journey',
       readMore: 'Read More',
-      viewAllUpdates: 'View All Updates',
       viewAllPriorities: 'View All Priorities',
       viewFullMedia: 'View Full Media & Videos',
       connect: 'Connect Directly',
       backToHome: 'Back to Home',
-      backToUpdates: 'Back to All Updates',
       readFullBio: 'Read Full Biography',
       janSunwaiForums: 'Jan Sunwai Forums',
       developmentPriorities: 'Development Priorities',
-      latestUpdates: 'Latest Updates',
       allRightsReserved: 'All rights reserved.',
       dedicatedService: 'Dedicated to Grounded Public Service',
       publicOfficeLocation: 'Public Office: Bhagwant Nagar, District Unnao (Uttar Pradesh)',
@@ -81,9 +77,9 @@ export const translations = {
     },
     publicLifeSection: {
       eyebrow: 'REGULAR GRIEVANCE REDRESSAL',
-      heading: 'Regular Jan Sunwai: Transparent & Accessible Leadership',
+      heading: 'Jan Sunwai: Meeting People Face to Face',
       description:
-        'In Bhagwant Nagar, democratic representation means being physically present and directly reachable. Regular Jan Sunwai sessions provide every villager an open platform to present personal and village grievances without intermediaries.',
+        'Ashish Shukla holds Jan Sunwai regularly so that anyone from Bhagwant Nagar can walk in and tell him their problem directly, whether it is their own or their village\'s. No middlemen in between.',
       buttonLabel: 'Jan Sunwai Forums',
       directBadge: 'Direct Grievance Redressal',
       villageHeading: 'Village Chaupals & Real-Time Development Inspections',
@@ -105,16 +101,6 @@ export const translations = {
       intro:
         'Bhagwant Nagar is not just an administrative constituency; it is the heartbeat of our heritage in Unnao. From fertile agricultural fields to vibrant village bazaars, our mission is to ensure every hamlet receives dignified civic amenities, seamless roads, and modern healthcare.',
       bottomBadge: 'Connecting every village in Bhagwant Nagar with development and dignity.',
-    },
-    updatesSection: {
-      eyebrow: 'LATEST UPDATES',
-      heading: 'Latest from the Field',
-      description:
-        'Follow the latest public engagements, community interactions, field visits, and development activities across Bhagwant Nagar.',
-      readMore: 'Read more',
-      fieldReportTitle: 'Field Report & Key Directives',
-      additionalPhotosTitle: 'Additional Photographs from the Field',
-      submitInquiryLink: 'Submit an Inquiry or Grievance →',
     },
     mediaSection: {
       eyebrow: 'MEDIA & GALLERY',
@@ -234,7 +220,6 @@ export const translations = {
       publicLife: 'सार्वजनिक जीवन',
       development: 'विकास कार्य',
       media: 'मीडिया',
-      updates: 'अपडेट्स',
       contact: 'संपर्क',
     },
     navDropdowns: {
@@ -255,16 +240,13 @@ export const translations = {
       explorePublicWork: 'सार्वजनिक कार्य देखें',
       viewJourney: 'यात्रा देखें',
       readMore: 'और पढ़ें',
-      viewAllUpdates: 'सभी अपडेट देखें',
       viewAllPriorities: 'सभी प्राथमिकताएं देखें',
       viewFullMedia: 'पूरी गैलरी एवं वीडियो देखें',
       connect: 'सीधा संपर्क करें',
       backToHome: 'होम पर वापस जाएं',
-      backToUpdates: 'सभी अपडेट्स पर वापस जाएं',
       readFullBio: 'पूरा परिचय पढ़ें',
       janSunwaiForums: 'जनसुनवाई मंच',
       developmentPriorities: 'विकास की प्राथमिकताएं',
-      latestUpdates: 'नवीनतम समाचार',
       allRightsReserved: 'सर्वाधिकार सुरक्षित।',
       dedicatedService: 'माटी और जनसेवा को समर्पित',
       publicOfficeLocation: 'जनसेवा कार्यालय: भगवंत नगर, जनपद उन्नाव (उत्तर प्रदेश)',
@@ -318,16 +300,6 @@ export const translations = {
       intro:
         'भगवंत नगर केवल एक क्षेत्र नहीं, बल्कि हमारी आस्था और पहचान का केंद्र है। उपजाऊ खेतों से लेकर ग्रामीण बाजारों तक, हमारा एकमात्र संकल्प है कि क्षेत्र के प्रत्येक मजरे तक पक्की सड़कें, स्वच्छ पेयजल, सुलभ स्वास्थ्य और सम्मानजनक जीवन की सुविधाएं पहुंचें।',
       bottomBadge: 'भगवंत नगर के हर गांव तक विकास की रोशनी पहुंचाना हमारा ध्येय है।',
-    },
-    updatesSection: {
-      eyebrow: 'नवीनतम समाचार',
-      heading: 'क्षेत्र से नवीनतम अपडेट',
-      description:
-        'भगवंत नगर में चल रहे विकास कार्यों, स्वास्थ्य शिविरों, किसान चौपालों और जनसुनवाई की ताजा रिपोर्ट।',
-      readMore: 'विस्तार से पढ़ें',
-      fieldReportTitle: 'क्षेत्रीय रिपोर्ट एवं प्रमुख निर्देश',
-      additionalPhotosTitle: 'क्षेत्र से अतिरिक्त तस्वीरें',
-      submitInquiryLink: 'समस्या अथवा सुझाव भेजें →',
     },
     mediaSection: {
       eyebrow: 'चित्र वीथिका',
