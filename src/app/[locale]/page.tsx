@@ -1,5 +1,6 @@
 import { Hero } from '@/components/home/Hero';
 import { AboutPreview } from '@/components/home/AboutPreview';
+import { PoliticalJourneyPreview } from '@/components/home/PoliticalJourneyPreview';
 import { PublicLifePreview } from '@/components/home/PublicLifePreview';
 import { DevelopmentPreview } from '@/components/home/DevelopmentPreview';
 import { SocialSection } from '@/components/home/SocialSection';
@@ -11,6 +12,7 @@ export default function LocalizedHomePage() {
     <>
       <Hero />
       <AboutPreview />
+      <PoliticalJourneyPreview />
       <PublicLifePreview />
       <DevelopmentPreview />
       <LatestSocialMedia xCard={<XUpdatesCard />} />

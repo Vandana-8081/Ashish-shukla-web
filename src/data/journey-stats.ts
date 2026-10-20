@@ -28,7 +28,7 @@ export const journeyPage = {
   title: { en: 'Vikas Yatra: the change, in figures', hi: 'विकास यात्रा: बदलाव, आँकड़ों में' },
   subtitle: {
     en: 'Figures, not slogans. Each number below comes from a government source, named under it.',
-    hi: 'नारे नहीं, आँकड़े। नीचे दी गई हर संख्या एक सरकारी स्रोत से है, जिसका नाम उसके नीचे दिया है।',
+    hi: 'नारे नहीं, आँकड़े। नीचे दी गई हर संख्या एक सरकारी स्रोत से है।',
   },
   sections: {
     india: {

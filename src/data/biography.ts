@@ -13,6 +13,7 @@ export interface BiographyData {
   portraitImage: string;
 }
 
+
 export const biographyData: BiographyData = {
   eyebrow: {
     en: 'BIOGRAPHY',
@@ -20,34 +21,37 @@ export const biographyData: BiographyData = {
   },
 
   title: {
-    en: 'Ashish Shukla Rinku',
-    hi: 'आशीष शुक्ला रिंकू',
+    en: 'Ashish Shukla',
+    hi: 'आशीष शुक्ला',
   },
 
   quote: {
-    en: '“Public service means staying connected with people, understanding their concerns, and working towards the development of the community.”',
-
-    hi: '“जनसेवा का अर्थ है जनता से जुड़े रहना, उनकी समस्याओं को समझना और क्षेत्र के विकास की दिशा में निरंतर प्रयास करना।”',
+    en: '“Public service begins with listening to people, understanding their concerns, and working towards the development of the community.”',
+    hi: '“जनसेवा की शुरुआत जनता की बात सुनने, उनकी समस्याओं को समझने और क्षेत्र के विकास के लिए निरंतर प्रयास करने से होती है।”',
   },
 
   paragraphs: [
-    {
-      en: 'Ashish Shukla, popularly known as “Rinku,” is associated with public life in Bhagwantnagar, Unnao district, Uttar Pradesh. His public profile reflects his role as President of Bhagwantnagar Nagar Panchayat and his connection with the local community.',
+   
+{
+  en: 'Ashish Shukla, also popularly known as “Rinku,” is the Chairman of Bhagwantnagar Nagar Panchayat in Unnao district, Uttar Pradesh. Associated with the Bharatiya Janata Party, his public role is centred on public service, engagement with local residents, and the development of Bhagwantnagar.',
 
-      hi: 'आशीष शुक्ला, जिन्हें लोकप्रिय रूप से “रिंकू” के नाम से जाना जाता है, उत्तर प्रदेश के उन्नाव जनपद स्थित भगवंतनगर के सार्वजनिक जीवन से जुड़े हैं। नगर पंचायत भगवंतनगर के अध्यक्ष के रूप में उनकी भूमिका और स्थानीय जनता से उनका जुड़ाव उनके सार्वजनिक परिचय का महत्वपूर्ण हिस्सा है।',
-    },
+  hi: 'आशीष शुक्ला, जिन्हें “रिंकू” के नाम से भी जाना जाता है, उत्तर प्रदेश के उन्नाव जनपद की नगर पंचायत भगवंतनगर के अध्यक्ष हैं। भारतीय जनता पार्टी से जुड़े आशीष शुक्ला की सार्वजनिक भूमिका जनसेवा, स्थानीय नागरिकों से संवाद और भगवंतनगर के विकास पर केंद्रित है।',
+},
 
-    {
-      en: 'His public responsibilities are connected with local civic administration and the development of Bhagwantnagar. Important areas of public interest include road connectivity, sanitation, healthcare facilities, drainage, electricity-related concerns, and the improvement of essential civic amenities.',
-
-      hi: 'उनके सार्वजनिक दायित्व भगवंतनगर के स्थानीय प्रशासन और क्षेत्र के विकास से जुड़े हैं। सड़क संपर्क, स्वच्छता, स्वास्थ्य सुविधाएँ, जल निकासी, बिजली से संबंधित समस्याएँ तथा आवश्यक नागरिक सुविधाओं में सुधार स्थानीय विकास के महत्वपूर्ण विषय हैं।',
-    },
 
     {
-      en: 'As a public representative, his profile emphasizes communication with citizens, attention to local issues, and efforts towards inclusive community development. The aim is to highlight the concerns and aspirations of Bhagwantnagar residents and the importance of responsive local governance.',
+      en: 'Elected as a Bharatiya Janata Party candidate in the 2023 Uttar Pradesh urban local body elections, he undertakes responsibilities related to local civic administration. Roads and connectivity, sanitation, drainage, healthcare facilities, electricity-related concerns, and essential civic amenities are important issues for the area.',
 
-      hi: 'एक जनप्रतिनिधि के रूप में उनके परिचय में नागरिकों से संवाद, स्थानीय समस्याओं पर ध्यान और समावेशी सामुदायिक विकास के प्रयासों को प्रमुखता दी गई है। इसका उद्देश्य भगवंतनगर के निवासियों की आवश्यकताओं और आकांक्षाओं तथा उत्तरदायी स्थानीय प्रशासन के महत्व को सामने लाना है।',
+      hi: 'वर्ष 2023 के उत्तर प्रदेश नगर निकाय चुनाव में भारतीय जनता पार्टी के प्रत्याशी के रूप में वे नगर पंचायत भगवंतनगर के अध्यक्ष निर्वाचित हुए। उनके दायित्व स्थानीय नागरिक सुविधाओं और प्रशासन से जुड़े हैं। सड़क एवं आवागमन, स्वच्छता, जल निकासी, स्वास्थ्य सुविधाएँ, बिजली से संबंधित समस्याएँ और आवश्यक जनसुविधाएँ क्षेत्र के महत्वपूर्ण विषय हैं।',
     },
+
+   
+{
+  en: 'His public profile emphasizes listening to residents, understanding local needs, and giving attention to issues that affect everyday life. Through public engagement and a commitment to local development, he aims to contribute to better civic amenities and an improved quality of life for the people of Bhagwantnagar.',
+
+  hi: 'उनके सार्वजनिक जीवन में नागरिकों की बात सुनना, स्थानीय आवश्यकताओं को समझना और रोजमर्रा के जीवन को प्रभावित करने वाली समस्याओं पर ध्यान देना महत्वपूर्ण है। जनसंवाद और क्षेत्र के विकास के प्रति प्रतिबद्धता के माध्यम से उनका उद्देश्य भगवंतनगर में बेहतर नागरिक सुविधाओं और लोगों के जीवन स्तर में सुधार के लिए प्रयास करना है।',
+},
+
   ],
 
   coreValues: [
@@ -58,9 +62,9 @@ export const biographyData: BiographyData = {
       },
 
       description: {
-        en: 'Encouraging direct communication with citizens and giving attention to local concerns and community needs.',
+        en: 'Listening to residents, understanding their concerns, and encouraging meaningful communication between citizens and local representatives.',
 
-        hi: 'नागरिकों से सीधे संवाद, स्थानीय समस्याओं और समुदाय की आवश्यकताओं पर ध्यान देने को प्राथमिकता।',
+        hi: 'नागरिकों की बात सुनना, उनकी समस्याओं को समझना और जनता तथा जनप्रतिनिधियों के बीच सार्थक संवाद को बढ़ावा देना।',
       },
     },
 
@@ -71,22 +75,22 @@ export const biographyData: BiographyData = {
       },
 
       description: {
-        en: 'Highlighting essential civic priorities such as roads, sanitation, drainage, healthcare, and public amenities.',
+        en: 'Focusing on local priorities, including roads, sanitation, drainage, healthcare, and essential civic amenities.',
 
-        hi: 'सड़क, स्वच्छता, जल निकासी, स्वास्थ्य सेवाओं और जनसुविधाओं जैसी आवश्यक प्राथमिकताओं पर ध्यान।',
+        hi: 'सड़क, स्वच्छता, जल निकासी, स्वास्थ्य सेवाओं और आवश्यक नागरिक सुविधाओं जैसी स्थानीय प्राथमिकताओं पर ध्यान देना।',
       },
     },
 
     {
       title: {
         en: 'Inclusive Community',
-        hi: 'समावेशी समाज',
+        hi: 'समावेशी विकास',
       },
 
       description: {
-        en: 'Supporting a development-focused approach that recognizes the needs and aspirations of people across the community.',
+        en: 'Recognizing the needs of different sections of society and supporting a community-focused approach to development.',
 
-        hi: 'समुदाय के सभी वर्गों की आवश्यकताओं और आकांक्षाओं को ध्यान में रखते हुए विकासोन्मुख दृष्टिकोण।',
+        hi: 'समाज के विभिन्न वर्गों की आवश्यकताओं को समझना और समुदाय की जरूरतों को ध्यान में रखकर विकास को प्राथमिकता देना।',
       },
     },
   ],
@@ -94,4 +98,5 @@ export const biographyData: BiographyData = {
   profileImage: '/images/hero/ashish3.png',
   portraitImage: '/images/hero/hero1.png',
 };
+
 

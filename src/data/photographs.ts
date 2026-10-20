@@ -149,5 +149,17 @@ export const photographData: PhotographItem[] = [
     image: '/images/gallery/a2.jpg',
     alt: sunwai.caption,
   },
+  {
+    id: 'festival-visit',
+    image: '/images/gallery/a15.jpg',
+    alt: {
+      en: 'Ashish Shukla at a local festive celebration',
+      hi: 'स्थानीय उत्सव में आशीष शुक्ला',
+    },
+    caption: {
+      en: 'Meeting community members at a local festive celebration.',
+      hi: 'स्थानीय उत्सव में लोगों से मुलाकात।',
+    },
+  },
  
 ];
