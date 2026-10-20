@@ -6,7 +6,7 @@ import { useLanguage } from '@/lib/languageContext';
 import { janSunwaiData, publicLifeItems } from '@/data/publicLife';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
-import { CheckCircle2, MapPin } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
 export function PublicLifePreview() {
   const { t, dict, getHref, locale } = useLanguage();
@@ -44,14 +44,10 @@ export function PublicLifePreview() {
                 ))}
               </div>
 
-              <div className="pt-4 flex flex-wrap items-center gap-4">
+              <div className="pt-4">
                 <Button href={getHref('/public-life#jan-sunwai')} variant="primary" icon="arrow">
                   {dict.publicLifeSection.buttonLabel}
                 </Button>
-                <div className="flex items-center gap-1.5 text-xs text-[#6B625A]">
-                  <MapPin className="w-4 h-4 text-[#F5660A]" />
-                  <span>{t(janSunwaiData.scheduleInfo)}</span>
-                </div>
               </div>
             </div>
 

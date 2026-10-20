@@ -12,18 +12,18 @@ export interface BhagwantNagarSection {
 }
 
 export const bhagwantNagarData: BhagwantNagarSection = {
-  tagline: {
-    en: 'ROOTS · RESPONSIBILITY · DEVELOPMENT',
-    hi: 'संस्कार · उत्तरदायित्व · समग्र विकास',
-  },
+ tagline: {
+  en: 'ROOTS · RESPONSIBILITY · DEVELOPMENT',
+  hi: 'संस्कार · जनसेवा · विकास',
+},
   heading: {
     en: 'Bhagwant Nagar: Sacred Heritage, Bright Future',
     hi: 'भगवंत नगर: समृद्ध परंपरा, उज्ज्वल भविष्य',
   },
-  intro: {
-    en: 'Bhagwant Nagar is not just an administrative constituency; it is the heartbeat of our heritage in Unnao. From fertile agricultural fields to vibrant village bazaars, our mission is to ensure every hamlet receives dignified civic amenities, seamless roads, and modern healthcare.',
-    hi: 'भगवंत नगर केवल एक क्षेत्र नहीं, बल्कि हमारी आस्था और पहचान का केंद्र है। उपजाऊ खेतों से लेकर ग्रामीण बाजारों तक, हमारा एकमात्र संकल्प है कि क्षेत्र के प्रत्येक मजरे तक पक्की सड़कें, स्वच्छ पेयजल, सुलभ स्वास्थ्य और सम्मानजनक जीवन की सुविधाएं पहुंचें।',
-  },
+ intro: {
+  en: 'Bhagwant Nagar is more than an administrative area; it is a place shaped by our shared heritage, rural life, and community spirit. From fertile agricultural fields to lively village markets, our commitment is to work towards better roads, clean drinking water, accessible healthcare, and essential civic amenities for every settlement.',
+  hi: 'भगवंतनगर हमारी सांस्कृतिक विरासत, ग्रामीण जीवन और आपसी भाईचारे की पहचान है। उपजाऊ खेतों से लेकर जीवंत ग्रामीण बाजारों तक, हमारा संकल्प है कि क्षेत्र के हर गांव और मजरे तक बेहतर सड़कें, स्वच्छ पेयजल, सुलभ स्वास्थ्य सेवाएं और बुनियादी नागरिक सुविधाएं पहुंचें।',
+},
   pillars: [
     {
       title: {

@@ -59,14 +59,14 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       {/* Drawer */}
       <div className="fixed inset-y-0 right-0 max-w-sm w-full bg-[#F8F4ED] shadow-2xl flex flex-col justify-between z-10 overflow-y-auto">
         {/* Header */}
-        <div className="p-5 border-b border-[#E8E2D8] flex items-center justify-between bg-white">
+        <div className="pl-3 pr-5 py-5 border-b border-[#E8E2D8] flex items-center justify-between bg-white">
           <div className="flex items-center gap-3">
             <Image
-              src="/icons/ashish.svg"
+              src="/logo/logo3.png"
               alt={dict.brand.name}
               width={2048}
-              height={683}
-              className="h-11 w-auto max-w-[min(58vw,12rem)] shrink-0 object-contain"
+              height={677}
+              className="h-12 w-auto max-w-[min(72vw,18rem)] shrink-0 object-contain"
             />
           </div>
           <button

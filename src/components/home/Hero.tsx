@@ -69,9 +69,9 @@ export function Hero() {
         min-h-0
         lg:min-h-[720px]
         overflow-hidden
-        bg-[#F5660A]
+        bg-[#F8F4ED]
         border-b
-        border-[#D45300]
+        border-[#E8E2D8]
       "
     >
       {/* =====================================================
@@ -167,7 +167,7 @@ export function Hero() {
                 font-bold
                 tracking-[0.22em]
                 uppercase
-                text-white
+                text-[#F5660A]
               "
             >
              
@@ -209,7 +209,7 @@ export function Hero() {
                 text-base
                 sm:text-lg
                 md:text-xl
-                text-white/95
+                text-[#4A433D]
                 leading-[1.65]
                 font-normal
               "
@@ -290,8 +290,8 @@ export function Hero() {
                   left-0
                   w-[42%]
                   bg-gradient-to-r
-                  from-[#F5660A]
-                  via-[#F5660A]/75
+                  from-[#F8F4ED]
+                  via-[#F8F4ED]/75
                   to-transparent
                 "
               />
@@ -304,8 +304,8 @@ export function Hero() {
                   bottom-0
                   h-[28%]
                   bg-gradient-to-t
-                  from-[#F5660A]
-                  via-[#F5660A]/35
+                  from-[#F8F4ED]
+                  via-[#F8F4ED]/35
                   to-transparent
                 "
               />
@@ -318,7 +318,7 @@ export function Hero() {
                   top-0
                   h-[15%]
                   bg-gradient-to-b
-                  from-[#F5660A]/45
+                  from-[#F8F4ED]/45
                   to-transparent
                 "
               />
@@ -377,7 +377,7 @@ export function Hero() {
                   top-0
                   h-[8%]
                   bg-gradient-to-b
-                  from-[#F5660A]
+                  from-[#F8F4ED]
                   to-transparent
                 "
               />
@@ -390,7 +390,7 @@ export function Hero() {
                   bottom-0
                   h-[12%]
                   bg-gradient-to-t
-                  from-[#F5660A]
+                  from-[#F8F4ED]
                   to-transparent
                 "
               />

@@ -52,15 +52,15 @@ export function Navbar() {
             {/* Brand Logo */}
             <Link
               href={`/${locale}`}
-              className="flex items-center gap-3.5 group focus-visible:outline-2 focus-visible:outline-[#F5660A] rounded-lg p-1 -ml-1 sm:ml-0"
+              className="flex items-center gap-3.5 group focus-visible:outline-2 focus-visible:outline-[#F5660A] rounded-lg p-1 -ml-3 sm:-ml-2"
             >
               <Image
-                src="/icons/ashish.svg"
+                src="/logo/logo3.png"
                 alt={dict.brand.name}
                 width={2048}
-                height={683}
+                height={677}
                 priority
-                className="h-14 w-auto max-w-[min(48vw,12rem)] shrink-0 object-contain sm:max-w-[14rem]"
+                className="h-16 w-auto max-w-[min(62vw,20rem)] shrink-0 object-contain sm:max-w-[20rem]"
               />
             </Link>
 

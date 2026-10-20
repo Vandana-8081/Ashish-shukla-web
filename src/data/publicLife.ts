@@ -60,8 +60,8 @@ export const janSunwaiData: JanSunwaiDetails = {
     },
   ],
   scheduleInfo: {
-    en: 'Held regularly at the camp office in Bhagwant Nagar, and at chaupals in villages across the blocks.',
-    hi: 'भगवंत नगर केंद्रीय कैंप कार्यालय एवं विकास खंडों के विभिन्न ग्रामों में चौपालों के माध्यम से नियमित आयोजित।',
+    en: '',
+    hi: '',
   },
   image: '/images/public-life/jan-sunwai.jpg',
   pageImage: '/images/public-life/jan-sunwai-page.jpg',

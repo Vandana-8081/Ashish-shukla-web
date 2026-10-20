@@ -96,7 +96,7 @@ export const biographyData: BiographyData = {
   ],
 
   profileImage: '/images/hero/ashish3.png',
-  portraitImage: '/images/hero/hero1.png',
+  portraitImage: '/images/hero/about.png',
 };
 
 
