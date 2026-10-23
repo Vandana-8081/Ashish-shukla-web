@@ -3,7 +3,7 @@ import type { PhotoItem, VideoItem } from '@/types';
 export const photoGalleryData: PhotoItem[] = [
   {
     id: 'gallery-1',
-    image: '/images/gallery/a11.jpg',
+    image: '/images/public-life/a1.jpg',
     category: {
       en: 'Cultural & Heritage',
       hi: 'सांस्कृतिक एवं सामाजिक',
@@ -143,6 +143,29 @@ export const videoGalleryData: VideoItem[] = [
     en: 'Participated as the chief guest at the regional athletics competition held at R.R.B.N. Inter College, Bhagwantnagar, Unnao. Inaugurated the competition and encouraged participating athletes. Emphasized that sports promote physical and mental growth while strengthening discipline, confidence, team spirit, and healthy competition. Wished all the athletes a bright future and encouraged them to move forward with hard work, dedication, and sportsmanship, with confidence that talented athletes from the region will bring recognition to the district and state.',
 
     hi: 'भगवंतनगर, उन्नाव स्थित आर.आर.बी.एन. इंटर कॉलेज के मैदान में आयोजित क्षेत्रीय एथलेटिक्स प्रतियोगिता में मुख्य अतिथि के रूप में सम्मिलित होकर प्रतियोगिता का शुभारंभ किया एवं प्रतिभागी खिलाड़ियों का उत्साहवर्धन किया। खेल युवाओं के शारीरिक एवं मानसिक विकास के साथ-साथ अनुशासन, आत्मविश्वास, टीम भावना और स्वस्थ प्रतिस्पर्धा की भावना को मजबूत करते हैं। इस अवसर पर सभी प्रतिभागी खिलाड़ियों के उज्ज्वल भविष्य की कामना करते हुए उन्हें निरंतर परिश्रम, समर्पण और खेल भावना के साथ आगे बढ़ने के लिए प्रेरित किया। विश्वास है कि हमारे क्षेत्र की प्रतिभाशाली खेल प्रतिभाएं जिले और प्रदेश का नाम रोशन करेंगी।',
+  },
+},
+{
+  id: 'video-3',
+
+  videoPath: '/images/media/vid5.mp4',
+
+  title: {
+    en: 'Public Support and Respect — My Greatest Identity',
+    hi: 'जनता का समर्थन और सम्मान — मेरी सबसे बड़ी पहचान',
+  },
+
+  duration: '00:45',
+
+  date: {
+    en: 'July 2026',
+    hi: 'जुलाई 2026',
+  },
+
+  description: {
+    en: 'Public support and the respect of the people are my greatest identity. My connection with the people of Bhagwantnagar is my strength and inspiration to continue working for the community.',
+
+    hi: 'जनता का समर्थन और उनका सम्मान ही मेरी सबसे बड़ी पहचान है। भगवंतनगर के लोगों से मेरा जुड़ाव मेरी ताकत और प्रेरणा है। जनसेवा के प्रति समर्पण और अपने क्षेत्र के लोगों के विश्वास को बनाए रखना ही मेरे सार्वजनिक जीवन का आधार है।',
   },
 },
 ];

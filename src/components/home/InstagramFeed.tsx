@@ -134,7 +134,7 @@ export function InstagramFeed({ result }: { result: SocialFeedResult }) {
 
   return (
     <CardShell>
-      <ul className="grid max-h-[560px] grid-cols-2 gap-3 sm:grid-cols-3 overflow-y-auto bg-[#F8F4ED] p-3">
+      <ul className="grid max-h-[560px] grid-cols-2 gap-3 overflow-y-auto bg-[#F8F4ED] p-3 sm:grid-cols-3">
         {result.items.map((item) => (
           <li key={item.id} className="overflow-hidden rounded-xl border border-[#E8E2D8] bg-white">
             <a

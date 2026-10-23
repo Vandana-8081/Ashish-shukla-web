@@ -42,6 +42,67 @@ export const ideasIntro = {
   },
 };
 
+export const ourApproach = {
+  title: { en: 'Our Approach', hi: 'हमारी सोच' },
+  mainIdea: {
+    text: {
+      en: 'I believe being a public representative means more than leading. It means staying among the people, understanding their expectations, and living up to their trust. My connection to Bhagwantnagar and my responsibility towards its people are the foundation of my approach.',
+      hi: 'मेरा विश्वास है कि जनप्रतिनिधि होने का अर्थ केवल नेतृत्व करना नहीं, बल्कि अपने लोगों के बीच रहना, उनकी अपेक्षाओं को समझना और उनके विश्वास पर खरा उतरना है। भगवंतनगर की मिट्टी से जुड़ाव और यहाँ के लोगों के प्रति जिम्मेदारी ही मेरी सोच का आधार है।',
+    },
+  },
+  commitment: {
+    paragraphs: [
+      {
+        en: 'For me, Bhagwantnagar’s development is not limited to roads and facilities; it is connected to a better future for every family. I want to work towards an environment where citizens’ voices are valued, young people have opportunities to move forward, and everyone can take pride in the progress of their area.',
+        hi: 'मेरे लिए भगवंतनगर का विकास केवल सड़कों और सुविधाओं तक सीमित नहीं, बल्कि हर परिवार के बेहतर भविष्य से जुड़ा है। मैं ऐसा वातावरण बनाने की दिशा में प्रयास करना चाहता हूँ, जहाँ नागरिकों की आवाज़ को महत्व मिले, युवाओं को आगे बढ़ने के अवसर मिलें और हर व्यक्ति अपने क्षेत्र की प्रगति पर गर्व कर सके।',
+      },
+      {
+        en: 'My priority is to sustain public trust, preserve warmth in our relationships, and ensure that the benefits of development reach every section of society.',
+        hi: 'मेरी प्राथमिकता है कि जनविश्वास बना रहे, रिश्तों में अपनापन रहे और विकास का लाभ समाज के हर वर्ग तक पहुँचे।',
+      },
+      {
+        en: 'I believe development truly succeeds when its benefits reach every section of society and no citizen feels overlooked when facing a need or problem. By valuing public dialogue, transparency, and mutual trust, I believe in continuously working to understand what residents expect and to help address their concerns.',
+        hi: 'मेरा मानना है कि विकास की वास्तविक सफलता तब है, जब उसका लाभ समाज के हर वर्ग तक पहुँचे और कोई भी नागरिक अपनी आवश्यकताओं तथा समस्याओं को लेकर स्वयं को उपेक्षित महसूस न करे। जनसंवाद, पारदर्शिता और आपसी विश्वास को महत्व देते हुए मैं नागरिकों की अपेक्षाओं को समझने और उनकी समस्याओं के समाधान की दिशा में निरंतर प्रयास करने के पक्ष में हूँ।',
+      },
+    ],
+  },
+};
+
+export const areaPriorities = {
+  title: { en: 'Priorities for Bhagwantnagar', hi: 'क्षेत्र की प्राथमिकताएँ' },
+  subtitle: {
+    en: 'Five areas that deserve focused attention in Bhagwantnagar.',
+    hi: 'भगवंतनगर के लिए पाँच विषय, जिन पर सबसे अधिक ध्यान है।',
+  },
+  items: [
+    {
+      icon: 'road',
+      title: { en: 'Roads', hi: 'सड़क' },
+      text: { en: 'Better roads connecting villages with block and district centres.', hi: 'गाँवों को ब्लॉक व जिला मुख्यालय से जोड़ने वाली बेहतर सड़कें।' },
+    },
+    {
+      icon: 'education',
+      title: { en: 'Education', hi: 'शिक्षा' },
+      text: { en: 'Improving rural schools and access to quality education.', hi: 'ग्रामीण विद्यालयों व शिक्षा सुविधाओं में सुधार।' },
+    },
+    {
+      icon: 'health',
+      title: { en: 'Healthcare', hi: 'स्वास्थ्य' },
+      text: { en: 'Strengthening primary healthcare centres and services.', hi: 'प्राथमिक स्वास्थ्य केंद्रों का सुदृढ़ीकरण।' },
+    },
+    {
+      icon: 'water',
+      title: { en: 'Irrigation & Electricity', hi: 'सिंचाई व बिजली' },
+      text: { en: 'Reliable irrigation water and electricity for farming families.', hi: 'किसानों के लिए भरोसेमंद पानी और बिजली।' },
+    },
+    {
+      icon: 'grievances',
+      title: { en: 'Public Grievances', hi: 'जन समस्याएँ' },
+      text: { en: 'Listening to residents’ concerns and working towards their timely resolution.', hi: 'जनता की समस्याओं का त्वरित निस्तारण।' },
+    },
+  ],
+};
+
 export const ideaArticles: IdeaArticle[] = [
   {
     slug: 'ayushman-bharat',

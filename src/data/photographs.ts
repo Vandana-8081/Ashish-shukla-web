@@ -138,6 +138,16 @@ export const photographData: PhotographItem[] = [
     image: '/images/gallery/a1.jpg',
     alt: sports.caption,
   },
+   {
+    id: 'sports-3',
+    image: '/images/hero/hero1.png',
+    alt: sports.caption,
+  },
+   {
+    id: 'sports-4',
+    image: '/images/public-life/a2.jpg',
+    alt: sports.caption,
+  },
   {
     id: 'sunwai-group',
     image: '/images/gallery/a14.jpg',

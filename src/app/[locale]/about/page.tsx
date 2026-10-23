@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { AboutPage } from '@/components/story/AboutPage';
 import { Chapters } from '@/components/story/Chapters';
+import { Banner } from '@/components/story/Blocks';
 import { chapters } from '@/data/story';
 
 export async function generateMetadata({
@@ -29,6 +30,7 @@ export default function AboutRoute() {
       <section id="journey" className="scroll-mt-24">
         <Chapters items={chapters.slice(0, 3)} />
       </section>
+      <Banner />
     </>
   );
 }

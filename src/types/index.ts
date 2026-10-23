@@ -34,6 +34,8 @@ export interface HeroSlide {
   mobileImage?: string;
   eyebrow: LocalizedString;
   heading: LocalizedString;
+  /** Popular name shown in brackets under the heading. */
+  nickname?: LocalizedString;
   subtitle?: LocalizedString;
   description: LocalizedString;
   primaryCta: {

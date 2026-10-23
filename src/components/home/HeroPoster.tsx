@@ -52,6 +52,12 @@ export function HeroPoster({ slide }: { slide: HeroSlide }) {
           {t(slide.heading)}
         </h1>
 
+        {slide.nickname && (
+          <p className="mt-2 font-editorial text-xl font-bold text-saffron sm:mt-3 sm:text-2xl md:text-3xl">
+            {t(slide.nickname)}
+          </p>
+        )}
+
         {slide.subtitle && (
           <p className="mt-4 max-w-[680px] font-editorial text-base font-semibold leading-snug text-[#151210] sm:mt-6 sm:text-xl md:text-2xl">
             {t(slide.subtitle)}

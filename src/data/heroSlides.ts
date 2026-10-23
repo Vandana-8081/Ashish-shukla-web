@@ -14,6 +14,10 @@ heading: {
 en: 'ASHISH SHUKLA',
 hi: 'आशीष शुक्ला',
 },
+nickname: {
+en: '(Rinku)',
+hi: '(रिंकू)',
+},
 subtitle: {
 en: 'Dedicated to Public Service, Committed to the Progress of Bhagwantnagar',
 hi: 'जनसेवा के प्रति समर्पित, भगवंतनगर की प्रगति के लिए प्रतिबद्ध',

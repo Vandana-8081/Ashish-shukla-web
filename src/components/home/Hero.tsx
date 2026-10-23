@@ -36,7 +36,7 @@ export function Hero() {
 
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 7000);
+    }, 4000);
 
     return () => clearInterval(timer);
   }, []);
@@ -305,6 +305,12 @@ export function Hero() {
             >
               {t(slide.heading)}
             </h1>
+
+            {slide.nickname && (
+              <p className="mt-2 font-editorial text-xl font-bold text-saffron sm:mt-3 sm:text-2xl md:text-3xl">
+                {t(slide.nickname)}
+              </p>
+            )}
 
             {/* Subtitle */}
             {slide.subtitle && (

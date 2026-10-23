@@ -11,7 +11,11 @@ export function IdealsPage() {
   const [selectedCategoryId, setSelectedCategoryId] = useState(idealsCategories[0].id);
   const [activePerson, setActivePerson] = useState<IdealPerson | null>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
-  const selectedCategory = idealsCategories.find(({ id }) => id === selectedCategoryId)!;
+  const selectedCategory = idealsCategories.find(({ id }) => id === selectedCategoryId) ?? idealsCategories[0];
+  const visiblePeople = (selectedCategoryId
+    ? selectedCategory.people.map((person) => ({ person, category: selectedCategory }))
+    : idealsCategories.flatMap((category) => category.people.map((person) => ({ person, category })))
+  );
   const isHindi = locale === 'hi';
 
   useEffect(() => {
@@ -26,7 +30,8 @@ export function IdealsPage() {
         kicker: 'प्रेरणा के स्रोत',
         tagline: 'वे महान व्यक्तित्व, जिनके विचार और मूल्य हमारी जनसेवा का मार्ग दिखाते हैं।',
         heading: 'हमारे आदर्श',
-        categories: 'श्रेणियाँ',
+        all: 'सभी',
+        thought: 'आज का विचार',
         pending: 'इस श्रेणी के लिए सत्यापित परिचय और स्वीकृत चित्र शीघ्र जोड़े जाएंगे।',
         temporaryPortrait: 'अस्थायी चित्र',
         temporaryPortraitAlt: 'अस्थायी तटस्थ आकृति; यह संबंधित व्यक्ति का चित्र नहीं है',
@@ -38,7 +43,8 @@ export function IdealsPage() {
         kicker: 'SOURCES OF INSPIRATION',
         tagline: 'The great personalities whose thoughts and values guide our public service.',
         heading: 'Our Ideals',
-        categories: 'CATEGORIES',
+        all: 'All',
+        thought: 'A Thought to Remember',
         pending: 'Verified profiles and approved portraits for this category will be added here.',
         temporaryPortrait: 'TEMPORARY IMAGE',
         temporaryPortraitAlt: 'Temporary neutral silhouette placeholder, not a depiction of this person',
@@ -48,124 +54,103 @@ export function IdealsPage() {
 
   return (
     <main className="min-h-screen bg-[#F7F4EF] pb-14">
-      <header className="relative isolate overflow-hidden bg-gradient-to-br from-[#FF8A2B] via-[#F5660A] to-[#D45300] text-white">
-        {/* Soft sunburst rays */}
-        <div
-          aria-hidden="true"
-          className="absolute -right-24 top-1/2 -z-10 h-[620px] w-[620px] -translate-y-1/2 rounded-full opacity-25 [background:repeating-conic-gradient(from_0deg,rgba(255,255,255,0.55)_0deg_6deg,transparent_6deg_18deg)] [mask-image:radial-gradient(circle,#000_0,transparent_68%)] [-webkit-mask-image:radial-gradient(circle,#000_0,transparent_68%)]"
-        />
-        <div aria-hidden="true" className="absolute -left-16 -top-20 -z-10 h-64 w-64 rounded-full border-[28px] border-white/10" />
-        <div aria-hidden="true" className="absolute -bottom-24 left-1/3 -z-10 h-56 w-56 rounded-full bg-white/10 blur-2xl" />
-        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-white/70 to-transparent" />
-
-        <div className="mx-auto flex max-w-[1440px] flex-col items-center px-4 py-7 text-center sm:px-6 sm:py-9 lg:py-10">
-          <span className="text-xs font-bold uppercase tracking-[0.3em] text-white/90 sm:text-sm">{copy.kicker}</span>
-          <div className="mt-3 flex items-center gap-3" aria-hidden="true">
-            <span className="h-px w-12 bg-white/70 sm:w-20" />
-            <span className="h-2.5 w-2.5 rotate-45 bg-white" />
-            <span className="h-px w-12 bg-white/70 sm:w-20" />
+      <header className="bg-[#F1EBE1] px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
+        <div className="mx-auto grid max-w-[1240px] items-center gap-8 lg:grid-cols-[1.2fr_.8fr] lg:gap-12">
+          <div>
+            <span className="text-sm font-semibold text-[#B94F0B]">{copy.kicker}</span>
+            <h1 className="mt-2 font-editorial text-4xl font-bold leading-tight text-[#172943] sm:text-5xl lg:text-6xl">
+              {copy.heading}
+            </h1>
+            <p className="mt-5 max-w-3xl text-base leading-8 text-[#554E46] sm:text-lg">{copy.tagline}</p>
           </div>
-          <h1 className="mt-3 font-editorial text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-            {copy.heading}
-          </h1>
-          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/95 sm:text-base">{copy.tagline}</p>
+          {selectedCategory.people[0] && (
+            <aside className="rounded-md border-t-4 border-[#F5660A] bg-[#102945] p-6 text-white shadow-lg sm:p-8">
+              <p className="text-sm font-semibold text-[#FFB27A]">{copy.thought}</p>
+              <blockquote className="mt-3 font-editorial text-xl leading-relaxed sm:text-2xl">
+                “{isHindi ? selectedCategory.people[0].quotation?.hi : selectedCategory.people[0].quotation?.en || selectedCategory.people[0].quotation?.hi}”
+              </blockquote>
+              <div className="mt-5 flex items-center gap-3 border-t border-white/15 pt-4">
+                <div className="relative h-14 w-12 shrink-0 overflow-hidden rounded border-2 border-[#F5660A] bg-white/10">
+                  <Image src={selectedCategory.people[0].portrait ?? '/images/ideals/portrait-placeholder.svg'} alt="" fill sizes="48px" className="object-cover object-top" />
+                </div>
+                <p className="font-semibold text-white">
+                  {isHindi ? selectedCategory.people[0].name.hi : selectedCategory.people[0].name.en}
+                </p>
+              </div>
+            </aside>
+          )}
         </div>
       </header>
 
-      <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 gap-6 px-4 pt-8 sm:px-6 md:pt-10 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-7 lg:pl-8 lg:pr-20 xl:grid-cols-[340px_minmax(0,1fr)]">
-        <aside aria-label={copy.categories} className="self-start overflow-hidden rounded-lg bg-white shadow-sm">
-          <h2 className="bg-[#F5660A] px-4 py-3 text-lg font-semibold text-white">
-            {copy.categories}
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1">
-            {idealsCategories.map((category) => {
-              const active = category.id === selectedCategoryId;
-              return (
+      <section className="mx-auto max-w-[1440px] px-4 pb-12 pt-9 sm:px-6 sm:pt-12">
+        <h2 className="sr-only">{copy.eyebrow}</h2>
+        <div className="mb-8 flex flex-wrap justify-center gap-2.5 sm:mb-10 sm:gap-3">
+          <button
+            type="button"
+            aria-pressed={!selectedCategoryId}
+            onClick={() => setSelectedCategoryId('')}
+            className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F5660A] ${!selectedCategoryId ? 'border-[#F5660A] bg-[#FFF4E6] text-[#B94F0B]' : 'border-[#D5D8E0] bg-white text-[#27374F] hover:border-[#F5660A] hover:text-[#B94F0B]'}`}
+          >
+            {copy.all}<small className="text-xs opacity-70">{idealsCategories.reduce((total, category) => total + category.people.length, 0)}</small>
+          </button>
+          {idealsCategories.map((category) => {
+            const active = category.id === selectedCategoryId;
+            return (
+              <button
+                key={category.id}
+                type="button"
+                aria-pressed={active}
+                onClick={() => setSelectedCategoryId(category.id)}
+                className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F5660A] ${active ? 'border-[#F5660A] bg-[#FFF4E6] text-[#B94F0B]' : 'border-[#D5D8E0] bg-white text-[#27374F] hover:border-[#F5660A] hover:text-[#B94F0B]'}`}
+              >
+                {isHindi ? category.title.hi : category.title.en}<small className="text-xs opacity-70">{category.people.length}</small>
+              </button>
+            );
+          })}
+        </div>
+
+        {visiblePeople.length > 0 ? (
+          <div aria-live="polite" className="grid grid-cols-1 gap-5 min-[440px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-7">
+            {visiblePeople.map(({ person, category }) => (
+              <article key={person.id}>
                 <button
-                  key={category.id}
                   type="button"
-                  aria-pressed={active}
-                  onClick={() => setSelectedCategoryId(category.id)}
-                  className={`min-h-14 border-b border-[#E5E5E5] px-4 py-3 text-left text-sm leading-relaxed transition-colors focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-[#F5660A] sm:min-h-16 ${
-                    active
-                      ? 'bg-[#EFE7DC] text-[#F5660A]'
-                      : 'bg-white text-[#373737] hover:bg-[#F7F4EF] hover:text-[#F5660A]'
-                  }`}
+                  onClick={() => setActivePerson(person)}
+                  aria-haspopup="dialog"
+                  className="group flex h-full w-full flex-col overflow-hidden rounded-md border border-[#E1DBD1] bg-white text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F5660A]"
                 >
-                  {isHindi ? category.title.hi : category.title.en}
+                  <div className="relative aspect-[4/5] w-full overflow-hidden border-b-4 border-[#F5660A] bg-[#F1EBE1]">
+                    <Image
+                      src={person.portrait ?? '/images/ideals/portrait-placeholder.svg'}
+                      alt={person.portrait
+                        ? (isHindi ? person.portraitAlt.hi : person.portraitAlt.en)
+                        : copy.temporaryPortraitAlt}
+                      fill
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                      className="object-cover object-[center_22%] transition-transform duration-500 group-hover:scale-105"
+                    />
+                    {person.years && <span className="absolute bottom-3 left-3 rounded-full bg-[#141B38]/85 px-3 py-1 text-xs font-semibold text-white">{isHindi && person.yearsHi ? person.yearsHi : person.years}</span>}
+                    {!person.portrait && <span className="absolute inset-x-0 bottom-0 bg-[#F5660A]/80 px-2 py-1.5 text-center text-[11px] font-semibold text-white">{copy.temporaryPortrait}</span>}
+                  </div>
+                  <div className="flex flex-1 flex-col gap-2 p-4 sm:p-5">
+                    <h3 className="font-editorial text-lg font-bold leading-snug text-[#172943] sm:text-xl">{isHindi ? person.name.hi : person.name.en}</h3>
+                    <p className="text-sm font-semibold text-[#B94F0B]">{isHindi ? category.title.hi : category.title.en}</p>
+                    {(person.quotation || person.description) && (
+                      <blockquote className="mt-2 border-t border-[#E1DBD1] pt-3 text-sm leading-7 text-[#514A43] sm:text-base">
+                        “{person.quotation
+                          ? (isHindi ? person.quotation.hi : person.quotation.en || person.quotation.hi)
+                          : (isHindi ? person.description?.hi : person.description?.en)}”
+                      </blockquote>
+                    )}
+                  </div>
                 </button>
-              );
-            })}
+              </article>
+            ))}
           </div>
-        </aside>
-
-        <section aria-live="polite" aria-labelledby="selected-ideals-category" className="min-w-0">
-          <div className="mb-5 flex flex-wrap items-end justify-between gap-3 border-b border-[#CFC8BE] pb-3 text-[#F5660A]">
-            <h2 id="selected-ideals-category" className="font-editorial text-2xl font-bold sm:text-3xl">
-              {copy.eyebrow}
-            </h2>
-            <p className="text-base font-semibold sm:text-lg">
-              {isHindi ? selectedCategory.title.hi : selectedCategory.title.en}
-            </p>
-          </div>
-
-          {selectedCategory.people.length > 0 ? (
-            <div className="space-y-4">
-              {selectedCategory.people.map((person) => (
-                <article key={person.id}>
-                  <button
-                    type="button"
-                    onClick={() => setActivePerson(person)}
-                    aria-haspopup="dialog"
-                    className="grid w-full grid-cols-1 items-center gap-5 rounded-xl bg-white p-5 text-left shadow-md transition-shadow hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F5660A] sm:grid-cols-[minmax(180px,28%)_1fr] sm:gap-7 sm:p-6"
-                  >
-                    <div className="relative mx-auto aspect-[4/3] w-full max-w-64 overflow-hidden bg-white sm:mx-0 sm:max-w-none">
-                      <Image
-                        src={person.portrait ?? '/images/ideals/portrait-placeholder.svg'}
-                        alt={person.portrait
-                          ? (isHindi ? person.portraitAlt.hi : person.portraitAlt.en)
-                          : copy.temporaryPortraitAlt}
-                        fill
-                        sizes="(max-width: 640px) 100vw, 280px"
-                        className={person.portrait ? 'object-contain' : 'object-cover'}
-                      />
-                      {!person.portrait && (
-                        <span className="absolute inset-x-0 bottom-0 bg-[#F5660A]/80 px-2 py-1.5 text-center text-[11px] font-semibold tracking-wider text-white">
-                          {copy.temporaryPortrait}
-                        </span>
-                      )}
-                    </div>
-                    <div className="flex flex-col justify-center">
-                      {(person.quotation || person.description) && (
-                        <p className="text-lg leading-relaxed text-[#6B625A] sm:text-xl">
-                          <span aria-hidden="true" className="font-serif text-3xl font-bold text-[#A9A9A9]">“</span>
-                          {person.quotation
-                            ? (isHindi ? person.quotation.hi : person.quotation.en || person.quotation.hi)
-                            : (isHindi ? person.description?.hi : person.description?.en)}
-                          <span aria-hidden="true" className="font-serif text-3xl font-bold text-[#A9A9A9]">”</span>
-                        </p>
-                      )}
-                      <div className="mt-4 text-right text-sm font-bold text-saffron sm:text-base">
-                        {isHindi ? person.name.hi : person.name.en}
-                        {person.years ? ` (${isHindi && person.yearsHi ? person.yearsHi : person.years})` : ''}
-                      </div>
-                      {person.verificationNote && (
-                        <p className="mt-2 text-right text-xs leading-relaxed text-[#7B7168]">
-                          {isHindi ? person.verificationNote.hi : person.verificationNote.en}
-                        </p>
-                      )}
-                    </div>
-                  </button>
-                </article>
-              ))}
-            </div>
-          ) : (
-            <p className="rounded-xl bg-white px-5 py-5 text-sm leading-relaxed text-[#5C6665] shadow-sm">
-              {copy.pending}
-            </p>
-          )}
-        </section>
-      </div>
+        ) : (
+          <p className="rounded-xl bg-white px-5 py-5 text-sm leading-relaxed text-[#5C6665] shadow-sm">{copy.pending}</p>
+        )}
+      </section>
 
       <dialog
         ref={dialogRef}

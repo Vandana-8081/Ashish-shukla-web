@@ -20,7 +20,7 @@ export interface IdealCategory {
 }
 
 // Add people only when their details, quotations, and portrait usage rights are verified.
-export const idealsCategories: IdealCategory[] = [
+const allIdealsCategories: IdealCategory[] = [
   {
     id: 'sangh-bjp-leaders',
     title: {
@@ -70,28 +70,6 @@ export const idealsCategories: IdealCategory[] = [
         quotation: {
           hi: 'मातृभूमि! तेरे चरणों में पहले ही मैं अपना मन अर्पित कर चुका हूँ। देश-सेवा ही ईश्वर-सेवा है, यह मानकर मैंने तेरी सेवा के माध्यम से भगवान की सेवा की।',
           en: 'O motherland! I have already offered my heart at your feet. Believing that service to the nation is service to God, I served God through service to you.',
-        },
-      },
-      {
-        id: 'shyama-prasad-mukherjee',
-        name: { en: 'Dr. Shyama Prasad Mukherjee', hi: 'डॉ. श्यामा प्रसाद मुखर्जी' },
-        years: '1901–1953',
-        portrait: '/images/ideals/shyama-prasad-mukherjee.jpg',
-        portraitAlt: { en: 'Portrait of Shyama Prasad Mukherjee', hi: 'श्यामा प्रसाद मुखर्जी का चित्र' },
-        quotation: {
-          hi: 'एक देश में दो विधान, दो प्रधान और दो निशान नहीं चलेंगे।',
-          en: 'One country cannot have two constitutions, two heads, and two flags.',
-        },
-      },
-      {
-        id: 'deen-dayal-upadhyaya',
-        name: { en: 'Shri Pandit Deen Dayal Upadhyaya', hi: 'श्री पं. दीन दयाल उपाध्याय' },
-        years: '1916–1968',
-        portrait: '/images/ideals/deen-dayal-upadhyaya.jpg',
-        portraitAlt: { en: 'Portrait of Deen Dayal Upadhyaya', hi: 'दीन दयाल उपाध्याय का चित्र' },
-        quotation: {
-          hi: 'आर्थिक योजनाओं तथा आर्थिक प्रगति का माप समाज के ऊपर की सीढ़ी पर पहुँचे हुए व्यक्ति नहीं, बल्कि सबसे नीचे के स्तर पर विद्यमान व्यक्ति से होगा।',
-          en: 'Economic plans and progress should be measured by the person at the lowest level of society, not by those who have reached its uppermost steps.',
         },
       },
       {
@@ -374,7 +352,7 @@ export const idealsCategories: IdealCategory[] = [
         id: 'apj-abdul-kalam',
         name: { en: 'Dr. A. P. J. Abdul Kalam', hi: 'अब्दुल कलाम' },
         years: '1931–2015',
-        portrait: '/images/ideals/apj-abdul-kalam.jpg',
+        portrait: '/images/ideals/apj-abdul-kalam.png',
         portraitAlt: { en: 'Portrait of A. P. J. Abdul Kalam', hi: 'ए. पी. जे. अब्दुल कलाम का चित्र' },
         quotation: { hi: 'जीवन में सुख का अनुभव तभी प्राप्त होता है जब इन सुखों को कठिनाइयों से प्राप्त किया जाता है।' },
         verificationNote: { hi: 'यह कथन संदर्भ पृष्ठ पर कलाम से संबद्ध है; मूल स्रोत स्वतंत्र रूप से पुष्ट नहीं है।', en: 'This saying is attributed to Kalam on the reference page; its original source is unconfirmed.' },
@@ -383,7 +361,7 @@ export const idealsCategories: IdealCategory[] = [
         id: 'swami-vivekananda',
         name: { en: 'Swami Vivekananda', hi: 'स्वामी विवेकानन्द' },
         years: '1863–1902',
-        portrait: '/images/ideals/swami-vivekananda.jpg',
+        portrait: '/images/ideals/swami-vivekananda.png',
         portraitAlt: { en: 'Portrait of Swami Vivekananda', hi: 'स्वामी विवेकानन्द का चित्र' },
         quotation: { hi: 'किसी भी कार्य को करने के लिए तुरंत उठो, जागो और तब तक नहीं रुको जब तक लक्ष्य हासिल न हो जाए।' },
         verificationNote: { hi: 'यह प्रचलित पंक्ति कठोपनिषद् से प्रेरित विवेकानन्द के प्रसिद्ध आह्वान का रूपांतर है; यह सटीक पाठ पुष्ट नहीं है।', en: 'This familiar line adapts Vivekananda’s call inspired by the Katha Upanishad; this exact wording is unconfirmed.' },
@@ -479,5 +457,29 @@ export const idealsCategories: IdealCategory[] = [
         verificationNote: { hi: 'यह कथन संदर्भ पृष्ठ पर गांधी से संबद्ध है; इस सटीक हिंदी पाठ का मूल स्रोत पुष्ट नहीं है।', en: 'This saying is attributed to Gandhi on the reference page; the source of this exact Hindi wording is unconfirmed.' },
       },
     ],
+  },
+];
+
+// The public page mirrors the reference site: three groups, twelve people.
+// Nanaji Deshmukh and Rajmata Vijayaraje Scindia are still missing (no verified details or portraits yet).
+const allPeople = allIdealsCategories.flatMap(({ people }) => people);
+const pick = (...ids: string[]) =>
+  ids.flatMap((id) => allPeople.filter((person) => person.id === id));
+
+export const idealsCategories: IdealCategory[] = [
+  {
+    id: 'rss',
+    title: { en: 'Rashtriya Swayamsevak Sangh', hi: 'राष्ट्रीय स्वयंसेवक संघ' },
+    people: pick('keshav-baliram-hedgewar', 'madhav-sadashiv-golwalkar', 'veer-savarkar', 'ashok-singhal'),
+  },
+  {
+    id: 'bjp',
+    title: { en: 'Bharatiya Janata Party', hi: 'भारतीय जनता पार्टी' },
+    people: pick('atal-bihari-vajpayee', 'narendra-modi'),
+  },
+  {
+    id: 'nation-builders',
+    title: { en: 'Nation Builders', hi: 'राष्ट्र-निर्माता' },
+    people: pick('swami-vivekananda', 'apj-abdul-kalam', 'shivaji-maharaj', 'subhas-chandra-bose', 'bhagat-singh', 'vallabhbhai-patel'),
   },
 ];
