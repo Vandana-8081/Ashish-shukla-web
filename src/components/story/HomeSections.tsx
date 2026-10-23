@@ -41,7 +41,7 @@ export function ServiceCards() {
   return (
     <section className="section-pad">
       <div className="container-site">
-        <SectionHead eyebrow={s.eyebrow} title={s.title} accent={s.accent} text={s.text} />
+        <SectionHead eyebrow={s.eyebrow} title={s.title} accent={s.accent} />
         <Stagger className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {s.items.map((c) => (
             <Item key={t(c.title)}>

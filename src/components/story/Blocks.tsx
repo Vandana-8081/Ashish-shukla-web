@@ -125,7 +125,6 @@ export function Banner({ cta }: { cta?: { href: string; label: L } }) {
       <div className="container-site relative z-10">
         <Reveal>
           <h2 className="max-w-5xl font-editorial text-[clamp(32px,4.6vw,64px)] font-bold leading-[1.25] text-white">{t(banner.title)}</h2>
-          <p className="mt-6 max-w-2xl text-[17px] leading-8 text-white/80">{t(banner.text)}</p>
           {cta && (
             <Link href={getHref(cta.href)} className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-[#ffe9d6]">
               {t(cta.label)} <ArrowRight className="h-4 w-4" />
