@@ -51,7 +51,7 @@ export function LanguageSwitcher({ locale, className = '' }: LanguageSwitcherPro
         href={englishPath}
         onClick={() => handleLocaleChange('en')}
         scroll={false}
-        className={`inline-flex min-h-7 items-center px-2.5 py-1 text-[11px] font-semibold rounded-md transition sm:min-h-8 sm:px-3 sm:py-1.5 sm:text-xs sm:rounded-lg ${
+        className={`inline-flex min-h-8 items-center px-3 py-1 text-xs font-semibold rounded-md transition sm:min-h-9 sm:px-3.5 sm:py-1.5 sm:text-sm sm:rounded-lg ${
           locale === 'en'
             ? 'bg-[#F5660A] text-white shadow-xs font-bold'
             : 'text-[#6B625A] hover:text-[#151210]'
@@ -71,7 +71,7 @@ export function LanguageSwitcher({ locale, className = '' }: LanguageSwitcherPro
         href={hindiPath}
         onClick={() => handleLocaleChange('hi')}
         scroll={false}
-        className={`inline-flex min-h-7 items-center px-2.5 py-1 text-[11px] font-semibold rounded-md transition sm:min-h-8 sm:px-3 sm:py-1.5 sm:text-xs sm:rounded-lg ${
+        className={`inline-flex min-h-8 items-center px-3 py-1 text-xs font-semibold rounded-md transition sm:min-h-9 sm:px-3.5 sm:py-1.5 sm:text-sm sm:rounded-lg ${
           locale === 'hi'
             ? 'bg-[#F5660A] text-white shadow-xs font-bold'
             : 'text-[#6B625A] hover:text-[#151210]'

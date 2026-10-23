@@ -7,6 +7,7 @@ import { LocaleDocumentLanguage } from '@/components/layout/LocaleDocumentLangua
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { FloatingSocial } from '@/components/layout/FloatingSocial';
+import { ScrollProgress } from '@/components/story/motion';
 import { getDictionary } from '@/data/translations';
 import { OG_IMAGE, SITE_URL } from '@/lib/site';
 
@@ -141,6 +142,7 @@ export default async function LocaleLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <ScrollProgress />
       <Navbar />
       <main className="flex-1">
         {children}

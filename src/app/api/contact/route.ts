@@ -8,7 +8,7 @@ const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
 const rateLimitBuckets = new Map<string, { count: number; resetAt: number }>();
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/u;
-const enquiryTypes = new Set(['general', 'media', 'programme', 'meeting', 'other']);
+const enquiryTypes = new Set(['general', 'media', 'programme', 'meeting', 'issue', 'other']);
 
 function readText(value: unknown, maxLength: number): string {
   return typeof value === 'string' ? value.trim().slice(0, maxLength) : '';
@@ -68,6 +68,14 @@ export async function POST(request: Request) {
   const subject = readText(payload.subject, 160).replace(/[\r\n]+/gu, ' ');
   const enquiryType = readText(payload.enquiryType, 30);
   const message = readText(payload.message, 4000);
+  const extraFields: [string, string, string][] = [
+    ['organisation', 'Organisation', 'संस्था'], ['village', 'Village / Ward', 'गाँव / वार्ड'],
+    ['block', 'Block', 'ब्लॉक'], ['category', 'Issue category', 'समस्या की श्रेणी'],
+    ['location', 'Location', 'स्थान'], ['preferredDate', 'Preferred date', 'पसंदीदा तिथि'],
+  ];
+  const extras = extraFields
+    .map(([key, en, hiLabel]) => [en, hiLabel, readText(payload[key], 200)] as const)
+    .filter(([, , value]) => value);
   const locale = payload.locale === 'hi' ? 'hi' : 'en';
 
   if (!name || !subject || !enquiryTypes.has(enquiryType) || message.length < 10) {
@@ -98,6 +106,7 @@ export async function POST(request: Request) {
     media: { en: 'Media', hi: 'मीडिया' },
     programme: { en: 'Public programme', hi: 'सार्वजनिक कार्यक्रम' },
     meeting: { en: 'Meeting request', hi: 'मुलाक़ात का अनुरोध' },
+    issue: { en: 'Public issue', hi: 'जन समस्या' },
     other: { en: 'Other', hi: 'अन्य' },
   };
   const notProvided = locale === 'hi' ? 'प्रदान नहीं किया गया' : 'Not provided';
@@ -106,6 +115,7 @@ export async function POST(request: Request) {
     [labels.panchayat, panchayat || notProvided], [labels.subject, subject],
     [labels.type, types[enquiryType][locale]], [labels.message, message],
   ];
+  for (const [en, hiLabel, value] of extras) values.push([locale === 'hi' ? hiLabel : en, value]);
   const text = values.map(([label, value]) => `${label}:\n${value}`).join('\n\n');
   const htmlRows = values.map(([label, value]) => `<tr><th align="left" valign="top" style="padding:10px;border:1px solid #e8e2d8;background:#faf7f2;white-space:nowrap">${escapeHtml(label)}</th><td valign="top" style="padding:10px;border:1px solid #e8e2d8;white-space:pre-wrap">${escapeHtml(value)}</td></tr>`).join('');
 

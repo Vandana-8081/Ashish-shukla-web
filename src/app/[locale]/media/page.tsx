@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { MediaIntro } from '@/components/story/Pages2';
 import { PhotoGallery } from '@/components/media/PhotoGallery';
 import { VideoSection } from '@/components/media/VideoSection';
 import { Container } from '@/components/ui/Container';
@@ -35,21 +36,22 @@ export default async function MediaPage({
   const dict = getDictionary((locale === 'hi' ? 'hi' : 'en') as Locale);
 
   return (
-    <div className="py-12 md:py-20 space-y-16">
-      {/* Video Section */}
-      <Container size="wide" id="videos">
-        <SectionHeading
-          title={dict.mediaSection.videoHeading}
-          as="h1"
-          description={dict.mediaSection.videoDesc}
-        />
-        <VideoSection />
-      </Container>
+    <div>
+      <MediaIntro />
+      <div className="py-12 md:py-20 space-y-16">
+        <Container size="wide" id="videos">
+          <SectionHeading
+            title={dict.mediaSection.videoHeading}
+            as="h2"
+            description={dict.mediaSection.videoDesc}
+          />
+          <VideoSection />
+        </Container>
 
-      {/* Photo Gallery */}
-      <Container size="wide" id="photos" className="pt-8 border-t border-[#E8E2D8]">
-        <PhotoGallery />
-      </Container>
+        <Container size="wide" id="photos" className="pt-8 border-t border-[#E8E2D8]">
+          <PhotoGallery />
+        </Container>
+      </div>
     </div>
   );
 }

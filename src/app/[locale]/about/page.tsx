@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
-import { Biography } from '@/components/about/Biography';
-import type { Locale } from '@/types';
-import { getDictionary } from '@/data/translations';
-import { JourneyTimeline } from '@/components/journey/JourneyTimeline';
+import { AboutPage } from '@/components/story/AboutPage';
+import { Chapters } from '@/components/story/Chapters';
+import { chapters } from '@/data/story';
 
 export async function generateMetadata({
   params,
@@ -10,28 +9,26 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const dict = getDictionary((locale === 'hi' ? 'hi' : 'en') as Locale);
   return {
-    title: locale === 'hi' ? 'जीवन परिचय एवं यात्रा' : 'Biography & Journey',
-    description: dict.aboutSection.heading,
+    title: locale === 'hi' ? 'आशीष शुक्ला - परिचय' : 'About Ashish Shukla',
+    description:
+      locale === 'hi'
+        ? 'गढ़ा हुआ जीवन, विरासत में मिला नहीं — आशीष शुक्ला का जीवन परिचय।'
+        : 'A life built, not inherited — the biography of Ashish Shukla, Chairman of Bhagwant Nagar Nagar Panchayat.',
     alternates: {
       canonical: `/${locale}/about`,
-      languages: {
-        en: '/en/about',
-        hi: '/hi/about',
-      },
+      languages: { en: '/en/about', hi: '/hi/about' },
     },
   };
 }
 
-export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
+export default function AboutRoute() {
   return (
-    <div className="bg-white">
-      <Biography />
-      <section id="journey" className="bg-white py-4 md:py-8 scroll-mt-24">
-        <JourneyTimeline />
+    <>
+      <AboutPage />
+      <section id="journey" className="scroll-mt-24">
+        <Chapters items={chapters.slice(0, 3)} />
       </section>
-    </div>
+    </>
   );
 }

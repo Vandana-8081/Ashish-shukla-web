@@ -77,11 +77,11 @@ export function AssistantWidget() {
       {open && (
         <section
           aria-label={hi ? 'आशीष सहायक चैट' : 'Ashish assistant chat'}
-          className="fixed bottom-24 right-4 z-50 flex h-[min(620px,calc(100dvh-8rem))] w-[min(390px,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl border border-[#E8E2D8] bg-[#FAF7F2] shadow-2xl sm:bottom-24 sm:right-6"
+          className="fixed bottom-24 right-4 z-50 flex h-[min(620px,calc(100dvh-8rem))] w-[min(390px,calc(100vw-2rem))] flex-col overflow-hidden rounded-3xl border border-[#d9d1c5] bg-[var(--paper)] shadow-[var(--shadow-deep)] sm:bottom-24 sm:right-6"
         >
-          <header className="flex items-center justify-between gap-3 bg-[#151210] px-4 py-4 text-white">
+          <header className="flex items-center justify-between gap-3 border-b border-white/10 bg-[var(--navy-deep)] px-4 py-4 text-white">
             <div className="flex min-w-0 items-center gap-3">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F5660A]">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[var(--saffron)] text-white">
                 <Sparkles className="h-5 w-5" aria-hidden="true" />
               </span>
               <div className="min-w-0">
@@ -94,17 +94,17 @@ export function AssistantWidget() {
             </button>
           </header>
 
-          <div ref={listRef} className="flex-1 space-y-3 overflow-y-auto p-4" aria-live="polite">
+          <div ref={listRef} className="flex-1 space-y-3 overflow-y-auto bg-[var(--paper)] p-4" aria-live="polite">
             {messages.length === 0 && (
               <>
-                <div className="max-w-[90%] rounded-2xl rounded-tl-sm border border-[#E8E2D8] bg-white p-3.5 text-sm leading-relaxed text-[#302922]">
+                <div className="max-w-[90%] rounded-2xl rounded-tl-sm border border-[#e5ddd1] bg-white p-3.5 text-sm leading-relaxed text-[#302922] shadow-sm">
                   {hi
                     ? 'नमस्ते! मैं आशीष शुक्ला की वेबसाइट और सार्वजनिक जानकारी खोजने में आपकी मदद कर सकता हूँ।'
                     : 'Hello! I can help you explore Ashish Shukla’s website and public information.'}
                 </div>
                 <div className="flex flex-col items-start gap-2 pt-1">
                   {suggestions.map((suggestion) => (
-                    <button key={suggestion} type="button" onClick={() => void sendMessage(suggestion)} className="rounded-full border border-[#E8E2D8] bg-white px-3 py-2 text-left text-xs text-[#51483F] transition-colors hover:border-[#F5660A] hover:text-[#D45300] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F5660A]">
+                    <button key={suggestion} type="button" onClick={() => void sendMessage(suggestion)} className="rounded-full border border-[#e5ddd1] bg-[#fffdf8] px-3 py-2 text-left text-xs text-[#51483F] transition-colors hover:border-[var(--saffron)] hover:text-[var(--saffron-dark)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F5660A]">
                       {suggestion}
                     </button>
                   ))}
@@ -112,13 +112,13 @@ export function AssistantWidget() {
               </>
             )}
             {messages.map((item, index) => (
-              <div key={`${item.role}-${index}`} className={`max-w-[90%] whitespace-pre-wrap rounded-2xl p-3.5 text-sm leading-relaxed ${item.role === 'user' ? 'ml-auto rounded-tr-sm bg-[#F5660A] text-white' : 'rounded-tl-sm border border-[#E8E2D8] bg-white text-[#302922]'}`}>
+              <div key={`${item.role}-${index}`} className={`max-w-[90%] whitespace-pre-wrap rounded-2xl p-3.5 text-sm leading-relaxed ${item.role === 'user' ? 'ml-auto rounded-tr-sm bg-[var(--navy)] text-white' : 'rounded-tl-sm border border-[#e5ddd1] bg-white text-[#302922] shadow-sm'}`}>
                 {item.content}
               </div>
             ))}
             {loading && <div className="flex items-center gap-2 text-xs text-[#6B625A]"><LoaderCircle className="h-4 w-4 animate-spin" aria-hidden="true" />{hi ? 'जवाब तैयार हो रहा है…' : 'Preparing a reply…'}</div>}
             {error && (
-              <div className="rounded-xl border border-[#E8E2D8] bg-white p-3 text-xs leading-relaxed text-[#6B625A]">
+              <div className="rounded-xl border border-[#e5ddd1] bg-white p-3 text-xs leading-relaxed text-[#6B625A]">
                 {error}{' '}
                 <Link href={getHref('/contact')} onClick={() => setOpen(false)} className="font-semibold text-[#F5660A] underline underline-offset-2">
                   {hi ? 'संपर्क करें' : 'Contact the office'}
@@ -127,7 +127,7 @@ export function AssistantWidget() {
             )}
           </div>
 
-          <form onSubmit={handleSubmit} className="flex items-center gap-2 border-t border-[#E8E2D8] bg-white p-3">
+          <form onSubmit={handleSubmit} className="flex items-center gap-2 border-t border-[#e5ddd1] bg-[#fffdf8] p-3">
             <input
               ref={inputRef}
               value={message}
@@ -135,9 +135,9 @@ export function AssistantWidget() {
               maxLength={1200}
               aria-label={hi ? 'अपना संदेश लिखें' : 'Write your message'}
               placeholder={hi ? 'अपना सवाल लिखें…' : 'Type your question…'}
-              className="min-w-0 flex-1 rounded-full border border-[#E8E2D8] bg-[#FAF7F2] px-4 py-3 text-sm text-[#151210] outline-none placeholder:text-[#8A8178] focus:border-[#F5660A] focus:ring-2 focus:ring-[#F5660A]/15"
+              className="min-w-0 flex-1 rounded-full border border-[#ded5c8] bg-white px-4 py-3 text-sm text-[#151210] outline-none placeholder:text-[#8A8178] focus:border-[var(--saffron)] focus:ring-2 focus:ring-[var(--saffron)]/15"
             />
-            <button type="submit" disabled={loading || !message.trim()} aria-label={hi ? 'संदेश भेजें' : 'Send message'} className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F5660A] text-white transition-colors hover:bg-[#D45300] disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F5660A]">
+            <button type="submit" disabled={loading || !message.trim()} aria-label={hi ? 'संदेश भेजें' : 'Send message'} className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--saffron)] text-white transition-colors hover:bg-[var(--saffron-dark)] disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--saffron)]">
               <Send className="h-4 w-4" aria-hidden="true" />
             </button>
           </form>

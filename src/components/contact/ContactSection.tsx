@@ -120,12 +120,13 @@ export function ContactSection({ as = 'h2', id, className = '' }: ContactSection
   const labelClass = 'text-sm font-semibold text-[#151210]';
 
   return (
-    <section id={id} aria-label={hi ? 'संपर्क करें' : 'Contact'} className={`bg-[#F8F4ED] py-12 md:py-20 scroll-mt-24 ${className}`}>
+    <section id={id} aria-label={hi ? 'संपर्क करें' : 'Contact'} className={`bg-[var(--navy-deep)] py-12 md:py-20 scroll-mt-24 ${className}`}>
       <Container size="wide">
         <SectionHeading
           eyebrow={dict.contactSection.eyebrow}
           title={hi ? 'संपर्क करें' : 'Get in touch'}
           as={as}
+          light
           description={hi
             ? 'सार्वजनिक सहभागिता, मीडिया, कार्यक्रमों या मुलाक़ात के लिए अपना संदेश भेजें।'
             : 'Get in touch about public engagement, media, programmes, or a meeting.'}
@@ -133,7 +134,7 @@ export function ContactSection({ as = 'h2', id, className = '' }: ContactSection
 
         <div className="mx-auto max-w-3xl">
           {submitted ? (
-            <div className="border border-[#E8E2D8] bg-white p-8 text-center sm:p-12">
+            <div className="rounded-2xl border border-[#E8E2D8] bg-white p-8 text-center shadow-xl sm:p-12">
               <CheckCircle2 className="mx-auto h-12 w-12 text-emerald-600" aria-hidden="true" />
               <h2 className="mt-5 font-editorial text-xl font-bold text-[#151210]">
                 {hi ? 'आपका संदेश सफलतापूर्वक भेजा गया' : 'Your enquiry was sent successfully'}
@@ -157,7 +158,7 @@ export function ContactSection({ as = 'h2', id, className = '' }: ContactSection
               </Button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="grid gap-6 border border-[#E8E2D8] bg-white p-5 sm:grid-cols-2 sm:p-8">
+            <form onSubmit={handleSubmit} className="grid gap-6 rounded-2xl border border-[#E8E2D8] border-t-4 border-t-[var(--saffron)] bg-white p-5 shadow-xl sm:grid-cols-2 sm:p-8">
               <div>
                 <label htmlFor="contact-name" className={labelClass}>{dict.contactSection.nameLabel}</label>
                 <input id="contact-name" name="name" type="text" autoComplete="name" required maxLength={120} value={formData.name} onChange={(event) => updateFormField('name', event.target.value)} className={inputClass} />

@@ -6,6 +6,7 @@ import { useLanguage } from '@/lib/languageContext';
 import { heroSlides } from '@/data/heroSlides';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
+import { HeroPoster } from '@/components/home/HeroPoster';
 import {
   ChevronLeft,
   ChevronRight,
@@ -62,18 +63,129 @@ export function Hero() {
     );
   };
 
+  const controls = heroSlides.length > 1 ? (
+          <div
+            className="
+              pointer-events-auto
+              absolute
+              z-30
+              bottom-7
+              lg:bottom-8
+              left-1/2
+              -translate-x-1/2
+              flex
+              items-center
+              gap-3
+              bg-[#151210]/10
+              backdrop-blur-md
+              border
+              border-white/40
+              rounded-full
+              px-3
+              py-2
+              shadow-sm
+            "
+          >
+            {/* Previous */}
+            <button
+              type="button"
+              onClick={goToPrevious}
+              aria-label="Previous slide"
+              className="
+                w-10
+                h-10
+                rounded-full
+                flex
+                items-center
+                justify-center
+                text-[#151210]
+                hover:bg-white/70
+                transition-colors
+              "
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+
+            {/* Dots */}
+            <div
+              className="flex items-center gap-1.5"
+              role="tablist"
+              aria-label="Hero slides"
+            >
+              {heroSlides.map((_, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  role="tab"
+                  onClick={() => setCurrentSlide(idx)}
+                  aria-label={`Go to slide ${idx + 1}`}
+                  aria-selected={currentSlide === idx}
+                  className={`
+                    relative
+                    h-2
+                    rounded-full
+                    after:absolute
+                    after:-inset-2
+                    after:content-['']
+                    transition-[width,background-color]
+                    duration-300
+                    ${
+                      currentSlide === idx
+                        ? 'w-8 bg-white'
+                        : 'w-2 bg-white/50 hover:bg-white/80'
+                    }
+                  `}
+                />
+              ))}
+            </div>
+
+            {/* Next */}
+            <button
+              type="button"
+              onClick={goToNext}
+              aria-label="Next slide"
+              className="
+                w-10
+                h-10
+                rounded-full
+                flex
+                items-center
+                justify-center
+                text-[#151210]
+                hover:bg-white/70
+                transition-colors
+              "
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+  ) : null;
+
   return (
     <section
-      className="
+      className={`
         relative
         min-h-0
-        lg:min-h-[720px]
+        ${slide.poster ? '' : 'lg:min-h-[720px]'}
         overflow-hidden
         bg-[#F8F4ED]
         border-b
         border-[#E8E2D8]
-      "
+      `}
     >
+      {slide.poster && (
+        <>
+          <HeroPoster slide={slide} />
+          <div className="pointer-events-none absolute inset-0 z-30">
+            <Container size="wide" className="relative h-full">
+              {controls}
+            </Container>
+          </div>
+        </>
+      )}
+
+      {!slide.poster && (
+        <>
       {/* =====================================================
           BACKGROUND
       ====================================================== */}
@@ -223,9 +335,9 @@ export function Hero() {
                 mt-5
                 sm:mt-10
                 flex
-                flex-nowrap sm:flex-wrap
-                items-center
-                gap-3 sm:gap-4
+                flex-col sm:flex-row sm:flex-wrap
+                items-stretch sm:items-center
+                gap-2.5 sm:gap-4
               "
             >
               <Button
@@ -233,7 +345,7 @@ export function Hero() {
                 variant="primary"
                 size="lg"
                 icon="arrow"
-                className="flex-1 sm:flex-none px-3 py-3 text-sm sm:px-6 sm:py-3.5 sm:text-base whitespace-nowrap bg-white text-[#F5660A] hover:bg-[#FFF5E9]"
+                className="w-full sm:w-auto justify-center px-3 py-3 text-center text-sm leading-snug sm:px-6 sm:py-3.5 sm:text-base bg-white text-[#F5660A] hover:bg-[#FFF5E9]"
               >
                 {t(slide.primaryCta.label)}
               </Button>
@@ -242,7 +354,7 @@ export function Hero() {
                 href={getHref(slide.secondaryCta.path)}
                 variant="secondary"
                 size="lg"
-                className="flex-1 sm:flex-none px-3 py-3 text-sm sm:px-6 sm:py-3.5 sm:text-base whitespace-nowrap"
+                className="w-full sm:w-auto justify-center px-3 py-3 text-center text-sm leading-snug sm:px-6 sm:py-3.5 sm:text-base"
               >
                 {t(slide.secondaryCta.label)}
               </Button>
@@ -402,103 +514,10 @@ export function Hero() {
             SLIDER CONTROLS
         ====================================================== */}
 
-        {heroSlides.length > 1 && (
-          <div
-            className="
-              absolute
-              z-30
-              bottom-7
-              lg:bottom-8
-              left-1/2
-              -translate-x-1/2
-              flex
-              items-center
-              gap-3
-              bg-[#151210]/10
-              backdrop-blur-md
-              border
-              border-white/40
-              rounded-full
-              px-3
-              py-2
-              shadow-sm
-            "
-          >
-            {/* Previous */}
-            <button
-              type="button"
-              onClick={goToPrevious}
-              aria-label="Previous slide"
-              className="
-                w-10
-                h-10
-                rounded-full
-                flex
-                items-center
-                justify-center
-                text-[#151210]
-                hover:bg-white/70
-                transition-colors
-              "
-            >
-              <ChevronLeft className="w-4 h-4" />
-            </button>
-
-            {/* Dots */}
-            <div
-              className="flex items-center gap-1.5"
-              role="tablist"
-              aria-label="Hero slides"
-            >
-              {heroSlides.map((_, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  role="tab"
-                  onClick={() => setCurrentSlide(idx)}
-                  aria-label={`Go to slide ${idx + 1}`}
-                  aria-selected={currentSlide === idx}
-                  className={`
-                    relative
-                    h-2
-                    rounded-full
-                    after:absolute
-                    after:-inset-2
-                    after:content-['']
-                    transition-[width,background-color]
-                    duration-300
-                    ${
-                      currentSlide === idx
-                        ? 'w-8 bg-white'
-                        : 'w-2 bg-white/50 hover:bg-white/80'
-                    }
-                  `}
-                />
-              ))}
-            </div>
-
-            {/* Next */}
-            <button
-              type="button"
-              onClick={goToNext}
-              aria-label="Next slide"
-              className="
-                w-10
-                h-10
-                rounded-full
-                flex
-                items-center
-                justify-center
-                text-[#151210]
-                hover:bg-white/70
-                transition-colors
-              "
-            >
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-        )}
+        {controls}
       </Container>
+        </>
+      )}
     </section>
   );
 }

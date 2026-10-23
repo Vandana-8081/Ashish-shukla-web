@@ -1,6 +1,34 @@
-import { redirect } from 'next/navigation';
+import type { Metadata } from 'next';
+import { JourneyIntro } from '@/components/story/JourneyExtra';
+import { Chapters } from '@/components/story/Chapters';
+import { NextChapter, Closing } from '@/components/story/Sections';
+import { Timeline } from '@/components/story/Blocks';
+import { chapters } from '@/data/story';
 
-export default async function JourneyPage({ params }: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
   const { locale } = await params;
-  redirect(`/${locale}/about#journey`);
+  return {
+    title: locale === 'hi' ? 'जीवन की यात्रा' : 'The Journey',
+    description:
+      locale === 'hi'
+        ? 'आशीष शुक्ला की सार्वजनिक यात्रा जनसंपर्क, नागरिकों की समस्याओं को समझने और भगवंतनगर के विकास के प्रति प्रतिबद्धता पर केंद्रित है।'
+        : 'From Bhagwant Nagar to Kanpur — and back: the journey of Ashish Shukla.',
+    alternates: { canonical: `/${locale}/journey`, languages: { en: '/en/journey', hi: '/hi/journey' } },
+  };
+}
+
+export default function JourneyPage() {
+  return (
+    <>
+      <JourneyIntro />
+      <Timeline showHead={false} />
+      <Chapters items={chapters} />
+      <NextChapter />
+      <Closing />
+    </>
+  );
 }

@@ -1,16 +1,23 @@
 import type { Metadata } from 'next';
-import { Yatra_One } from 'next/font/google';
+import { Noto_Serif_Devanagari, Source_Serif_4 } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/lib/languageContext';
 import { SiteMotion } from '@/components/layout/SiteMotion';
 import { OG_IMAGE, SITE_URL } from '@/lib/site';
 
-// Devanagari-only subset: used for Hindi headings; Latin text keeps the existing serif stack.
-const hindiHeading = Yatra_One({
+// Devanagari font used throughout Hindi pages.
+const hindiHeading = Noto_Serif_Devanagari({
   subsets: ['devanagari'],
-  weight: '400',
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
   variable: '--font-hindi-heading',
+});
+
+const displaySerif = Source_Serif_4({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  display: 'swap',
+  variable: '--font-display',
 });
 
 export const metadata: Metadata = {
@@ -79,7 +86,7 @@ export default function RootLayout({
   const locale = 'hi' as const;
 
   return (
-    <html lang={locale} className={hindiHeading.variable} suppressHydrationWarning>
+    <html lang={locale} className={`${hindiHeading.variable} ${displaySerif.variable}`} suppressHydrationWarning>
       <body className="min-h-screen flex flex-col bg-[#F8F4ED] text-[#171717] antialiased selection:bg-[#F5660A] selection:text-white">
         <LanguageProvider locale={locale}>
           <SiteMotion />

@@ -64,7 +64,13 @@ const sunwai = {
 };
 
 const chaupal = publicLife('village-gatherings');
-const inspections = publicLife('field-inspections');
+const inspections = {
+  image: '/images/public-life/ashish4.jpg',
+  title: {
+    en: 'On-site inspection of civic works',
+    hi: 'नागरिक कार्यों का स्थलीय निरीक्षण',
+  },
+};
 
 /**
  * Real photographs already in /public/images. Captions are reused from existing

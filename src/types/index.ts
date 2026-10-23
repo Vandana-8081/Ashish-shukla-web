@@ -28,6 +28,10 @@ export interface SocialLink {
 export interface HeroSlide {
   id: string;
   image: string;
+  /** Poster layout: the image is a full-width background with the text and buttons laid over it. */
+  poster?: boolean;
+  /** Optional portrait poster used on phones and tablets, with the text laid over it. */
+  mobileImage?: string;
   eyebrow: LocalizedString;
   heading: LocalizedString;
   subtitle?: LocalizedString;

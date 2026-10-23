@@ -35,6 +35,7 @@ type InstagramMedia = {
   id?: unknown;
   caption?: unknown;
   media_type?: unknown;
+  media_url?: unknown;
   thumbnail_url?: unknown;
   permalink?: unknown;
   timestamp?: unknown;
@@ -152,6 +153,41 @@ function normalizeInstagramVideos(mediaItems: InstagramMedia[]): SocialFeedItem[
   }).sort((a, b) => Date.parse(b.publishedAt ?? '') - Date.parse(a.publishedAt ?? '')).slice(0, 8);
 }
 
+/** All recent public posts (photos, videos, reels, carousels), newest first. */
+function normalizeInstagramPosts(mediaItems: InstagramMedia[]): SocialFeedItem[] {
+  const seen = new Set<string>();
+  return mediaItems.flatMap((media) => {
+    const id = asString(media.id);
+    const permalink = validPermalink(media.permalink, 'instagram');
+    if (!id || !permalink || seen.has(id)) return [];
+    seen.add(id);
+
+    const type = asString(media.media_type)?.toUpperCase();
+    const mediaType: SocialFeedItem['mediaType'] = type === 'VIDEO'
+      ? 'video'
+      : type === 'CAROUSEL_ALBUM'
+        ? 'carousel'
+        : type === 'IMAGE'
+          ? 'image'
+          : undefined;
+    const firstChild = media.children?.data?.[0];
+    // Video posts expose a still in thumbnail_url; photos expose it in media_url.
+    const thumbnailUrl = type === 'VIDEO'
+      ? validHttpsUrl(media.thumbnail_url)
+      : validHttpsUrl(media.media_url) ?? validHttpsUrl(firstChild?.thumbnail_url) ?? validHttpsUrl(firstChild?.media_url);
+
+    return [{
+      id,
+      platform: 'instagram' as const,
+      caption: asString(media.caption),
+      mediaType,
+      thumbnailUrl,
+      permalink,
+      publishedAt: validDate(media.timestamp),
+    }];
+  }).sort((a, b) => Date.parse(b.publishedAt ?? '') - Date.parse(a.publishedAt ?? '')).slice(0, 24);
+}
+
 async function fetchGraphPage<T>(url: URL, accessToken: string): Promise<{ data: T[]; next?: URL } | null> {
   const response = await fetch(url, {
     headers: { Authorization: `Bearer ${accessToken}` },
@@ -211,6 +247,28 @@ export async function getFacebookFeed(): Promise<SocialFeedResult> {
     const posts = await fetchGraph<FacebookPost>(url, accessToken);
     return posts
       ? { status: 'ok', items: normalizeFacebookPosts(posts), updatedAt: new Date().toISOString() }
+      : { status: 'error', items: [] };
+  } catch {
+    return { status: 'error', items: [] };
+  }
+}
+
+export async function getInstagramPosts(): Promise<SocialFeedResult> {
+  const accountId = process.env.INSTAGRAM_ACCOUNT_ID?.trim();
+  const accessToken = process.env.INSTAGRAM_ACCESS_TOKEN?.trim();
+  const version = graphVersion();
+  if (!accountId || !accessToken || !validGraphVersion(version)) {
+    return { status: 'unconfigured', items: [] };
+  }
+
+  const url = new URL(`https://graph.facebook.com/${version}/${encodeURIComponent(accountId)}/media`);
+  url.searchParams.set('fields', 'id,caption,media_type,media_url,thumbnail_url,permalink,timestamp,children{media_type,media_url,thumbnail_url}');
+  url.searchParams.set('limit', '30');
+
+  try {
+    const media = await fetchGraph<InstagramMedia>(url, accessToken);
+    return media
+      ? { status: 'ok', items: normalizeInstagramPosts(media), updatedAt: new Date().toISOString() }
       : { status: 'error', items: [] };
   } catch {
     return { status: 'error', items: [] };

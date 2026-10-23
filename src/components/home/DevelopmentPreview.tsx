@@ -14,7 +14,7 @@ export function DevelopmentPreview() {
   const { t, dict, getHref } = useLanguage();
 
   return (
-    <section className="py-20 md:py-28 bg-[#F8F4ED] border-b border-[#E8E2D8]">
+    <section className="bg-[#F8F4ED] py-14 sm:py-20 md:py-28 border-b border-[#E8E2D8]">
       <Container size="wide">
         {/* Section Heading */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">

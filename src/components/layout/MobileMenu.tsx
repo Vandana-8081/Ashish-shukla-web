@@ -93,7 +93,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               const isExpanded = expandedId === item.id;
               const rowClass = `flex items-center justify-between px-3 py-3 rounded-lg text-lg font-medium transition-colors ${
                 isActive
-                  ? 'text-[#F5660A] bg-white font-semibold shadow-2xs'
+                  ? 'text-[var(--navy)] bg-white font-semibold shadow-2xs'
                   : 'text-[#151210] hover:bg-white/80'
               }`;
 

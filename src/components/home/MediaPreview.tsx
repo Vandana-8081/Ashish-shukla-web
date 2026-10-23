@@ -11,7 +11,7 @@ export function MediaPreview() {
   const { dict, getHref } = useLanguage();
 
   return (
-    <section className="py-20 md:py-28 bg-[#F8F4ED] border-b border-[#E8E2D8]">
+    <section className="py-14 sm:py-20 md:py-28 bg-[#F8F4ED] border-b border-[#E8E2D8]">
       <Container size="wide">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
           <SectionHeading

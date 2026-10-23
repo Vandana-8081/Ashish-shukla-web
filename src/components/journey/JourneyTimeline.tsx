@@ -45,14 +45,12 @@ export function JourneyTimeline() {
         {/* Timeline */}
         <ol aria-labelledby="journey-heading" className="relative mx-auto mt-14 max-w-4xl md:mt-20">
           <span aria-hidden="true" className="absolute bottom-3 left-[15px] top-3 w-[2px] bg-[#E8E2DA] md:left-[19px]" />
-          {journeyMilestones.map((milestone, index) => (
+          {journeyMilestones.map((milestone) => (
             <li key={milestone.id} className="relative pb-10 pl-12 last:pb-0 md:pl-16">
               <span
                 aria-hidden="true"
-                className="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-full border-4 border-white bg-[#F5660A] text-xs font-bold text-white shadow-sm md:h-10 md:w-10 md:text-sm"
-              >
-                {index + 1}
-              </span>
+                className="absolute left-1.5 top-1.5 h-5 w-5 rounded-full border-4 border-white bg-[#F5660A] shadow-sm md:left-2.5 md:top-2.5 md:h-5 md:w-5"
+              />
 
               <div className="rounded-2xl border border-[#E8E2DA] bg-[#FFF9F1] p-5 sm:p-6">
                 {milestone.year && (

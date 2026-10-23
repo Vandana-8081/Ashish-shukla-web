@@ -20,41 +20,41 @@ export const janSunwaiData: JanSunwaiDetails = {
     hi: 'नियमित जनसुनवाई एवं समाधान',
   },
   title: {
-    en: 'Jan Sunwai: Meeting People Face to Face',
+    en: 'Regular Jan Sunwai: Transparent, Accountable and Accessible Leadership',
     hi: 'नियमित जनसुनवाई: पारदर्शी, जवाबदेह और सहज नेतृत्व',
   },
   description: {
-    en: 'Ashish Shukla holds Jan Sunwai regularly so that anyone from Bhagwant Nagar can walk in and tell him their problem directly, whether it is their own or their village\'s. No middlemen in between.',
+    en: 'Public service in Bhagwant Nagar means being consistently present among residents. Regular Jan Sunwai gives every villager an opportunity to share concerns, suggestions, and needs directly, without a middleman.',
     hi: 'भगवंत नगर में जनसेवा का अर्थ है जनता के बीच निरंतर उपस्थिति। नियमित जनसुनवाई के माध्यम से हर ग्रामीण को बिना किसी बिचौलिए के अपनी समस्याएं, सुझाव और आवश्यकताएं सीधे रखने का अवसर मिलता है।',
   },
   principles: [
     {
       title: {
-        en: 'Heard in Person',
+        en: 'Direct Dialogue Without Barriers',
         hi: 'बिना किसी बाधा के सीधा संवाद',
       },
       description: {
-        en: 'People sit down and talk it through, whether it is a stuck pension or a broken village transformer.',
+        en: 'From pensions and ration cards to a faulty transformer or tubewell, every concern is discussed face to face and followed toward a solution.',
         hi: 'पेंशन, राशन कार्ड से लेकर ट्रांसफार्मर व नलकूप की खराबी तक हर समस्या पर आमने-सामने बैठकर चर्चा और समाधान।',
       },
     },
     {
       title: {
-        en: 'Every Complaint Is Followed Up',
+        en: 'Time-bound Administrative Coordination',
         hi: 'समयबद्ध प्रशासनिक समन्वय',
       },
       description: {
-        en: 'Each application is written down, sent to the right department, and checked again until there is an answer.',
+        en: 'Every application is formally recorded, coordinated promptly with the relevant department, and monitored for progress.',
         hi: 'प्रत्येक आवेदन का विधिवत रिकॉर्ड, संबंधित विभागीय अधिकारियों से तत्काल समन्वय और प्रगति की सतत निगरानी।',
       },
     },
     {
       title: {
-        en: 'Elders and Women First',
+        en: 'Priority for Senior Citizens, Women and Farming Families',
         hi: 'बुजुर्गों एवं महिलाओं की समस्याओं को प्राथमिकता',
       },
       description: {
-        en: 'The elderly, widows and farming families in urgent need are heard first.',
+        en: 'Hearings give top priority to senior citizens, women, and farming families facing hardship.',
         hi: 'वरिष्ठ नागरिकों, माताओं-बहनों और पीड़ित किसान परिवारों की सुनवाई को सर्वोच्च प्राथमिकता।',
       },
     },
@@ -80,24 +80,8 @@ export const publicLifeItems: PublicLifeItem[] = [
     },
     image: '/images/public-life/ashish3.jpg',
     details: [
-      { en: 'Direct discussions on irrigation canal maintenance and electricity supply', hi: 'नहरों के टेल तक पानी और विद्युत आपूर्ति पर सीधी समीक्षा' },
-      { en: 'Listening to small business owners and village artisans', hi: 'ग्रामीण दस्तकारों और छोटे व्यापारियों की कठिनाइयों की सुनवाई' },
-    ],
-  },
-  {
-    id: 'field-inspections',
-    title: {
-      en: 'On-Site Field Inspections of Civic Works',
-      hi: 'विकास कार्यों का स्थलीय निरीक्षण',
-    },
-    description: {
-      en: 'Regular surprise and scheduled reviews of newly constructed roads, community water tanks, and school facilities to enforce strict quality.',
-      hi: 'सड़कों, जल जीवन मिशन के कार्यों, सामुदायिक भवनों और विद्यालयों का भौतिक सत्यापन ताकि गुणवत्ता में कोई समझौता न हो।',
-    },
-    image: '/images/public-life/ashish4.jpg',
-    details: [
-      { en: 'Ensuring adherence to engineering specifications for rural link roads', hi: 'ग्रामीण मार्गों के निर्माण में मानक और गुणवत्ता की कड़ी निगरानी' },
-      { en: 'Reviewing functional readiness of primary health sub-centers', hi: 'प्राथमिक स्वास्थ्य उपकेंद्रों में दवाओं और स्टाफ की उपलब्धता का निरीक्षण' },
+      { en: 'Direct review of water and electricity supply up to the tail end of canals', hi: 'नहरों के अंतिम छोर तक सिंचाई के पानी और बिजली की उपलब्धता की समीक्षा' },
+      { en: 'Hearing the difficulties of rural artisans and small traders', hi: 'ग्रामीण दस्तकारों और छोटे व्यापारियों की कठिनाइयों की सुनवाई' },
     ],
   },
 ];

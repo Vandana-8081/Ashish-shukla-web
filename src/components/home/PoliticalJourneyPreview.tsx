@@ -94,7 +94,6 @@ export function PoliticalJourneyPreview() {
                   }`}
                 >
                   <div className={`text-sm font-bold ${current ? 'text-[#FFD9BD]' : 'text-[#A63D00]'}`}>
-                    <span className="mr-3">{String(i + 1).padStart(2, '0')}</span>
                     {t(s.label)}
                   </div>
                   <h3 className="mt-5 font-editorial text-xl font-bold">{t(s.title)}</h3>

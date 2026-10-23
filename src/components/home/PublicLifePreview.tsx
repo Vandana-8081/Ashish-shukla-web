@@ -12,7 +12,7 @@ export function PublicLifePreview() {
   const { t, dict, getHref, locale } = useLanguage();
 
   return (
-    <section className="pt-20 md:pt-28 bg-white border-b border-[#E8E2D8]">
+    <section className="bg-white pt-14 sm:pt-20 md:pt-28 border-b border-[#E8E2D8]">
       <Container size="wide">
         {/* Jan Sunwai Highlight Block */}
         <div className="bg-[#FAF7F2] rounded-3xl border border-[#E8E2D8] p-6 sm:p-10 lg:p-14 mb-16 shadow-2xs">

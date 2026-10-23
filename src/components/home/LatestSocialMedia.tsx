@@ -5,11 +5,10 @@ import { useLanguage } from '@/lib/languageContext';
 import { socialLinks } from '@/data/socialLinks';
 import { Container } from '@/components/ui/Container';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { TwitterFeed } from '@/components/home/TwitterFeed';
 import { FacebookIcon } from '@/components/ui/SocialIcons';
 import { ArrowUpRight } from 'lucide-react';
 
-export function LatestSocialMedia({ xCard }: { xCard?: ReactNode }) {
+export function LatestSocialMedia({ instagramCard }: { instagramCard: ReactNode }) {
   const { dict } = useLanguage();
   const content = dict.latestSocialMedia;
   const facebook = socialLinks.find((item) => item.platform === 'facebook');
@@ -35,7 +34,7 @@ export function LatestSocialMedia({ xCard }: { xCard?: ReactNode }) {
   }, []);
 
   const facebookCard = (
-    <article className="flex flex-col rounded-2xl border border-[#E8E2D8] bg-[#F8F4ED] p-3 sm:p-4">
+    <article className="flex flex-col rounded-[28px] border border-[var(--line)] bg-[#fffdf8] p-3 sm:p-4 shadow-[var(--shadow-soft)]">
       <div className="flex items-center justify-between gap-4 border-b border-[#E8E2D8] pb-5">
         <div className="flex items-center gap-3">
           <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-[#F5660A]">
@@ -82,12 +81,17 @@ export function LatestSocialMedia({ xCard }: { xCard?: ReactNode }) {
   );
 
   return (
-    <section className="bg-white py-20 md:py-28 border-b border-[#E8E2D8]">
+    <section className="bg-[var(--paper)] py-14 sm:py-20 md:py-28">
       <Container size="wide" className="px-2 sm:px-4 lg:px-6">
-        <SectionHeading eyebrow={content.eyebrow} title={content.heading} description={content.description} />
+        <SectionHeading
+          eyebrow={content.eyebrow}
+          title={content.heading}
+          description={content.description}
+          className="max-sm:[&>p]:text-justify"
+        />
         <div className="mx-auto grid max-w-[1120px] grid-cols-1 items-stretch gap-6 lg:grid-cols-2">
           {facebookCard}
-          {xCard ?? <TwitterFeed />}
+          {instagramCard}
         </div>
       </Container>
     </section>

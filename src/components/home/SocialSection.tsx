@@ -9,7 +9,7 @@ export function SocialSection() {
   const { dict } = useLanguage();
 
   return (
-    <section className="bg-[#F5660A] text-white py-20 md:py-28">
+    <section className="bg-[var(--maroon)] text-white py-20 md:py-28">
       <Container size="wide">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column */}

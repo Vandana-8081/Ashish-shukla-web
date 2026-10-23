@@ -13,6 +13,18 @@ export const photoGalleryData: PhotoItem[] = [
       hi: 'क्षेत्रीय सांस्कृतिक उत्सवों में सहभागिता एवं पारंपरिक विरासत का नमन।',
     },
   },
+  ...['sj1.jpg', 'sj2.jpg', 'sj3.jpg', 'sj4.jpg', 'sj5.jpg'].map((photo, index) => ({
+    id: `culture-heritage-${index + 1}`,
+    image: `/images/gallery/${photo}`,
+    category: {
+      en: 'Cultural & Heritage',
+      hi: 'सांस्कृतिक एवं सामाजिक',
+    },
+    caption: {
+      en: 'A moment from a cultural and heritage gathering.',
+      hi: 'सांस्कृतिक एवं सामाजिक कार्यक्रम का एक क्षण।',
+    },
+  })),
   {
     id: 'gallery-2',
     image: '/images/gallery/a8.jpg',
@@ -25,6 +37,18 @@ export const photoGalleryData: PhotoItem[] = [
       hi: 'ग्राम बुजुर्गों से आत्मीय संवाद, मार्गदर्शन एवं लोककल्याण हेतु उनका आशीर्वाद।',
     },
   },
+  ...['jans1.jpg', 'jans2.jpg', 'jans3.jpg', 'jans4.jpg'].map((photo, index) => ({
+    id: `jan-samvad-${index + 1}`,
+    image: `/images/gallery/${photo}`,
+    category: {
+      en: 'Community Dialogue',
+      hi: 'जनसंवाद',
+    },
+    caption: {
+      en: 'A moment from direct dialogue with the community.',
+      hi: 'समुदाय के साथ सीधे संवाद का एक क्षण।',
+    },
+  })),
   {
     id: 'gallery-3',
     image: '/images/gallery/a9.jpg',
@@ -95,7 +119,7 @@ export const videoGalleryData: VideoItem[] = [
   description: {
     en: 'During public outreach in the 166-Bhagwantnagar Assembly Constituency, interacted warmly with local residents, inquired about their well-being, and discussed various issues concerning the area. The interaction reflected a strong sense of belonging and affection, with the relationship between the public and their representative being described as one like a family. Remained committed to the well-being of every family, resolving local issues, and maintaining the continuous pace of development in Bhagwantnagar.',
 
-    hi: '166-भगवंतनगर विधानसभा क्षेत्र में जनसंपर्क के दौरान क्षेत्रवासियों से आत्मीय भेंट कर उनका कुशलक्षेम जाना तथा क्षेत्र से जुड़े विभिन्न विषयों एवं समस्याओं पर संवाद किया। क्षेत्रवासियों के बीच मिलने वाला अपनापन और स्नेह इस विश्वास को और मजबूत करता है कि हमारा संबंध केवल जनप्रतिनिधि और जनता का नहीं, बल्कि एक परिवार जैसा है। भगवंतनगर के प्रत्येक परिवार के सुख-समृद्धि, क्षेत्र की समस्याओं के समाधान तथा विकास की निरंतर गति को बनाए रखने के उद्देश्य से जनसेवा के दायित्व को निभाने के लिए प्रतिबद्ध हूँ।',
+    hi: '166-भगवंतनगर विधानसभा क्षेत्र में जनसंपर्क के दौरान क्षेत्रवासियों से आत्मीय भेंट कर उनका हालचाल जाना तथा क्षेत्र से जुड़े विभिन्न विषयों एवं समस्याओं पर संवाद किया। क्षेत्रवासियों के बीच मिलने वाला अपनापन और स्नेह इस विश्वास को और मजबूत करता है कि हमारा संबंध केवल जनप्रतिनिधि और जनता का नहीं, बल्कि एक परिवार जैसा है। भगवंतनगर के प्रत्येक परिवार के सुख-समृद्धि, क्षेत्र की समस्याओं के समाधान तथा विकास की निरंतर गति को बनाए रखने के उद्देश्य से जनसेवा के दायित्व को निभाने के लिए प्रतिबद्ध हूँ।',
   },
 },
 {

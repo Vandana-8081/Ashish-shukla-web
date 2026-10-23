@@ -13,14 +13,14 @@ export function AboutPreview() {
   const [photoRatio, setPhotoRatio] = useState(1);
 
   return (
-    <section className="py-20 md:py-28 bg-white border-b border-[#E8E2D8]">
+    <section className="bg-white py-14 sm:py-20 md:py-28 border-b border-[#E8E2D8]">
       <Container size="wide">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Authentic Photograph */}
           <div className="lg:col-span-5 order-2 lg:order-1">
             <div className="relative">
               <div
-                className="relative w-full rounded-2xl overflow-hidden bg-[#F8F4ED] border border-[#E8E2D8] shadow-sm"
+                className="relative w-full rounded-2xl overflow-hidden bg-[#F8F4ED] border  border-[#E8E2D8] shadow-sm"
                 style={{ aspectRatio: photoRatio }}
               >
                 <Image
@@ -28,7 +28,7 @@ export function AboutPreview() {
                   alt={dict.brand.name}
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
-                  className="object-contain"
+                  className="object-cover object-[center_20%] "
                   onLoad={(event) => {
                     const { naturalWidth, naturalHeight } = event.currentTarget;
                     if (naturalWidth && naturalHeight) setPhotoRatio(naturalWidth / naturalHeight);

@@ -15,10 +15,7 @@ export async function generateMetadata({
     description: dict.contactSection.description,
     alternates: {
       canonical: `/${locale}/contact`,
-      languages: {
-        en: '/en/contact',
-        hi: '/hi/contact',
-      },
+      languages: { en: '/en/contact', hi: '/hi/contact' },
     },
   };
 }

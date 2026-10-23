@@ -25,38 +25,46 @@ export const navigationItems: NavItem[] = [
       },
       {
         name: { en: 'Life Journey', hi: 'जीवन यात्रा' },
-        path: '/about#journey',
+        path: '/journey',
 
       },
+      // { name: { en: 'Political Journey', hi: 'राजनीतिक यात्रा' }, path: '/political-journey' },
     ],
   },
   {
     id: 'public-life',
     name: {
-      en: 'Public Life',
-      hi: 'सार्वजनिक जीवन',
+      en: 'Public Service & Vision',
+      hi: 'जनसेवा एवं विज़न',
     },
     path: '/public-life',
+    hasDropdown: true,
+    children: [
+      { name: { en: 'Public Service', hi: 'जनसेवा' }, path: '/public-life#public-service' },
+      { name: { en: 'Bhagwant Nagar Vision', hi: 'भगवंतनगर का विज़न' }, path: '/public-life#vision' },
+      
+    ],
   },
   {
     id: 'media',
     name: {
-      en: 'Media',
+      en: ' Media',
       hi: 'मीडिया',
     },
     path: '/media',
     hasDropdown: true,
     children: [
       {
-        name: { en: 'Photo', hi: 'चित्र' },
-        path: '/media#photos',
-       
-      },
-      {
         name: { en: 'Video', hi: 'वीडियो' },
         path: '/media#videos',
        
       },
+      {
+        name: { en: 'Photo', hi: 'चित्र' },
+        path: '/media#photos',
+       
+      },
+      
     ],
   },
   {
@@ -79,10 +87,7 @@ export const navigationItems: NavItem[] = [
   },
   {
     id: 'contact',
-    name: {
-      en: 'Contact',
-      hi: 'संपर्क',
-    },
+    name: { en: 'Contact', hi: 'संपर्क' },
     path: '/contact',
   },
 ];

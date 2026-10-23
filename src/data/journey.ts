@@ -1,156 +1,161 @@
 import type { TimelinePhase } from '@/types';
 
+
 export const journeyTimeline: TimelinePhase[] = [
   {
     id: 'early-years',
     phase: {
-      en: 'Early Years',
-      hi: 'आरंभिक वर्ष',
+      en: 'Roots & Values',
+      hi: 'संस्कार एवं जड़ें',
     },
     period: {
-      en: 'Roots in Bhagwant Nagar',
-      hi: 'भगवंत नगर की माटी में संस्कार',
+      en: 'A Connection with Bhagwantnagar',
+      hi: 'भगवंतनगर से आत्मीय जुड़ाव',
     },
     title: {
-      en: 'Formative Upbringing in Rural Unnao',
-      hi: 'ग्रामीण परिवेश में संस्कारों का निर्माण',
+      en: 'Grounded in Values, Connected to the People',
+      hi: 'संस्कारों की नींव, जनमानस से जुड़ाव',
     },
     subtitle: {
-      en: 'Learning from the resilience of village life and agricultural traditions',
-      hi: 'गांव के सहज जीवन, किसानी और सादगी से सीखी जीवन की आधारशिला',
+      en: 'A journey shaped by local roots, cultural values, and a sense of responsibility',
+      hi: 'स्थानीय परिवेश, सांस्कृतिक मूल्यों और सामाजिक उत्तरदायित्व से प्रेरित यात्रा',
     },
     description: {
-      en: 'Growing up in Bhagwant Nagar, Ashish Shukla was immersed in the everyday joys and severe challenges of rural families. The reliance on seasonal rains, modest village infrastructure, and strong community solidarity shaped his lifelong compass of empathy and responsibility.',
-      hi: 'भगवंत नगर के ग्रामीण आंचल में बड़े होते हुए आशीष शुक्ला ने किसानों और सामान्य परिवारों के दैनिक संघर्षों को अत्यंत करीब से देखा। सीमित संसाधनों के बीच आपसी सहयोग और सद्भाव के वातावरण ने उनके भीतर सेवा और संवेदना के बीज रोपे।',
+      en: 'Bhagwantnagar and its surrounding communities form an important part of Ashish Shukla’s public identity. His journey reflects the importance of understanding local aspirations, respecting community values, and remaining connected to the people and issues that shape everyday life.',
+      hi: 'भगवंतनगर और आसपास के क्षेत्र आशीष शुक्ला के सार्वजनिक जीवन की पहचान का महत्वपूर्ण हिस्सा हैं। उनकी यात्रा स्थानीय आकांक्षाओं को समझने, सामाजिक मूल्यों का सम्मान करने और आम नागरिकों के जीवन से जुड़े मुद्दों के प्रति संवेदनशील रहने की भावना को दर्शाती है।',
     },
     highlights: [
       {
-        en: 'Nurtured in traditional family values of integrity and hard work',
-        hi: 'पारिवारिक संस्कारों और कर्मठता की मजबूत नींव',
+        en: 'A lasting connection with Bhagwantnagar and its communities',
+        hi: 'भगवंतनगर और यहां के लोगों से आत्मीय जुड़ाव',
       },
       {
-        en: 'Early observation of healthcare and educational hurdles in local hamlets',
-        hi: 'ग्रामीण क्षेत्रों में स्वास्थ्य व शिक्षा से जुड़ी कठिनाइयों का प्रत्यक्ष अनुभव',
+        en: 'Respect for family values, community traditions, and social harmony',
+        hi: 'पारिवारिक संस्कारों, स्थानीय परंपराओं और सामाजिक सद्भाव का सम्मान',
       },
       {
-        en: 'Deep emotional and cultural bond formed with Bhagwant Nagar villages',
-        hi: 'भगवंत नगर के हर मजरे और पुरवे से गहरा आत्मीय नाता',
+        en: 'An appreciation of the everyday needs and aspirations of citizens',
+        hi: 'नागरिकों की दैनिक आवश्यकताओं और आकांक्षाओं को समझने की प्रतिबद्धता',
       },
     ],
     image: '/images/journey/ashish1.jpg',
   },
+
   {
     id: 'professional-journey',
     phase: {
-      en: 'Professional Journey',
-      hi: 'व्यावसायिक यात्रा',
+      en: 'Experience & Learning',
+      hi: 'अनुभव एवं सीख',
     },
     period: {
-      en: 'Enterprise & Growth (Kanpur & Lucknow)',
-      hi: 'उद्यमशीलता एवं अनुभव विस्तार (कानपुर व लखनऊ)',
+      en: 'Personal and Professional Development',
+      hi: 'व्यक्तिगत एवं व्यावसायिक विकास',
     },
     title: {
-      en: 'Building Enterprise Through Hard Work & Discipline',
-      hi: 'परिश्रम और लगन से स्थापित किया व्यावसायिक आयाम',
+      en: 'Learning the Value of Commitment and Discipline',
+      hi: 'अनुशासन, परिश्रम और प्रतिबद्धता का महत्व',
     },
     subtitle: {
-      en: 'Learning practical management, industry dynamics, and teamwork',
-      hi: 'व्यावहारिक प्रबंधन, उद्योग और टीम वर्क की गहरी समझ',
+      en: 'Building a practical understanding of teamwork, responsibility, and decision-making',
+      hi: 'टीमवर्क, जिम्मेदारी और निर्णय लेने की व्यावहारिक समझ',
     },
     description: {
-      en: 'Moving to the bustling industrial hubs of Kanpur and Lucknow, he engaged directly in business and professional ventures. Through tenacity and acute business acumen, he built enterprise operations, gained exposure to complex logistics, and interacted with workers from diverse backgrounds.',
-      hi: 'कानपुर और लखनऊ जैसे प्रमुख केंद्रों में कदम रखते हुए उन्होंने व्यापार और उद्यमशीलता के क्षेत्र में आत्मनिर्भरता से कार्य प्रारंभ किया। कड़े परिश्रम और व्यावसायिक सूझबूझ के बल पर उन्होंने न केवल सफलता अर्जित की, बल्कि रोजगार सृजन और कार्यप्रबंधन की बारीक समझ विकसित की।',
+      en: 'Every professional and personal experience offers an opportunity to learn, adapt, and grow. This phase of Ashish Shukla’s journey represents the importance of practical understanding, consistent effort, and constructive engagement—qualities that can contribute to responsible public leadership.',
+      hi: 'व्यक्तिगत और व्यावसायिक जीवन का प्रत्येक अनुभव सीखने, परिस्थितियों के अनुरूप ढलने और आगे बढ़ने का अवसर देता है। आशीष शुक्ला की यात्रा का यह चरण व्यावहारिक समझ, निरंतर परिश्रम और सकारात्मक संवाद के महत्व को दर्शाता है, जो जिम्मेदार जननेतृत्व के लिए उपयोगी गुण हैं।',
     },
     highlights: [
       {
-        en: 'Gained hands-on expertise in enterprise administration and problem-solving',
-        hi: 'प्रबंधन, संगठन और समस्याओं के त्वरित समाधान का व्यावहारिक अनुभव',
+        en: 'Emphasis on discipline, responsibility, and practical learning',
+        hi: 'अनुशासन, जिम्मेदारी और व्यावहारिक सीख पर जोर',
       },
       {
-        en: 'Created employment opportunities and mentored energetic young professionals',
-        hi: 'युवाओं के लिए रोजगार के अवसर और मार्गदर्शन',
+        en: 'Understanding the importance of teamwork and effective communication',
+        hi: 'टीमवर्क और प्रभावी संवाद के महत्व की समझ',
       },
       {
-        en: 'Maintained continuous contact with his native constituency throughout',
-        hi: 'सफलता की ऊंचाइयों के बावजूद अपनी जन्मभूमि से निरंतर जीवंत संपर्क',
+        en: 'Applying experience with a focus on public needs and local priorities',
+        hi: 'जनहित और स्थानीय प्राथमिकताओं को ध्यान में रखकर अनुभव का उपयोग',
       },
     ],
     image: '/images/journey/ashish2.jpg',
   },
+
   {
-    id: 'return-to-bhagwant-nagar',
+    id: 'public-connect',
     phase: {
-      en: 'Return to Bhagwant Nagar',
-      hi: 'माटी की ओर वापसी',
+      en: 'Public Connect',
+      hi: 'जनसंपर्क',
     },
     period: {
-      en: 'Commitment to the Native Soil',
-      hi: 'जन्मभूमि के प्रति उत्तरदायित्व का बोध',
+      en: 'Listening to Local Aspirations',
+      hi: 'स्थानीय आकांक्षाओं को समझना',
     },
     title: {
-      en: 'Bringing Knowledge & Resources Back Home',
-      hi: 'अनुभव और संसाधनों को क्षेत्र के विकास में समर्पित करना',
+      en: 'Understanding the Issues That Matter to Citizens',
+      hi: 'नागरिकों से जुड़े मुद्दों को समझना',
     },
     subtitle: {
-      en: 'A conscious decision to channel life experience into local empowerment',
-      hi: 'व्यावसायिक अनुभव को क्षेत्रीय उत्थान में बदलने का दृढ़ निर्णय',
+      en: 'Encouraging dialogue around civic needs, public facilities, and development priorities',
+      hi: 'नागरिक सुविधाओं, जनसमस्याओं और विकास की प्राथमिकताओं पर संवाद',
     },
     description: {
-      en: 'Recognizing that true fulfillment lay in uplifting his own homeland, Ashish Shukla returned to Bhagwant Nagar to establish sustained, ground-level civic initiatives. He began spending extensive time visiting panchayats, surveying dilapidated link roads, and addressing health camp deficits.',
-      hi: 'यह अनुभव करते हुए कि वास्तविक सार्थकता अपनी जन्मभूमि की सेवा में है, आशीष शुक्ला ने भगवंत नगर लौटकर जनसरोकारों को अपनी प्राथमिकता बनाया। उन्होंने न्याय पंचायतों और गांवों का सघन दौरा कर संपर्क मार्गों, जल निकासी और स्वास्थ्य सुविधाओं के सुधार हेतु काम शुरू किया।',
+      en: 'Public engagement begins with listening. Connecting with residents and understanding their concerns helps bring attention to important local priorities, including roads, drainage, sanitation, electricity, healthcare, and other essential civic facilities.',
+      hi: 'जनसेवा की शुरुआत लोगों की बात सुनने और उनकी समस्याओं को समझने से होती है। नागरिकों से संवाद के माध्यम से सड़क, जल निकासी, स्वच्छता, बिजली, स्वास्थ्य सेवाओं और अन्य आवश्यक सुविधाओं से जुड़े स्थानीय मुद्दों को प्राथमिकता देने का प्रयास किया जा सकता है।',
     },
     highlights: [
       {
-        en: 'Panchayat-level consultative tours listening to grassroots challenges',
-        hi: 'पंचायत स्तर पर चौपालों के माध्यम से समस्याओं का संकलन',
+        en: 'Listening to residents and understanding their concerns',
+        hi: 'नागरिकों की बात सुनना और उनकी समस्याओं को समझना',
       },
       {
-        en: 'Direct personal intervention in rural civic and infrastructure emergencies',
-        hi: 'स्थानीय अवसंरचनात्मक कठिनाइयों में त्वरित सहयोग एवं समाधान',
+        en: 'Recognising essential civic amenities as development priorities',
+        hi: 'आवश्यक नागरिक सुविधाओं को विकास की प्राथमिकता मानना',
       },
       {
-        en: 'Initiating sustained social welfare and youth encouragement programs',
-        hi: 'सामाजिक कल्याण एवं युवा प्रोत्साहन कार्यक्रमों की शुरुआत',
+        en: 'Promoting constructive dialogue and community participation',
+        hi: 'सकारात्मक संवाद और सामुदायिक सहभागिता को बढ़ावा देना',
       },
     ],
     image: '/images/journey/ashish3.jpg',
   },
+
   {
     id: 'public-life',
     phase: {
-      en: 'Public Life',
-      hi: 'सक्रिय जनजीवन',
+      en: 'Public Leadership',
+      hi: 'जननेतृत्व',
     },
     period: {
-      en: 'Grassroots Representation & Public Service',
-      hi: 'जनसुलभ नेतृत्व एवं अनवरत सेवा',
+      en: 'Chairman, Bhagwantnagar Nagar Panchayat',
+      hi: 'अध्यक्ष, नगर पंचायत भगवंतनगर',
     },
     title: {
-      en: 'Dedicated to People’s Voice and All-Round Development',
-      hi: 'जनता की आवाज बनकर चौमुखी विकास को गति देना',
+      en: 'A Public Role Focused on Civic Development',
+      hi: 'नागरिक सुविधाओं और स्थानीय विकास पर केंद्रित जनसेवा',
     },
     subtitle: {
-      en: 'Institution of weekly Jan Sunwai and transparent grievance redressal',
-      hi: 'साप्ताहिक जनसुनवाई और पारदर्शी समस्या समाधान की कार्यशैली',
+      en: 'Working towards responsive governance, accessible communication, and better civic amenities',
+      hi: 'उत्तरदायी प्रशासन, सुलभ संवाद और बेहतर नागरिक सुविधाओं की दिशा में प्रयास',
     },
     description: {
-      en: 'Today, Ashish Shukla stands as an accessible, vigilant representative of the public interest in Bhagwant Nagar. His door remains open to every citizen, bridging the gap between governance and rural households through disciplined follow-ups with local departments.',
-      hi: 'वर्तमान में आशीष शुक्ला भगवंत नगर के प्रत्येक नागरिक के सुख-दुख के सच्चे सहभागी हैं। नियमित जनसुनवाई के माध्यम से वे शासन, प्रशासन और जनसामान्य के बीच एक विश्वसनीय सेतु के रूप में कार्य करते हुए समस्याओं के स्थायी समाधान के लिए तत्पर रहते हैं।',
+      en: 'As Chairman of Bhagwantnagar Nagar Panchayat, Ashish Shukla’s public role is connected with the civic needs and development priorities of the area. Sanitation, drainage, roads, public amenities, and communication with residents remain important subjects in the broader effort to improve everyday urban and community life.',
+      hi: 'नगर पंचायत भगवंतनगर के अध्यक्ष के रूप में आशीष शुक्ला की सार्वजनिक भूमिका क्षेत्र की नागरिक आवश्यकताओं और विकास की प्राथमिकताओं से जुड़ी है। स्वच्छता, जल निकासी, सड़कें, सार्वजनिक सुविधाएं और नागरिकों के साथ संवाद बेहतर स्थानीय जीवन के लिए महत्वपूर्ण विषय हैं।',
     },
     highlights: [
       {
-        en: 'Regular Jan Sunwai redressal forums with transparent case follow-ups',
-        hi: 'नियमित जनसुनवाई एवं जनसमस्याओं का समयबद्ध निस्तारण',
+        en: 'Focus on sanitation, drainage, roads, and essential civic amenities',
+        hi: 'स्वच्छता, जल निकासी, सड़कों और आवश्यक नागरिक सुविधाओं पर ध्यान',
       },
       {
-        en: 'Unwavering focus on health centers, rural connectivity, and education',
-        hi: 'स्वास्थ्य, ग्रामीण सड़क संपर्क और शिक्षा के सुदृढ़ीकरण पर विशेष जोर',
+        en: 'Encouraging communication between residents and local administration',
+        hi: 'नागरिकों और स्थानीय प्रशासन के बीच संवाद को प्रोत्साहित करना',
       },
       {
-        en: 'Standing shoulder-to-shoulder with farmers, youth, and self-help groups',
-        hi: 'किसानों, युवाओं और महिला समूहों के साथ निरंतर संवाद व संबल',
+        en: 'Keeping local needs and inclusive development at the centre of public life',
+        hi: 'स्थानीय आवश्यकताओं और समावेशी विकास को प्राथमिकता देना',
       },
     ],
     image: '/images/journey/ashish4.jpg',
   },
 ];
+
