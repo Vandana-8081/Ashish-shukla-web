@@ -56,7 +56,7 @@ export interface Chapter {
 export const chapters: Chapter[] = [
   {
     id: 'beginning',
-    kicker: { en: 'The Beginning', hi: 'शुरुआत' },
+    kicker: { en: '', hi: '' },
     title: { en: 'A Journey That Began with His Roots', hi: 'जड़ों से शुरू हुआ एक सफर' },
     body: [
       {
@@ -76,7 +76,7 @@ export const chapters: Chapter[] = [
   },
   {
     id: 'kanpur',
-    kicker: { en: 'Experience and Struggle', hi: 'अनुभव और संघर्ष' },
+    kicker: { en: '', hi: '' },
     title: { en: 'Lessons Learned Through Hard Work', hi: 'मेहनत से मिली सीख' },
     body: [
       {
@@ -92,7 +92,7 @@ export const chapters: Chapter[] = [
   },
   {
     id: 'business',
-    kicker: { en: 'A New Turn', hi: 'नया मोड़' },
+    kicker: { en: '', hi: '' },
     title: { en: 'A New Direction Through Experience', hi: 'अनुभव से मिली नई दिशा' },
     body: [
       {
@@ -108,7 +108,7 @@ export const chapters: Chapter[] = [
   },
   {
     id: 'roots',
-    kicker: { en: 'Public Service', hi: 'जनसेवा' },
+    kicker: { en: '', hi: '' },
     title: { en: 'From Success to Service', hi: 'सफलता से सेवा तक' },
     body: [
       {
@@ -127,7 +127,7 @@ export const chapters: Chapter[] = [
   },
   {
     id: 'return',
-    kicker: { en: 'The Homecoming', hi: 'घर वापसी' },
+    kicker: { en: '', hi: '' },
     title: { en: 'The return to Bhagwant Nagar', hi: 'भगवंत नगर वापसी' },
     body: [
       {
@@ -230,7 +230,7 @@ export const priorities = {
 };
 
 export const nextChapter = {
-  eyebrow: { en: 'The Way Forward', hi: 'आगे की दिशा' },
+  eyebrow: { en: '', hi: '' },
   title: {
     en: 'Public Trust, Public Service, and Bhagwantnagar’s Development',
     hi: 'जनविश्वास, जनसेवा और भगवंतनगर का विकास',
@@ -242,7 +242,7 @@ export const nextChapter = {
 };
 
 export const closing = {
-  eyebrow: { en: 'The Journey Continues', hi: 'यात्रा जारी है' },
+  eyebrow: { en: '', hi: '' },
   lines: [
     { en: 'His connection with Bhagwantnagar, the people’s trust, and a sense of responsibility for development are the foundations of his public journey.', hi: 'भगवंतनगर से जुड़ाव, जनता का विश्वास और विकास के प्रति जिम्मेदारी — यही उनकी सार्वजनिक यात्रा के मूल आधार हैं।' },
     { en: 'The purpose of this journey is to listen to every resident, understand local needs, and work toward better basic amenities.', hi: 'हर नागरिक की बात सुनना, स्थानीय जरूरतों को समझना और बेहतर बुनियादी सुविधाओं की दिशा में प्रयास करना इस यात्रा का उद्देश्य है।' },
@@ -256,7 +256,7 @@ export const closing = {
 
 /** About page */
 export const aboutPage = {
-  eyebrow: { en: 'About Ashish', hi: 'आशीष के बारे में' },
+  eyebrow: { en: '', hi: '' },
   title: { en: 'A life built, not inherited', hi: 'गढ़ा हुआ जीवन, विरासत में मिला नहीं' },
   who: {
     en: 'Ashish Shukla is a public representative, entrepreneur and community figure associated with Bhagwant Nagar in Unnao district, Uttar Pradesh. There was no established business waiting for him, no political office, no comfortable path laid out in advance — only a family facing economic limitations and a young boy learning very early that survival required work.',
@@ -307,7 +307,7 @@ export const aboutPage = {
       hi: 'कुछ जगहें ऐसी होती हैं जहाँ लोग केवल रहते हैं, और कुछ ऐसी होती हैं जो जीवन का हिस्सा बनकर हमेशा उनके साथ चलती हैं। भगवंत नगर आशीष शुक्ला के लिए ऐसी ही जगह है—जहाँ उनके बचपन की यादें जुड़ी हैं, परिवार के संस्कारों ने उनके व्यक्तित्व को आकार दिया और जीवन के शुरुआती संघर्षों ने उन्हें मेहनत, धैर्य और जिम्मेदारी का महत्व सिखाया।\n\nजीवन में आगे बढ़ने और अपने लिए नई संभावनाएँ तलाशने के दौरान उन्होंने अलग-अलग अनुभवों से बहुत कुछ सीखा। लेकिन समय के साथ यह एहसास और गहरा होता गया कि व्यक्तिगत सफलता का वास्तविक अर्थ तभी पूरा होता है, जब उसका लाभ अपने समाज और अपनी जन्मभूमि तक भी पहुँचे। उनके लिए भगवंत नगर केवल एक स्थान नहीं, बल्कि अपनी पहचान, अपने लोगों और अपनी जड़ों से जुड़ा एक भावनात्मक रिश्ता है।',
     },
   },
-  bioTitle: { en: 'Biography', hi: 'जीवन परिचय' },
+  bioTitle: { en: '', hi: '' },
   bio: [
     {
       en: 'Ashish Shukla is the chairman of Bhagwantnagar Nagar Panchayat in Unnao district, Uttar Pradesh. As an elected representative associated with the Bharatiya Janata Party, his public life focuses on engaging with local residents, understanding public concerns, and carrying out responsibilities related to the area’s development.',
@@ -330,7 +330,7 @@ export const aboutPage = {
 
 /** Journey page */
 export const journeyPage = {
-  eyebrow: { en: 'Life Journey', hi: 'जीवन की यात्रा' },
+  eyebrow: { en: '', hi: '' },
   title: { en: 'From a Commitment to Public Service to Leadership', hi: 'जनसेवा के संकल्प से नेतृत्व तक' },
   intro: {
     en: 'Ashish Shukla’s public journey centres on engaging with residents, understanding their concerns, and remaining committed to Bhagwantnagar’s development. As Nagar Panchayat Chairman, he aims to prioritise local needs and work continuously on matters of public interest.',
@@ -367,7 +367,7 @@ export const journeyPage = {
 /* ───────── Editorial redesign additions ───────── */
 
 export const homeStory = {
-  eyebrow: { en: 'His Story', hi: 'उनकी कहानी' },
+  eyebrow: { en: '', hi: '' },
   title: { en: 'From struggle to service — a life built, not inherited', hi: 'संघर्ष से सेवा तक — गढ़ा हुआ जीवन, विरासत में मिला नहीं' },
   accent: { en: 'built, not inherited', hi: 'गढ़ा हुआ जीवन' },
   link: { en: 'Read the life journey', hi: 'जीवन यात्रा पढ़ें' },
@@ -375,7 +375,7 @@ export const homeStory = {
 };
 
 export const timelineHead = {
-  eyebrow: { en: 'The Journey', hi: 'यात्रा' },
+  eyebrow: { en: '', hi: '' },
   title: { en: 'From Bhagwantnagar to public service', hi: 'भगवंतनगर से जनसेवा तक का सफर' },
   text: {
     en: 'A journey shaped by a bond with home, lessons from life, and a commitment to serve and support the development of Bhagwantnagar.',
@@ -384,7 +384,7 @@ export const timelineHead = {
 };
 
 export const serviceCards = {
-  eyebrow: { en: 'Public Service', hi: 'जनसेवा' },
+  eyebrow: { en: '', hi: '' },
   title: { en: 'Service that begins at the doorstep', hi: 'सेवा, जो चौखट से शुरू होती है' },
   accent: { en: 'at the doorstep', hi: 'चौखट से' },
   // text: {
@@ -412,7 +412,7 @@ export const banner = {
 };
 
 export const newsHead = {
-  eyebrow: { en: 'In the News', hi: 'समाचारों में' },
+  eyebrow: { en: '', hi: '' },
   title: { en: 'Latest from the ground', hi: 'ज़मीन से ताज़ा' },
   accent: { en: 'from the ground', hi: 'ज़मीन से' },
   readMore: { en: 'Read the report', hi: 'पूरी खबर पढ़ें' },

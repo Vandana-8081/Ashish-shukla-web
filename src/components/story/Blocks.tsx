@@ -34,7 +34,7 @@ export function SectionHead({
   const { t } = useLanguage();
   return (
     <Reveal className={`max-w-[880px] ${center ? 'mx-auto text-center' : ''}`}>
-      {eyebrow && <div className="ed-eyebrow mb-3">{t(eyebrow)}</div>}
+      {eyebrow && t(eyebrow).trim() && <div className="ed-eyebrow mb-3">{t(eyebrow)}</div>}
       <AccentTitle title={t(title)} accent={accent ? t(accent) : undefined} className={`ed-h2 ${dark ? '!text-white' : ''}`} />
       {text && <p className={`ed-body mt-5 ${dark ? '!text-white/75' : ''} ${center ? 'mx-auto max-w-[760px]' : 'max-w-[760px]'}`}>{t(text)}</p>}
     </Reveal>
@@ -69,8 +69,8 @@ export function PageHero({
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,29,44,.35),rgba(10,29,44,.9))]" />
       <div className="tricolor-rule absolute inset-x-0 top-0" />
       <div className="container-site relative z-10 py-14 text-white md:py-16">
-        <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }}
-          className="ed-eyebrow !text-[#ffb27a]">{t(eyebrow)}</motion.div>
+        {t(eyebrow).trim() && <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }}
+        className="ed-eyebrow !text-[#ffb27a]">{t(eyebrow)}</motion.div>}
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.25 }}
           className="ed-title mt-4 max-w-[900px]">{t(title)}</motion.h1>
         {text && (

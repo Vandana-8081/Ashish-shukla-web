@@ -267,25 +267,8 @@ export function Hero() {
             "
           >
             {/* Eyebrow */}
-            <div
-              className="
-                eyebrow-label
-                flex
-                items-center
-                gap-3
-                mb-3
-                sm:mb-7
-                text-xs
-                sm:text-sm
-                font-bold
-                tracking-[0.22em]
-                uppercase
-                text-[#F5660A]
-              "
-            >
-             
-                {t(slide.eyebrow)}
-             
+            <div className="eyebrow-label hero-eyebrow relative mb-4 inline-flex w-fit items-center rounded-sm border border-[#F2E4D7] bg-[#FFF9F2] px-3.5 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#B94F0B] shadow-sm sm:mb-7 sm:px-4 sm:py-2.5 sm:text-xs before:absolute before:-left-1 before:top-1/2 before:h-7 before:w-1 before:-translate-y-1/2 before:rounded-full before:bg-[#F5660A]">
+              {t(slide.eyebrow)}
             </div>
 
             {/* Main Heading */}

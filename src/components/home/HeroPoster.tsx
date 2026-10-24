@@ -44,7 +44,7 @@ export function HeroPoster({ slide }: { slide: HeroSlide }) {
 
       <div className={`z-10 flex flex-col justify-center ${slide.mobileImage ? 'absolute inset-x-0 max-lg:top-[clamp(2rem,8vh,4rem)] max-lg:bottom-auto' : 'relative shrink-0'} px-7 pb-3 pt-4 sm:px-10 sm:pb-6 sm:pt-12 lg:absolute lg:inset-y-0 lg:left-0 lg:w-[62%] lg:p-0 lg:pl-[9%]`}>
         {/* Same text design as the other hero slides */}
-        <div className="eyebrow-label mb-4 text-[11px] font-bold uppercase tracking-[0.22em] text-[#F5660A] sm:mb-7 sm:text-sm">
+        <div className="eyebrow-label hero-eyebrow relative mb-4 inline-flex w-fit items-center rounded-sm border border-[#F2E4D7] bg-[#FFF9F2] px-3.5 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#B94F0B] shadow-sm sm:mb-7 sm:px-4 sm:py-2.5 sm:text-xs before:absolute before:-left-1 before:top-1/2 before:h-7 before:w-1 before:-translate-y-1/2 before:rounded-full before:bg-[#F5660A]">
           {t(slide.eyebrow)}
         </div>
 

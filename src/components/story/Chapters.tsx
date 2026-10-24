@@ -17,7 +17,7 @@ export function Chapters({ items = chapters, id }: { items?: Chapter[]; id?: str
             <div className={`container-site grid gap-10 lg:items-center lg:gap-16 ${c.image ? 'lg:grid-cols-2' : 'mx-auto max-w-[900px]'}`}>
               <Reveal className={flip ? 'lg:order-2' : ''}>
                 <div className="flex items-center">
-                  <span className="ed-eyebrow">{t(c.kicker)}</span>
+                  {t(c.kicker).trim() && <span className="ed-eyebrow">{t(c.kicker)}</span>}
                 </div>
                 <h2 className="ed-h2 mt-4">{t(c.title)}</h2>
                 <div className="ed-body mt-5 space-y-4">

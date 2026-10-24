@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Download, ImagePlus, Share2, X } from 'lucide-react';
 import { useLanguage } from '@/lib/languageContext';
 import { anniversaries, ecardOccasions, ecardStrings as s, tributePalettes } from '@/data/ecard';
-import { idealsCategories } from '@/data/ideals';
+import { allPeople } from '@/data/ideals';
 import { SITE_URL } from '@/lib/site';
 import { CARD_H, CARD_W, drawCard, type CardSpec } from '@/components/ecard/drawCard';
 
@@ -102,7 +102,7 @@ export function EcardMaker() {
     setPortrait(null);
     if (!selection.startsWith(ANNIVERSARY_PREFIX)) return;
     const item = anniversaries.find((entry) => entry.id === selection.slice(ANNIVERSARY_PREFIX.length));
-    const src = idealsCategories.flatMap((category) => category.people).find((person) => person.id === item?.personId)?.portrait;
+    const src = allPeople.find((person) => person.id === item?.personId)?.portrait;
     if (!src) return;
     let active = true;
     loadImage(src).then((img) => active && setPortrait(img)).catch(() => undefined);
@@ -266,9 +266,9 @@ export function EcardMaker() {
       </form>
 
       <div className="mx-auto w-full max-w-[460px] lg:sticky lg:top-28">
-        <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-[#C94E00]">{s.preview[lang]}</p>
+        {s.preview[lang].trim() && <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-[#C94E00]">{s.preview[lang]}</p>}
         <div className="overflow-hidden rounded-2xl border border-[#E8E2D8] bg-white shadow-lg" style={{ aspectRatio: `${CARD_W} / ${CARD_H}` }}>
-          <canvas ref={canvasRef} width={CARD_W} height={CARD_H} role="img" aria-label={`${s.preview[lang]}: ${spec.title}`} className="block h-full w-full" />
+          <canvas ref={canvasRef} width={CARD_W} height={CARD_H} role="img" aria-label={s.preview[lang] ? `${s.preview[lang]}: ${spec.title}` : spec.title} className="block h-full w-full" />
         </div>
       </div>
     </div>

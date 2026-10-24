@@ -41,10 +41,6 @@ export default async function DevelopmentPage({ params }: { params: Promise<{ lo
           </nav>
           <div className="mt-9 grid items-end gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(300px,.62fr)] lg:gap-14">
             <div>
-              <span className="inline-flex items-center gap-2 text-sm font-bold tracking-[0.08em] text-[#B84F08]">
-                <span aria-hidden="true" className="h-1 w-7 rounded-full bg-[#F5660A]" />
-                {hi ? 'विकास की दिशा' : 'IDEAS & PROGRESS'}
-              </span>
               <h1 className="mt-3 max-w-4xl font-editorial text-4xl font-bold leading-[1.12] tracking-tight text-[#171412] sm:text-4xl lg:text-5xl">{ideasIntro.title[locale]}</h1>
             </div>
             <p className="max-w-xl border-l-2 border-[#F5660A] pl-5 text-base leading-7 text-[#4A3F37] sm:text-lg sm:leading-8 lg:mb-1">{ideasIntro.subtitle[locale]}</p>

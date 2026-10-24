@@ -107,7 +107,7 @@ export function NextChapter() {
       <ParallaxBg src="/images/gallery/a11.jpg" overlay="linear-gradient(90deg,rgba(121,61,55,.92),rgba(16,45,73,.8))" />
       <div className="container-site relative z-10 text-white">
         <Reveal>
-          <div className="ed-eyebrow !text-[#ffb27a]">{t(nextChapter.eyebrow)}</div>
+          {t(nextChapter.eyebrow).trim() && <div className="ed-eyebrow !text-[#ffb27a]">{t(nextChapter.eyebrow)}</div>}
           <h2 className="mt-4 max-w-5xl font-editorial text-[clamp(28px,3.6vw,46px)] font-bold leading-[1.08]">{t(nextChapter.title)}</h2>
           <p className="mt-6 max-w-2xl text-[17px] leading-8 text-white/80">{t(nextChapter.text)}</p>
         </Reveal>
@@ -123,7 +123,7 @@ export function Closing() {
       <div aria-hidden className="ed-float absolute left-1/2 top-8 h-64 w-64 -translate-x-1/2 rounded-full bg-[var(--saffron)]/15 blur-3xl" />
       <div className="container-site relative">
         <Reveal>
-          <div className="ed-eyebrow !text-[#ffb27a]">{t(closing.eyebrow)}</div>
+          {t(closing.eyebrow).trim() && <div className="ed-eyebrow !text-[#ffb27a]">{t(closing.eyebrow)}</div>}
         </Reveal>
         <Stagger className="mx-auto mt-6 max-w-4xl space-y-2 text-sm leading-relaxed text-white/70 sm:text-base md:text-lg">
           {closing.lines.map((l, i) => (

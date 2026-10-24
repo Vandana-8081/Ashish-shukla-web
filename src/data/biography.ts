@@ -16,8 +16,8 @@ export interface BiographyData {
 
 export const biographyData: BiographyData = {
   eyebrow: {
-    en: 'BIOGRAPHY',
-    hi: 'जीवन परिचय',
+    en: '',
+    hi: '',
   },
 
   title: {

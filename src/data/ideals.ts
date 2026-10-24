@@ -462,7 +462,7 @@ const allIdealsCategories: IdealCategory[] = [
 
 // The public page mirrors the reference site: three groups, twelve people.
 // Nanaji Deshmukh and Rajmata Vijayaraje Scindia are still missing (no verified details or portraits yet).
-const allPeople = allIdealsCategories.flatMap(({ people }) => people);
+export const allPeople = allIdealsCategories.flatMap(({ people }) => people);
 const pick = (...ids: string[]) =>
   ids.flatMap((id) => allPeople.filter((person) => person.id === id));
 

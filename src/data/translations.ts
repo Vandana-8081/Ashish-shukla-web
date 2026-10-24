@@ -64,12 +64,12 @@ export const translations = {
       leaderCardSubtitle: 'Bhagwant Nagar Constituency',
     },
     aboutSection: {
-      eyebrow: 'BIOGRAPHY',
+      eyebrow: '',
       heading: 'Ashish Shukla',
       readFullButton: 'Read Full Biography',
     },
     journeySection: {
-      eyebrow: 'LIFE JOURNEY',
+      eyebrow: '',
       heading: 'A Journey Shaped by Experience & Service',
       description:
         'From native roots in Bhagwant Nagar to professional enterprise in regional hubs, and back to dedicated public service.',
@@ -108,11 +108,11 @@ export const translations = {
       description:
         'Authentic photographs documenting public interactions, grassroots chaupals, and local service initiatives.',
       viewAllButton: 'View Full Media & Videos',
-      videoEyebrow: 'VIDEO ARCHIVE',
+      videoEyebrow: '',
       videoHeading: 'Video Addresses & Field Updates',
       videoDesc:
         'Recorded messages, developmental reviews, and proceedings from recent public sessions.',
-      photoEyebrow: 'PHOTO GALLERY',
+      photoEyebrow: '',
       photoHeading: 'Visual Moments from the Field',
       photoDesc:
         'Glimpses of daily public life, meetings with village elders, youth sports competitions, and cultural occasions in Bhagwant Nagar.',
@@ -122,7 +122,7 @@ export const translations = {
       videoPlaybackError: 'This video could not be played. Please try again later.',
     },
     latestSocialMedia: {
-      eyebrow: 'LATEST UPDATES',
+      eyebrow: '',
       heading: 'Latest from Social Media',
       description:
         "The latest public updates, community engagements, photographs, and videos shared through Ashish Shukla's official social media accounts.",
@@ -147,13 +147,13 @@ export const translations = {
       noInstagramPosts: 'No public Instagram posts are currently available.',
     },
     socialSection: {
-      eyebrow: 'OFFICIAL SOCIAL CHANNELS',
+      eyebrow: '',
       heading: 'Follow on social media',
       description:
         'Follow official social pages to stay informed on regional development updates, weekly public grievance hearings, and community programs.',
     },
     contactSection: {
-      eyebrow: 'PUBLIC INTERACTION',
+      eyebrow: '',
       heading: 'Public Interaction & Grievance Portal',
       description:
         'Citizens and residents of Bhagwant Nagar can directly submit personal grievances, village proposals, and community requests.',
@@ -260,12 +260,12 @@ export const translations = {
       leaderCardSubtitle: 'भगवंत नगर विधानसभा क्षेत्र',
     },
     aboutSection: {
-      eyebrow: 'जीवन परिचय एवं दृष्टि',
+      eyebrow: '',
       heading: 'आशीष शुक्ला',
       readFullButton: 'पूरा परिचय पढ़ें',
     },
     journeySection: {
-      eyebrow: 'जीवन यात्रा',
+      eyebrow: '',
       heading: 'अनुभव और संघर्ष से गढ़ी गई जीवन यात्रा',
       description:
         'भगवंत नगर की माटी से लेकर कानपुर और लखनऊ के व्यावसायिक अनुभव तक, और फिर अपनी जन्मभूमि को समर्पित जनसेवा का संकल्प।',
@@ -304,11 +304,11 @@ export const translations = {
       description:
         'क्षेत्रीय भ्रमण, चौपालों, वरिष्ठ नागरिकों से संवाद एवं जनकल्याण कार्यक्रमों के वास्तविक चित्र।',
       viewAllButton: 'पूरी गैलरी एवं वीडियो देखें',
-      videoEyebrow: 'वीडियो संदेश',
+      videoEyebrow: '',
       videoHeading: 'वक्तव्य एवं क्षेत्रीय समीक्षा वीडियो',
       videoDesc:
         'रिकॉर्ड किए गए संदेश, विकासात्मक समीक्षाएं और हाल की सार्वजनिक बैठकों की कार्यवाही।',
-      photoEyebrow: 'चित्र वीथिका',
+      photoEyebrow: '',
       photoHeading: 'क्षेत्र से दृश्य क्षण',
       photoDesc:
         'दैनिक सार्वजनिक जीवन, ग्राम बुजुर्गों से भेंट, युवा खेल प्रतियोगिताओं और सांस्कृतिक अवसरों की झलकियां।',
@@ -318,7 +318,7 @@ export const translations = {
       videoPlaybackError: 'यह वीडियो नहीं चल सका। कृपया बाद में पुनः प्रयास करें।',
     },
     latestSocialMedia: {
-      eyebrow: 'नवीनतम अपडेट',
+      eyebrow: '',
       heading: 'सोशल मीडिया से नवीनतम अपडेट',
       description: 'आशीष शुक्ला के आधिकारिक सोशल मीडिया खातों पर साझा किए गए नवीनतम सार्वजनिक अपडेट, जनसंपर्क गतिविधियाँ, तस्वीरें और वीडियो।',
       facebookTitle: 'फेसबुक अपडेट',
@@ -342,13 +342,13 @@ export const translations = {
       noInstagramPosts: 'अभी कोई सार्वजनिक इंस्टाग्राम पोस्ट उपलब्ध नहीं है।',
     },
     socialSection: {
-      eyebrow: 'आधिकारिक सोशल मीडिया',
+      eyebrow: '',
       heading: 'सोशल मीडिया पर जुड़ें',
       description:
         'आधिकारिक सोशल मीडिया माध्यमों से जुड़े रहें और भगवंत नगर के विकास कार्यों, जनसुनवाई और कार्यक्रमों की हर नई जानकारी प्राप्त करें।',
     },
     contactSection: {
-      eyebrow: 'जनसंपर्क एवं संवाद',
+      eyebrow: '',
       heading: 'कार्यालय संपर्क एवं जनसुनवाई सहायता',
       description:
         'भगवंत नगर के नागरिक अपनी समस्याएं, सुझाव अथवा क्षेत्र से जुड़े मुद्दे सीधे साझा कर सकते हैं।',

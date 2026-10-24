@@ -257,6 +257,11 @@ html:lang(hi) body .ed-title {
 .ed-eyebrow {
   font-size: 12px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--saffron);
 }
+
+.ed-eyebrow:not(.hero-eyebrow),
+.eyebrow-label:not(.hero-eyebrow) {
+  display: none !important;
+}
 .pill-link {
   display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px; border-radius: 999px;
   background: #ffffffd6; border: 1px solid #0000001f; font-size: 14px; font-weight: 700; color: var(--navy);

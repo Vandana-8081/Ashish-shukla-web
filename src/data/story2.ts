@@ -5,7 +5,7 @@ export interface Item { icon: string; title: L; text?: L }
 
 /* ───────────── Public Service ───────────── */
 export const servicePage = {
-  eyebrow: { en: 'Public Service & Municipal Leadership', hi: 'जनसेवा एवं नगर नेतृत्व' } as L,
+  eyebrow: { en: '', hi: '' } as L,
   title: {
     en: 'Public office begins where personal convenience ends',
     hi: 'जन-पद वहाँ से शुरू होता है, जहाँ व्यक्तिगत सुविधा समाप्त होती है',
@@ -50,7 +50,7 @@ export const servicePage = {
 
 /* ───────────── Bhagwant Nagar ───────────── */
 export const placePage = {
-  eyebrow: { en: 'Bhagwant Nagar', hi: 'भगवंत नगर' } as L,
+  eyebrow: { en: '', hi: '' } as L,
   title: {
     en: 'A journey shaped by the people of Bhagwant Nagar',
     hi: 'भगवंत नगर के लोगों से जुड़ी यह यात्रा',
@@ -114,7 +114,7 @@ export const politicalPage = {
 
 /* ───────────── News & Media ───────────── */
 export const mediaIntro = {
-  eyebrow: { en: 'News & Media', hi: 'समाचार एवं मीडिया' } as L,
+  eyebrow: { en: '', hi: '' } as L,
   title: { en: 'Moments of public service, through photographs', hi: 'जनसेवा के पल, तस्वीरों के संग' } as L,
   text: {
     en: 'A glimpse of public dialogue, community welfare efforts, public programmes and important moments in Bhagwantnagar’s development. These photographs capture the connection with residents and activities taking place across the area.',

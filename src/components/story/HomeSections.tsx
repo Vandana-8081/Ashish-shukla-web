@@ -18,7 +18,7 @@ export function StoryFeature() {
     <section className="section-pad bg-[var(--paper-2)]">
       <div className="container-site grid gap-10 lg:grid-cols-[1.02fr_.98fr] lg:items-center lg:gap-16">
         <Reveal>
-          <div className="ed-eyebrow mb-3">{t(homeStory.eyebrow)}</div>
+          {t(homeStory.eyebrow).trim() && <div className="ed-eyebrow mb-3">{t(homeStory.eyebrow)}</div>}
           <AccentTitle title={t(homeStory.title)} accent={t(homeStory.accent)} />
           <p className="ed-body mt-5">{t(shortBio)}</p>
           <Link href={getHref('/journey')} className="group mt-7 inline-flex items-center gap-3 font-bold text-[var(--navy)]">
@@ -146,7 +146,6 @@ export function GalleryTabs() {
       <div className="container-site">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <SectionHead
-            eyebrow={{ en: 'Photo Gallery', hi: 'फोटो गैलरी' }}
             title={{ en: 'Public life in pictures', hi: 'चित्रों में जन-जीवन' }}
             accent={{ en: 'in pictures', hi: 'चित्रों में' }}
           />
@@ -212,7 +211,7 @@ export function VideosRow() {
     <section className="section-pad bg-[var(--navy)]">
       <div className="container-site">
         <div className="flex flex-wrap items-end justify-between gap-4">
-          <SectionHead dark eyebrow={{ en: 'Videos', hi: 'वीडियो' }} title={{ en: 'Latest videos', hi: 'ताज़ा वीडियो' }} accent={{ en: 'videos', hi: 'वीडियो' }} />
+          <SectionHead dark title={{ en: 'Latest videos', hi: 'ताज़ा वीडियो' }} accent={{ en: 'videos', hi: 'वीडियो' }} />
           <Link href={getHref('/media#videos')} className="pill-link">{hi ? 'सभी देखें' : 'View all'} <ArrowRight className="h-4 w-4" /></Link>
         </div>
         <Stagger className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">

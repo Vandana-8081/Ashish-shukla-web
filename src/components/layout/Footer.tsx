@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/lib/languageContext';
 import { socialLinks } from '@/data/socialLinks';
@@ -56,9 +57,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-white/10">
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-5">
-            <p className="font-editorial text-4xl font-bold leading-tight tracking-tight text-[#ff7a1a] sm:text-4xl">
-              {dict.brand.name}
-            </p>
+            <Link href={`/${locale}`} className="inline-flex rounded-lg focus-visible:outline-2 focus-visible:outline-[#F5660A]">
+              <Image
+                src="/logo/logo3.png"
+                alt={dict.brand.name}
+                width={2048}
+                height={677}
+                className="h-20 w-auto max-w-[min(90vw,24rem)] object-contain"
+              />
+            </Link>
 
             <p className="text-base leading-relaxed text-white/70 max-w-sm">
               {dict.footer.description}

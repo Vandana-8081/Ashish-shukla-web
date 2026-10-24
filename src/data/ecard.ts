@@ -96,7 +96,7 @@ export const tributePalettes: Array<[string, string]> = [
 ];
 
 export const ecardStrings = {
-  eyebrow: L('PUBLIC SERVICE', 'जन सेवा'),
+  eyebrow: L('', ''),
   heading: L('e-Card: send greetings with your name', 'ई-कार्ड: अपने नाम से शुभकामनाएँ भेजें'),
   intro: L(
     'Choose an occasion, add your name and photo, and download the card or share it straight to WhatsApp.',
@@ -132,7 +132,7 @@ export const ecardStrings = {
     'Card downloaded. Attach it in the WhatsApp chat that just opened.',
     'कार्ड डाउनलोड हो गया है। खुले हुए WhatsApp चैट में उसे जोड़कर भेजें।',
   ),
-  preview: L('Card preview', 'कार्ड पूर्वावलोकन'),
+  preview: L('', ''),
   cardName: L('Ashish Shukla', 'आशीष शुक्ला'),
   cardLine: L('Bharatiya Janata Party · Bhagwantnagar, Unnao', 'भारतीय जनता पार्टी · भगवंतनगर, उन्नाव'),
   cardUrl: L('facebook.com/ashish4unnaao', 'facebook.com/ashish4unnaao'),

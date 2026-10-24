@@ -28,7 +28,7 @@ export function AboutPage() {
       <section id="biography" className="section-pad scroll-mt-24">
         <div className="container-site max-w-[900px]">
           <Reveal>
-            <div className="ed-eyebrow">{t(aboutPage.bioTitle)}</div>
+            {t(aboutPage.bioTitle).trim() && <div className="ed-eyebrow">{t(aboutPage.bioTitle)}</div>}
             <h2 className="ed-h2 mt-3 flex flex-wrap items-baseline gap-x-3">
               <span>{dict.brand.name}</span>
               <span className="font-editorial text-2xl font-bold text-saffron sm:text-3xl">{t({ en: '(Rinku Shukla)', hi: '(रिंकू शुक्ला)' })}</span>

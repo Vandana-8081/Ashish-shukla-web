@@ -57,7 +57,6 @@ export function IdealsPage() {
       <header className="bg-[#F1EBE1] px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
         <div className="mx-auto grid max-w-[1240px] items-center gap-8 lg:grid-cols-[1.2fr_.8fr] lg:gap-12">
           <div>
-            <span className="text-sm font-semibold text-[#B94F0B]">{copy.kicker}</span>
             <h1 className="mt-2 font-editorial text-4xl font-bold leading-tight text-[#172943] sm:text-4xl lg:text-5xl">
               {copy.heading}
             </h1>
