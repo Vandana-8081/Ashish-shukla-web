@@ -19,7 +19,7 @@ export function PublicLifePreview() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Left Content */}
             <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center text-xs font-bold tracking-[0.2em] uppercase text-[#F5660A]">
+              <div className="eyebrow-label inline-flex items-center text-xs font-bold tracking-[0.2em] uppercase text-[#F5660A]">
                 <span>{dict.publicLifeSection.eyebrow}</span>
               </div>
 
@@ -92,7 +92,7 @@ export function PublicLifePreview() {
                     <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#F5660A]">
                       {label}
                     </div>
-                    <h3 className="mt-3 font-editorial text-3xl font-bold leading-[1.15] text-[#151210] sm:text-4xl lg:text-5xl">
+                    <h3 className="mt-3 font-editorial text-3xl font-bold leading-[1.15] text-[#151210] sm:text-4xl">
                       {t(item.title)}
                     </h3>
 

@@ -56,7 +56,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-white/10">
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-5">
-            <p className="font-editorial text-4xl font-bold leading-tight tracking-tight text-[#ff7a1a] sm:text-5xl">
+            <p className="font-editorial text-4xl font-bold leading-tight tracking-tight text-[#ff7a1a] sm:text-4xl">
               {dict.brand.name}
             </p>
 

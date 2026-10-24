@@ -72,7 +72,7 @@ export default async function IdeaArticlePage({ params }: Props) {
           <div className="mt-6 grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
             <div className="min-w-0 lg:col-span-7">
               <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#B84F08]">{article.category[locale]}</p>
-              <h1 className="mt-3 font-editorial text-3xl font-bold leading-tight tracking-tight text-[#1C1410] sm:text-4xl lg:text-5xl">{article.title[locale]}</h1>
+              <h1 className="mt-3 font-editorial text-3xl font-bold leading-tight tracking-tight text-[#1C1410] sm:text-4xl lg:text-[44px]">{article.title[locale]}</h1>
               <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#4A3F37]">{article.summary[locale]}</p>
               <p className="mt-5 text-sm text-[#6E625A]">
                 {hi ? 'प्रकाशित: ' : 'Published: '}{published} · {article.readMinutes} {hi ? 'मिनट पढ़ें' : 'min read'}

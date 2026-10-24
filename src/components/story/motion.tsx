@@ -80,6 +80,7 @@ export function TiltImage({
   sizes = '(max-width:1024px) 100vw, 46vw',
   position = 'object-top',
   priority,
+  still = false,
 }: {
   src: string;
   alt: string;
@@ -87,6 +88,8 @@ export function TiltImage({
   sizes?: string;
   position?: string;
   priority?: boolean;
+  /** Show the whole photo: no zoom-in bleed and no scroll drift, so nothing is cropped. */
+  still?: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const rx = useMotionValue(0);
@@ -112,7 +115,7 @@ export function TiltImage({
       }}
       className={`image-frame will-change-transform ${className}`}
     >
-      <motion.div style={{ y: drift }} className="absolute inset-[-8%]">
+      <motion.div style={still ? undefined : { y: drift }} className={`absolute ${still ? 'inset-0' : 'inset-[-8%]'}`}>
         <Image src={src} alt={alt} fill sizes={sizes} priority={priority} className={`object-cover ${position}`} />
       </motion.div>
     </motion.div>

@@ -22,11 +22,11 @@ export function StoryHero() {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease }}
-              className="inline-flex items-center gap-2 rounded-full border border-[#F5660A]/30 bg-white px-4 py-1.5 text-xs font-semibold tracking-wide text-[#D45300]"
+              className="eyebrow-label inline-flex items-center gap-2 rounded-full border border-[#F5660A]/30 bg-white px-4 py-1.5 text-xs font-semibold tracking-wide text-[#D45300]"
             >
               <MapPin className="w-3.5 h-3.5" /> {t(storyHero.eyebrow)}
             </motion.div>
-            <h1 className="mt-5 font-editorial text-[clamp(2rem,8vw,3.75rem)] font-bold leading-[1.08] text-[#151210] sm:text-6xl xl:text-7xl">
+            <h1 className="mt-5 font-editorial text-[clamp(2rem,8vw,3rem)] font-bold leading-[1.1] text-[#151210] sm:text-5xl xl:text-[58px]">
               {storyHero.lines.map((line, i) => (
                 <motion.span
                   key={i}

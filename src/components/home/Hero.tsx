@@ -269,6 +269,7 @@ export function Hero() {
             {/* Eyebrow */}
             <div
               className="
+                eyebrow-label
                 flex
                 items-center
                 gap-3
@@ -293,10 +294,10 @@ export function Hero() {
                 max-w-[780px]
                 font-editorial
                 text-[38px]
-                sm:text-[56px]
-                md:text-[64px]
-                lg:text-[68px]
-                xl:text-[76px]
+                sm:text-[44px]
+                md:text-[48px]
+                lg:text-[52px]
+                xl:text-[58px]
                 font-bold
                 text-[#151210]
                 leading-[0.98]

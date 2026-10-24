@@ -52,7 +52,7 @@ export function PoliticalJourneyPreview() {
       <Container size="wide">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-3xl">
-            <h2 className="mt-2 font-editorial text-4xl font-bold leading-tight text-[#151210] sm:text-5xl">
+            <h2 className="mt-2 font-editorial text-4xl font-bold leading-tight text-[#151210] sm:text-4xl">
               {hi ? 'राजनीतिक यात्रा' : 'Political Journey'}
             </h2>
             <p className="mt-6 text-base text-[#4A433D] sm:text-lg">

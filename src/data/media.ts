@@ -169,3 +169,21 @@ export const videoGalleryData: VideoItem[] = [
   },
 },
 ];
+
+/**
+ * The six photos shown in the homepage "Instagram Updates" card (no Meta API needed).
+ * To refresh them, put new images in public/images/gallery and edit this list.
+ */
+export const currentUpdates: PhotoItem[] = [
+  { file: 'a14.jpg', en: 'Inauguration ceremony with local residents.', hi: 'स्थानीय लोगों के साथ उद्घाटन समारोह।' },
+  { file: 'jans1.jpg', en: 'Addressing a Gaurishankar Jan Kalyan Samiti gathering.', hi: 'गौरीशंकर जन कल्याण समिति के कार्यक्रम में संबोधन।' },
+  { file: 'jans2.jpg', en: 'A moment from a public gathering.', hi: 'जनसभा का एक क्षण।' },
+  { file: 'jans3.jpg', en: 'A moment from a public gathering.', hi: 'जनसभा का एक क्षण।' },
+  { file: 'jans4.jpg', en: 'A moment from a public gathering.', hi: 'जनसभा का एक क्षण।' },
+  { file: 'a15.jpg', en: 'Meeting and interacting with the community.', hi: 'समुदाय के साथ मुलाकात और संवाद।' },
+].map(({ file, en, hi }, index) => ({
+  id: `current-update-${index + 1}`,
+  image: `/images/gallery/${file}`,
+  category: { en: 'Latest Update', hi: 'ताज़ा अपडेट' },
+  caption: { en, hi },
+}));

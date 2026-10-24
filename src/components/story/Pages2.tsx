@@ -12,9 +12,9 @@ import { mediaIntro, placePage, politicalPage, servicePage } from '@/data/story2
 
 const responsibilityImages = [
   '/images/public-life/villageroad.webp',
-  '/images/public-life/water.webp',
+  '/images/updates/safai.webp',
   '/images/public-life/light.webp',
-  '/images/public-life/ashish2.jpg',
+  '/images/updates/janseva.jpg',
 ];
 
 function ScrollingPhotoColumn({ photos, className = '' }: { photos: string[]; className?: string }) {
@@ -157,7 +157,7 @@ export function ServicePage() {
         <ParallaxBg src="/images/public-life/jan-sunwai.jpg" />
         <div className="container-site relative z-10">
           <Reveal>
-            <h2 className="max-w-4xl font-editorial text-[clamp(32px,4.6vw,64px)] font-bold leading-[1.08]">{t(s.cta.title)}</h2>
+            <h2 className="max-w-4xl font-editorial text-[clamp(28px,3.6vw,46px)] font-bold leading-[1.08]">{t(s.cta.title)}</h2>
             <Link href={getHref('/contact')} className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-[#ffe9d6]">
               {t(s.cta.button)} <ArrowRight className="h-4 w-4" />
             </Link>
@@ -236,7 +236,7 @@ export function PoliticalPage() {
         <ParallaxBg src="/images/gallery/a8.jpg" overlay="linear-gradient(90deg,rgba(121,61,55,.92),rgba(16,45,73,.82))" />
         <div className="container-site relative z-10">
           <Reveal>
-            <h2 className="max-w-4xl font-editorial text-[clamp(30px,4.2vw,56px)] font-bold leading-[1.08]">{t(p.partyTitle)}</h2>
+            <h2 className="max-w-4xl font-editorial text-[clamp(28px,3.6vw,46px)] font-bold leading-[1.08]">{t(p.partyTitle)}</h2>
             <p className="mt-5 max-w-2xl text-[17px] leading-8 text-white/85">{t(p.partyText)}</p>
           </Reveal>
         </div>

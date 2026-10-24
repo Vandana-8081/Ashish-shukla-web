@@ -33,7 +33,7 @@ export function SectionHeading({
       {eyebrow && (
         <div
           className={cn(
-            'text-xs font-semibold tracking-[0.2em] uppercase mb-3',
+            'eyebrow-label text-xs font-semibold tracking-[0.2em] uppercase mb-3',
             align === 'center' ? 'text-center' : 'text-left',
             light ? 'text-[#FF7D2B]' : 'text-[#F5660A]'
           )}

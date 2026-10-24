@@ -45,7 +45,7 @@ export default async function DevelopmentPage({ params }: { params: Promise<{ lo
                 <span aria-hidden="true" className="h-1 w-7 rounded-full bg-[#F5660A]" />
                 {hi ? 'विकास की दिशा' : 'IDEAS & PROGRESS'}
               </span>
-              <h1 className="mt-3 max-w-4xl font-editorial text-4xl font-bold leading-[1.12] tracking-tight text-[#171412] sm:text-5xl lg:text-6xl">{ideasIntro.title[locale]}</h1>
+              <h1 className="mt-3 max-w-4xl font-editorial text-4xl font-bold leading-[1.12] tracking-tight text-[#171412] sm:text-4xl lg:text-5xl">{ideasIntro.title[locale]}</h1>
             </div>
             <p className="max-w-xl border-l-2 border-[#F5660A] pl-5 text-base leading-7 text-[#4A3F37] sm:text-lg sm:leading-8 lg:mb-1">{ideasIntro.subtitle[locale]}</p>
           </div>
@@ -56,7 +56,7 @@ export default async function DevelopmentPage({ params }: { params: Promise<{ lo
         <Container size="wide" className="py-10 md:py-14">
           <div className="grid gap-8 md:grid-cols-2 md:gap-12 lg:gap-16">
             <div className="relative overflow-hidden rounded-2xl border border-[#E8D8C8] border-l-4 border-l-[#F5660A] bg-[#F8F0E6] p-6 shadow-[0_12px_35px_rgba(61,43,29,0.07)] sm:p-9">
-              <h2 id="our-approach-heading" className="font-editorial text-4xl font-bold leading-tight text-[#000000] sm:text-5xl">{ourApproach.title[locale]}</h2>
+              <h2 id="our-approach-heading" className="font-editorial text-4xl font-bold leading-tight text-[#000000] sm:text-4xl">{ourApproach.title[locale]}</h2>
               <p className="mt-5 text-lg leading-8 text-[#403A34] sm:text-xl sm:leading-9">{ourApproach.mainIdea.text[locale]}</p>
             </div>
             <div className="border-t border-[#E7DED3] pt-6 md:border-l md:border-t-0 md:pl-10 md:pt-0">

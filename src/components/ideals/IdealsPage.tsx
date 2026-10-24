@@ -58,7 +58,7 @@ export function IdealsPage() {
         <div className="mx-auto grid max-w-[1240px] items-center gap-8 lg:grid-cols-[1.2fr_.8fr] lg:gap-12">
           <div>
             <span className="text-sm font-semibold text-[#B94F0B]">{copy.kicker}</span>
-            <h1 className="mt-2 font-editorial text-4xl font-bold leading-tight text-[#172943] sm:text-5xl lg:text-6xl">
+            <h1 className="mt-2 font-editorial text-4xl font-bold leading-tight text-[#172943] sm:text-4xl lg:text-5xl">
               {copy.heading}
             </h1>
             <p className="mt-5 max-w-3xl text-base leading-8 text-[#554E46] sm:text-lg">{copy.tagline}</p>

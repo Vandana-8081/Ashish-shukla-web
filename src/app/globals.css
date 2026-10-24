@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Source+Serif+4:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@500;600;700&family=Karma:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -13,10 +13,11 @@
   --color-muted: #6B625A;
   --color-border-subtle: #E8E2D8;
 
-  --font-serif: var(--font-display), "Source Serif 4", "Georgia", "Cambria", serif;
-  --font-display: "Source Serif 4";
-  --font-hindi-heading: "Noto Serif Devanagari";
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  /* Eczar for headings and Karma for body text; both cover Latin and Devanagari. */
+  --font-serif: var(--font-display), Georgia, Cambria, serif;
+  --font-display: "Eczar";
+  --font-hindi-heading: "Eczar";
+  --font-sans: "Karma", Georgia, Cambria, serif;
 }
 
 :root {
@@ -45,8 +46,13 @@ body {
   background-color: #F8F4ED;
   color: #171717;
   font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.75;
   overflow-x: hidden;
 }
+
+html:lang(hi) { font-size: 105%; }
+html:lang(hi) body { line-height: 1.8; }
 
 /* Serif class for editorial headings */
 .font-editorial {
@@ -163,7 +169,7 @@ html:lang(hi) .font-editorial {
 .ed-display {
   font-family: var(--font-serif);
   letter-spacing: -0.045em;
-  font-size: clamp(44px, 6vw, 84px);
+  font-size: clamp(36px, 4.4vw, 58px);
   line-height: 0.97;
   font-weight: 700;
   text-wrap: balance;
@@ -171,8 +177,8 @@ html:lang(hi) .font-editorial {
 .ed-h2 {
   font-family: var(--font-serif);
   letter-spacing: -0.035em;
-  font-size: clamp(32px, 4vw, 56px);
-  line-height: 1.05;
+  font-size: clamp(30px, 3.8vw, 48px);
+  line-height: 1.12;
   font-weight: 700;
   text-wrap: balance;
   color: var(--ink);
@@ -180,39 +186,74 @@ html:lang(hi) .font-editorial {
 .ed-title {
   font-family: var(--font-serif);
   letter-spacing: -0.045em;
-  font-size: clamp(42px, 6.2vw, 84px);
+  font-size: clamp(36px, 4.4vw, 58px);
   line-height: 0.98;
   font-weight: 700;
   text-wrap: balance;
 }
 @media (max-width: 640px) {
   .ed-display {
-    font-size: clamp(36px, 10vw, 54px);
+    font-size: clamp(32px, 9vw, 44px);
     line-height: 1.04;
   }
   .ed-h2 {
-    font-size: clamp(29px, 7.5vw, 40px);
+    font-size: clamp(26px, 7vw, 34px);
     line-height: 1.12;
   }
   .ed-title {
-    font-size: clamp(36px, 9vw, 54px);
+    font-size: clamp(32px, 9vw, 44px);
     line-height: 1.08;
   }
 }
 html:lang(hi) .ed-display, html:lang(hi) .ed-h2, html:lang(hi) .ed-title {
   font-family: var(--font-hindi-heading), var(--font-serif);
   letter-spacing: normal;
-  line-height: 1.18;
-  font-weight: 400;
+  line-height: 1.3;
+  font-weight: 500;
   font-synthesis-weight: none;
+}
+html:lang(hi) h1 {
+  font-size: clamp(36px, 4.5vw, 58px) !important;
+  line-height: 1.2;
+}
+html:lang(hi) h2 {
+  font-size: clamp(1.75rem, 3.3vw, 2.6rem) !important;
+  line-height: 1.2;
+}
+@media (max-width: 640px) {
+  html:lang(hi) h1 { font-size: clamp(30px, 8.5vw, 40px) !important; }
+  html:lang(hi) h2 { font-size: clamp(26px, 6vw, 32px) !important; }
 }
 /* Keep the same Devanagari typeface across every Hindi page and component. */
 html:lang(hi) body,
 html:lang(hi) body * {
-  font-family: var(--font-hindi-heading), var(--font-sans) !important;
+  font-family: var(--font-sans) !important;
   font-synthesis-weight: none;
 }
-.ed-body { color: #3f3a34; font-size: clamp(16px, 1.3vw, 20px); line-height: 1.75; }
+/* Headings keep the display face (Eczar) in both languages. */
+h1, h2, h3 { font-family: var(--font-serif); }
+html:lang(hi) body h1,
+html:lang(hi) body h2,
+html:lang(hi) body h3,
+html:lang(hi) body .font-editorial,
+html:lang(hi) body .ed-display,
+html:lang(hi) body .ed-h2,
+html:lang(hi) body .ed-title {
+  font-family: var(--font-serif) !important;
+}
+@layer utilities {
+  p[class~="text-base"],
+  p[class~="text-lg"],
+  p[class~="text-xl"],
+  p[class~="leading-relaxed"],
+  p[class~="leading-7"],
+  p[class~="leading-8"],
+  p[class~="leading-[1.65]"],
+  .ed-body {
+    @apply text-justify;
+  }
+}
+.ed-body { color: #3f3a34; font-size: clamp(16px, 1.2vw, 18px); line-height: 1.75; }
 .ed-eyebrow {
   font-size: 12px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--saffron);
 }

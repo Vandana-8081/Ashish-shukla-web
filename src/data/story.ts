@@ -393,7 +393,7 @@ export const serviceCards = {
   // },
   items: [
     { image: '/images/gallery/ashish1.jpg', title: { en: 'Janta Darbar', hi: 'जनता दरबार' }, text: { en: 'Elders, women, and young people share their concerns directly. They are heard patiently, and many issues are resolved on the spot.', hi: 'बुजुर्ग, महिलाएँ और युवा सीधे अपनी बात रखते हैं — धैर्य से सुनी जाती है, कई का मौके पर समाधान।' } },
-    { image: '/images/public-life/water.webp', title: { en: 'Water, Drains & Lights', hi: 'पानी, नाली और रोशनी' }, text: { en: 'Taking up clean drinking water, street lighting, drains, and paved-lane construction with officials.', hi: 'स्वच्छ पेयजल, स्ट्रीट लाइट, नाली और खड़ंजा निर्माण पर अधिकारियों के साथ पहल।' } },
+    { image: '/images/updates/safai.webp', title: { en: 'Water, Drains & Lights', hi: 'पानी, नाली और रोशनी' }, text: { en: 'Taking up clean drinking water, street lighting, drains, and paved-lane construction with officials.', hi: 'स्वच्छ पेयजल, स्ट्रीट लाइट, नाली और खड़ंजा निर्माण पर अधिकारियों के साथ पहल।' } },
     { image: '/images/public-life/nagrik.jpg', title: { en: 'Schemes & Pensions', hi: 'योजनाएँ और पेंशन' }, text: { en: 'Supporting eligible families in accessing the Pradhan Mantri Awas Yojana and old-age and widow pensions.', hi: 'प्रधानमंत्री आवास योजना, वृद्धा व विधवा पेंशन — पात्र परिवारों को उनका हक दिलाने में सहयोग।' } },
     { image: '/images/gallery/khel.jpg', title: { en: 'Youth & Community', hi: 'युवा एवं समाज' }, text: { en: 'Sports, cultural programmes, and community events that bring Bhagwant Nagar together.', hi: 'खेल, सांस्कृतिक कार्यक्रम और सामुदायिक आयोजन, जो भगवंत नगर को जोड़े रखते हैं।' } },
   ],

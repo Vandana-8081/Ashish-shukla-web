@@ -27,8 +27,8 @@ export function HeroPoster({ slide }: { slide: HeroSlide }) {
       {/* Phones and tablets: the whole portrait poster is the background; the text sits just above his head */}
       {slide.mobileImage && (
         <div className="absolute inset-0 overflow-hidden bg-[#FFF8F0] lg:hidden">
-          {/* Extends below the hero so the foot of the poster is cropped and his head sits lower */}
-          <div className="absolute inset-x-0 top-0 -bottom-[9svh]">
+          {/* Extends slightly below the hero so the foot of the poster is cropped, keeping his face and shoulders in view */}
+          <div className="absolute inset-x-0 top-0 -bottom-[6svh]">
             <Image
               key={`poster-mobile-bg-${slide.mobileImage}`}
               src={slide.mobileImage}
@@ -42,13 +42,13 @@ export function HeroPoster({ slide }: { slide: HeroSlide }) {
         </div>
       )}
 
-      <div className={`z-10 flex flex-col justify-center ${slide.mobileImage ? 'absolute inset-x-0 max-lg:bottom-[calc(max(100%_+_9svh,177.8vw)*0.43_-_9svh_+_84px)]' : 'relative shrink-0'} px-7 pb-3 pt-4 sm:px-10 sm:pb-6 sm:pt-12 lg:absolute lg:inset-y-0 lg:left-0 lg:w-[62%] lg:p-0 lg:pl-[9%]`}>
+      <div className={`z-10 flex flex-col justify-center ${slide.mobileImage ? 'absolute inset-x-0 max-lg:top-[clamp(2rem,8vh,4rem)] max-lg:bottom-auto' : 'relative shrink-0'} px-7 pb-3 pt-4 sm:px-10 sm:pb-6 sm:pt-12 lg:absolute lg:inset-y-0 lg:left-0 lg:w-[62%] lg:p-0 lg:pl-[9%]`}>
         {/* Same text design as the other hero slides */}
-        <div className="mb-4 text-[11px] font-bold uppercase tracking-[0.22em] text-[#F5660A] sm:mb-7 sm:text-sm">
+        <div className="eyebrow-label mb-4 text-[11px] font-bold uppercase tracking-[0.22em] text-[#F5660A] sm:mb-7 sm:text-sm">
           {t(slide.eyebrow)}
         </div>
 
-        <h1 className="max-w-[780px] font-editorial text-[34px] font-bold leading-[1.15] sm:leading-[0.98] tracking-[-0.035em] text-[#151210] sm:text-[56px] md:text-[64px] lg:text-[68px] xl:text-[76px]">
+        <h1 className="max-w-[780px] font-editorial text-[34px] font-bold leading-[1.15] sm:leading-[0.98] tracking-[-0.035em] text-[#151210] sm:text-[44px] md:text-[48px] lg:text-[52px] xl:text-[58px]">
           {t(slide.heading)}
         </h1>
 
@@ -68,13 +68,13 @@ export function HeroPoster({ slide }: { slide: HeroSlide }) {
           {t(slide.description)}
         </p>
 
-        <div className="mt-5 flex flex-col items-stretch gap-2.5 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+        <div className="mt-5 flex flex-col items-stretch gap-2.5 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 max-lg:flex-row max-lg:gap-2">
           <Button
             href={getHref(slide.primaryCta.path)}
             variant="primary"
             size="lg"
             icon="arrow"
-            className="w-full justify-center bg-white px-3 py-3 text-center text-sm leading-snug text-[#F5660A] hover:bg-[#FFF5E9] sm:w-auto sm:px-6 sm:py-3.5 sm:text-base"
+            className="w-full justify-center bg-white px-3 py-3 text-center text-sm leading-snug text-[#F5660A] hover:bg-[#FFF5E9] sm:w-auto sm:px-6 sm:py-3.5 sm:text-base max-lg:w-auto max-lg:flex-1 max-lg:whitespace-nowrap max-lg:rounded-full max-lg:bg-[#F5660A] max-lg:px-2 max-lg:py-2 max-lg:text-[11px] max-lg:text-white max-lg:shadow-md max-lg:hover:bg-[#D45300]"
           >
             {t(slide.primaryCta.label)}
           </Button>
@@ -83,7 +83,7 @@ export function HeroPoster({ slide }: { slide: HeroSlide }) {
             href={getHref(slide.secondaryCta.path)}
             variant="secondary"
             size="lg"
-            className="w-full justify-center px-3 py-3 text-center text-sm leading-snug sm:w-auto sm:px-6 sm:py-3.5 sm:text-base"
+            className="w-full justify-center px-3 py-3 text-center text-sm leading-snug sm:w-auto sm:px-6 sm:py-3.5 sm:text-base max-lg:w-auto max-lg:flex-1 max-lg:whitespace-nowrap max-lg:rounded-full max-lg:border-[#E8E2D8] max-lg:bg-white/90 max-lg:px-2 max-lg:py-2 max-lg:text-[11px] max-lg:text-[#151210] max-lg:shadow-sm"
           >
             {t(slide.secondaryCta.label)}
           </Button>

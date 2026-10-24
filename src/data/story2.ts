@@ -21,15 +21,15 @@ export const servicePage = {
   } as L,
   responsibilities: [
     { icon: 'road', title: { en: 'Streets & roads', hi: 'सड़कें और गलियाँ' } },
-    { icon: 'droplets', title: { en: 'Irrigation System', hi: 'सिंचाई व्यवस्था' } },
+    { icon: 'droplets', title: { en: 'Sanitation and Drainage', hi: 'स्वच्छता एवं जल निकासी' } },
     { icon: 'lightbulb', title: { en: 'Streetlights', hi: 'स्ट्रीट लाइट' } },
-    { icon: 'store', title: { en: 'Local facilities', hi: 'स्थानीय सुविधाएँ' } },
+    { icon: 'store', title: { en: 'Community Support and Material Distribution', hi: 'जनसहयोग एवं सामग्री वितरण' } },
   ] as Item[],
   responsibilityDescriptions: [
     { en: 'Maintain connected, safer roads and neighborhood streets.', hi: 'स्थानीय सड़कों और गलियों को सुगम व सुरक्षित बनाने पर ध्यान।' },
     { en: 'Keep drains clear and improve water flow across local areas.', hi: 'नालियों की सफाई और जल निकासी व्यवस्था बेहतर करने पर ध्यान।' },
     { en: 'Improve visibility and safer movement after dark.', hi: 'रात में बेहतर रोशनी और सुरक्षित आवागमन की दिशा में प्रयास।' },
-    { en: 'Strengthen access to essential neighborhood civic facilities.', hi: 'मोहल्लों में जरूरी नागरिक सुविधाओं तक पहुँच बेहतर करना।' },
+    { en: 'The purpose of public service is to stand with members of society and strengthen the spirit of support when needed.', hi: 'जनसेवा का उद्देश्य समाज के लोगों के साथ खड़े रहना और जरूरत के समय सहयोग की भावना को मजबूत करना है।' },
   ] as L[],
   fieldTitle: { en: 'A field-oriented approach', hi: 'ज़मीन पर उतरकर काम करने का तरीका' } as L,
   fieldText: {

@@ -1021,13 +1021,13 @@ export function drawCard(canvas: HTMLCanvasElement, input: DrawInput) {
     size -= 4;
     ctx.font = `${weight} ${size}px ${hi ? SANS : SERIF}`;
   }
-  const ruleY = 598;
+  const ruleY = 612;
   if (ctx.measureText(spec.title).width > 900) {
     ctx.font = `${weight} 64px ${hi ? SANS : SERIF}`;
     const lines = wrap(ctx, spec.title, 900).slice(0, 2);
-    lines.forEach((line, i) => ctx.fillText(line, W / 2, 546 + i * 62 - (lines.length - 1) * 40));
+    lines.forEach((line, i) => ctx.fillText(line, W / 2, 564 + i * 62 - (lines.length - 1) * 40));
   } else {
-    ctx.fillText(spec.title, W / 2, hi ? 572 : 560);
+    ctx.fillText(spec.title, W / 2, hi ? 590 : 578);
   }
   ctx.shadowColor = 'transparent';
   ctx.shadowBlur = 0;
@@ -1045,7 +1045,7 @@ export function drawCard(canvas: HTMLCanvasElement, input: DrawInput) {
   diamond(ctx, W / 2, ruleY, 9, spec.accent);
 
   // Message box
-  const boxY = 622;
+  const boxY = 632;
   const boxH = 150;
   ctx.fillStyle = 'rgba(0,0,0,0.28)';
   ctx.beginPath();

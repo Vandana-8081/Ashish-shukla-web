@@ -56,7 +56,7 @@ export default async function IdeasPage({
               <li className="font-semibold text-[#1C1410]">{ideasIntro.ideasHeading[locale]}</li>
             </ol>
           </nav>
-          <h1 className="mt-6 max-w-3xl font-editorial text-4xl font-bold leading-tight tracking-tight text-[#1C1410] sm:text-5xl">{ideasIntro.ideasHeading[locale]}</h1>
+          <h1 className="mt-6 max-w-3xl font-editorial text-4xl font-bold leading-tight tracking-tight text-[#1C1410] sm:text-4xl">{ideasIntro.ideasHeading[locale]}</h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#4A3F37]">{ideasIntro.ideasIntro[locale]}</p>
         </Container>
       </header>

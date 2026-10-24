@@ -23,7 +23,7 @@ export function JourneyTimeline() {
             </div>
             <h2
               id="journey-heading"
-              className="mt-3 font-editorial text-3xl font-bold leading-tight text-[#151210] sm:text-4xl md:text-5xl"
+              className="mt-3 font-editorial text-3xl font-bold leading-tight text-[#151210] sm:text-4xl"
             >
               {t(politicalJourneyIntro.heading)}
             </h2>

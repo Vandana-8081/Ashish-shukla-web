@@ -44,7 +44,7 @@ export default async function JourneyPage({ params }: { params: Promise<{ locale
           </nav>
           <div className="mt-6 grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
             <div className="min-w-0 lg:col-span-7">
-              <h1 className="max-w-3xl font-editorial text-4xl font-bold leading-tight tracking-tight text-[#1C1410] sm:text-5xl lg:text-6xl">{journeyPage.title[locale]}</h1>
+              <h1 className="max-w-3xl font-editorial text-4xl font-bold leading-tight tracking-tight text-[#1C1410] sm:text-4xl lg:text-5xl">{journeyPage.title[locale]}</h1>
               <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#4A3F37]">{journeyPage.subtitle[locale]}</p>
               <ul className="mt-8 flex flex-wrap gap-x-8 gap-y-3 border-t border-[#F5C9A8] pt-6 text-sm text-[#1C1410]">
                 {sections.map((section) => (

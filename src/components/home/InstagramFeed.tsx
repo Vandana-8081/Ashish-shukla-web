@@ -3,7 +3,7 @@
 import { ArrowUpRight, Images, Play } from 'lucide-react';
 import { useLanguage } from '@/lib/languageContext';
 import { socialLinks } from '@/data/socialLinks';
-import { photoGalleryData } from '@/data/media';
+import { currentUpdates } from '@/data/media';
 import { InstagramIcon } from '@/components/ui/SocialIcons';
 import type { SocialFeedResult } from '@/lib/socialFeeds';
 
@@ -72,7 +72,7 @@ function FollowPrompt({ message }: { message: string }) {
     return (
       <div className="flex min-h-[560px] flex-col">
         <ul className="grid flex-1 grid-cols-2 gap-1 overflow-y-auto bg-[#F8F4ED] p-2 sm:grid-cols-3">
-          {photoGalleryData.slice(0, 6).map((photo) => (
+          {currentUpdates.map((photo) => (
             <li key={photo.id} className="overflow-hidden rounded-lg">
               <a href={profile.url} target="_blank" rel="noopener noreferrer" aria-label={photo.caption.en}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -172,6 +172,29 @@ export function InstagramFeed({ result }: { result: SocialFeedResult }) {
           </li>
         ))}
       </ul>
+    </CardShell>
+  );
+}
+
+/** Instagram's own public profile embed: always shows the latest posts, no Meta key needed. */
+export function InstagramUpdates() {
+  const { dict } = useLanguage();
+  const profile = socialLinks.find((item) => item.platform === 'instagram');
+  const embedUrl = profile ? `${profile.url.replace(/\/+$/, '')}/embed/` : undefined;
+
+  return (
+    <CardShell>
+      {embedUrl ? (
+        <iframe
+          src={embedUrl}
+          title={dict.latestSocialMedia.instagramTitle}
+          loading="lazy"
+          scrolling="yes"
+          className="block h-[560px] w-full border-0 bg-white"
+        />
+      ) : (
+        <FollowPrompt message="" />
+      )}
     </CardShell>
   );
 }

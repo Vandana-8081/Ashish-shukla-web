@@ -43,7 +43,7 @@ export function AboutPreview() {
 
           {/* Right Column: Editorial Bio */}
           <div className="lg:col-span-7 order-1 lg:order-2 space-y-6">
-            <div className="inline-flex items-center text-xs font-bold tracking-[0.2em] uppercase text-[#F5660A]">
+            <div className="eyebrow-label inline-flex items-center text-xs font-bold tracking-[0.2em] uppercase text-[#F5660A]">
               <span>{dict.aboutSection.eyebrow}</span>
             </div>
 

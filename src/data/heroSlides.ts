@@ -3,8 +3,8 @@ import type { HeroSlide } from '@/types';
 export const heroSlides: HeroSlide[] = [
 {
 id: 'hero-poster',
-image: '/images/hero/poster-new.jpg',
-mobileImage: '/images/hero/poster-new-mobile.jpg',
+image: '/images/hero/poster1.jpeg',
+mobileImage: '/images/hero/postermobile1.jpeg',
 poster: true,
 eyebrow: {
 en: 'OFFICIAL PROFILE',
@@ -15,8 +15,8 @@ en: 'ASHISH SHUKLA',
 hi: 'आशीष शुक्ला',
 },
 nickname: {
-en: '(Rinku)',
-hi: '(रिंकू)',
+en: '(Rinku Shukla)',
+hi: '(रिंकू शुक्ला)',
 },
 subtitle: {
 en: 'Dedicated to Public Service, Committed to the Progress of Bhagwantnagar',
@@ -43,8 +43,8 @@ path: '/about#journey',
 },
 {
 id: 'hero-banner',
-image: '/images/hero/banner-4.jpg',
-mobileImage: '/images/hero/banner-4-mobile.jpg',
+image: '/images/hero/poster2.jpeg',
+mobileImage: '/images/hero/postermobile2.jpeg',
 poster: true,
 eyebrow: {
 en: 'PUBLIC CONNECT',

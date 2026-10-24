@@ -42,6 +42,7 @@ export const navigationItems: NavItem[] = [
     children: [
       { name: { en: 'Public Service', hi: 'जनसेवा' }, path: '/public-life#public-service' },
       { name: { en: 'Bhagwant Nagar Vision', hi: 'भगवंतनगर का विज़न' }, path: '/public-life#vision' },
+      { name: { en: 'E-Card', hi: 'ई-कार्ड' }, path: '/e-card' },
       
     ],
   },

@@ -61,7 +61,7 @@ export function Priorities() {
       <div className="container-site relative grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
         <div className="lg:sticky lg:top-32 lg:self-start">
           <div className="ed-eyebrow !text-[#ffad72]">{t(priorities.eyebrow)}</div>
-          <h2 className="mt-4 max-w-xl font-editorial text-[clamp(34px,4.7vw,62px)] font-semibold leading-[1.16] text-white">
+          <h2 className="mt-4 max-w-xl font-editorial text-[clamp(28px,3.6vw,46px)] font-semibold leading-[1.16] text-white">
             {t(priorities.title)}
           </h2>
           <p className="mt-6 max-w-lg text-base leading-8 text-white/70 sm:text-lg">
@@ -108,7 +108,7 @@ export function NextChapter() {
       <div className="container-site relative z-10 text-white">
         <Reveal>
           <div className="ed-eyebrow !text-[#ffb27a]">{t(nextChapter.eyebrow)}</div>
-          <h2 className="mt-4 max-w-5xl font-editorial text-[clamp(30px,4.2vw,58px)] font-bold leading-[1.08]">{t(nextChapter.title)}</h2>
+          <h2 className="mt-4 max-w-5xl font-editorial text-[clamp(28px,3.6vw,46px)] font-bold leading-[1.08]">{t(nextChapter.title)}</h2>
           <p className="mt-6 max-w-2xl text-[17px] leading-8 text-white/80">{t(nextChapter.text)}</p>
         </Reveal>
       </div>
@@ -131,7 +131,7 @@ export function Closing() {
           ))}
         </Stagger>
         <Reveal delay={0.2}>
-          <h2 className="mx-auto mt-8 max-w-4xl text-balance font-editorial text-[clamp(30px,3.8vw,54px)] font-bold leading-[1.16] text-[#ffb27a]">{t(closing.place)}</h2>
+          <h2 className="mx-auto mt-8 max-w-4xl text-balance font-editorial text-[clamp(28px,3.6vw,46px)] font-bold leading-[1.16] text-[#ffb27a]">{t(closing.place)}</h2>
           <div className="mt-5 space-y-1 font-editorial text-base sm:text-lg md:text-xl">
             {closing.final.map((l, i) => (
               <p key={i}>{t(l)}</p>
