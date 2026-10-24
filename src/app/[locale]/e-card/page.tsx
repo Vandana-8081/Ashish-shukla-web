@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import { EcardMaker } from '@/components/ecard/EcardMaker';
 import { Container } from '@/components/ui/Container';
 import { ecardStrings as s } from '@/data/ecard';
@@ -10,14 +11,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const lang = locale === 'hi' ? 'hi' : 'en';
-  return {
+  return pageMetadata({
+    locale,
+    path: '/e-card',
     title: s.heading[lang],
     description: s.intro[lang],
-    alternates: {
-      canonical: `/${locale}/e-card`,
-      languages: { en: '/en/e-card', hi: '/hi/e-card' },
-    },
-  };
+  });
 }
 
 export default async function EcardPage({

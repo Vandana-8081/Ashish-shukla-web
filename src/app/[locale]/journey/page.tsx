@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import { JourneyIntro } from '@/components/story/JourneyExtra';
 import { Chapters } from '@/components/story/Chapters';
 import { NextChapter, Closing } from '@/components/story/Sections';
@@ -11,14 +12,15 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  return {
+  return pageMetadata({
+    locale,
+    path: '/journey',
     title: locale === 'hi' ? 'जीवन की यात्रा' : 'The Journey',
     description:
       locale === 'hi'
         ? 'आशीष शुक्ला की सार्वजनिक यात्रा जनसंपर्क, नागरिकों की समस्याओं को समझने और भगवंतनगर के विकास के प्रति प्रतिबद्धता पर केंद्रित है।'
-        : 'From Bhagwant Nagar to Kanpur — and back: the journey of Ashish Shukla.',
-    alternates: { canonical: `/${locale}/journey`, languages: { en: '/en/journey', hi: '/hi/journey' } },
-  };
+        : 'From Bhagwant Nagar to Kanpur — and back: the life journey of Ashish Shukla, Chairman of Bhagwantnagar Nagar Panchayat, Unnao.',
+  });
 }
 
 export default function JourneyPage() {

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { breadcrumbJsonLd, pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ExternalLink, FileText, ListChecks, Users } from 'lucide-react';
@@ -19,11 +20,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const l: Locale = locale === 'hi' ? 'hi' : 'en';
   const article = ideaArticles.find((item) => item.slug === slug);
   if (!article) return {};
-  return {
+  return pageMetadata({
+    locale: l,
+    path: `/development/ideas/${slug}`,
     title: article.title[l],
     description: article.summary[l],
-    alternates: { canonical: `/${l}/development/ideas/${slug}`, languages: { en: `/en/development/ideas/${slug}`, hi: `/hi/development/ideas/${slug}` } },
-  };
+    image: article.image,
+    type: 'article',
+    publishedTime: article.publishedAt,
+  });
 }
 
 /** Splits a paragraph into sentences (English full stop or Hindi danda). */
@@ -53,8 +58,30 @@ export default async function IdeaArticlePage({ params }: Props) {
   const sourceHost = new URL(article.sourceUrl).hostname.replace(/^www\./u, '');
   const card = 'rounded-2xl border border-[#F5C9A8] bg-white p-4 shadow-sm';
 
+  const jsonLd = [
+    breadcrumbJsonLd(locale, [
+      [hi ? 'होम' : 'Home', ''],
+      [ideasIntro.title[locale], '/development'],
+      [ideasIntro.ideasHeading[locale], '/development/ideas'],
+      [article.title[locale], `/development/ideas/${article.slug}`],
+    ]),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: article.title[locale],
+      description: article.summary[locale],
+      image: `${SITE_URL}${article.image}`,
+      datePublished: article.publishedAt,
+      inLanguage: hi ? 'hi-IN' : 'en-IN',
+      mainEntityOfPage: articleUrl,
+      author: { '@id': `${SITE_URL}/#person` },
+      publisher: { '@id': `${SITE_URL}/#person` },
+    },
+  ];
+
   return (
     <main data-site-motion-ignore className="min-h-[70vh] bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <header className="border-b border-[#EBE2D8] bg-[#FAF6F1]/50">
         <Container size="wide" className="pb-10 pt-7 lg:pb-12">
           <nav aria-label="Breadcrumb" className="text-sm text-[#6E625A]">

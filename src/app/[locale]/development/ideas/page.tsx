@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Container } from '@/components/ui/Container';
@@ -9,11 +10,7 @@ import type { Locale } from '@/types';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const l: Locale = locale === 'hi' ? 'hi' : 'en';
-  return {
-    title: ideasIntro.ideasHeading[l],
-    description: ideasIntro.ideasIntro[l],
-    alternates: { canonical: `/${l}/development/ideas`, languages: { en: '/en/development/ideas', hi: '/hi/development/ideas' } },
-  };
+  return pageMetadata({ locale: l, path: '/development/ideas', title: ideasIntro.ideasHeading[l], description: ideasIntro.ideasIntro[l] });
 }
 
 export default async function IdeasPage({

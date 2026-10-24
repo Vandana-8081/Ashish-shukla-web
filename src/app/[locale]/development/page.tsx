@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowRight, Route, GraduationCap, HeartPulse, Droplet, MessageSquare } from 'lucide-react';
@@ -11,11 +12,7 @@ import type { Locale } from '@/types';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const l: Locale = locale === 'hi' ? 'hi' : 'en';
-  return {
-    title: ideasIntro.title[l],
-    description: ideasIntro.subtitle[l],
-    alternates: { canonical: `/${l}/development`, languages: { en: '/en/development', hi: '/hi/development' } },
-  };
+  return pageMetadata({ locale: l, path: '/development', title: ideasIntro.title[l], description: ideasIntro.subtitle[l] });
 }
 
 export default async function DevelopmentPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -56,7 +53,7 @@ export default async function DevelopmentPage({ params }: { params: Promise<{ lo
               <p className="mt-5 text-lg leading-8 text-[#403A34] sm:text-xl sm:leading-9">{ourApproach.mainIdea.text[locale]}</p>
             </div>
             <div className="border-t border-[#E7DED3] pt-6 md:border-l md:border-t-0 md:pl-10 md:pt-0">
-              <div className="space-y-4 text-base leading-7 text-[#4A3F37]">
+              <div className="space-y-4 text-justify text-base leading-7 text-[#4A3F37]">
                 {ourApproach.commitment.paragraphs.map((paragraph, index) => <p key={index}>{paragraph[locale]}</p>)}
               </div>
             </div>

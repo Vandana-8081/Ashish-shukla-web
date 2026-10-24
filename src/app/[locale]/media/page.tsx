@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import { MediaIntro } from '@/components/story/Pages2';
 import { PhotoGallery } from '@/components/media/PhotoGallery';
 import { VideoSection } from '@/components/media/VideoSection';
@@ -14,17 +15,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const dict = getDictionary((locale === 'hi' ? 'hi' : 'en') as Locale);
-  return {
+  return pageMetadata({
+    locale,
+    path: '/media',
     title: dict.mediaSection.heading,
     description: dict.mediaSection.description,
-    alternates: {
-      canonical: `/${locale}/media`,
-      languages: {
-        en: '/en/media',
-        hi: '/hi/media',
-      },
-    },
-  };
+  });
 }
 
 export default async function MediaPage({

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -11,11 +12,7 @@ import type { Locale } from '@/types';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const l: Locale = locale === 'hi' ? 'hi' : 'en';
-  return {
-    title: journeyPage.title[l],
-    description: journeyPage.subtitle[l],
-    alternates: { canonical: `/${l}/development/journey`, languages: { en: '/en/development/journey', hi: '/hi/development/journey' } },
-  };
+  return pageMetadata({ locale: l, path: '/development/journey', title: journeyPage.title[l], description: journeyPage.subtitle[l] });
 }
 
 export default async function JourneyPage({ params }: { params: Promise<{ locale: string }> }) {

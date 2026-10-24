@@ -112,6 +112,21 @@ export default async function LocaleLayout({
           validLocale === 'hi'
             ? 'अध्यक्ष, नगर पंचायत भगवंतनगर'
             : 'President, Bhagwantnagar Nagar Panchayat',
+        birthDate: '1980-02-26',
+        nationality: 'IN',
+        alumniOf: {
+          '@type': 'EducationalOrganization',
+          name: 'R. R. B. N. Inter College, Bhagwant Nagar, Unnao',
+        },
+        affiliation: {
+          '@type': 'Organization',
+          name: validLocale === 'hi' ? 'भारतीय जनता पार्टी' : 'Bharatiya Janata Party',
+        },
+        worksFor: { '@id': `${SITE_URL}/#nagar-panchayat` },
+        knowsAbout:
+          validLocale === 'hi'
+            ? ['जनसेवा', 'ग्रामीण विकास', 'स्वच्छता', 'सड़क एवं जल निकासी', 'स्वास्थ्य सुविधाएँ']
+            : ['Public service', 'Rural development', 'Sanitation', 'Roads and drainage', 'Healthcare access'],
         sameAs: [
           'https://www.facebook.com/ashish4unnaao',
           'https://www.instagram.com/ashish4unnao/',
@@ -123,6 +138,18 @@ export default async function LocaleLayout({
           addressRegion: 'Uttar Pradesh',
           addressCountry: 'IN',
         },
+      },
+      {
+        '@type': 'GovernmentOrganization',
+        '@id': `${SITE_URL}/#nagar-panchayat`,
+        name: validLocale === 'hi' ? 'नगर पंचायत भगवंतनगर' : 'Bhagwantnagar Nagar Panchayat',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Bhagwant Nagar',
+          addressRegion: 'Uttar Pradesh',
+          addressCountry: 'IN',
+        },
+        areaServed: { '@type': 'AdministrativeArea', name: 'Bhagwant Nagar, Unnao, Uttar Pradesh' },
       },
       {
         '@type': 'WebSite',

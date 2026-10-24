@@ -36,7 +36,7 @@ export function HeroPoster({ slide }: { slide: HeroSlide }) {
               fill
               priority
               sizes="100vw"
-              className="object-cover object-[60%_bottom]"
+              className="object-cover object-[60%_20%]"
             />
           </div>
         </div>

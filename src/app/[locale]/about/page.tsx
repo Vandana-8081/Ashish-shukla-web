@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/seo';
 import { AboutPage } from '@/components/story/AboutPage';
 import { Chapters } from '@/components/story/Chapters';
 import { Banner } from '@/components/story/Blocks';
@@ -10,17 +11,15 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  return {
+  return pageMetadata({
+    locale,
+    path: '/about',
     title: locale === 'hi' ? 'आशीष शुक्ला - परिचय' : 'About Ashish Shukla',
     description:
       locale === 'hi'
-        ? 'गढ़ा हुआ जीवन, विरासत में मिला नहीं — आशीष शुक्ला का जीवन परिचय।'
-        : 'A life built, not inherited — the biography of Ashish Shukla, Chairman of Bhagwant Nagar Nagar Panchayat.',
-    alternates: {
-      canonical: `/${locale}/about`,
-      languages: { en: '/en/about', hi: '/hi/about' },
-    },
-  };
+        ? 'आशीष शुक्ला (रिंकू) का जीवन परिचय — अध्यक्ष, नगर पंचायत भगवंतनगर, उन्नाव, उत्तर प्रदेश। गढ़ा हुआ जीवन, विरासत में मिला नहीं।'
+        : 'The biography of Ashish Shukla (Rinku), Chairman of Bhagwantnagar Nagar Panchayat, Unnao, Uttar Pradesh — a life built, not inherited.',
+  });
 }
 
 export default function AboutRoute() {
