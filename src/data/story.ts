@@ -39,8 +39,8 @@ export const marqueeText: LocalizedString = {
 };
 
 export const shortBio: LocalizedString = {
-  en: 'From economic hardship and early employment in Kanpur to entrepreneurship and public leadership in Bhagwant Nagar, Ashish Shukla’s journey has been shaped by work, resilience and grassroots experience. Today, as Chairman of Bhagwant Nagar Nagar Panchayat, he is seeking to contribute at a broader level to the future of the Bhagwant Nagar region.',
-  hi: 'आर्थिक कठिनाइयों और कानपुर में शुरुआती रोज़गार से लेकर उद्यमिता और भगवंत नगर में जन-नेतृत्व तक, आशीष शुक्ला की यात्रा परिश्रम, संघर्षशीलता और ज़मीनी अनुभव से गढ़ी गई है। आज नगर पंचायत भगवंत नगर के अध्यक्ष के रूप में वे भगवंत नगर क्षेत्र के भविष्य में व्यापक स्तर पर योगदान देना चाहते हैं।',
+  en: 'Ashish Shukla’s journey reflects hard work, experience, and a sense of responsibility toward society. As Chairman of Bhagwantnagar Nagar Panchayat, his purpose is to understand residents’ expectations, prioritize local issues, and keep working toward better basic amenities and development in the area.',
+  hi: 'आशीष शुक्ला की यात्रा परिश्रम, अनुभव और समाज के प्रति जिम्मेदारी की भावना को दर्शाती है। नगर पंचायत भगवंतनगर के अध्यक्ष के रूप में उनका उद्देश्य नागरिकों की अपेक्षाओं को समझना, स्थानीय समस्याओं को प्राथमिकता देना और क्षेत्र में बेहतर बुनियादी सुविधाओं एवं विकास के लिए निरंतर प्रयास करना है।',
 };
 
 export interface Chapter {
