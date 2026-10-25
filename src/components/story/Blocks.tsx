@@ -117,14 +117,14 @@ export function Timeline({ showHead = true }: { showHead?: boolean }) {
 }
 
 /** Full-width photo with parallax and a bold statement. */
-export function Banner({ cta }: { cta?: { href: string; label: L } }) {
+export function Banner({ cta, image = banner.image, position = 'object-[center_30%]', title = banner.title }: { cta?: { href: string; label: L }; image?: string; position?: string; title?: L }) {
   const { t, getHref } = useLanguage();
   return (
-    <section className="relative overflow-hidden py-20 md:py-28">
-      <ParallaxBg src={banner.image} />
+    <section className="relative flex min-h-[420px] items-center overflow-hidden py-28 md:min-h-[560px] md:py-40">
+      <ParallaxBg src={image} position={position} />
       <div className="container-site relative z-10">
         <Reveal>
-          <h2 className="max-w-5xl font-editorial text-[clamp(28px,3.6vw,46px)] font-bold leading-[1.25] text-white">{t(banner.title)}</h2>
+          <h2 className="max-w-5xl font-editorial text-[clamp(28px,3.6vw,46px)] font-bold leading-[1.25] text-white">{t(title)}</h2>
           {cta && (
             <Link href={getHref(cta.href)} className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-[#ffe9d6]">
               {t(cta.label)} <ArrowRight className="h-4 w-4" />

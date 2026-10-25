@@ -103,8 +103,8 @@ export function Priorities() {
 export function NextChapter() {
   const { t } = useLanguage();
   return (
-    <section className="relative overflow-hidden py-14 sm:py-20 md:py-28">
-      <ParallaxBg src="/images/gallery/a11.jpg" overlay="linear-gradient(90deg,rgba(121,61,55,.92),rgba(16,45,73,.8))" />
+    <section className="relative overflow-hidden py-20 sm:py-28 md:py-40 min-h-[460px] md:min-h-[620px] flex items-center">
+      <ParallaxBg src="/images/gallery/a11.jpg" position="object-top" overlay="linear-gradient(90deg,rgba(121,61,55,.92),rgba(16,45,73,.8))" />
       <div className="container-site relative z-10 text-white">
         <Reveal>
           {t(nextChapter.eyebrow).trim() && <div className="ed-eyebrow !text-[#ffb27a]">{t(nextChapter.eyebrow)}</div>}

@@ -6,7 +6,7 @@ import { PageHero } from './Blocks';
 import { Item, Stagger } from './motion';
 
 export function JourneyIntro() {
-  return <PageHero eyebrow={journeyPage.eyebrow} title={journeyPage.title} text={journeyPage.intro} image="/images/journey/ashish2.jpg" position="object-top" />;
+  return <PageHero eyebrow={journeyPage.eyebrow} title={journeyPage.title} text={journeyPage.intro} image="/images/journey/ashish2.jpg" position="object-[center_65%]" />;
 }
 
 export function JourneyExtra() {

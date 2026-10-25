@@ -118,7 +118,7 @@ export function IdealsPage() {
                   aria-haspopup="dialog"
                   className="group flex h-full w-full flex-col overflow-hidden rounded-md border border-[#E1DBD1] bg-white text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F5660A]"
                 >
-                  <div className="relative aspect-[4/5] w-full overflow-hidden border-b-4 border-[#F5660A] bg-[#F1EBE1]">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden border-b-4 border-[#F5660A] bg-[#F1EBE1]">
                     <Image
                       src={person.portrait ?? '/images/ideals/portrait-placeholder.svg'}
                       alt={person.portrait
@@ -126,7 +126,7 @@ export function IdealsPage() {
                         : copy.temporaryPortraitAlt}
                       fill
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                      className="object-cover object-[center_22%] transition-transform duration-500 group-hover:scale-105"
+                      className="object-contain object-center transition-transform duration-500 group-hover:scale-105"
                     />
                     {person.years && <span className="absolute bottom-3 left-3 rounded-full bg-[#141B38]/85 px-3 py-1 text-xs font-semibold text-white">{isHindi && person.yearsHi ? person.yearsHi : person.years}</span>}
                     {!person.portrait && <span className="absolute inset-x-0 bottom-0 bg-[#F5660A]/80 px-2 py-1.5 text-center text-[11px] font-semibold text-white">{copy.temporaryPortrait}</span>}

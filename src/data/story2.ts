@@ -63,6 +63,10 @@ export const placePage = {
     en: 'Every village and neighbourhood has its own priorities. Listening to residents, meeting families and seeing local conditions firsthand helps connect those needs with practical work.',
     hi: 'हर गाँव और मोहल्ले की अपनी ज़रूरतें हैं। लोगों से संवाद, परिवारों से मुलाक़ात और स्थानीय हालात को करीब से समझना इन ज़रूरतों को ज़मीनी काम से जोड़ता है।',
   } as L,
+  banner: {
+    en: 'Listening to every village and neighbourhood, and turning local needs into work on the ground.',
+    hi: 'हर गाँव और मोहल्ले की बात सुनना, और स्थानीय ज़रूरतों को ज़मीनी काम में बदलना।',
+  } as L,
   focusTitle: { en: 'What should the next phase focus on?', hi: 'अगला चरण किन बातों पर केंद्रित हो?' } as L,
   focus: [
     { icon: 'route', title: { en: 'Roads & Connectivity', hi: 'सड़कें एवं संपर्क' }, text: { en: 'Reliable connectivity links villages to markets, students to institutions, patients to hospitals and businesses to customers. Better roads are an economic multiplier.', hi: 'भरोसेमंद संपर्क गाँवों को बाज़ार से, विद्यार्थियों को संस्थानों से, मरीज़ों को अस्पताल से और व्यवसायों को ग्राहकों से जोड़ता है। बेहतर सड़कें आर्थिक गुणक हैं।' } },

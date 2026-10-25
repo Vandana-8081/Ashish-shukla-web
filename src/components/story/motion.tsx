@@ -136,14 +136,14 @@ export function ScrollProgress() {
 }
 
 /** Background image with a slow parallax drift (used on dark banner sections). */
-export function ParallaxBg({ src, overlay = 'linear-gradient(90deg,rgba(13,28,40,.9),rgba(13,28,40,.5))' }: { src: string; overlay?: string }) {
+export function ParallaxBg({ src, overlay = 'linear-gradient(90deg,rgba(13,28,40,.9),rgba(13,28,40,.5))', position = 'object-center' }: { src: string; overlay?: string; position?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
   const y = useTransform(scrollYProgress, [0, 1], ['-10%', '10%']);
   return (
     <div ref={ref} aria-hidden className="absolute inset-0 overflow-hidden">
       <motion.div style={{ y }} className="absolute inset-x-0 -inset-y-[12%]">
-        <Image src={src} alt="" fill sizes="100vw" className="object-cover" />
+        <Image src={src} alt="" fill sizes="100vw" className={`object-cover ${position}`} />
       </motion.div>
       <div className="absolute inset-0" style={{ background: overlay }} />
     </div>

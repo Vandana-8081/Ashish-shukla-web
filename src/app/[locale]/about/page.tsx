@@ -29,7 +29,14 @@ export default function AboutRoute() {
       <section id="journey" className="scroll-mt-24">
         <Chapters items={chapters.slice(0, 3)} />
       </section>
-      <Banner />
+      <Banner
+        image="/images/gallery/a10.jpg"
+        position="object-[center_25%]"
+        title={{
+          en: 'Staying close to the people, hearing every concern, and working with trust for Bhagwantnagar.',
+          hi: 'लोगों के बीच रहकर, हर समस्या को सुनकर, भरोसे के साथ भगवंतनगर के लिए कार्य करना।',
+        }}
+      />
     </>
   );
 }

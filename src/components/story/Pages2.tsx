@@ -98,7 +98,7 @@ export function ServicePage() {
   const s = servicePage;
   return (
     <>
-      <PageHero eyebrow={s.eyebrow} title={s.title} text={s.intro} image="/images/public-life/jan-sunwai-page.jpg" />
+      <PageHero eyebrow={s.eyebrow} title={s.title} text={s.intro} image="/images/public-life/jan-sunwai-page.jpg" position="object-[center_20%]" />
 
       <section id="public-service" className="section-pad relative isolate scroll-mt-24 overflow-hidden bg-[var(--paper-2)]">
         <svg
@@ -153,8 +153,8 @@ export function ServicePage() {
         </div>
       </section>
 
-      <section id="jan-sunwai" className="relative scroll-mt-24 overflow-hidden py-14 text-white sm:py-20 md:py-28">
-        <ParallaxBg src="/images/public-life/jan-sunwai.jpg" />
+      <section id="jan-sunwai" className="relative flex min-h-[380px] scroll-mt-24 items-center overflow-hidden py-20 text-white sm:py-24 md:min-h-[520px] md:py-32">
+        <ParallaxBg src="/images/public-life/jan-sunwai.jpg" position="object-[center_35%]" />
         <div className="container-site relative z-10">
           <Reveal>
             <h2 className="max-w-4xl font-editorial text-[clamp(28px,3.6vw,46px)] font-bold leading-[1.08]">{t(s.cta.title)}</h2>
@@ -199,7 +199,7 @@ function PlaceSections() {
           </Reveal>
         </div>
       </section>
-      <Banner />
+      <Banner image="/images/public-life/a3.jpg" position="object-[center_30%]" title={p.banner} />
     </>
   );
 }
@@ -233,7 +233,7 @@ export function PoliticalPage() {
         </div>
       </section>
       <section className="relative overflow-hidden py-14 text-white sm:py-20 md:py-28">
-        <ParallaxBg src="/images/gallery/a8.jpg" overlay="linear-gradient(90deg,rgba(121,61,55,.92),rgba(16,45,73,.82))" />
+        <ParallaxBg src="/images/public-life/a2.jpg" position="object-[center_30%]" overlay="linear-gradient(90deg,rgba(121,61,55,.92),rgba(16,45,73,.82))" />
         <div className="container-site relative z-10">
           <Reveal>
             <h2 className="max-w-4xl font-editorial text-[clamp(28px,3.6vw,46px)] font-bold leading-[1.08]">{t(p.partyTitle)}</h2>
