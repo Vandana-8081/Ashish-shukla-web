@@ -43,7 +43,11 @@ export const servicePage = {
     { en: 'Follow its progress', hi: 'प्रगति पर नज़र रखें' },
   ] as L[],
   cta: {
-    title: { en: 'Your area. Your issue. Your voice.', hi: 'आपका क्षेत्र। आपकी समस्या। आपकी आवाज़।' } as L,
+    title: { en: 'Every citizen’s voice matters', hi: 'हर नागरिक की बात महत्वपूर्ण है' } as L,
+    text: {
+      en: 'Share local issues and suggestions. Your participation is important in improving civic facilities and understanding the needs of the area.',
+      hi: 'स्थानीय समस्याओं और सुझावों को साझा करें। आपकी भागीदारी बेहतर नागरिक सुविधाओं और क्षेत्र की आवश्यकताओं को समझने की दिशा में महत्वपूर्ण है।',
+    } as L,
     button: { en: 'Share a Public Issue', hi: 'अपनी समस्या बताएं' } as L,
   },
 };

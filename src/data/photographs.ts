@@ -140,7 +140,7 @@ export const photographData: PhotographItem[] = [
   },
    {
     id: 'sports-3',
-    image: '/images/hero/hero1.png',
+    image: '/images/hero/hero2.png',
     alt: sports.caption,
   },
    {

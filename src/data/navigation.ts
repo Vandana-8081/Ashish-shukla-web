@@ -46,7 +46,26 @@ export const navigationItems: NavItem[] = [
       
     ],
   },
+ 
   {
+    id: 'development',
+    name: { en: 'Development & Ideas', hi: 'विकास एवं विचार' },
+    path: '/development',
+    hasDropdown: true,
+    children: [
+      { name: { en: 'Ideas & Articles', hi: 'विचार एवं लेख' }, path: '/development/ideas' },
+      { name: { en: 'Development Journey', hi: 'विकास यात्रा' }, path: '/development/journey' },
+    ],
+  },
+  {
+    id: 'ideals',
+    name: {
+      en: 'Our Ideals',
+      hi: 'हमारे आदर्श',
+    },
+    path: '/ideals',
+  },
+   {
     id: 'media',
     name: {
       en: ' Media',
@@ -67,24 +86,6 @@ export const navigationItems: NavItem[] = [
       },
       
     ],
-  },
-  {
-    id: 'development',
-    name: { en: 'Development & Ideas', hi: 'विकास एवं विचार' },
-    path: '/development',
-    hasDropdown: true,
-    children: [
-      { name: { en: 'Ideas & Articles', hi: 'विचार एवं लेख' }, path: '/development/ideas' },
-      { name: { en: 'Development Journey', hi: 'विकास यात्रा' }, path: '/development/journey' },
-    ],
-  },
-  {
-    id: 'ideals',
-    name: {
-      en: 'Our Ideals',
-      hi: 'हमारे आदर्श',
-    },
-    path: '/ideals',
   },
   {
     id: 'contact',

@@ -70,7 +70,7 @@ export default function RootLayout({
   const locale = 'hi' as const;
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} data-scroll-behavior="smooth" suppressHydrationWarning>
       <body className="min-h-screen flex flex-col bg-[#F8F4ED] text-[#171717] antialiased selection:bg-[#F5660A] selection:text-white">
         <LanguageProvider locale={locale}>
           <SiteMotion />

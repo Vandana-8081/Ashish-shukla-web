@@ -60,6 +60,13 @@ export function SiteMotion() {
         if (element.matches(cardSelector)) {
           element.setAttribute('data-site-card', '');
         }
+        // Anything already on screen is shown in the same frame it is marked, so
+        // it never flashes hidden and fades back in on load or route change.
+        const rect = element.getBoundingClientRect();
+        if (rect.bottom > 0 && rect.top < window.innerHeight) {
+          element.setAttribute('data-site-visible', '');
+          return;
+        }
         intersectionObserver.observe(element);
       });
     };

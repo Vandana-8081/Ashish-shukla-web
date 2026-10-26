@@ -158,6 +158,7 @@ export function ServicePage() {
         <div className="container-site relative z-10">
           <Reveal>
             <h2 className="max-w-4xl font-editorial text-[clamp(28px,3.6vw,46px)] font-bold leading-[1.08]">{t(s.cta.title)}</h2>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg">{t(s.cta.text)}</p>
             <Link href={getHref('/contact')} className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-[#ffe9d6]">
               {t(s.cta.button)} <ArrowRight className="h-4 w-4" />
             </Link>

@@ -51,7 +51,7 @@ export const photoGalleryData: PhotoItem[] = [
   })),
   {
     id: 'gallery-3',
-    image: '/images/gallery/a9.jpg',
+    image: '/images/gallery/a9.png',
     category: {
       en: 'Youth & Sports',
       hi: 'युवा एवं खेल',

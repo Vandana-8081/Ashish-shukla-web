@@ -57,7 +57,7 @@ export const chapters: Chapter[] = [
   {
     id: 'beginning',
     kicker: { en: '', hi: '' },
-    title: { en: 'A Journey That Began with His Roots', hi: 'जड़ों से शुरू हुआ एक सफर' },
+    title: { en: 'One Journey, Many Experiences', hi: 'एक सफर, अनेक अनुभव' },
     body: [
       {
         en: 'Ashish Shukla’s story begins with his connection to the soil, surroundings, and people of Bhagwant Nagar. Understanding local ways of life and the needs of ordinary people up close has been an important part of his journey.',
@@ -120,10 +120,6 @@ export const chapters: Chapter[] = [
         hi: 'समय के साथ जनहित के मुद्दों पर सक्रिय भागीदारी और लोगों से संवाद उनकी सार्वजनिक यात्रा का महत्वपूर्ण हिस्सा बने। यही जुड़ाव आगे चलकर जनसेवा और भगवंतनगर के विकास के प्रति उनकी जिम्मेदारी का आधार बना।',
       },
     ],
-    quote: {
-      en: 'A connection to one’s roots inspires a person to find ways to serve society.',
-      hi: 'अपनी मिट्टी से जुड़ाव ही वह प्रेरणा है, जो व्यक्ति को समाज के लिए कुछ करने की राह दिखाती है।',
-    },
   },
   {
     id: 'return',
@@ -152,28 +148,28 @@ export interface TimelineStop {
 /** Animated journey path. */
 export const timelineStops: TimelineStop[] = [
   {
-    title: { en: 'Bhagwant Nagar — Connected to the Roots', hi: 'भगवंतनगर — जड़ों से जुड़ाव' },
+    title: { en: 'Bhagwant Nagar ', hi: 'भगवंतनगर ' },
     text: {
       en: 'Connection with the local way of life and the people of Bhagwant Nagar laid the foundation for understanding the needs of the area. Closeness to the local surroundings and the lives of citizens shaped the approach to public service.',
       hi: 'भगवंतनगर की स्थानीय जीवनशैली और लोगों से जुड़ाव ने क्षेत्र की जरूरतों को समझने की नींव रखी। स्थानीय परिवेश और नागरिकों के जीवन से जुड़ाव ने जनसेवा के प्रति दृष्टिकोण को आकार दिया।',
     },
   },
   {
-    title: { en: 'Early Struggles — Learning from Experience', hi: 'शुरुआती संघर्ष — अनुभव से सीख' },
+    title: { en: 'Early Struggles ', hi: 'शुरुआती संघर्ष ' },
     text: {
       en: 'Early life experiences taught the importance of responsibility, hard work and working together with people. These experiences taught how to understand challenges, keep making steady efforts and take responsibilities seriously.',
       hi: 'जीवन के शुरुआती अनुभवों से जिम्मेदारी, मेहनत और लोगों के साथ मिलकर काम करने का महत्व सीखा। इन अनुभवों ने चुनौतियों को समझने, निरंतर प्रयास करने और जिम्मेदारियों को गंभीरता से निभाने की सीख दी।',
     },
   },
   {
-    title: { en: 'Public Service — Among the People', hi: 'जनसेवा — लोगों के बीच' },
+    title: { en: 'Public Service ', hi: 'जनसेवा ' },
     text: {
       en: 'He moved ahead with a spirit of speaking with local citizens, understanding their problems and working towards solutions. Listening to people’s needs and paying attention to issues of the area’s development is an important part of this journey of public service.',
       hi: 'स्थानीय नागरिकों से संवाद, उनकी समस्याओं को समझने और उनके समाधान की दिशा में प्रयास करने की भावना के साथ आगे बढ़े। लोगों की जरूरतों को सुनना और क्षेत्र के विकास से जुड़े मुद्दों पर ध्यान देना जनसेवा के इस सफर का महत्वपूर्ण हिस्सा है।',
     },
   },
   {
-    title: { en: 'Nagar Panchayat Chairman — A New Responsibility', hi: 'नगर पंचायत अध्यक्ष — नई जिम्मेदारी' },
+    title: { en: 'Nagar Panchayat Chairman ', hi: 'नगर पंचायत अध्यक्ष ' },
     text: {
       en: 'Carrying out responsibilities related to the development of Bhagwant Nagar and civic amenities after being elected Nagar Panchayat Chairman in 2023. In this role, attention to civic issues such as sanitation, roads, drainage and other basic amenities is important.',
       hi: 'वर्ष 2023 में नगर पंचायत अध्यक्ष निर्वाचित होने के बाद भगवंतनगर के विकास और नागरिक सुविधाओं से जुड़ी जिम्मेदारियों का निर्वहन। इस भूमिका में स्वच्छता, सड़क, जल निकासी और अन्य बुनियादी सुविधाओं से जुड़े नागरिक मुद्दों पर ध्यान देना महत्वपूर्ण है।',
@@ -257,10 +253,10 @@ export const closing = {
 /** About page */
 export const aboutPage = {
   eyebrow: { en: '', hi: '' },
-  title: { en: 'A life built, not inherited', hi: 'गढ़ा हुआ जीवन, विरासत में मिला नहीं' },
+  title: { en: 'From Struggle to Service', hi: 'संघर्ष से सेवा तक का सफर' },
   who: {
-    en: 'Ashish Shukla is a public representative, entrepreneur and community figure associated with Bhagwant Nagar in Unnao district, Uttar Pradesh. There was no established business waiting for him, no political office, no comfortable path laid out in advance — only a family facing economic limitations and a young boy learning very early that survival required work.',
-    hi: 'आशीष शुक्ला उन्नाव ज़िले (उत्तर प्रदेश) के भगवंत नगर से जुड़े जनप्रतिनिधि, उद्यमी और सामाजिक व्यक्तित्व हैं। उनके लिए न कोई स्थापित कारोबार इंतज़ार कर रहा था, न कोई राजनीतिक पद, न कोई आसान रास्ता — बस आर्थिक सीमाओं से जूझता परिवार था और एक बालक, जो बहुत जल्दी सीख गया कि जीवित रहने के लिए काम करना पड़ता है।',
+    en: 'Ashish Shukla is a public representative and entrepreneur associated with Bhagwantnagar in Unnao district, Uttar Pradesh. His life reflects hard work, experience and a constant drive to move forward. Learning from the challenges of his early years, he made those experiences the foundation for his progress. Today, as President of the Nagar Panchayat Bhagwantnagar, his public role is focused on connecting with local citizens and working for the needs of the region.',
+    hi: 'आशीष शुक्ला उत्तर प्रदेश के उन्नाव जिले के भगवंतनगर से जुड़े जनप्रतिनिधि और उद्यमी हैं। उनका जीवन परिश्रम, अनुभव और निरंतर आगे बढ़ने की सोच को दर्शाता है। शुरुआती जीवन की चुनौतियों से सीख लेते हुए उन्होंने अपने अनुभवों को आगे बढ़ने का आधार बनाया। आज नगर पंचायत भगवंतनगर के अध्यक्ष के रूप में उनकी सार्वजनिक भूमिका स्थानीय नागरिकों से जुड़ने और क्षेत्र की आवश्यकताओं के लिए कार्य करने पर केंद्रित है।',
   },
   blocks: [
     {
@@ -368,8 +364,8 @@ export const journeyPage = {
 
 export const homeStory = {
   eyebrow: { en: '', hi: '' },
-  title: { en: 'From struggle to service — a life built, not inherited', hi: 'संघर्ष से सेवा तक — गढ़ा हुआ जीवन, विरासत में मिला नहीं' },
-  accent: { en: 'built, not inherited', hi: 'गढ़ा हुआ जीवन' },
+  title: { en: 'From hard work to recognition — one journey, many experiences', hi: 'मेहनत से पहचान तक — एक सफर, अनेक अनुभव' },
+  accent: { en: 'one journey, many experiences', hi: 'एक सफर, अनेक अनुभव' },
   link: { en: 'Read the life journey', hi: 'जीवन यात्रा पढ़ें' },
   image: '/images/hero/about.png',
 };
@@ -378,8 +374,8 @@ export const timelineHead = {
   eyebrow: { en: '', hi: '' },
   title: { en: 'From Bhagwantnagar to public service', hi: 'भगवंतनगर से जनसेवा तक का सफर' },
   text: {
-    en: 'A journey shaped by a bond with home, lessons from life, and a commitment to serve and support the development of Bhagwantnagar.',
-    hi: 'अपनी मिट्टी से जुड़ाव, जीवन के अनुभवों से मिली सीख और जनसेवा के संकल्प के साथ भगवंतनगर के विकास की दिशा में आगे बढ़ती एक प्रेरणादायक यात्रा।',
+    en: 'A journey shaped by lessons from life and a commitment to serve and support the development of Bhagwantnagar.',
+    hi: 'जीवन के अनुभवों से मिली सीख और जनसेवा के संकल्प के साथ भगवंतनगर के विकास की दिशा में आगे बढ़ती एक प्रेरणादायक यात्रा।',
   },
 };
 
