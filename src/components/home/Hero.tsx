@@ -7,6 +7,10 @@ import { heroSlides } from '@/data/heroSlides';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { HeroPoster } from '@/components/home/HeroPoster';
+import { Autoplay, Keyboard } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import type { Swiper as SwiperInstance } from 'swiper';
+import 'swiper/css';
 import {
   ChevronLeft,
   ChevronRight,
@@ -27,12 +31,13 @@ export function Hero() {
   const { t, dict, getHref } = useLanguage();
 
   const [currentSlide, setCurrentSlide] = useState(0);
+  const swiperRef = useRef<SwiperInstance | null>(null);
   // Mobile photo box follows each slide's own proportions: full width, never cropped.
   const [mobilePhotoRatio, setMobilePhotoRatio] = useState(4 / 5);
   const mobileImageRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
-    if (heroSlides.length <= 1) return;
+    if (heroSlides.length <= 1 || heroSlides.every((item) => item.poster)) return;
 
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
@@ -52,12 +57,20 @@ export function Hero() {
   }, [currentSlide]);
 
   const goToPrevious = () => {
+    if (swiperRef.current && !swiperRef.current.destroyed) {
+      swiperRef.current.slidePrev();
+      return;
+    }
     setCurrentSlide((prev) =>
       prev === 0 ? heroSlides.length - 1 : prev - 1
     );
   };
 
   const goToNext = () => {
+    if (swiperRef.current && !swiperRef.current.destroyed) {
+      swiperRef.current.slideNext();
+      return;
+    }
     setCurrentSlide((prev) =>
       (prev + 1) % heroSlides.length
     );
@@ -111,14 +124,17 @@ export function Hero() {
             <div
               className="flex items-center gap-1.5"
               role="tablist"
-              aria-label="Hero slides"
+              aria-label="Hero slides. Use the left and right arrow keys to change slides."
             >
               {heroSlides.map((_, idx) => (
                 <button
                   key={idx}
                   type="button"
                   role="tab"
-                  onClick={() => setCurrentSlide(idx)}
+                  onClick={() => {
+                    if (swiperRef.current && !swiperRef.current.destroyed) swiperRef.current.slideToLoop(idx);
+                    else setCurrentSlide(idx);
+                  }}
                   aria-label={`Go to slide ${idx + 1}`}
                   aria-selected={currentSlide === idx}
                   className={`
@@ -179,7 +195,21 @@ export function Hero() {
     >
       {slide.poster && (
         <>
-          <HeroPoster slide={slide} />
+          <Swiper
+            modules={[Autoplay, Keyboard]}
+            loop={heroSlides.length > 1}
+            autoplay={heroSlides.length > 1 ? { delay: 5000, disableOnInteraction: false } : false}
+            keyboard={{ enabled: true, onlyInViewport: true }}
+            onSwiper={(swiper) => { swiperRef.current = swiper; }}
+            onSlideChange={(swiper) => setCurrentSlide(swiper.realIndex)}
+            className="!absolute !inset-0 !h-full min-h-[inherit]"
+          >
+            {heroSlides.map((heroSlide) => (
+              <SwiperSlide key={heroSlide.id}>
+                <HeroPoster slide={heroSlide} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
           <div className="pointer-events-none absolute inset-0 z-30">
             <Container size="wide" className="relative h-full">
               {controls}
