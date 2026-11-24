@@ -357,7 +357,7 @@ export function Hero() {
               <p
                 key={`hero-subtitle-main-${slide.id}-${t(slide.subtitle)}`}
                 data-no-split="true"
-                className="mt-2.5 sm:mt-3.5 max-w-[720px] font-editorial text-[15px] sm:text-[19px] md:text-[23px] lg:text-[28px] xl:text-[32px] font-medium sm:font-semibold leading-relaxed text-[#1E1916] whitespace-pre-line tracking-normal animate-fadeIn"
+                className="mt-2.5 sm:mt-3.5 max-w-[720px] font-editorial text-[20px] sm:text-[19px] md:text-[23px] lg:text-[28px] xl:text-[32px] font-medium sm:font-semibold leading-relaxed text-[#1E1916] whitespace-pre-line tracking-normal animate-fadeIn"
               >
                 {t(slide.subtitle)}
               </p>
