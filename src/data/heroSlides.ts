@@ -33,7 +33,7 @@ en: 'Your Voice,\nOur Priority',
 hi: 'आपकी बात,\nहमारी प्राथमिकता',
 },
 subtitle: {
-  en: 'Connecting with citizens, understanding their concerns,\nand working towards the development of Bhagwantnagar.',
+  en: 'Connecting with citizens, understanding their concerns, and working towards the development of Bhagwantnagar.',
   hi: 'नागरिकों से जुड़कर उनकी समस्याओं को समझना\nऔर भगवंतनगर के विकास की दिशा में प्रयास करना।',
 },
 description: {
