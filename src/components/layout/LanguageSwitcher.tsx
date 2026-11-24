@@ -42,7 +42,7 @@ export function LanguageSwitcher({ locale, className = '' }: LanguageSwitcherPro
 
   return (
     <div
-      className={`inline-flex items-center bg-[#F8F4ED] p-1.5 sm:p-1 rounded-xl border border-[#E8E2D8] ${className}`}
+      className={`inline-flex items-center bg-black/[0.04] p-1 rounded-full border border-black/[0.06] backdrop-blur-xs ${className}`}
       role="group"
       aria-label="Language selection"
     >
@@ -51,9 +51,9 @@ export function LanguageSwitcher({ locale, className = '' }: LanguageSwitcherPro
         href={englishPath}
         onClick={() => handleLocaleChange('en')}
         scroll={false}
-        className={`inline-flex min-h-8 items-center px-3 py-1 text-xs font-semibold rounded-md transition sm:min-h-9 sm:px-3.5 sm:py-1.5 sm:text-sm sm:rounded-lg ${
+        className={`inline-flex min-h-7.5 items-center justify-center px-3 py-1 text-xs font-semibold rounded-full transition-all duration-300 ${
           locale === 'en'
-            ? 'bg-[#F5660A] text-white shadow-xs font-bold'
+            ? 'bg-white text-[var(--navy)] shadow-xs font-bold'
             : 'text-[#6B625A] hover:text-[#151210]'
         }`}
         aria-label="Switch to English"
@@ -62,18 +62,14 @@ export function LanguageSwitcher({ locale, className = '' }: LanguageSwitcherPro
         EN
       </Link>
 
-      <span className="text-[#D4CCC0] text-xs font-light px-0.5 sm:px-1 select-none" aria-hidden="true">
-        |
-      </span>
-
       {/* Hindi Link */}
       <Link
         href={hindiPath}
         onClick={() => handleLocaleChange('hi')}
         scroll={false}
-        className={`inline-flex min-h-8 items-center px-3 py-1 text-xs font-semibold rounded-md transition sm:min-h-9 sm:px-3.5 sm:py-1.5 sm:text-sm sm:rounded-lg ${
+        className={`inline-flex min-h-7.5 items-center justify-center px-3 py-1 text-xs font-semibold rounded-full transition-all duration-300 ${
           locale === 'hi'
-            ? 'bg-[#F5660A] text-white shadow-xs font-bold'
+            ? 'bg-white text-[var(--navy)] shadow-xs font-bold'
             : 'text-[#6B625A] hover:text-[#151210]'
         }`}
         aria-label="Switch to Hindi"

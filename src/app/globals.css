@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@500;600;700&family=Karma:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Rozha+One&family=Karma:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -13,10 +13,10 @@
   --color-muted: #6B625A;
   --color-border-subtle: #E8E2D8;
 
-  /* Eczar for headings and Karma for body text; both cover Latin and Devanagari. */
-  --font-serif: var(--font-display), Georgia, Cambria, serif;
-  --font-display: "Eczar";
-  --font-hindi-heading: "Eczar";
+  /* Classic French Garamond stack: Cormorant Garamond (high-contrast display) & EB Garamond (classic specimen) */
+  --font-serif: "Cormorant Garamond", "EB Garamond", Garamond, "Times New Roman", Georgia, serif;
+  --font-display: "Cormorant Garamond", "EB Garamond", Garamond, Georgia, serif;
+  --font-hindi-heading: "Rozha One", "Karma", Georgia, serif;
   --font-sans: "Karma", Georgia, Cambria, serif;
 }
 
@@ -34,6 +34,19 @@ html:lang(hi) *,
 html:lang(hi) *::before,
 html:lang(hi) *::after {
   letter-spacing: normal !important;
+}
+
+/* Hide header and floating widgets completely when lightbox is open */
+body.lightbox-open header,
+body.lightbox-open aside,
+body.lightbox-open [aria-label="Social links bar"],
+body.lightbox-open [data-nextjs-dev-tools-button],
+body.lightbox-open [class*="AssistantWidget"],
+body.lightbox-open .floating-assistant {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
 }
 
 html {
@@ -158,6 +171,7 @@ html:lang(hi) .font-editorial {
   --line: #131b2121;
   --shadow-soft: 0 18px 52px #10181f14;
   --shadow-deep: 0 26px 80px #0811192e;
+  --ease-out-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .tricolor-rule {
@@ -168,7 +182,7 @@ html:lang(hi) .font-editorial {
 .section-pad { padding-block: clamp(54px, 6vw, 88px); }
 .ed-display {
   font-family: var(--font-serif);
-  letter-spacing: -0.045em;
+  letter-spacing: -0.015em;
   font-size: clamp(36px, 4.4vw, 58px);
   line-height: 0.97;
   font-weight: 700;
@@ -176,7 +190,7 @@ html:lang(hi) .font-editorial {
 }
 .ed-h2 {
   font-family: var(--font-serif);
-  letter-spacing: -0.035em;
+  letter-spacing: -0.01em;
   font-size: clamp(30px, 3.8vw, 48px);
   line-height: 1.12;
   font-weight: 700;
@@ -185,7 +199,7 @@ html:lang(hi) .font-editorial {
 }
 .ed-title {
   font-family: var(--font-serif);
-  letter-spacing: -0.045em;
+  letter-spacing: -0.015em;
   font-size: clamp(36px, 4.4vw, 58px);
   line-height: 0.98;
   font-weight: 700;
@@ -295,3 +309,40 @@ html:lang(hi) body .ed-title {
 .ed-float { animation: ed-float 6s ease-in-out infinite; }
 @keyframes ed-pulse-ring { 0% { box-shadow: 0 0 0 0 #d9691f66; } 100% { box-shadow: 0 0 0 16px #d9691f00; } }
 .ed-pulse { animation: ed-pulse-ring 2s ease-out infinite; }
+
+/* Responsive Line Splits on Scroll (GSAP SplitText + ScrollTrigger) */
+.split-line-mask {
+  overflow: hidden !important;
+  display: block !important;
+  padding-top: 0.22em !important;
+  margin-top: -0.22em !important;
+  padding-bottom: 0.28em !important;
+  margin-bottom: -0.28em !important;
+}
+.split-line-child {
+  display: block !important;
+  will-change: transform, opacity;
+  line-height: inherit;
+}
+
+/* Devanagari headings need adequate vertical line-height so matras and accents are never clipped */
+html:lang(hi) .split-line-child,
+html:lang(hi) .font-editorial {
+  line-height: 1.18 !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

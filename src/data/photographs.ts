@@ -31,6 +31,10 @@ const publicLife = (id: string) => {
 
 const dharmik = gallery('gallery-1');
 const bujurg = gallery('gallery-2');
+const pondGroup = gallery('gallery-02');
+const templeGroup = gallery('gallery-06');
+const templeVisit = gallery('gallery-07');
+const pondVisit = gallery('gallery-08');
 const khel = gallery('gallery-3');
 const review = gallery('gallery-4');
 
@@ -79,6 +83,38 @@ const inspections = {
  */
 export const photographData: PhotographItem[] = [
   { id: 'dharmik', image: dharmik.image, alt: dharmik.caption, caption: dharmik.caption },
+  {
+    id: 'pond-group',
+    image: pondGroup.image,
+    alt: {
+      en: 'Ashish Shukla with community members beside a pond',
+      hi: '\u0924\u093e\u0932\u093e\u092c \u0915\u0947 \u0915\u093f\u0928\u093e\u0930\u0947 \u0938\u092e\u0941\u0926\u093e\u092f \u0915\u0947 \u0932\u094b\u0917\u094b\u0902 \u0915\u0947 \u0938\u093e\u0925 \u0906\u0936\u0940\u0937 \u0936\u0941\u0915\u094d\u0932\u093e',
+    },
+  },
+  {
+    id: 'temple-group',
+    image: templeGroup.image,
+    alt: {
+      en: 'Ashish Shukla with community members at a temple gathering',
+      hi: '\u092e\u0902\u0926\u093f\u0930 \u0915\u0947 \u0906\u092f\u094b\u091c\u0928 \u092e\u0947\u0902 \u0938\u092e\u0941\u0926\u093e\u092f \u0915\u0947 \u0932\u094b\u0917\u094b\u0902 \u0915\u0947 \u0938\u093e\u0925 \u0906\u0936\u0940\u0937 \u0936\u0941\u0915\u094d\u0932\u093e',
+    },
+  },
+  {
+    id: 'temple-pond-visit',
+    image: templeVisit.image,
+    alt: {
+      en: 'Ashish Shukla meeting community members beside the temple pond',
+      hi: '\u092e\u0902\u0926\u093f\u0930 \u0915\u0947 \u0924\u093e\u0932\u093e\u092c \u0915\u0947 \u092a\u093e\u0938 \u0938\u092e\u0941\u0926\u093e\u092f \u0915\u0947 \u0932\u094b\u0917\u094b\u0902 \u0938\u0947 \u092e\u093f\u0932\u0924\u0947 \u0906\u0936\u0940\u0937 \u0936\u0941\u0915\u094d\u0932\u093e',
+    },
+  },
+  {
+    id: 'community-pond-visit',
+    image: pondVisit.image,
+    alt: {
+      en: 'Ashish Shukla speaking with community members by the pond',
+      hi: '\u0924\u093e\u0932\u093e\u092c \u0915\u0947 \u0915\u093f\u0928\u093e\u0930\u0947 \u0938\u092e\u0941\u0926\u093e\u092f \u0915\u0947 \u0932\u094b\u0917\u094b\u0902 \u0938\u0947 \u092c\u093e\u0924\u091a\u0940\u0924 \u0915\u0930\u0924\u0947 \u0906\u0936\u0940\u0937 \u0936\u0941\u0915\u094d\u0932\u093e',
+    },
+  },
   {
     id: 'portrait',
     image: '/images/gallery/a13.jpg',

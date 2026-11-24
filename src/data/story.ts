@@ -255,8 +255,8 @@ export const aboutPage = {
   eyebrow: { en: '', hi: '' },
   title: { en: 'From Struggle to Service', hi: 'संघर्ष से सेवा तक का सफर' },
   who: {
-    en: 'Ashish Shukla is a public representative and entrepreneur associated with Bhagwantnagar in Unnao district, Uttar Pradesh. His life reflects hard work, experience and a constant drive to move forward. Learning from the challenges of his early years, he made those experiences the foundation for his progress. Today, as President of the Nagar Panchayat Bhagwantnagar, his public role is focused on connecting with local citizens and working for the needs of the region.',
-    hi: 'आशीष शुक्ला उत्तर प्रदेश के उन्नाव जिले के भगवंतनगर से जुड़े जनप्रतिनिधि और उद्यमी हैं। उनका जीवन परिश्रम, अनुभव और निरंतर आगे बढ़ने की सोच को दर्शाता है। शुरुआती जीवन की चुनौतियों से सीख लेते हुए उन्होंने अपने अनुभवों को आगे बढ़ने का आधार बनाया। आज नगर पंचायत भगवंतनगर के अध्यक्ष के रूप में उनकी सार्वजनिक भूमिका स्थानीय नागरिकों से जुड़ने और क्षेत्र की आवश्यकताओं के लिए कार्य करने पर केंद्रित है।',
+    en: 'Ashish Shukla is a public representative and entrepreneur associated with Bhagwantnagar in Unnao district, Uttar Pradesh. His life reflects hard work, experience and a constant drive to move forward. Learning from the challenges of his early years, he made those experiences the foundation for his progress.',
+    hi: 'आशीष शुक्ला उत्तर प्रदेश के उन्नाव जिले के भगवंतनगर से जुड़े जनप्रतिनिधि और उद्यमी हैं। उनका जीवन परिश्रम, अनुभव और निरंतर आगे बढ़ने की सोच को दर्शाता है। शुरुआती जीवन की चुनौतियों से सीख लेते हुए उन्होंने अपने अनुभवों को आगे बढ़ने का आधार बनाया।',
   },
   blocks: [
     {

@@ -10,6 +10,7 @@ import { photoGalleryData, videoGalleryData } from '@/data/media';
 import { homeStory, newsHead, newsItems, serviceCards, shortBio } from '@/data/story';
 import { AccentTitle, SectionHead } from './Blocks';
 import { Item, Reveal, Stagger, TiltImage } from './motion';
+import { ResponsiveLineSplit } from '@/components/ui/ResponsiveLineSplit';
 
 /** Text beside a tilting portrait on a warm band. */
 export function StoryFeature() {
@@ -17,15 +18,17 @@ export function StoryFeature() {
   return (
     <section className="section-pad bg-[var(--paper-2)]">
       <div className="container-site grid gap-10 lg:grid-cols-[1.02fr_.98fr] lg:items-center lg:gap-16">
-        <Reveal>
+        <div>
           {t(homeStory.eyebrow).trim() && <div className="ed-eyebrow mb-3">{t(homeStory.eyebrow)}</div>}
           <AccentTitle title={t(homeStory.title)} accent={t(homeStory.accent)} />
-          <p className="ed-body mt-5">{t(shortBio)}</p>
+          <ResponsiveLineSplit as="p" className="ed-body mt-5">
+            {t(shortBio)}
+          </ResponsiveLineSplit>
           <Link href={getHref('/journey')} className="group mt-7 inline-flex items-center gap-3 font-bold text-[var(--navy)]">
             {t(homeStory.link)}
             <ArrowRight className="h-[18px] w-[18px] transition-transform group-hover:translate-x-1.5" />
           </Link>
-        </Reveal>
+        </div>
         <Reveal delay={0.12}>
           <TiltImage src={homeStory.image} alt="Ashish Shukla" className="min-h-[360px] sm:min-h-[440px] lg:min-h-[520px] object-cover object-[center_20%]" />
         </Reveal>

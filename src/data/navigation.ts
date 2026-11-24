@@ -68,23 +68,20 @@ export const navigationItems: NavItem[] = [
    {
     id: 'media',
     name: {
-      en: ' Media',
+      en: 'Media',
       hi: 'मीडिया',
     },
     path: '/media',
     hasDropdown: true,
     children: [
       {
-        name: { en: 'Video', hi: 'वीडियो' },
-        path: '/media#videos',
-       
+        name: { en: 'Photographs', hi: 'तस्वीरें' },
+        path: '/media#photos',
       },
       {
-        name: { en: 'Photo', hi: 'चित्र' },
-        path: '/media#photos',
-       
+        name: { en: 'Videos', hi: 'वीडियो' },
+        path: '/media#videos',
       },
-      
     ],
   },
   {

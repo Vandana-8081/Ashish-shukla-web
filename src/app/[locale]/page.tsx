@@ -1,10 +1,9 @@
 import { Hero } from '@/components/home/Hero';
-import { Closing } from '@/components/story/Sections';
 import { GalleryTabs, NewsSection, ServiceCards, StoryFeature, VideosRow } from '@/components/story/HomeSections';
 import { Banner, Timeline } from '@/components/story/Blocks';
-import { SocialSection } from '@/components/home/SocialSection';
 import { LatestSocialMedia } from '@/components/home/LatestSocialMedia';
 import { InstagramUpdates } from '@/components/home/InstagramFeed';
+import { EcardHomeSection } from '@/components/ecard/EcardHomeSection';
 
 export default function LocalizedHomePage() {
   return (
@@ -17,11 +16,10 @@ export default function LocalizedHomePage() {
       <NewsSection />
       <GalleryTabs />
       <VideosRow />
-      <SocialSection />
       <LatestSocialMedia
         instagramCard={<InstagramUpdates />}
       />
-      <Closing />
+      <EcardHomeSection />
     </>
   );
 }

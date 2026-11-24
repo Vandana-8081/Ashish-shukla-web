@@ -1,10 +1,23 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { socialLinks } from '@/data/socialLinks';
 import { FacebookIcon, InstagramIcon, XIcon } from '@/components/ui/SocialIcons';
 import { AssistantWidget } from '@/components/layout/AssistantWidget';
 
 export function FloatingSocial() {
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
+  useEffect(() => {
+    const handleLightbox = (e: Event) => {
+      const customEvent = e as CustomEvent<{ open: boolean }>;
+      setIsLightboxOpen(Boolean(customEvent.detail?.open));
+    };
+    window.addEventListener('lightbox-toggle', handleLightbox);
+    return () => window.removeEventListener('lightbox-toggle', handleLightbox);
+  }, []);
+
+  if (isLightboxOpen) return null;
   const getSocialIcon = (platform: string) => {
     switch (platform) {
       case 'facebook':

@@ -6,39 +6,21 @@ id: 'hero-poster',
 image: '/images/hero/poster1.jpeg',
 mobileImage: '/images/hero/postermobile1.jpeg',
 poster: true,
-eyebrow: {
-en: 'OFFICIAL PROFILE',
-hi: 'आधिकारिक परिचय',
-},
 heading: {
-en: 'ASHISH SHUKLA',
+en: 'Ashish Shukla',
 hi: 'आशीष शुक्ला',
 },
 nickname: {
-en: '(Rinku Shukla)',
-hi: '(रिंकू शुक्ला)',
+en: '(Rinku)',
+hi: '(रिंकू)',
 },
 subtitle: {
 en: 'Dedicated to Public Service, Committed to the Progress of Bhagwantnagar',
 hi: 'जनसेवा के प्रति समर्पित, भगवंतनगर की प्रगति के लिए प्रतिबद्ध',
 },
 description: {
-en: 'Working continuously, together with the citizens of Bhagwantnagar, for local development, better civic amenities and a brighter future for every citizen.',
-hi: 'भगवंतनगर के नागरिकों के साथ मिलकर स्थानीय विकास, बेहतर नागरिक सुविधाओं और प्रत्येक नागरिक के उज्ज्वल भविष्य के लिए निरंतर प्रयासरत।',
-},
-primaryCta: {
-label: {
-en: 'Explore Public Work',
-hi: 'जनसेवा के कार्य देखें',
-},
-path: '/public-life',
-},
-secondaryCta: {
-label: {
-en: 'View Political Journey',
-hi: 'राजनीतिक यात्रा देखें',
-},
-path: '/about#journey',
+en: '',
+hi: '',
 },
 },
 {
@@ -46,33 +28,17 @@ id: 'hero-banner',
 image: '/images/hero/poster2.jpeg',
 mobileImage: '/images/hero/postermobile2.jpeg',
 poster: true,
-eyebrow: {
-en: 'PUBLIC CONNECT',
-hi: 'जनसंवाद एवं जनसेवा',
-},
 heading: {
-en: 'Your Voice, Our Priority',
-hi: 'आपकी बात, हमारी प्राथमिकता',
+en: 'Your Voice,\nOur Priority',
+hi: 'आपकी बात,\nहमारी प्राथमिकता',
 },
-
+subtitle: {
+  en: 'Connecting with citizens, understanding their concerns,\nand working towards the development of Bhagwantnagar.',
+  hi: 'नागरिकों से जुड़कर उनकी समस्याओं को समझना\nऔर भगवंतनगर के विकास की दिशा में प्रयास करना।',
+},
 description: {
-  en: 'Connecting with citizens, understanding their concerns, and working towards the development of Bhagwantnagar.',
-  hi: 'नागरिकों से जुड़कर उनकी समस्याओं को समझना और भगवंतनगर के विकास की दिशा में प्रयास करना।',
-},
-
-primaryCta: {
-label: {
-en: 'Public Hearings',
-hi: 'जनसुनवाई',
-},
-path: '/public-life#jan-sunwai',
-},
-secondaryCta: {
-label: {
-en: 'Contact Us',
-hi: 'संपर्क करें',
-},
-path: '/contact',
+  en: '',
+  hi: '',
 },
 },
 ];

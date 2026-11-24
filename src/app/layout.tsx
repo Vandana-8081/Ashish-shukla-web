@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { LanguageProvider } from '@/lib/languageContext';
 import { SiteMotion } from '@/components/layout/SiteMotion';
+import { LineSplitScrollManager } from '@/components/layout/LineSplitScrollManager';
 import { OG_IMAGE, SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -74,6 +75,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-[#F8F4ED] text-[#171717] antialiased selection:bg-[#F5660A] selection:text-white">
         <LanguageProvider locale={locale}>
           <SiteMotion />
+          <LineSplitScrollManager />
           {children}
         </LanguageProvider>
       </body>

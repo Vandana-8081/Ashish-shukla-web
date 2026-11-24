@@ -36,7 +36,7 @@ export function Hero() {
 
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 4000);
+    }, 5000);
 
     return () => clearInterval(timer);
   }, []);
@@ -69,8 +69,9 @@ export function Hero() {
               pointer-events-auto
               absolute
               z-30
-              bottom-7
-              lg:bottom-8
+              bottom-3
+              sm:bottom-4
+              lg:bottom-5
               left-1/2
               -translate-x-1/2
               flex
@@ -82,7 +83,7 @@ export function Hero() {
               border-white/40
               rounded-full
               px-3
-              py-2
+              py-1.5
               shadow-sm
             "
           >
@@ -163,15 +164,18 @@ export function Hero() {
 
   return (
     <section
-      className={`
+      data-no-split="true"
+      className="
+        hero-section
         relative
-        min-h-0
-        ${slide.poster ? '' : 'lg:min-h-[720px]'}
+        min-h-[calc(100svh-4.8125rem)]
+        sm:min-h-[calc(100svh-5.3125rem)]
+        w-full
         overflow-hidden
         bg-[#F8F4ED]
         border-b
         border-[#E8E2D8]
-      `}
+      "
     >
       {slide.poster && (
         <>
@@ -231,15 +235,16 @@ export function Hero() {
           relative
           z-10
           h-full
-          min-h-0
-          lg:min-h-[720px]
+          w-full
+          min-h-[inherit]
         "
       >
         <div
           className="
             relative
+            h-full
+            w-full
             min-h-0
-            lg:min-h-[720px]
             grid
             grid-cols-1
             lg:grid-cols-12
@@ -259,96 +264,127 @@ export function Hero() {
               flex
               flex-col
               justify-center
-              pt-6 sm:pt-16
-              pb-4 sm:pb-6
-              lg:py-20
+              pt-16 sm:pt-20 pb-3 sm:pb-5 lg:py-8
               pr-0
               lg:pr-8
             "
           >
             {/* Eyebrow */}
-            <div className="eyebrow-label hero-eyebrow relative mb-4 inline-flex w-fit items-center rounded-sm border border-[#F2E4D7] bg-[#FFF9F2] px-3.5 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#B94F0B] shadow-sm sm:mb-7 sm:px-4 sm:py-2.5 sm:text-xs before:absolute before:-left-1 before:top-1/2 before:h-7 before:w-1 before:-translate-y-1/2 before:rounded-full before:bg-[#F5660A]">
-              {t(slide.eyebrow)}
-            </div>
+            {slide.eyebrow && (
+              <div className="eyebrow-label hero-eyebrow relative mb-2 sm:mb-3 inline-flex w-fit items-center rounded-sm border border-[#F2E4D7] bg-[#FFF9F2] px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#B94F0B] shadow-sm sm:px-4 sm:py-2 sm:text-xs">
+                {t(slide.eyebrow)}
+              </div>
+            )}
 
             {/* Main Heading */}
             <h1
+              key={`hero-heading-main-${slide.id}-${t(slide.heading)}`}
+              data-no-split="true"
               className="
-                max-w-[780px]
+                max-w-[950px]
                 font-editorial
-                text-[38px]
-                sm:text-[44px]
-                md:text-[48px]
-                lg:text-[52px]
-                xl:text-[58px]
-                font-bold
+                text-[44px]
+                sm:text-[54px]
+                md:text-[66px]
+                lg:text-[78px]
+                xl:text-[88px]
+                font-semibold sm:font-bold
                 text-[#151210]
-                leading-[0.98]
-                tracking-[-0.035em]
+                leading-[1.22] sm:leading-[1.15]
+                tracking-[-0.015em]
+                animate-fadeIn
               "
             >
-              {t(slide.heading)}
+              {t(slide.heading).includes('\n') ? (
+                <>
+                  {t(slide.heading).split('\n')[0]}
+                  <br />
+                  <span className="text-saffron">{t(slide.heading).split('\n')[1]}</span>
+                </>
+              ) : t(slide.heading).includes(' ') ? (
+                <>
+                  {t(slide.heading).slice(0, t(slide.heading).lastIndexOf(' '))}
+                  {' '}
+                  <span className="text-saffron">{t(slide.heading).slice(t(slide.heading).lastIndexOf(' ') + 1)}</span>
+                </>
+              ) : (
+                t(slide.heading)
+              )}
             </h1>
 
             {slide.nickname && (
-              <p className="mt-2 font-editorial text-xl font-bold text-saffron sm:mt-3 sm:text-2xl md:text-3xl">
+              <p
+                key={`hero-nickname-main-${slide.id}-${t(slide.nickname)}`}
+                data-no-split="true"
+                className="mt-1 sm:mt-2 font-editorial text-lg sm:text-2xl md:text-[28px] lg:text-3xl font-semibold text-[#151210] tracking-normal animate-fadeIn"
+              >
                 {t(slide.nickname)}
               </p>
             )}
 
             {/* Subtitle */}
             {slide.subtitle && (
-              <p className="mt-4 sm:mt-6 max-w-[680px] font-editorial text-lg sm:text-xl md:text-2xl font-semibold leading-snug text-[#151210]">
+              <p
+                key={`hero-subtitle-main-${slide.id}-${t(slide.subtitle)}`}
+                data-no-split="true"
+                className="mt-2.5 sm:mt-3.5 max-w-[720px] font-editorial text-[15px] sm:text-[19px] md:text-[23px] lg:text-[28px] xl:text-[32px] font-medium sm:font-semibold leading-relaxed text-[#1E1916] whitespace-pre-line tracking-normal animate-fadeIn"
+              >
                 {t(slide.subtitle)}
               </p>
             )}
 
             {/* Description */}
-            <p
-              className="
-                mt-3 sm:mt-4
-                max-w-[680px]
-                text-base
-                sm:text-lg
-                md:text-xl
-                text-[#4A433D]
-                leading-[1.65]
-                font-normal
-              "
-            >
-              {t(slide.description)}
-            </p>
+            {t(slide.description).trim() && (
+              <p
+                className="
+                  mt-2.5 sm:mt-3.5
+                  max-w-[700px]
+                  text-xs sm:text-sm md:text-[15px] lg:text-base
+                  text-[#4A433D]
+                  leading-[1.65]
+                  font-normal
+                "
+              >
+                {t(slide.description)}
+              </p>
+            )}
 
             {/* CTA Buttons */}
-            <div
-              className="
-                mt-5
-                sm:mt-10
-                flex
-                flex-col sm:flex-row sm:flex-wrap
-                items-stretch sm:items-center
-                gap-2.5 sm:gap-4
-              "
-            >
-              <Button
-                href={getHref(slide.primaryCta.path)}
-                variant="primary"
-                size="lg"
-                icon="arrow"
-                className="w-full sm:w-auto justify-center px-3 py-3 text-center text-sm leading-snug sm:px-6 sm:py-3.5 sm:text-base bg-white text-[#F5660A] hover:bg-[#FFF5E9]"
+            {(slide.primaryCta || slide.secondaryCta) && (
+              <div
+                className="
+                  mt-4
+                  sm:mt-6
+                  flex
+                  flex-col sm:flex-row sm:flex-wrap
+                  items-stretch sm:items-center
+                  gap-2.5 sm:gap-4
+                "
               >
-                {t(slide.primaryCta.label)}
-              </Button>
+                {slide.primaryCta && (
+                  <Button
+                    href={getHref(slide.primaryCta.path)}
+                    variant="primary"
+                    size="lg"
+                    icon="arrow"
+                    className="w-full sm:w-auto justify-center px-3 py-3 text-center text-sm leading-snug sm:px-6 sm:py-3.5 sm:text-base bg-white text-[#F5660A] hover:bg-[#FFF5E9]"
+                  >
+                    {t(slide.primaryCta.label)}
+                  </Button>
+                )}
 
-              <Button
-                href={getHref(slide.secondaryCta.path)}
-                variant="secondary"
-                size="lg"
-                className="w-full sm:w-auto justify-center px-3 py-3 text-center text-sm leading-snug sm:px-6 sm:py-3.5 sm:text-base"
-              >
-                {t(slide.secondaryCta.label)}
-              </Button>
-            </div>
+                {slide.secondaryCta && (
+                  <Button
+                    href={getHref(slide.secondaryCta.path)}
+                    variant="secondary"
+                    size="lg"
+                    className="w-full sm:w-auto justify-center px-3 py-3 text-center text-sm leading-snug sm:px-6 sm:py-3.5 sm:text-base"
+                  >
+                    {t(slide.secondaryCta.label)}
+                  </Button>
+                )}
+              </div>
+            )}
           </div>
 
           {/* =================================================
@@ -379,7 +415,7 @@ export function Hero() {
                 priority
                 sizes="(max-width: 1024px) 0vw, 55vw"
                 className="
-                  object-cover
+                  object-contain
                   object-center
                 "
               />
@@ -451,6 +487,9 @@ export function Hero() {
               -mx-4
               sm:-mx-6
               w-auto
+              max-h-[35svh]
+              flex-1
+              min-h-0
               mt-2
             "
             style={{ aspectRatio: mobilePhotoRatio }}

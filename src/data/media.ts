@@ -1,16 +1,16 @@
-import type { PhotoItem, VideoItem } from '@/types';
+import type { PhotoItem, VideoItem, PressItem } from '@/types';
 
 export const photoGalleryData: PhotoItem[] = [
   {
     id: 'gallery-1',
-    image: '/images/public-life/a1.jpg',
+    image: '/images/gallery/a01.jpg',
     category: {
       en: 'Cultural & Heritage',
       hi: 'सांस्कृतिक एवं सामाजिक',
     },
     caption: {
-      en: 'Participating in local traditional celebrations and paying homage to Bhagwant Nagar heritage.',
-      hi: 'क्षेत्रीय सांस्कृतिक उत्सवों में सहभागिता एवं पारंपरिक विरासत का नमन।',
+      en: '',
+      hi: '',
     },
   },
   ...['sj1.jpg', 'sj2.jpg', 'sj3.jpg', 'sj4.jpg', 'sj5.jpg'].map((photo, index) => ({
@@ -21,8 +21,8 @@ export const photoGalleryData: PhotoItem[] = [
       hi: 'सांस्कृतिक एवं सामाजिक',
     },
     caption: {
-      en: 'A moment from a cultural and heritage gathering.',
-      hi: 'सांस्कृतिक एवं सामाजिक कार्यक्रम का एक क्षण।',
+      en: '',
+      hi: '',
     },
   })),
   {
@@ -33,9 +33,51 @@ export const photoGalleryData: PhotoItem[] = [
       hi: 'जनसंवाद',
     },
     caption: {
-      en: 'Heartfelt interaction with village elders, receiving their blessings and guidance for community service.',
-      hi: 'ग्राम बुजुर्गों से आत्मीय संवाद, मार्गदर्शन एवं लोककल्याण हेतु उनका आशीर्वाद।',
+      en: '',
+      hi: '',
     },
+  },
+   {
+    id: 'gallery-02',
+    image: '/images/gallery/a04.jpg',
+    category: {
+      en: 'Community Dialogue',
+      hi: 'जनसंवाद',
+    },
+    caption: {
+      en: '',
+      hi: '',
+    },
+  },
+  {
+    id: 'gallery-06',
+    image: '/images/gallery/a06.jpg',
+    category: {
+      en: 'Community Dialogue',
+      hi: '\u091c\u0928\u0938\u0902\u0935\u093e\u0926',
+    },
+    caption: {
+      en: '',
+      hi: '',
+    },
+  },
+  {
+    id: 'gallery-07',
+    image: '/images/gallery/a07.jpg',
+    category: {
+      en: 'Community Dialogue',
+      hi: '\u091c\u0928\u0938\u0902\u0935\u093e\u0926',
+    },
+    caption: { en: '', hi: '' },
+  },
+  {
+    id: 'gallery-08',
+    image: '/images/gallery/a08.jpg',
+    category: {
+      en: 'Community Dialogue',
+      hi: '\u091c\u0928\u0938\u0902\u0935\u093e\u0926',
+    },
+    caption: { en: '', hi: '' },
   },
   ...['jans1.jpg', 'jans2.jpg', 'jans3.jpg', 'jans4.jpg'].map((photo, index) => ({
     id: `jan-samvad-${index + 1}`,
@@ -45,8 +87,8 @@ export const photoGalleryData: PhotoItem[] = [
       hi: 'जनसंवाद',
     },
     caption: {
-      en: 'A moment from direct dialogue with the community.',
-      hi: 'समुदाय के साथ सीधे संवाद का एक क्षण।',
+      en: '',
+      hi: '',
     },
   })),
   {
@@ -57,8 +99,8 @@ export const photoGalleryData: PhotoItem[] = [
       hi: 'युवा एवं खेल',
     },
     caption: {
-      en: 'Interacting with energetic rural sports teams and encouraging fitness across panchayats.',
-      hi: 'ग्रामीण खेल प्रतिभाओं से भेंट एवं युवाओं को खेल और स्वास्थ्य के प्रति प्रोत्साहन।',
+      en: '',
+      hi: '',
     },
   },
   {
@@ -69,13 +111,36 @@ export const photoGalleryData: PhotoItem[] = [
       hi: 'सार्वजनिक सहभागिता',
     },
     caption: {
-      en: 'Large gathering of citizens during a developmental review meet in rural Unnao.',
-      hi: 'विकास कार्यों की समीक्षा बैठक में उपस्थित जागरूक नागरिकों का समूह।',
+      en: '',
+      hi: '',
     },
   },
 ];
 
 export const videoGalleryData: VideoItem[] = [
+{
+  id: 'video-3',
+
+  videoPath: '/images/media/vid3.mp4',
+
+  title: {
+    en: 'Regional Athletics Competition at R.R.B.N. Inter College',
+    hi: 'आर.आर.बी.एन. इंटर कॉलेज में क्षेत्रीय एथलेटिक्स प्रतियोगिता',
+  },
+
+  duration: '00:45',
+
+  date: {
+    en: 'July 2026',
+    hi: 'जुलाई २०२६',
+  },
+
+  description: {
+    en: 'Participated as the chief guest at the regional athletics competition held at R.R.B.N. Inter College, Bhagwantnagar, Unnao. Inaugurated the competition and encouraged participating athletes. Emphasized that sports promote physical and mental growth while strengthening discipline, confidence, team spirit, and healthy competition. Wished all the athletes a bright future and encouraged them to move forward with hard work, dedication, and sportsmanship, with confidence that talented athletes from the region will bring recognition to the district and state.',
+
+    hi: 'भगवंतनगर, उन्नाव स्थित आर.आर.बी.एन. इंटर कॉलेज के मैदान में आयोजित क्षेत्रीय एथलेटिक्स प्रतियोगिता में मुख्य अतिथि के रूप में सम्मिलित होकर प्रतियोगिता का शुभारंभ किया एवं प्रतिभागी खिलाड़ियों का उत्साहवर्धन किया। खेल युवाओं के शारीरिक एवं मानसिक विकास के साथ-साथ अनुशासन, आत्मविश्वास, टीम भावना और स्वस्थ प्रतिस्पर्धा की भावना को मजबूत करते हैं। इस अवसर पर सभी प्रतिभागी खिलाड़ियों के उज्ज्वल भविष्य की कामना करते हुए उन्हें निरंतर परिश्रम, समर्पण और खेल भावना के साथ आगे बढ़ने के लिए प्रेरित किया। विश्वास है कि हमारे क्षेत्र की प्रतिभाशाली खेल प्रतिभाएं जिले और प्रदेश का नाम रोशन करेंगी।',
+  },
+},
 {
   id: 'video-1',
 
@@ -123,30 +188,7 @@ export const videoGalleryData: VideoItem[] = [
   },
 },
 {
-  id: 'video-3',
-
-  videoPath: '/images/media/vid3.mp4',
-
-  title: {
-    en: 'Regional Athletics Competition at R.R.B.N. Inter College',
-    hi: 'आर.आर.बी.एन. इंटर कॉलेज में क्षेत्रीय एथलेटिक्स प्रतियोगिता',
-  },
-
-  duration: '00:45',
-
-  date: {
-    en: 'July 2026',
-    hi: 'जुलाई २०२६',
-  },
-
-  description: {
-    en: 'Participated as the chief guest at the regional athletics competition held at R.R.B.N. Inter College, Bhagwantnagar, Unnao. Inaugurated the competition and encouraged participating athletes. Emphasized that sports promote physical and mental growth while strengthening discipline, confidence, team spirit, and healthy competition. Wished all the athletes a bright future and encouraged them to move forward with hard work, dedication, and sportsmanship, with confidence that talented athletes from the region will bring recognition to the district and state.',
-
-    hi: 'भगवंतनगर, उन्नाव स्थित आर.आर.बी.एन. इंटर कॉलेज के मैदान में आयोजित क्षेत्रीय एथलेटिक्स प्रतियोगिता में मुख्य अतिथि के रूप में सम्मिलित होकर प्रतियोगिता का शुभारंभ किया एवं प्रतिभागी खिलाड़ियों का उत्साहवर्धन किया। खेल युवाओं के शारीरिक एवं मानसिक विकास के साथ-साथ अनुशासन, आत्मविश्वास, टीम भावना और स्वस्थ प्रतिस्पर्धा की भावना को मजबूत करते हैं। इस अवसर पर सभी प्रतिभागी खिलाड़ियों के उज्ज्वल भविष्य की कामना करते हुए उन्हें निरंतर परिश्रम, समर्पण और खेल भावना के साथ आगे बढ़ने के लिए प्रेरित किया। विश्वास है कि हमारे क्षेत्र की प्रतिभाशाली खेल प्रतिभाएं जिले और प्रदेश का नाम रोशन करेंगी।',
-  },
-},
-{
-  id: 'video-3',
+  id: 'video-4',
 
   videoPath: '/images/media/vid5.mp4',
 
@@ -187,3 +229,126 @@ export const currentUpdates: PhotoItem[] = [
   category: { en: 'Latest Update', hi: 'ताज़ा अपडेट' },
   caption: { en, hi },
 }));
+
+export const pressCoverageData: PressItem[] = [
+  {
+    id: 'press-1',
+    image: '/images/gallery/a10.jpg',
+    source: 'Dainik Jagran',
+    location: 'Bhagwant Nagar',
+    title: {
+      en: 'Kshetra Panchayat and Village Development Review Meet Organized',
+      hi: 'क्षेत्र पंचायत एवं ग्राम विकास समीक्षा बैठक का आयोजन',
+    },
+    description: {
+      en: 'Meeting of local representatives and public workers organized to address rural civic works, roads, and irrigation.',
+      hi: 'ग्रामीण विकास, सड़क एवं सिंचाई से जुड़े विषयों पर समीक्षा बैठक कर समस्याओं के समयबद्ध समाधान का निर्देश।',
+    },
+    date: { en: 'October 2026', hi: 'अक्टूबर २०२६' },
+  },
+  {
+    id: 'press-2',
+    image: '/images/gallery/a14.jpg',
+    source: 'Amar Ujala',
+    location: 'Unnao',
+    title: {
+      en: 'Warm Welcome by Workers and Citizens Across Assembly Belt',
+      hi: 'कार्यकर्ताओं एवं आम नागरिकों द्वारा विधानसभा क्षेत्र में भव्य स्वागत',
+    },
+    description: {
+      en: 'Ashish Shukla received heartfelt public reception during community dialogue and outreach in Bhagwant Nagar.',
+      hi: 'भगवंत नगर प्रवास के दौरान क्षेत्रीय नागरिकों एवं युवाओं द्वारा गर्मजोशी से स्वागत व संवाद।',
+    },
+    date: { en: 'September 2026', hi: 'सितंबर २०२६' },
+  },
+  {
+    id: 'press-3',
+    image: '/images/gallery/a3.jpg',
+    source: 'Press Coverage',
+    location: 'Purwa, Unnao',
+    title: {
+      en: 'Mega Free Health Screening & Diagnostic Camp in Purwa',
+      hi: 'पुरवा में विशाल निःशुल्क स्वास्थ्य एवं नेत्र जांच शिविर का आयोजन',
+    },
+    description: {
+      en: 'Over 800 rural families benefited from free checkups, specialized diagnostic tests, and medicine distribution.',
+      hi: 'सैकड़ों जरूरतमंद परिवारों को निःशुल्क स्वास्थ्य परामर्श, नेत्र परीक्षण एवं दवाएं वितरित की गईं।',
+    },
+    date: { en: 'August 2026', hi: 'अगस्त २०२६' },
+  },
+  {
+    id: 'press-4',
+    image: '/images/gallery/a4.jpg',
+    source: 'Rashtriya Sahara',
+    location: 'Asoha, Bhagwant Nagar',
+    title: {
+      en: 'Kisan Chaupal: Resolving Tail-End Irrigation & Canal Cleaning',
+      hi: 'किसान चौपाल: अंतिम छोर तक सिंचाई जल व नहर सफाई पर चर्चा',
+    },
+    description: {
+      en: 'In-depth dialogue with farmer groups regarding procurement centers, irrigation, and agricultural support.',
+      hi: 'किसानों के साथ बैठक कर धान क्रय केंद्रों, नहरों की सफाई और समय पर खाद-बीज उपलब्धता पर मंथन।',
+    },
+    date: { en: 'July 2026', hi: 'जुलाई २०२६' },
+  },
+  {
+    id: 'press-5',
+    image: '/images/gallery/a5.jpg',
+    source: 'Hindustan',
+    location: 'Bhagwant Nagar',
+    title: {
+      en: 'Rural Sports Tournament Inauguration & Sports Kits Distribution',
+      hi: 'ग्रामीण खेलकूद प्रतियोगिता का शुभारंभ एवं खेल किट वितरण',
+    },
+    description: {
+      en: 'Encouraging youth athleticism, physical fitness, and sportsman spirit across panchayats.',
+      hi: 'युवाओं के शारीरिक एवं मानसिक विकास हेतु खेल प्रतियोगिताओं का आयोजन व प्रतिभाओं का सम्मान।',
+    },
+    date: { en: 'June 2026', hi: 'जून २०२६' },
+  },
+  {
+    id: 'press-6',
+    image: '/images/gallery/a12.jpg',
+    source: 'Dainik Jagran',
+    location: 'Unnao',
+    title: {
+      en: 'Weekly Jan Sunwai: Immediate Resolution of Public Grievances',
+      hi: 'साप्ताहिक जनसुनवाई: जनसमस्याओं की गंभीरता से सुनवाई एवं त्वरित निस्तारण',
+    },
+    description: {
+      en: 'Hearing hundreds of citizens directly at the central public office with administrative coordination.',
+      hi: 'जनसेवा कार्यालय में ग्रामीणों की समस्याओं को सुनकर संबंधित अधिकारियों को त्वरित समाधान के निर्देश।',
+    },
+    date: { en: 'May 2026', hi: 'मई २०२६' },
+  },
+  {
+    id: 'press-7',
+    image: '/images/gallery/a7.jpg',
+    source: 'Press Report',
+    location: 'Bighapur',
+    title: {
+      en: 'Comprehensive Review of Rural Infrastructure and Road Paving',
+      hi: 'ग्रामीण संपर्क मार्गों एवं नागरिक सुविधाओं का स्थलीय निरीक्षण',
+    },
+    description: {
+      en: 'Inspecting ongoing road widening, street lighting, and drinking water facilities in remote villages.',
+      hi: 'अधूरी सड़कों, प्रकाश व्यवस्था एवं पेयजल परियोजनाओं का स्थलीय निरीक्षण कर गुणवत्ता बनाए रखने पर बल।',
+    },
+    date: { en: 'April 2026', hi: 'अप्रैल २०२६' },
+  },
+  {
+    id: 'press-8',
+    image: '/images/gallery/a8.jpg',
+    source: 'Amar Ujala',
+    location: 'Bhagwant Nagar',
+    title: {
+      en: '',
+      hi: '',
+    },
+    description: {
+      en: 'Receiving blessings and constructive suggestions for youth employment, healthcare, and education.',
+      hi: 'गांव-गांव जाकर बुजुर्गों का आशीर्वाद एवं क्षेत्र के सर्वांगीण विकास हेतु जनसुझाव प्राप्त किए।',
+    },
+    date: { en: 'March 2026', hi: 'मार्च २०२६' },
+  },
+];

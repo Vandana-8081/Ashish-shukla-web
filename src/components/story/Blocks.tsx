@@ -8,12 +8,17 @@ import { useLanguage } from '@/lib/languageContext';
 import { timelineStops, banner, timelineHead } from '@/data/story';
 import { ParallaxBg, Reveal, Stagger, Item } from './motion';
 import type { LocalizedString } from '@/types';
+import { ResponsiveLineSplit } from '@/components/ui/ResponsiveLineSplit';
 
 type L = LocalizedString;
 
-/** Renders the section title without decorative highlight styling. */
+/** Renders the section title with GSAP responsive line splits on scroll. */
 export function AccentTitle({ title, className = 'ed-h2' }: { title: string; accent?: string; className?: string }) {
-  return <h2 className={className}>{title}</h2>;
+  return (
+    <ResponsiveLineSplit as="h2" className={className}>
+      {title}
+    </ResponsiveLineSplit>
+  );
 }
 
 export function SectionHead({
@@ -33,11 +38,15 @@ export function SectionHead({
 }) {
   const { t } = useLanguage();
   return (
-    <Reveal className={`max-w-[880px] ${center ? 'mx-auto text-center' : ''}`}>
+    <div className={`max-w-[880px] ${center ? 'mx-auto text-center' : ''}`}>
       {eyebrow && t(eyebrow).trim() && <div className="ed-eyebrow mb-3">{t(eyebrow)}</div>}
       <AccentTitle title={t(title)} accent={accent ? t(accent) : undefined} className={`ed-h2 ${dark ? '!text-white' : ''}`} />
-      {text && <p className={`ed-body mt-5 ${dark ? '!text-white/75' : ''} ${center ? 'mx-auto max-w-[760px]' : 'max-w-[760px]'}`}>{t(text)}</p>}
-    </Reveal>
+      {text && (
+        <ResponsiveLineSplit as="p" className={`ed-body mt-5 ${dark ? '!text-white/75' : ''} ${center ? 'mx-auto max-w-[760px]' : 'max-w-[760px]'}`}>
+          {t(text)}
+        </ResponsiveLineSplit>
+      )}
+    </div>
   );
 }
 
@@ -71,11 +80,29 @@ export function PageHero({
       <div className="container-site relative z-10 py-14 text-white md:py-16">
         {t(eyebrow).trim() && <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }}
         className="ed-eyebrow !text-[#ffb27a]">{t(eyebrow)}</motion.div>}
-        <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.25 }}
-          className="ed-title mt-4 max-w-[900px]">{t(title)}</motion.h1>
+        <ResponsiveLineSplit
+          as="h1"
+          key={t(title)}
+          scrollTrigger={false}
+          delay={0.25}
+          duration={1.1}
+          stagger={0.12}
+          className="ed-title mt-4 max-w-[900px]"
+        >
+          {t(title)}
+        </ResponsiveLineSplit>
         {text && (
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.45 }}
-            className="mt-6 max-w-3xl text-[17px] leading-8 text-white/80 md:text-[20px]">{t(text)}</motion.p>
+          <ResponsiveLineSplit
+            as="p"
+            key={t(text)}
+            scrollTrigger={false}
+            delay={0.45}
+            duration={1.0}
+            stagger={0.08}
+            className="mt-6 max-w-3xl text-[17px] leading-8 text-white/80 md:text-[20px]"
+          >
+            {t(text)}
+          </ResponsiveLineSplit>
         )}
       </div>
     </section>
@@ -124,7 +151,9 @@ export function Banner({ cta, image = banner.image, position = 'object-[center_3
       <ParallaxBg src={image} position={position} />
       <div className="container-site relative z-10">
         <Reveal>
-          <h2 className="max-w-5xl font-editorial text-[clamp(28px,3.6vw,46px)] font-bold leading-[1.25] text-white">{t(title)}</h2>
+          <ResponsiveLineSplit as="h2" className="max-w-5xl font-editorial text-[clamp(28px,3.6vw,46px)] font-bold leading-[1.25] text-white">
+            {t(title)}
+          </ResponsiveLineSplit>
           {cta && (
             <Link href={getHref(cta.href)} className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-[#ffe9d6]">
               {t(cta.label)} <ArrowRight className="h-4 w-4" />

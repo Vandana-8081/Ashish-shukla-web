@@ -71,9 +71,6 @@ export function Footer() {
               {dict.footer.description}
             </p>
 
-            <div className="pt-2 text-sm text-white/60">
-              <span>{dict.common.publicOfficeLocation}</span>
-            </div>
           </div>
 
           {/* Quick Links */}

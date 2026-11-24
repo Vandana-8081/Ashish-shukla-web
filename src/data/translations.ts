@@ -50,7 +50,6 @@ export const translations = {
       developmentPriorities: 'Development Priorities',
       allRightsReserved: 'All rights reserved.',
       dedicatedService: 'Dedicated to Grounded Public Service',
-      publicOfficeLocation: 'Public Office: Bhagwant Nagar, District Unnao (Uttar Pradesh)',
       switchLanguage: 'Switch Language',
     },
     hero: {
@@ -162,8 +161,6 @@ export const translations = {
       officeAddress: '166-Bhagwant Nagar, District Unnao, Uttar Pradesh - 209864',
       hoursTitle: 'Jan Sunwai Hours',
       hoursDesc: 'Weekly Public Hearing: 9:00 AM - 2:00 PM (Rotational block chaupals on weekends)',
-      emailTitle: 'Correspondence & Inquiries',
-      socialTitle: 'Official Channels',
       formTitle: 'Public Grievance & Message Form',
       formSubtitle: 'Please provide accurate details for prompt coordination and departmental follow-up.',
       nameLabel: 'Full Name *',
@@ -246,7 +243,6 @@ export const translations = {
       developmentPriorities: 'विकास की प्राथमिकताएं',
       allRightsReserved: 'सर्वाधिकार सुरक्षित।',
       dedicatedService: 'माटी और जनसेवा को समर्पित',
-      publicOfficeLocation: 'जनसेवा कार्यालय: भगवंत नगर, जनपद उन्नाव (उत्तर प्रदेश)',
       switchLanguage: 'भाषा बदलें',
     },
     hero: {
@@ -357,8 +353,6 @@ export const translations = {
       officeAddress: 'विधानसभा क्षेत्र भगवंत नगर, जनपद उन्नाव, उत्तर प्रदेश - २०९८६४',
       hoursTitle: 'जनसुनवाई समय',
       hoursDesc: 'साप्ताहिक जनसुनवाई: प्रातः ९:०० बजे से दोपहर २:०० बजे तक',
-      emailTitle: 'पत्राचार एवं सुझाव',
-      socialTitle: 'आधिकारिक सोशल मीडिया',
       formTitle: 'जनसुनवाई / संपर्क प्रपत्र',
       formSubtitle: 'कृपया अपना पूरा विवरण भरें ताकि त्वरित सहायता एवं समन्वय किया जा सके।',
       nameLabel: 'पूरा नाम *',

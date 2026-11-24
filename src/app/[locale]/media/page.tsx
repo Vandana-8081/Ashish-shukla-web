@@ -1,10 +1,8 @@
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/seo';
-import { MediaIntro } from '@/components/story/Pages2';
+import { MediaHero } from '@/components/media/MediaHero';
 import { PhotoGallery } from '@/components/media/PhotoGallery';
 import { VideoSection } from '@/components/media/VideoSection';
-import { Container } from '@/components/ui/Container';
-import { SectionHeading } from '@/components/ui/SectionHeading';
 import type { Locale } from '@/types';
 import { getDictionary } from '@/data/translations';
 
@@ -29,25 +27,17 @@ export default async function MediaPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const dict = getDictionary((locale === 'hi' ? 'hi' : 'en') as Locale);
 
   return (
-    <div>
-      <MediaIntro />
-      <div className="py-12 md:py-20 space-y-16">
-        <Container size="wide" id="videos">
-          <SectionHeading
-            title={dict.mediaSection.videoHeading}
-            as="h2"
-            description={dict.mediaSection.videoDesc}
-          />
-          <VideoSection />
-        </Container>
+    <main id="main" tabIndex={-1} className="w-full max-w-full outline-none overflow-x-hidden">
+      {/* 1. Hero Header (Breadcrumbs, Titles, Jump Links, Aspect 16/10 Photo) */}
+      <MediaHero />
 
-        <Container size="wide" id="photos" className="pt-8 border-t border-[#E8E2D8]">
-          <PhotoGallery />
-        </Container>
-      </div>
-    </div>
+      {/* 2. Photographs Section (#photos - Asymmetric Dynamic Grid + Original Full-Screen Lightbox) */}
+      <PhotoGallery />
+
+      {/* 3. Videos Section (#videos - "From the field" Featured Player + Video Grid) */}
+      <VideoSection />
+    </main>
   );
 }

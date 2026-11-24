@@ -32,17 +32,17 @@ export interface HeroSlide {
   poster?: boolean;
   /** Optional portrait poster used on phones and tablets, with the text laid over it. */
   mobileImage?: string;
-  eyebrow: LocalizedString;
+  eyebrow?: LocalizedString;
   heading: LocalizedString;
   /** Popular name shown in brackets under the heading. */
   nickname?: LocalizedString;
   subtitle?: LocalizedString;
   description: LocalizedString;
-  primaryCta: {
+  primaryCta?: {
     label: LocalizedString;
     path: string;
   };
-  secondaryCta: {
+  secondaryCta?: {
     label: LocalizedString;
     path: string;
   };
@@ -109,4 +109,14 @@ export interface VideoItem {
   date: LocalizedString;
   description: LocalizedString;
   videoUrl?: string;
+}
+
+export interface PressItem {
+  id: string;
+  image: string;
+  source: string;
+  location: string;
+  title: LocalizedString;
+  description: LocalizedString;
+  date?: LocalizedString;
 }
